@@ -1,6 +1,7 @@
-:root{
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+@import url('../src/assets/Fonts/ClashDisplay/css/clash-display.css');
 
+:root{
+  font-family: 'ClashDisplay-Variable', system-ui, -apple-system;
   color-scheme: light dark;
   color: var(--white);
   background-color: var(--primary);
