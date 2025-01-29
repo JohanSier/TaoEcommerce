@@ -2,6 +2,7 @@
 
 :root{
   font-family: 'ClashDisplay-Variable', system-ui, -apple-system;
+  font-variation-settings: "wght" 500;
   color-scheme: light dark;
   color: var(--white);
   background-color: var(--primary);
