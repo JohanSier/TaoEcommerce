@@ -1,7 +1,10 @@
 @import url('../assets/Fonts/ClashDisplay/css/clash-display.css');
+*{
+box-sizing: border-box;  /*Important instruction for navbar to respect parent bounds*/
+font-family: 'ClashDisplay-Variable', system-ui, -apple-system;
+}
 
 :root{
-  font-family: 'ClashDisplay-Variable', system-ui, -apple-system;
   font-variation-settings: "wght" 500;
   color-scheme: light dark;
   color: var(--white);
@@ -25,6 +28,7 @@
   --warning: #CBAA01;
   --info: #0276CA;
   --error: #CC1402;
+  --transparent: transparent;
 }
 
 body{
