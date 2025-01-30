@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import './styles/App.css'
+import TopBarInfo from './components/TopBarInfo'
 
 function App() {
 
   return (
     <>
-      <h1>Testing</h1>
+      <TopBarInfo />
     </>
   )
 }
