@@ -33,8 +33,8 @@ font-family: 'ClashDisplay-Variable', system-ui, -apple-system;
 
 body{
   margin: 0;
-  padding-right: .5rem;
-  padding-left: .5rem;
+  padding-right: .65rem;
+  padding-left: .65rem;
 }
 
 #root {

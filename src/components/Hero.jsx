@@ -12,8 +12,8 @@ const Container = styled.div`
   width: 100%;
   height: 43.75rem;
   
-  position: relative;
-  top: -5.3rem;
+  position: relative; /* esta linea es para contener al overlay hecho con :after */
+  margin-top: -5.3rem; /* usamos margin-top negativo en vez de top pues usando esta propiedad (margin) no deja el hueco que si dejaria top */
   left: 0;
   z-index: 1;
 
@@ -72,7 +72,7 @@ const ButtonsContainer = styled.div`
     flex-wrap: wrap;
     gap: 12px;
     position: relative;
-    z-index: 900;
+    z-index: 999;
 `;
 
 const Button = styled.a`
