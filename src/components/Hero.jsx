@@ -13,7 +13,7 @@ const Container = styled.div`
   height: 43.75rem;
   
   position: relative;
-  top: -5.625rem;
+  top: -5.3rem;
   left: 0;
   z-index: 1;
 
@@ -101,12 +101,12 @@ const Hero = () => {
       <ButtonsContainer>
         <Button href="#">
           Shop All
-          <HiArrowCircleRight size={24}/>
+          <HiArrowCircleRight aria-label="Next" title="Go to all products page" size={24}/>
         </Button>
 
         <Button href="#">
           Shop New Collection
-          <HiArrowCircleRight size={24}/>
+          <HiArrowCircleRight aria-label="Next" title="Go to next collection products page" size={24}/>
         </Button>
       </ButtonsContainer>
     </Container>
