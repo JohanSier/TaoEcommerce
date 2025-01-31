@@ -106,15 +106,15 @@ const NavBar = () => {
 
       <RightLinks>
         <Link className="input-btn">
-          <HiOutlineSearch />
+          <HiOutlineSearch aria-label="Search Icon" title="Search Item"/>
           <Input type="text" placeholder="Buscar" />
         </Link>
 
         <Link>
-          <HiOutlineUser />
+          <HiOutlineUser aria-label="Profile Icon" title="Go to profile page"/>
         </Link>
         <Link>
-          <HiOutlineShoppingBag />
+          <HiOutlineShoppingBag aria-label="Cart Icon" title="Go to the cart page"/>
         </Link>
       </RightLinks>
     </Wrapper>
