@@ -1,4 +1,7 @@
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
 @import url('../assets/Fonts/ClashDisplay/css/clash-display.css');
+
 *{
 box-sizing: border-box;  /*Important instruction for navbar to respect parent bounds*/
 font-family: 'ClashDisplay-Variable', system-ui, -apple-system;

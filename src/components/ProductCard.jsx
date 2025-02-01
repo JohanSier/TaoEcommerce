@@ -1,17 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 
-const Container = styled.div`
+const Container = styled.a`
+  text-decoration: none;
   display: flex;
   flex-direction: column;
   width: 15.6rem;
   height: 100%;
   border: 1px solid var(--greyE);
+  border-radius: 8px;
+  outline: none;
 `;
 const ProductImage = styled.img`
   width: 100%;
   height: 18.31rem;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: inherit;
+
 `;
 
 const ProductInfo = styled.div`
@@ -37,7 +42,7 @@ const Price = styled.p`
 
 const ProductCard = ({ productTitle, price, srcImage }) => {
   return (
-    <Container>
+    <Container href="#">
       <ProductImage src={srcImage} />
       <ProductInfo>
         <ProductTitle>{productTitle}</ProductTitle>
