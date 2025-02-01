@@ -76,7 +76,7 @@ const products = [
       "A durable and stylish black backpack with iconic accents, ready to carry your game essentials.",
     price: 84.99,
     imageSrc: backpack,
-  },
+  }
 ];
 
 export { categories, products };
