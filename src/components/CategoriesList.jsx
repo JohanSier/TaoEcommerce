@@ -1,5 +1,5 @@
 import React from "react";
-import categories from "../assets/Images"; // Import the array
+import {categories} from "../assets/Images"; // Import the array
 import CategoryCard from "./CategoryCard";
 import styled from "styled-components";
 

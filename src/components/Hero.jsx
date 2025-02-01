@@ -30,7 +30,7 @@ const Container = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: #0000004d;
+    background: #0000003d;
     z-index: 500;
     border-top-left-radius: 1.5rem;
     border-top-right-radius: 1.5rem;
