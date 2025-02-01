@@ -5,7 +5,7 @@ const Container = styled.a`
   text-decoration: none;
   display: flex;
   flex-direction: column;
-  width: 15.6rem;
+  width: 17rem;
   height: 100%;
   border: 1px solid var(--greyE);
   border-radius: 8px;

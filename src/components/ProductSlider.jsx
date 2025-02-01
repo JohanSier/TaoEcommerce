@@ -3,18 +3,40 @@ import Slider from "react-slick";
 import styled from "styled-components";
 import ProductCard from "./ProductCard";
 
-const SliderContainer = styled.div`
+const SliderContainer = styled.section`
   width: 100%;
   background: var(--white);
-  padding: 3rem 2rem;
+  padding: 0 2rem;
   cursor: -webkit-grab; 
   cursor: grab;
-
+  text-align: start;
   &:active{
   cursor: -webkit-grabbing; 
   cursor: grabbing;
   }
 `;
+
+const TitlePlusLink = styled.div`
+    width; 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 3rem;
+    cursor: default;
+`
+
+const Link = styled.a`
+    text-decoration: underline;
+    color: var(--secondary);
+`
+
+const Heading = styled.h5`
+    text-wrap: nowrap;
+    font-size: 2rem;
+    font-variation-settings: "wght" 600;
+    margin-top: 0;
+    margin-bottom: 1rem;
+`
 
 const ArrowButton = styled.button`
   font-size: 24px;
@@ -74,6 +96,10 @@ const ProductSlider = ({ products }) => {
 
   return (
     <SliderContainer>
+        <TitlePlusLink>
+            <Heading style={{color: 'black', alignSelf:"start"}}>Street Kings</Heading>
+            <Link href="#">Discover More</Link>
+        </TitlePlusLink>
       <Slider {...settings}>
         {products.map((product) => (
           <ProductCard
