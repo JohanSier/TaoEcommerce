@@ -31,7 +31,7 @@ const Card = styled.a`
   text-decoration: none;
 
   width: 32rem;
-  height: 34rem;
+  height: 38rem;
   border-radius: 1rem;
   overflow: hidden; /* Previene desbordes */
   padding: 2rem;
