@@ -64,7 +64,7 @@ const Card = styled.a`
 
 
 
-const Heading = styled.h2`
+const Heading = styled.h3`
   margin: 0;
   font-size: 2rem;
   font-variation-settings: "wght" 600;
