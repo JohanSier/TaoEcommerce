@@ -15,8 +15,8 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   background: var(--transparent);
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 `;
 
 const Spacer = styled.div`
@@ -43,6 +43,7 @@ const Link = styled.a`
     padding-left: 0.8rem;
   }
 `;
+
 const Input = styled.input`
   margin: 0;
   width: 100%;
@@ -51,7 +52,6 @@ const Input = styled.input`
   border: none;
   outline: none;
   font-variation-settings: "wght" 500;
-  font-size: 1rem;
   cursor: pointer;
 
   &::placeholder {
@@ -61,7 +61,7 @@ const Input = styled.input`
 `;
 
 const LeftLinks = styled.ul`
-  text-wrap: nowrap;
+  white-space: nowrap;
   list-style: none;
   display: flex;
   flex: 1;
