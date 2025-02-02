@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { Link, useLocation } from "react-router";
+
 import {
   HiOutlineUser,
   HiOutlineShoppingBag,
@@ -9,14 +11,17 @@ import LogoImg from "../assets/Images/TaoHoops-logo.svg";
 
 const Wrapper = styled.div`
   width: 100%;
-  position: relative;
-  z-index: 99;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
   padding: 0 2rem;
   display: flex;
   align-items: center;
-  background: var(--transparent);
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+  background: ${(props)=> (!props.isHomepage || props.background ? "var(--secondary)" : "var(--transparent)")};  
+  border-top-left-radius: ${(props)=> (props.background ? 0 : "1rem")};
+  border-top-right-radius: ${(props)=> (props.background ? 0 : "1rem")};
+  transition: background .2s linear;
 `;
 
 const Spacer = styled.div`
@@ -27,7 +32,7 @@ const CenterLogo = styled.div`
   flex-shrink: 0; /* Evita que el logo se redimensione */
 `;
 
-const Link = styled.a`
+const StyledLink = styled(Link)`
   text-decoration: none;
   color: var(--white);
   cursor: pointer;
@@ -85,37 +90,53 @@ const RightLinks = styled(LeftLinks)`
 `;
 
 const NavBar = () => {
+  const location = useLocation(); // 🔥 Get the current URL
+  const isHomepage = location.pathname === "/"; 
+  const [background, setBackground] = useState(false)
+  
+   // ✅ Corrected Scroll Effect
+   useEffect(() => {
+    const handleScroll = () => {
+      setBackground(window.scrollY > 60);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <Wrapper>
+    <Wrapper background={background} isHomepage={isHomepage}>
       <LeftLinks>
-        <Link href="#">SHOP ALL</Link>{" "}
-        {/* Cambiar por un Link de React Router */}
-        <Link href="#">MEN'S</Link> {/* Cambiar por un Link de React Router */}
-        <Link href="#">WOMEN'S</Link>{" "}
-        {/* Cambiar por un Link de React Router */}
-        <Link href="#">KIDS</Link> {/* Cambiar por un Link de React Router */}
-        <Link href="#">ACCESORIES</Link>{" "}
-        {/* Cambiar por un Link de React Router */}
+        <StyledLink to="/products">SHOP ALL</StyledLink>
+        <StyledLink to="/products">MEN'S</StyledLink> 
+        <StyledLink to="/products">WOMEN'S</StyledLink>
+        <StyledLink to="/products">KIDS</StyledLink>
+        <StyledLink to="/products">ACCESORIES</StyledLink>
       </LeftLinks>
 
       <Spacer />
       <CenterLogo>
-        <Logo src={LogoImg} alt="TaoHoops logo" />
+        <StyledLink to="/">
+          <Logo src={LogoImg} alt="TaoHoops logo" />
+        </StyledLink>
       </CenterLogo>
       <Spacer />
 
       <RightLinks>
-        <Link className="input-btn">
+        <StyledLink to="/" className="input-btn">
           <HiOutlineSearch aria-label="Search Icon" title="Search Item"/>
           <Input type="text" placeholder="Buscar" />
-        </Link>
+        </StyledLink>
 
-        <Link>
+        <StyledLink to="/">
           <HiOutlineUser aria-label="Profile Icon" title="Go to profile page"/>
-        </Link>
-        <Link>
+        </StyledLink>
+        <StyledLink to="/">
           <HiOutlineShoppingBag aria-label="Cart Icon" title="Go to the cart page"/>
-        </Link>
+        </StyledLink>
       </RightLinks>
     </Wrapper>
   );
