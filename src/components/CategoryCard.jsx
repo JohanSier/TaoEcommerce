@@ -1,6 +1,6 @@
 import React from "react";
 import { HiArrowCircleRight } from "react-icons/hi";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const Icon = styled(HiArrowCircleRight)`
   position: relative;
@@ -17,9 +17,50 @@ const BackgroundImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 1; /* Lo pone detrás del contenido */
-  transition: transform .5s ease;
+  z-index: 1;
+  transition: transform 0.5s ease;
+`;
 
+/* Wrapper to contain the scrolling text */
+const ShopNow = styled.div`
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Ensures no extra text outside */
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.5s ease;
+`;
+
+/* Animation for infinite scrolling */
+const movingLetters = keyframes`
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+`;
+
+/* Inner scrolling text container */
+const ShopNowTextWrapper = styled.div`
+  display: flex;
+  white-space: nowrap;
+  gap: 2rem;
+  animation: ${movingLetters} 10s linear infinite;
+`;
+
+/* Individual moving text */
+const ShopNowText = styled.p`
+  font-size: 4rem;
+  font-variation-settings: "wght" 800;
+  color: white;
+  text-wrap: nowrap;
 `;
 
 const Card = styled.a`
@@ -29,16 +70,15 @@ const Card = styled.a`
   align-items: flex-end;
   justify-content: space-between;
   text-decoration: none;
-
   width: 32rem;
   height: 38rem;
   border-radius: 1rem;
-  overflow: hidden; /* Previene desbordes */
+  overflow: hidden;
   padding: 2rem;
   margin: 0;
   cursor: pointer;
 
-  &:hover ${BackgroundImage}{
+  &:hover ${BackgroundImage} {
     transform: scale(1.1);
   }
 
@@ -47,22 +87,21 @@ const Card = styled.a`
     right: 0;
   }
 
+  &:hover ${ShopNow} {
+    opacity: 1;
+  }
 
-  /* Gradiente en la parte inferior */
   &::after {
     content: "";
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 50%; /* Ajusta la altura del gradiente */
+    height: 50%;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
     z-index: 2;
   }
 `;
-
-
-
 
 const Heading = styled.h3`
   margin: 0;
@@ -70,14 +109,24 @@ const Heading = styled.h3`
   font-variation-settings: "wght" 600;
   color: white;
   position: relative;
-  z-index: 500;
-  /* Asegura que el texto esté sobre el gradiente */
+  z-index: 3;
 `;
 
 const CategoryCard = ({ title, imageSrc }) => {
   return (
-    <Card href="#" draggable="false" >
-      <BackgroundImage src={imageSrc} alt={`${title} Category Image`} draggable="false"/>
+    <Card href="#" draggable="false">
+      <ShopNow>
+        <ShopNowTextWrapper>
+          <ShopNowText>SHOP NOW</ShopNowText>
+          <ShopNowText>SHOP NOW</ShopNowText>
+          <ShopNowText>SHOP NOW</ShopNowText>
+          <ShopNowText>SHOP NOW</ShopNowText>
+          <ShopNowText>SHOP NOW</ShopNowText>
+          <ShopNowText>SHOP NOW</ShopNowText>
+          <ShopNowText>SHOP NOW</ShopNowText>
+        </ShopNowTextWrapper>
+      </ShopNow>
+      <BackgroundImage src={imageSrc} alt={`${title} Category Image`} draggable="false" />
       <Heading>{title}</Heading>
       <Icon color="white" size={32} />
     </Card>
