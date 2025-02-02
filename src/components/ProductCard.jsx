@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router";
 import styled from "styled-components";
 
-const Container = styled.a`
+const Container = styled(Link)`
   text-decoration: none;
   display: flex;
   flex-direction: column;
@@ -16,17 +17,22 @@ const ProductImage = styled.img`
   height: 18.31rem;
   object-fit: cover;
   border-radius: inherit;
-
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 `;
 
 const ProductInfo = styled.div`
-color: var(--secondary);
-    white-space: nowrap;
+  background: var(--white);
+  color: var(--secondary);
+  white-space: nowrap;
   display: flex;
   gap: 0.25rem;
   flex-direction: column;
   align-items: start;
   padding: 1.25rem 1.5rem;
+  border-radius: inherit;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
 `;
 
 const ProductTitle = styled.h5`
@@ -40,9 +46,9 @@ const Price = styled.p`
   margin: 0;
 `;
 
-const ProductCard = ({ productTitle, price, srcImage }) => {
+const ProductCard = ({ productTitle, price, srcImage, productLink}) => {
   return (
-    <Container href="#">
+    <Container to={productLink}>
       <ProductImage src={srcImage} />
       <ProductInfo>
         <ProductTitle>{productTitle}</ProductTitle>
