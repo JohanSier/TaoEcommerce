@@ -19,7 +19,8 @@ const CookieContainer = styled.div`
   align-items: center;
   text-align: center;
   opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transform: ${(props) => (props.isVisible ? "translateY(0)" : "translateY(20px)")};
+  transform: ${(props) =>
+    props.isVisible ? "translateY(0)" : "translateY(20px)"};
   transition: opacity 0.5s ease, transform 0.5s ease;
   z-index: 1000;
 `;
@@ -37,32 +38,32 @@ const ButtonGroup = styled.div`
 
 const AcceptButton = styled.button`
   display: flex;
-    white-space: nowrap;
-    align-items: center;
-    text-decoration: none;
-    gap: 5px;
-    border: none;
-    border-radius: 8px;
-    padding: 8px 16px;
-    cursor: pointer;
-    transition: background .5s ease, color .5s ease;
-    background: #4da809;
+  white-space: nowrap;
+  align-items: center;
+  text-decoration: none;
+  gap: 5px;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background 0.5s ease, color 0.5s ease;
+  background: #4da809;
 `;
 
 const RejectButton = styled.button`
-    display: flex;
-    white-space: nowrap;
-    align-items: center;
-    text-decoration: none;
-    gap: 5px;
-    border: none;
-    border-radius: 8px;
-    padding: 8px 16px;
-    cursor: pointer;
-    transition: background .5s ease, color .5s ease;
+  display: flex;
+  white-space: nowrap;
+  align-items: center;
+  text-decoration: none;
+  gap: 5px;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background 0.5s ease, color 0.5s ease;
 
   &:hover {
-    opacity: .9;
+    opacity: 0.9;
   }
 `;
 
@@ -92,7 +93,8 @@ const Cookies = () => {
   return (
     <CookieContainer isVisible={isVisible}>
       <CookieText>
-        🍪 Usamos cookies para mejorar tu experiencia. ¿Aceptas nuestras cookies?
+        🍪 Usamos cookies para mejorar tu experiencia. ¿Aceptas nuestras
+        cookies?
       </CookieText>
       <ButtonGroup>
         <RejectButton onClick={handleReject}>Rechazar</RejectButton>

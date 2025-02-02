@@ -1,5 +1,5 @@
 import React from "react";
-import {categories} from "../assets/Images"; // Import the array
+import { categories } from "../assets/Images"; // Import the array
 import CategoryCard from "./CategoryCard";
 import styled from "styled-components";
 
@@ -7,9 +7,9 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: .8rem;
+  gap: 0.8rem;
   background: var(--white);
-  padding:3rem 2rem;
+  padding: 3rem 2rem;
 `;
 
 const CategoriesList = () => {
@@ -19,6 +19,7 @@ const CategoriesList = () => {
         <CategoryCard
           key={category.id}
           title={category.title}
+          redirectLink={category.link}
           imageSrc={category.src}
         />
       ))}
