@@ -12,14 +12,13 @@ import bape_tweed_shorts from "./product-images/Bape_Tweed_Hem_Shorts.webp";
 import bape_black_tee from "./product-images/Bape_Black_Tee.webp";
 import wade_sweatshirt from "./product-images/Wade_Sweatshirt.webp";
 
-
 const categories = [
-  { id: 1, title: "Street Kings", src: categ_streetKings },
-  { id: 2, title: "Tees", src: categ_tees },
-  { id: 3, title: "Jerseys", src: categ_jerseys },
-  { id: 4, title: "Shorts", src: categ_shorts },
-  { id: 5, title: "Sneakers", src: categ_sneakers },
-  { id: 6, title: "Accessories", src: categ_accesories },
+  { id: 1, title: "Street Kings", src: categ_streetKings, link: "/products" },
+  { id: 2, title: "Tees", src: categ_tees, link: "/products" },
+  { id: 3, title: "Jerseys", src: categ_jerseys, link: "/products" },
+  { id: 4, title: "Shorts", src: categ_shorts, link: "/products" },
+  { id: 5, title: "Sneakers", src: categ_sneakers, link: "/products" },
+  { id: 6, title: "Accessories", src: categ_accesories, link: "/products" },
 ];
 
 const products = [
@@ -30,7 +29,8 @@ const products = [
     description:
       "A sleek black t-shirt with unique patches celebrating street basketball culture.",
     price: 44.99,
-    imageSrc: bape_black_tee
+    imageSrc: bape_black_tee,
+    link: "/products"
   },
   {
     id: 2,
@@ -39,7 +39,8 @@ const products = [
     description:
       "Stylish black camo shorts perfect for both on and off the court.",
     price: 54.99,
-    imageSrc: bape_shorts
+    imageSrc: bape_shorts,
+    link: "/products"
   },
   {
     id: 3,
@@ -48,7 +49,8 @@ const products = [
     description:
       " A premium, vintage-washed long-sleeve sweater for those cooler street game nights.",
     price: 69.99,
-    imageSrc: wade_sweatshirt
+    imageSrc: wade_sweatshirt,
+    link: "/products"
   },
   {
     id: 4,
@@ -57,7 +59,8 @@ const products = [
     description:
       "A deep navy t-shirt with star-inspired designs for standout street style.",
     price: 47.99,
-    imageSrc: bape_stellar_tee
+    imageSrc: bape_stellar_tee,
+    link: "/products"
   },
   {
     id: 5,
@@ -66,7 +69,8 @@ const products = [
     description:
       "Minimalist black shorts with subtle detailing for effortless style.",
     price: 49.99,
-    imageSrc: bape_tweed_shorts 
+    imageSrc: bape_tweed_shorts,
+    link: "/products"
   },
   {
     id: 6,
@@ -76,7 +80,8 @@ const products = [
       "A durable and stylish black backpack with iconic accents, ready to carry your game essentials.",
     price: 84.99,
     imageSrc: backpack,
-  }
+    link: "/products"
+  },
 ];
 
 export { categories, products };

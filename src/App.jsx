@@ -1,26 +1,24 @@
 import "./styles/App.css";
-import TopBarInfo from "./components/TopBarInfo";
-import NavBar from "./components/NavBar";
-import Hero from "./components/Hero";
-import CategoriesList from "./components/CategoriesList";
-import ProductSlider from "./components/ProductSlider";
-import { products } from "./assets/Images";
-import Footer from "./components/Footer";
-import Cookies from "./components/Cookies";
+import Homepage from "./pages/Homepage";
+import ProductsPage from "./pages/ProductsPage"; 
+import { Routes, Route } from "react-router";
+import RootLayout from "./components/RootLayout"; // ✅ Import the layout
+import NotFound from "./pages/NotFound"
 
 function App() {
   return (
-    <>
-      <TopBarInfo />
-      <NavBar />
-      <Hero />
-      <CategoriesList />
-      <ProductSlider products={products} />
-      <Cookies />
-      <Footer />
-    </>
+    <Routes>
+      {/* Root layout wrapper for all pages */}
+      <Route path="/" element={<RootLayout />}>
+        <Route index element={<Homepage />} />
+        <Route path="products" element={<ProductsPage />} />
+      </Route>
+
+
+        {/* Página 404 cuando no hay coincidencias */}
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }
 
 export default App;
-

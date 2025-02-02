@@ -1,5 +1,6 @@
 import React from "react";
 import { HiArrowCircleRight } from "react-icons/hi";
+import { Link } from "react-router";
 import styled, { keyframes } from "styled-components";
 
 const Icon = styled(HiArrowCircleRight)`
@@ -63,7 +64,7 @@ const ShopNowText = styled.p`
   text-wrap: nowrap;
 `;
 
-const Card = styled.a`
+const Card = styled(Link)`
   position: relative;
   display: flex;
   flex-grow: 1;
@@ -112,9 +113,9 @@ const Heading = styled.h3`
   z-index: 3;
 `;
 
-const CategoryCard = ({ title, imageSrc }) => {
+const CategoryCard = ({ title, imageSrc, redirectLink}) => {
   return (
-    <Card href="#" draggable="false">
+    <Card to={redirectLink} draggable="false">
       <ShopNow>
         <ShopNowTextWrapper>
           <ShopNowText>SHOP NOW</ShopNowText>
@@ -126,7 +127,11 @@ const CategoryCard = ({ title, imageSrc }) => {
           <ShopNowText>SHOP NOW</ShopNowText>
         </ShopNowTextWrapper>
       </ShopNow>
-      <BackgroundImage src={imageSrc} alt={`${title} Category Image`} draggable="false" />
+      <BackgroundImage
+        src={imageSrc}
+        alt={`${title} Category Image`}
+        draggable="false"
+      />
       <Heading>{title}</Heading>
       <Icon color="white" size={32} />
     </Card>
