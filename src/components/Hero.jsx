@@ -53,14 +53,14 @@ const Eyebrow = styled.div`
 `;
 
 const HeroHeading = styled.h1`
-    text-wrap: nowrap;
+    white-space: nowrap;
     font-size: 5rem;
     font-variation-settings: "wght" 600;
     margin: 0;
 `;
 
 const Text = styled.div`
-    text-wrap: nowrap;
+    white-space: nowrap;
     font-size: 1.1rem;
     font-variation-settings: "wght" 400;
     margin: 0;
@@ -77,7 +77,7 @@ const ButtonsContainer = styled.div`
 
 const Button = styled.a`
     display: flex;
-    text-wrap: nowrap;
+    white-space: nowrap;
     align-items: center;
     text-decoration: none;
     gap: 5px;
@@ -87,6 +87,14 @@ const Button = styled.a`
     padding: 8px 16px;
     color: var(--secondary);
     cursor: pointer;
+    transition: background .5s ease, color .5s ease;
+
+
+    &:hover{
+      background: var(--secondary);
+      color: var(--white);
+      transition: background .5s ease, color .5s ease;
+    }
 `;
 //all: unset is a property that removes all styles from an element
 const Hero = () => {

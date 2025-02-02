@@ -31,7 +31,7 @@ const Link = styled.a`
 `
 
 const Heading = styled.h5`
-    text-wrap: nowrap;
+    white-space: nowrap;
     font-size: 2rem;
     font-variation-settings: "wght" 600;
     margin-top: 0;

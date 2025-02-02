@@ -21,7 +21,7 @@ const ProductImage = styled.img`
 
 const ProductInfo = styled.div`
 color: var(--secondary);
-    text-wrap: nowrap;
+    white-space: nowrap;
   display: flex;
   gap: 0.25rem;
   flex-direction: column;
