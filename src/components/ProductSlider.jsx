@@ -2,17 +2,18 @@ import React from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 import ProductCard from "./ProductCard";
+import { Link } from "react-router";
 
 const SliderContainer = styled.section`
   width: 100%;
   background: var(--white);
   padding: 0 2rem;
-  cursor: -webkit-grab; 
+  cursor: -webkit-grab;
   cursor: grab;
   text-align: start;
-  &:active{
-  cursor: -webkit-grabbing; 
-  cursor: grabbing;
+  &:active {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
   }
 `;
 
@@ -23,20 +24,20 @@ const TitlePlusLink = styled.div`
     justify-content: space-between;
     padding-right: 3rem;
     cursor: default;
-`
+`;
 
-const Link = styled.a`
-    text-decoration: underline;
-    color: var(--secondary);
-`
+const StyledLink = styled(Link)`
+  text-decoration: underline;
+  color: var(--secondary);
+`;
 
 const Heading = styled.h5`
-    white-space: nowrap;
-    font-size: 2rem;
-    font-variation-settings: "wght" 600;
-    margin-top: 0;
-    margin-bottom: 1rem;
-`
+  white-space: nowrap;
+  font-size: 2rem;
+  font-variation-settings: "wght" 600;
+  margin-top: 0;
+  margin-bottom: 1rem;
+`;
 
 const ArrowButton = styled.button`
   font-size: 24px;
@@ -51,10 +52,10 @@ const ArrowButton = styled.button`
     outline: none;
   }
 
-  &.slick-next:before, &.slick-prev:before{
+  &.slick-next:before,
+  &.slick-prev:before {
     color: black;
     font-size: 24px;
-
   }
 `;
 
@@ -67,11 +68,19 @@ const ProductSlider = ({ products }) => {
     slidesToShow: 5, // Adjust based on the number of items per view
     slidesToScroll: 1,
     prevArrow: (
-        <ArrowButton role="button" aria-label="Next Slide" direction="prev"></ArrowButton>
-      ),
-      nextArrow: (
-        <ArrowButton role="button" aria-label="Prev Slide" direction="next"></ArrowButton>
-      ),
+      <ArrowButton
+        role="button"
+        aria-label="Next Slide"
+        direction="prev"
+      ></ArrowButton>
+    ),
+    nextArrow: (
+      <ArrowButton
+        role="button"
+        aria-label="Prev Slide"
+        direction="next"
+      ></ArrowButton>
+    ),
     responsive: [
       {
         breakpoint: 1360, // Tablet view
@@ -96,10 +105,12 @@ const ProductSlider = ({ products }) => {
 
   return (
     <SliderContainer>
-        <TitlePlusLink>
-            <Heading style={{color: 'black', alignSelf:"start"}}>Street Kings</Heading>
-            <Link href="#">Discover More</Link>
-        </TitlePlusLink>
+      <TitlePlusLink>
+        <Heading style={{ color: "black", alignSelf: "start" }}>
+          Street Kings
+        </Heading>
+        <StyledLink to='/products'>Discover More</StyledLink>
+      </TitlePlusLink>
       <Slider {...settings}>
         {products.map((product) => (
           <ProductCard
@@ -107,6 +118,7 @@ const ProductSlider = ({ products }) => {
             productTitle={product.name}
             price={product.price}
             srcImage={product.imageSrc}
+            productLink={product.link}
           />
         ))}
       </Slider>
