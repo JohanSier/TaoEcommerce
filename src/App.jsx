@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import CategoriesList from "./components/CategoriesList";
 import ProductSlider from "./components/ProductSlider";
 import { products } from "./assets/Images";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Hero />
       <CategoriesList />
       <ProductSlider products={products} />
+      <Footer />
     </>
   );
 }
