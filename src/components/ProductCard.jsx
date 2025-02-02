@@ -9,9 +9,9 @@ const Container = styled(Link)`
   width: 17rem;
   height: 100%;
   border: 1px solid var(--greyE);
-  border-radius: 8px;
   outline: none;
 `;
+
 const ProductImage = styled.img`
   width: 100%;
   height: 18.31rem;
