@@ -4,13 +4,13 @@ import styled from "styled-components";
 const CookieContainer = styled.div`
   position: fixed;
   bottom: 20px;
-  right: 3%;
+  left: 2%;
   transform: translateX(-50%);
   width: 90%;
   max-width: 25rem;
   background: var(--secondary);
   color: var(--white);
-  padding: 16px 20px;
+  padding: 20px;
   border: 2px solid var(--white);
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
