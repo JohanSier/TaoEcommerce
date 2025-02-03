@@ -12,11 +12,10 @@ function App() {
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Homepage />} />
         <Route path="products" element={<ProductsPage />} />
-      </Route>
-
-
         {/* Página 404 cuando no hay coincidencias */}
       <Route path="*" element={<NotFound />} />
+      </Route>
+
     </Routes>
   );
 }
