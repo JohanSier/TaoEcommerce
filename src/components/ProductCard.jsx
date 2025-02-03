@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router";
 import styled from "styled-components";
 
@@ -46,10 +46,16 @@ const Price = styled.p`
   margin: 0;
 `;
 
-const ProductCard = ({ productTitle, price, srcImage, productLink}) => {
+const ProductCard = ({ productTitle, price, srcImage, productLink, hoverImage}) => {
+  const [isHover, setIsHover] = useState(false);
+
   return (
     <Container to={productLink}>
-      <ProductImage src={srcImage} />
+      <ProductImage
+        src={isHover ? hoverImage : srcImage} // Disable hover effect when dragging
+        onMouseEnter={() => setIsHover(true)}
+        onMouseLeave={() => setIsHover(false)}
+      />
       <ProductInfo>
         <ProductTitle>{productTitle}</ProductTitle>
         <Price>${price}</Price>

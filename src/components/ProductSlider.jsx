@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 import ProductCard from "./ProductCard";
@@ -11,6 +11,7 @@ const SliderContainer = styled.section`
   cursor: -webkit-grab;
   cursor: grab;
   text-align: start;
+
   &:active {
     cursor: -webkit-grabbing;
     cursor: grabbing;
@@ -18,12 +19,12 @@ const SliderContainer = styled.section`
 `;
 
 const TitlePlusLink = styled.div`
-    width; 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-right: 3rem;
-    cursor: default;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 3rem;
+  cursor: default;
 `;
 
 const StyledLink = styled(Link)`
@@ -48,6 +49,7 @@ const ArrowButton = styled.button`
   transform: translateY(-50%);
 
   ${(props) => (props.direction === "prev" ? "left: 10px;" : "right: 10px;")}
+
   &:focus {
     outline: none;
   }
@@ -60,12 +62,14 @@ const ArrowButton = styled.button`
 `;
 
 const ProductSlider = ({ products }) => {
+  const [isDragging, setIsDragging] = useState(false);
+
   const settings = {
     dots: false,
     draggable: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 5, // Adjust based on the number of items per view
+    infinite: false,
+    speed: 600,
+    slidesToShow: 5,
     slidesToScroll: 1,
     prevArrow: (
       <ArrowButton
@@ -80,22 +84,22 @@ const ProductSlider = ({ products }) => {
         aria-label="Prev Slide"
         direction="next"
       ></ArrowButton>
-    ),
+    ), 
     responsive: [
       {
-        breakpoint: 1360, // Tablet view
+        breakpoint: 1360,
         settings: {
           slidesToShow: 4,
         },
       },
       {
-        breakpoint: 1090, // Tablet view
+        breakpoint: 1090,
         settings: {
           slidesToShow: 3,
         },
       },
       {
-        breakpoint: 768, // Mobile view
+        breakpoint: 768,
         settings: {
           slidesToShow: 2,
         },
@@ -109,7 +113,7 @@ const ProductSlider = ({ products }) => {
         <Heading style={{ color: "black", alignSelf: "start" }}>
           Street Kings
         </Heading>
-        <StyledLink to='/products'>Discover More</StyledLink>
+        <StyledLink to="/products">Discover More</StyledLink>
       </TitlePlusLink>
       <Slider {...settings}>
         {products.map((product) => (
@@ -119,6 +123,7 @@ const ProductSlider = ({ products }) => {
             price={product.price}
             srcImage={product.imageSrc}
             productLink={product.link}
+            hoverImage={product.hoverImage}
           />
         ))}
       </Slider>

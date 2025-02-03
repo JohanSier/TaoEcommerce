@@ -83,6 +83,7 @@ const ProductsPage = () => {
             productTitle={product.name}
             price={product.price}
             srcImage={product.imageSrc}
+            hoverImage={product.hoverImage}
           />
         ))}
       </ProductCardsContainer>

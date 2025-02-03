@@ -12,6 +12,14 @@ import bape_tweed_shorts from "./product-images/Bape_Tweed_Hem_Shorts.webp";
 import bape_black_tee from "./product-images/Bape_Black_Tee.webp";
 import wade_sweatshirt from "./product-images/Wade_Sweatshirt.webp";
 
+import backpack_hover from "./hover-images/Backpack_hover.webp";
+import bape_shorts_hover from "./hover-images/Bape_Shorts_hover.webp";
+import bape_stellar_tee_hover from "./hover-images/Bape_Tee_hover.webp";
+import bape_tweed_shorts_hover from "./hover-images/Bape_Tweed_Hem_Shorts_hover.webp";
+import bape_black_tee_hover from "./hover-images/Bape_Black_Tee_hover.webp";
+import wade_sweatshirt_hover from "./hover-images/Wade_Sweatshirt_hover.webp";
+
+
 const categories = [
   { id: 1, title: "Street Kings", src: categ_streetKings, link: "/products" },
   { id: 2, title: "Tees", src: categ_tees, link: "/products" },
@@ -30,7 +38,8 @@ const products = [
       "A sleek black t-shirt with unique patches celebrating street basketball culture.",
     price: 44.99,
     imageSrc: bape_black_tee,
-    link: "/products"
+    link: "/products",
+    hoverImage: bape_black_tee_hover
   },
   {
     id: 2,
@@ -40,7 +49,8 @@ const products = [
       "Stylish black camo shorts perfect for both on and off the court.",
     price: 54.99,
     imageSrc: bape_shorts,
-    link: "/products"
+    link: "/products",
+    hoverImage: bape_shorts_hover
   },
   {
     id: 3,
@@ -50,7 +60,8 @@ const products = [
       " A premium, vintage-washed long-sleeve sweater for those cooler street game nights.",
     price: 69.99,
     imageSrc: wade_sweatshirt,
-    link: "/products"
+    link: "/products",
+    hoverImage: wade_sweatshirt_hover
   },
   {
     id: 4,
@@ -60,7 +71,8 @@ const products = [
       "A deep navy t-shirt with star-inspired designs for standout street style.",
     price: 47.99,
     imageSrc: bape_stellar_tee,
-    link: "/products"
+    link: "/products",
+    hoverImage: bape_stellar_tee_hover
   },
   {
     id: 5,
@@ -70,7 +82,8 @@ const products = [
       "Minimalist black shorts with subtle detailing for effortless style.",
     price: 49.99,
     imageSrc: bape_tweed_shorts,
-    link: "/products"
+    link: "/products",
+    hoverImage: bape_tweed_shorts_hover
   },
   {
     id: 6,
@@ -80,7 +93,8 @@ const products = [
       "A durable and stylish black backpack with iconic accents, ready to carry your game essentials.",
     price: 84.99,
     imageSrc: backpack,
-    link: "/products"
+    link: "/products",
+    hoverImage: backpack_hover
   },
 ];
 
