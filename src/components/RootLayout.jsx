@@ -1,10 +1,12 @@
 import React from "react";
+import styled from "styled-components";
 import TopBarInfo from "./TopBarInfo";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
 import Cookies from "./Cookies";
-import { Outlet } from "react-router";
-import styled from "styled-components";
+import { Outlet} from "react-router";
+import TawkToChat from "./TawkToChat"; // ✅ Import the chat component
+
 
 const StyledOutlet = styled(Outlet)`
     margin-top: 0;
@@ -20,6 +22,7 @@ const RootLayout = () => {
       <StyledOutlet />
 
       <Footer />
+      <TawkToChat />
       <Cookies />
     </>
   );
