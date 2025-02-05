@@ -4,6 +4,7 @@ import ProductsPage from "./pages/ProductsPage";
 import { Routes, Route } from "react-router";
 import RootLayout from "./components/RootLayout"; // ✅ Import the layout
 import NotFound from "./pages/NotFound"
+import UserPage from "./pages/UserPage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Homepage />} />
         <Route path="products" element={<ProductsPage />} />
+        <Route path="log-in" element={<UserPage/>}/>
         {/* Página 404 cuando no hay coincidencias */}
       <Route path="*" element={<NotFound />} />
       </Route>

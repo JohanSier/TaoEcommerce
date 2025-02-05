@@ -131,7 +131,7 @@ const NavBar = () => {
           <Input type="text" placeholder="Buscar" />
         </StyledLink>
 
-        <StyledLink to="/">
+        <StyledLink to="/log-in">
           <HiOutlineUser aria-label="Profile Icon" title="Go to profile page"/>
         </StyledLink>
         <StyledLink to="/">
