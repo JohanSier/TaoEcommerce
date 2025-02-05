@@ -8,14 +8,7 @@ const SliderContainer = styled.section`
   width: 100%;
   background: var(--white);
   padding: 0 2rem;
-  cursor: -webkit-grab;
-  cursor: grab;
   text-align: start;
-
-  &:active {
-    cursor: -webkit-grabbing;
-    cursor: grabbing;
-  }
 `;
 
 const TitlePlusLink = styled.div`
@@ -62,12 +55,10 @@ const ArrowButton = styled.button`
 `;
 
 const ProductSlider = ({ products }) => {
-  const [isDragging, setIsDragging] = useState(false);
-
   const settings = {
     dots: false,
-    draggable: true,
-    infinite: false,
+    draggable: false,
+    infinite: true,
     speed: 600,
     slidesToShow: 5,
     slidesToScroll: 1,
