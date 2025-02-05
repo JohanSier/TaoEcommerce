@@ -7,7 +7,9 @@ import ScrollToTop from './components/ScrollToTop.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-        <ScrollToTop />
+        {/* Scroll to top ensures that everytime we change the page it appears in the top of every page
+        otherwise it would keep the screen in the same position as the previous when you hit click to the link */}
+        <ScrollToTop /> 
         <App />
     </BrowserRouter>
   </StrictMode>,

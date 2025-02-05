@@ -107,6 +107,10 @@ const NavBar = () => {
     };
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <Wrapper background={background} isHomepage={isHomepage}>
       <LeftLinks>
@@ -119,7 +123,7 @@ const NavBar = () => {
 
       <Spacer />
       <CenterLogo>
-        <StyledLink to="/">
+        <StyledLink to="/" onClick={scrollToTop}>
           <Logo src={LogoImg} alt="TaoHoops logo" />
         </StyledLink>
       </CenterLogo>
