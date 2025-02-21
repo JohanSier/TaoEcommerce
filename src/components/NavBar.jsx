@@ -58,7 +58,8 @@ const Input = styled.input`
   outline: none;
   font-variation-settings: "wght" 500;
   cursor: pointer;
-
+  color: var(--white); // This instruction is crucial to show the white text in other devices, otherwise it'll show it in black
+  
   &::placeholder {
     font-size: 1.1rem;
     color: var(--white);
