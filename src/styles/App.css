@@ -34,8 +34,14 @@ font-family: 'ClashDisplay-Variable', system-ui, -apple-system;
   --transparent: transparent;
 }
 
-body{
+
+html, body {
+  height: 100%; /* Ensures the page takes full height */
   margin: 0;
+  padding: 0;
+}
+
+body{
   padding-right: .65rem;
   padding-left: .65rem;
 }
@@ -43,5 +49,4 @@ body{
 #root {
   margin: 0;
   max-width: 100%;
-  text-align: center;
 }
