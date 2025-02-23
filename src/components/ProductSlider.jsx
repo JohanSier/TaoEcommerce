@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 import ProductCard from "./ProductCard";
@@ -112,9 +112,9 @@ const ProductSlider = ({ products }) => {
             key={product.id}
             productTitle={product.name}
             price={product.price}
-            srcImage={product.imageSrc}
-            productLink={product.link}
-            hoverImage={product.hoverImage}
+            srcImage={product.images[0]}
+            hoverImage={product.images[1]}
+            productLink={`/product/${product.id}`}
           />
         ))}
       </Slider>
