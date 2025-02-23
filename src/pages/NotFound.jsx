@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router";
-import notFoundImage from  "../assets/Images/not-found-image.avif"
+import notFoundImage from  "../assets/Images/not-found-image.webp"
 import styled from "styled-components";
 
 const Container = styled.section`
@@ -9,7 +9,7 @@ const Container = styled.section`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 80vh;
+  height: 87vh;
 
   background: url(${notFoundImage}) no-repeat;
   background-size: cover;
