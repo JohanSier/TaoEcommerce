@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router";
-import notFoundImage from  "../assets/Images/not-found-image.jpg"
+import notFoundImage from  "../assets/Images/not-found-image.avif"
 import styled from "styled-components";
 
 const Container = styled.section`
@@ -11,7 +11,7 @@ const Container = styled.section`
   width: 100%;
   height: 80vh;
 
-  background: url("${notFoundImage}") no-repeat;
+  background: url(${notFoundImage}) no-repeat;
   background-size: cover;
   background-position: center;
   overflow-x: hidden;

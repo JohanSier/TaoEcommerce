@@ -1,16 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import { HiArrowCircleRight } from "react-icons/hi";
-// import heroImage from "../assets/Images/hero-image.avif"; 
+//import heroImage from "../assets/Images/hero-image.avif"; 
 
 const Container = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   padding: 1.8rem 2rem;
-
+  overflow: hidden;
   width: 100%;
-  height: 43.75rem;
+  height: 40rem;
 
   position: relative; /* esta linea es para contener al overlay hecho con :after */
   margin-top: -5.3rem; /* usamos margin-top negativo en vez de top pues usando esta propiedad (margin) no deja el hueco que si dejaria top */
@@ -19,7 +19,7 @@ const Container = styled.div`
 
   background: url("https://bucketsquad.com/cdn/shop/files/BANNER_fb98d9a8-0326-408d-ab5c-0aa14040ee91.jpg?v=1739211443&width=2800") no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center 30%;
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 1.5rem;
 
