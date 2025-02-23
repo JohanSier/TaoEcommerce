@@ -12,5 +12,5 @@ createRoot(document.getElementById('root')).render(
         <ScrollToTop /> 
         <App />
     </BrowserRouter>
-  </StrictMode>,
+  </StrictMode>
 )
