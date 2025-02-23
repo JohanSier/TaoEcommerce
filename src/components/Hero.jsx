@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { HiArrowCircleRight } from "react-icons/hi";
-import heroImage from "../assets/Images/hero-image.avif";
+// import heroImage from "../assets/Images/hero-image.avif"; 
 
 const Container = styled.div`
   display: flex;
@@ -17,7 +17,7 @@ const Container = styled.div`
   left: 0;
   z-index: 1;
 
-  background: url("${heroImage}") no-repeat;
+  background: url("https://bucketsquad.com/cdn/shop/files/BANNER_fb98d9a8-0326-408d-ab5c-0aa14040ee91.jpg?v=1739211443&width=2800") no-repeat;
   background-size: cover;
   background-position: center;
   border-top-left-radius: 1.5rem;
