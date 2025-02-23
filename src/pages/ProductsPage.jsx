@@ -6,6 +6,7 @@ import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
 
 const Container = styled.main`
   position: relative;
+  text-align: center;
   width: 100%;
   background: var(--white);
   color: var(--secondary);
@@ -23,7 +24,7 @@ const FilterAndResults = styled.div`
   align-items: center;
   justify-content: space-between;
   position: sticky;
-  top: 84px;
+  top: 82px; // Change it from 84px to 82px because there was a tiny gap
   left: 0;
   background: var(--white);
   padding: 1rem;
@@ -82,8 +83,9 @@ const ProductsPage = () => {
             key={product.id}
             productTitle={product.name}
             price={product.price}
-            srcImage={product.imageSrc}
-            hoverImage={product.hoverImage}
+            srcImage={product.images[0]}
+            hoverImage={product.images[1]}
+            productLink={`/product/${product.id}`}
           />
         ))}
       </ProductCardsContainer>
