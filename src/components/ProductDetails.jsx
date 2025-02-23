@@ -23,7 +23,7 @@ const Price = styled.p`
     font-variation-settings: "wght" 600;
     font-size: 1.1rem;
     margin-top: 6px;
-    margin-bottom: 1.8rem;
+    margin-bottom: 1rem;
 `;
 
 const SizeGuideComponent = styled.a`
@@ -53,10 +53,18 @@ const SizeButton = styled.button`
     border: 1px solid var(--greyE);
     color: var(--secondary);
 
+    &:hover{
+        border:1px solid var(--secondary);
+    }
+
     &.selected {
         background: var(--complementary);
         color: var(--white);
-        border: 1px solid var(--complementary);    
+        border: 1px solid var(--complementary);  
+          
+            &:hover{
+            border:1px solid var(--secondary);
+        }
     }
 `;
 
@@ -88,6 +96,13 @@ const ExtraInfo = styled.p`
     gap: 8px;
 `;
 
+const Separator = styled.div`
+    width: 65%;
+    height: 2px;
+    background: #e6e6e6;
+    margin-bottom: 1rem;
+`
+
 const ProductDetails = ({ title, price, sizes }) => {
     const { id } = useParams();
     const [selectedSize, setSelectedSize] = useState(null);
@@ -105,6 +120,8 @@ const ProductDetails = ({ title, price, sizes }) => {
         <Container>
             <ProductTitle>{title}</ProductTitle>
             <Price>$ {price}</Price>
+
+            <Separator />
 
             <SizeGuideComponent>
                 <PiRulerBold size={20} />
