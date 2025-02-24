@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import ProductCard from "../components/ProductCard";
 import ProductDetails from "../components/ProductDetails";
 import { products } from "../assets/Images";
-import styled, { keyframes } from "styled-components";
 import { useParams } from "react-router";
+import styled, { keyframes } from "styled-components";
+import NotFound from "./NotFound";
+import { Gallery, Item } from "react-photoswipe-gallery";
+import "photoswipe/dist/photoswipe.css";
 
 const Container = styled.main`
   position: relative;
@@ -20,9 +23,14 @@ const Wrapper = styled.section`
 
 const Grid = styled.div`
   width: 70%;
-  flex-grow: 2;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr); /* Mantiene 2 columnas */
+  gap: 10px;
+`;
+
+const GridItem = styled.div`
+  width: 100%;
+  position: relative;
 `;
 
 /* Skeleton Loader Animation */
@@ -40,7 +48,6 @@ const Skeleton = styled.div`
   border-radius: 8px;
 `;
 
-/* Styled Image with fade-in effect */
 const StyledImage = styled.img`
   width: 100%;
   height: 700px;
@@ -49,6 +56,7 @@ const StyledImage = styled.img`
   flex-grow: 1;
   opacity: ${(props) => (props.loaded ? 1 : 0)};
   transition: opacity 0.3s ease-in-out;
+  cursor: pointer; // Hace que se vea como clickeable
 `;
 
 const MayAlsoLike = styled.section`
@@ -95,28 +103,41 @@ const SpecificProductTemplate = () => {
   const product = products.find((p) => p.id === parseInt(id));
 
   if (!product) {
-    return <h1>Producto no encontrado</h1>;
+    return <NotFound />;
   }
+
   const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
     <Container>
       <Wrapper>
         <Grid>
-          {products[id - 1].images.map((image, index) => {
-            return (
-              <div key={index} style={{ position: "relative" }}>
-                {!imageLoaded && <Skeleton />}{" "}
-                {/* Skeleton shown while loading */}
-                <StyledImage
-                  src={image}
-                  alt={product.name}
-                  loaded={imageLoaded}
-                  onLoad={() => setImageLoaded(true)}
-                />
-              </div>
-            );
-          })}
+          <Gallery>
+            {products[id - 1].images.map((image, index) => (
+              <GridItem key={index}>
+                <Item
+                  original={image}
+                  thumbnail={image}
+                  width="900"
+                  height="1000"
+                >
+                  {({ ref, open }) => (
+                    <>
+                      {!imageLoaded && <Skeleton />}
+                      <StyledImage
+                        ref={ref}
+                        src={image}
+                        alt={product.name}
+                        loaded={imageLoaded}
+                        onLoad={() => setImageLoaded(true)}
+                        onClick={open}
+                      />
+                    </>
+                  )}
+                </Item>
+              </GridItem>
+            ))}
+          </Gallery>
         </Grid>
 
         <StyledProductDetails
