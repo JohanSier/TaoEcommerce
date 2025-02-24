@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { HiArrowCircleRight } from "react-icons/hi";
+import { Link } from "react-router";
 //import heroImage from "../assets/Images/hero-image.avif"; 
 
 const Container = styled.div`
@@ -74,7 +75,7 @@ const ButtonsContainer = styled.div`
   z-index: 999;
 `;
 
-const Button = styled.a`
+const Button = styled(Link)`
   display: flex;
   white-space: nowrap;
   align-items: center;
@@ -105,7 +106,7 @@ const Hero = () => {
       </Copys>
 
       <ButtonsContainer>
-        <Button href="#">
+        <Button to="/products">
           Shop All
           <HiArrowCircleRight
             aria-label="Next"
