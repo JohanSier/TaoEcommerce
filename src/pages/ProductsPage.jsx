@@ -3,6 +3,7 @@ import ProductCard from "../components/ProductCard";
 import { products } from "../assets/Images";
 import styled from "styled-components";
 import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
+import { useParams } from "react-router";
 
 const Container = styled.main`
   position: relative;
@@ -65,9 +66,29 @@ const ProductCardsContainer = styled.section`
 `;
 
 const ProductsPage = () => {
+  const {category} = useParams();
+
+// Function to map category name to category ID
+function getCategoryId(category) {
+  const categories = {
+    "all": 0,
+    "street-kings": 1,
+    "tees": 2,
+    "jerseys": 3,
+    "shorts": 4,
+    "sneakers": 5,
+    "accessories": 6,
+  };
+  return categories[category] || null;
+}
+  // Filter products if category is selected
+  const filteredProducts = category !== "all"
+    ? products.filter(p => p.categoryId === getCategoryId(category))
+    : products;
+
   return (
     <Container>
-      <Heading>All Products</Heading>
+      <Heading>{category ? `${category.charAt(0).toUpperCase()} ${category.slice(1)} ` : "All Products"}</Heading>
 
       <FilterAndResults>
         <FilterButton>
@@ -78,9 +99,10 @@ const ProductsPage = () => {
       </FilterAndResults>
 
       <ProductCardsContainer>
-        {products.map((product) => (
+        {filteredProducts.map((product) => (
           <ProductCard
             key={product.id}
+            categoryId={product.categoryId}
             productTitle={product.name}
             price={product.price}
             srcImage={product.images[0]}

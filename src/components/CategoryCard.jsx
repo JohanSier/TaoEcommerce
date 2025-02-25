@@ -113,9 +113,9 @@ const Heading = styled.h3`
   z-index: 3;
 `;
 
-const CategoryCard = ({ title, imageSrc, redirectLink}) => {
+const CategoryCard = ({ title, imageSrc, link}) => {
   return (
-    <Card to={redirectLink} draggable="false">
+    <Card to={link} draggable="false">
       <ShopNow>
         <ShopNowTextWrapper>
           <ShopNowText>SHOP NOW</ShopNowText>

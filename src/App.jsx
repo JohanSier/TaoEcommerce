@@ -2,24 +2,26 @@ import "./styles/App.css";
 import Homepage from "./pages/Homepage";
 import ProductsPage from "./pages/ProductsPage"; 
 import { Routes, Route } from "react-router";
-import RootLayout from "./components/RootLayout"; // ✅ Import the layout
-import NotFound from "./pages/NotFound"
+import RootLayout from "./components/RootLayout"; 
+import NotFound from "./pages/NotFound";
 import UserPage from "./pages/UserPage";
 import SpecificProductTemplate from "./pages/SpecificProductTemplate";
 
 function App() {
   return (
     <Routes>
-      {/* Root layout wrapper for all pages */}
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Homepage />} />
-        <Route path="products" element={<ProductsPage />} />
-        <Route path="product/:id" element={<SpecificProductTemplate/>}/>
-        <Route path="log-in" element={<UserPage/>}/>
-        {/* Página 404 cuando no hay coincidencias */}
-      <Route path="*" element={<NotFound />} />
-      </Route>
 
+        <Route path="products/:category" element={<ProductsPage />}>
+          <Route path=":id" element={<SpecificProductTemplate />} />
+        </Route>
+
+        <Route path="log-in" element={<UserPage />} />
+        
+        {/* Página 404 cuando no hay coincidencias */}
+        <Route path="*" element={<NotFound />} />
+      </Route>
     </Routes>
   );
 }

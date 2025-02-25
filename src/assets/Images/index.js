@@ -49,18 +49,18 @@ import wade_sweatshirt_7 from "./Wade_Sweatshirt/Wade_Sweatshirt_7.jpg";
 
 
 const categories = [
-  { id: 1, title: "Street Kings", src: categ_streetKings, link: "/products" },
-  { id: 2, title: "Tees", src: categ_tees, link: "/products" },
-  { id: 3, title: "Jerseys", src: categ_jerseys, link: "/products" },
-  { id: 4, title: "Shorts", src: categ_shorts, link: "/products" },
-  { id: 5, title: "Sneakers", src: categ_sneakers, link: "/products" },
-  { id: 6, title: "Accessories", src: categ_accesories, link: "/products" },
+  { id: 1, title: "Street Kings", src: categ_streetKings, link: "/products/street-kings" },
+  { id: 2, title: "Tees", src: categ_tees, link: "/products/tees" },
+  { id: 3, title: "Jerseys", src: categ_jerseys, link: "/products/jerseys" },
+  { id: 4, title: "Shorts", src: categ_shorts, link: "/products/shorts" },
+  { id: 5, title: "Sneakers", src: categ_sneakers, link: "/products/sneakers" },
+  { id: 6, title: "Accessories", src: categ_accesories, link: "/products/accesories" },
 ];
 
 const products = [
   {
     id: 1,
-    categoryId: 1,
+    categoryId: 2,
     name: "Urban Insignia Tee",
     description:
       "A sleek black t-shirt with unique patches celebrating street basketball culture.",
@@ -70,7 +70,7 @@ const products = [
   },
   {
     id: 2,
-    categoryId: 1,
+    categoryId: 4,
     name: "Night Camo Shorts",
     description:
       "Stylish black camo shorts perfect for both on and off the court.",
@@ -90,7 +90,7 @@ const products = [
   },
   {
     id: 4,
-    categoryId: 1,
+    categoryId: 2,
     name: "Stellar Play Tee",
     description:
       "A deep navy t-shirt with star-inspired designs for standout street style.",
@@ -100,7 +100,7 @@ const products = [
   },
   {
     id: 5,
-    categoryId: 1,
+    categoryId: 4,
     name: "Shadowline Shorts",
     description:
       "Minimalist black shorts with subtle detailing for effortless style.",
@@ -110,7 +110,7 @@ const products = [
   },
   {
     id: 6,
-    categoryId: 1,
+    categoryId: 6,
     name: "Ascend Backpack",
     description:
       "A durable and stylish black backpack with iconic accents, ready to carry your game essentials.",

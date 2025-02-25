@@ -19,7 +19,7 @@ const CategoriesList = () => {
         <CategoryCard
           key={category.id}
           title={category.title}
-          redirectLink={category.link}
+          link={category.link}
           imageSrc={category.src}
         />
       ))}

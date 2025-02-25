@@ -24,10 +24,6 @@ const Wrapper = styled.div`
   transition: background .2s linear;
 `;
 
-const Spacer = styled.div`
-  flex: 1;
-`;
-
 const CenterLogo = styled.div`
   flex-shrink: 0; /* Evita que el logo se redimensione */
 `;
@@ -91,11 +87,10 @@ const RightLinks = styled(LeftLinks)`
 `;
 
 const NavBar = () => {
-  const location = useLocation(); // 🔥 Get the current URL
+  const location = useLocation(); // Get the current URL
   const isHomepage = location.pathname === "/"; 
   const [background, setBackground] = useState(false)
   
-   // ✅ Corrected Scroll Effect
    useEffect(() => {
     const handleScroll = () => {
       setBackground(window.scrollY > 60);
@@ -115,20 +110,19 @@ const NavBar = () => {
   return (
     <Wrapper background={background} isHomepage={isHomepage}>
       <LeftLinks>
-        <StyledLink to="/products">SHOP ALL</StyledLink>
-        <StyledLink to="/products">MEN'S</StyledLink> 
-        <StyledLink to="/products">WOMEN'S</StyledLink>
-        <StyledLink to="/products">KIDS</StyledLink>
-        <StyledLink to="/products">ACCESORIES</StyledLink>
+        <StyledLink to="/products/all">SHOP ALL</StyledLink>
+        <StyledLink to="/products/street-kings">NEW COLLECTION</StyledLink> 
+        <StyledLink to="/products/tees">TEES</StyledLink>
+        <StyledLink to="/products/jerseys">JERSEYS</StyledLink>
+        <StyledLink to="/products/shorts">SHORTS</StyledLink>
+        <StyledLink to="/products/sneakers">SNEAKERS</StyledLink>
       </LeftLinks>
 
-      <Spacer />
       <CenterLogo>
         <StyledLink to="/" onClick={scrollToTop}>
           <Logo src={LogoImg} alt="TaoHoops logo" />
         </StyledLink>
       </CenterLogo>
-      <Spacer />
 
       <RightLinks>
         <StyledLink to="/" className="input-btn">
