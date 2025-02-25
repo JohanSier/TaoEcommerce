@@ -24,7 +24,7 @@ const Wrapper = styled.section`
 const Grid = styled.div`
   width: 70%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Mantiene 2 columnas */
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 `;
 
@@ -56,7 +56,7 @@ const StyledImage = styled.img`
   flex-grow: 1;
   opacity: ${(props) => (props.loaded ? 1 : 0)};
   transition: opacity 0.3s ease-in-out;
-  cursor: pointer; // Hace que se vea como clickeable
+  cursor: pointer;
 `;
 
 const MayAlsoLike = styled.section`
@@ -112,7 +112,11 @@ const SpecificProductTemplate = () => {
     <Container>
       <Wrapper>
         <Grid>
-          <Gallery>
+          <Gallery
+            options={{
+              paddingFn: () => ({ top: 0, bottom: 0, left: 0, right: 0 }),
+            }}
+          >
             {products[id - 1].images.map((image, index) => (
               <GridItem key={index}>
                 <Item

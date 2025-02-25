@@ -5,12 +5,10 @@ import categ_shorts from "./categories-images/categ_shorts.avif";
 import categ_sneakers from "./categories-images/categ_sneakers.avif";
 import categ_accesories from "./categories-images/categ_accesories.avif";
 
-import backpack_1 from "./Backpack/Backpack_1.webp"
-import backpack_2 from "./Backpack/Backpack_2.webp";
-import backpack_3 from "./Backpack/Backpack_3.webp";
-import backpack_4 from "./Backpack/Backpack_4.webp";
-import backpack_5 from "./Backpack/Backpack_5.webp";
-
+import backpack_1 from "./Backpack/Backpack_1.jpg"
+import backpack_2 from "./Backpack/Backpack_2.jpg";
+import backpack_3 from "./Backpack/Backpack_3.jpg";
+import backpack_4 from "./Backpack/Backpack_4.jpg";
 
 import bape_shorts_1 from "./Bape_Shorts/Bape_Shorts_1.webp";
 import bape_shorts_2 from "./Bape_Shorts/Bape_Shorts_2.webp";
@@ -68,7 +66,6 @@ const products = [
       "A sleek black t-shirt with unique patches celebrating street basketball culture.",
     price: 44.99,
     images: [bape_black_tshirt_1, bape_black_tshirt_2, bape_black_tshirt_3, bape_black_tshirt_4, bape_black_tshirt_5],
-    link: "/products",
     availableSizes: ["XS", "S", "M", "2XL"]
   },
   {
@@ -79,7 +76,6 @@ const products = [
       "Stylish black camo shorts perfect for both on and off the court.",
     price: 54.99,
     images: [bape_shorts_1, bape_shorts_2, bape_shorts_3, bape_shorts_4, bape_shorts_5, bape_shorts_6],
-    link: "/products",
     availableSizes: ["XS", "S", "M", "L", "XL", "2XL"]
   },
   {
@@ -90,7 +86,6 @@ const products = [
       " A premium, vintage-washed long-sleeve sweater for those cooler street game nights.",
     price: 69.99,
     images: [wade_sweatshirt_1, wade_sweatshirt_2, wade_sweatshirt_3, wade_sweatshirt_4, wade_sweatshirt_5, wade_sweatshirt_6, wade_sweatshirt_7],
-    link: "/products",
     availableSizes: ["XS", "S", "M", "2XL"]
   },
   {
@@ -101,7 +96,6 @@ const products = [
       "A deep navy t-shirt with star-inspired designs for standout street style.",
     price: 47.99,
     images: [bape_tee_1, bape_tee_2, bape_tee_3, bape_tee_4, bape_tee_5, bape_tee_6, bape_tee_7, bape_tee_8],
-    link: "/products",
     availableSizes: ["M", "L", "XL", "2XL"]
   },
   {
@@ -112,7 +106,6 @@ const products = [
       "Minimalist black shorts with subtle detailing for effortless style.",
     price: 49.99,
     images: [bape_tweed_shorts_1, bape_tweed_shorts_2, bape_tweed_shorts_3, bape_tweed_shorts_4, bape_tweed_shorts_5, bape_tweed_shorts_6],
-    link: "/products",
     availableSizes: ["XS", "S", "M", "L", "XL", "2XL"]
   },
   {
@@ -122,8 +115,7 @@ const products = [
     description:
       "A durable and stylish black backpack with iconic accents, ready to carry your game essentials.",
     price: 84.99,
-    images: [backpack_1, backpack_2, backpack_3, backpack_4, backpack_5],
-    link: "/products",
+    images: [backpack_1, backpack_2, backpack_3, backpack_4],
     availableSizes: ["XS", "S", "M", "L", "XL", "2XL"]
   }
 ];
