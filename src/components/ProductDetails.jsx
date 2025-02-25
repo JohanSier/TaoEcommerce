@@ -81,6 +81,7 @@ const Cta = styled.button`
     border:none;
     border-radius: 10px;
     cursor: pointer;
+    color: var(--white);
 
     &:hover{
         opacity: 0.75;
