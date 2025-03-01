@@ -4,6 +4,7 @@ import { products } from "../assets/Images";
 import styled from "styled-components";
 import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
 import { useParams } from "react-router";
+import NotFound from "./NotFound";
 
 const Container = styled.main`
   position: relative;
@@ -86,16 +87,23 @@ function getCategoryId(category) {
     ? products.filter(p => p.categoryId === getCategoryId(category))
     : products;
 
+
+  const validCategories = ["all", "tees", "jerseys", "shorts", "sneakers", "accessories", "street-kings"];
+
+  if (!validCategories.includes(category)) {
+    return <NotFound />; // 🚀 Si la categoría no existe, renderiza NotFound
+  }
+
   return (
     <Container>
-      <Heading>{category ? `${category.charAt(0).toUpperCase()} ${category.slice(1)} ` : "All Products"}</Heading>
+      <Heading>{category != "all" ? `${category.charAt(0).toUpperCase()}${category.slice(1)} ` : "All Products"}</Heading>
 
       <FilterAndResults>
         <FilterButton>
           Filters
           <HiOutlineAdjustmentsHorizontal />
         </FilterButton>
-        <ResultsText>[{products.length} Results]</ResultsText>
+        <ResultsText>[{filteredProducts.length} Results]</ResultsText>
       </FilterAndResults>
 
       <ProductCardsContainer>
@@ -107,7 +115,7 @@ function getCategoryId(category) {
             price={product.price}
             srcImage={product.images[0]}
             hoverImage={product.images[1]}
-            productLink={`/product/${product.id}`}
+            productLink={`/products/${category || "all"}/${product.id}`}
           />
         ))}
       </ProductCardsContainer>
