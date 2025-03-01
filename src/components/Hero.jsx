@@ -106,7 +106,7 @@ const Hero = () => {
       </Copys>
 
       <ButtonsContainer>
-        <Button to="/products">
+        <Button to="/products/all">
           Shop All
           <HiArrowCircleRight
             aria-label="Next"
@@ -115,7 +115,7 @@ const Hero = () => {
           />
         </Button>
 
-        <Button href="#">
+        <Button to="/products/street-kings">
           Shop New Collection
           <HiArrowCircleRight
             aria-label="Next"
