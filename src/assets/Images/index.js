@@ -3,7 +3,7 @@ import categ_tees from "./categories-images/categ_tees.avif";
 import categ_jerseys from "./categories-images/categ_jerseys.avif";
 import categ_shorts from "./categories-images/categ_shorts.avif";
 import categ_sneakers from "./categories-images/categ_sneakers.avif";
-import categ_accesories from "./categories-images/categ_accesories.avif";
+import categ_accessories from "./categories-images/categ_accesories.avif";
 
 import backpack_1 from "./Backpack/Backpack_1.jpg"
 import backpack_2 from "./Backpack/Backpack_2.jpg";
@@ -54,7 +54,7 @@ const categories = [
   { id: 3, title: "Jerseys", src: categ_jerseys, link: "/products/jerseys" },
   { id: 4, title: "Shorts", src: categ_shorts, link: "/products/shorts" },
   { id: 5, title: "Sneakers", src: categ_sneakers, link: "/products/sneakers" },
-  { id: 6, title: "Accessories", src: categ_accesories, link: "/products/accesories" },
+  { id: 6, title: "Accessories", src: categ_accessories, link: "/products/accessories" },
 ];
 
 const products = [
