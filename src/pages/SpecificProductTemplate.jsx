@@ -99,7 +99,7 @@ const StyledProductDetails = styled(ProductDetails)`
 
 const SpecificProductTemplate = () => {
   const productsMayLike = products.slice(0, 5);
-  const { id } = useParams();
+  const { id, category } = useParams();
   const product = products.find((p) => p.id === parseInt(id));
 
   if (!product) {
@@ -148,6 +148,7 @@ const SpecificProductTemplate = () => {
           title={product.name}
           price={product.price}
           sizes={product.availableSizes}
+          description={product.description}
         />
       </Wrapper>
 
@@ -164,7 +165,7 @@ const SpecificProductTemplate = () => {
                 price={product.price}
                 srcImage={product.images[0]}
                 hoverImage={product.images[1]}
-                productLink={`/product/${product.id}`}
+                productLink={`/products/${category}/${product.id}`}
               />
             ))}
         </Products>

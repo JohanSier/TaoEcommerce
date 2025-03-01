@@ -13,9 +13,8 @@ function App() {
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Homepage />} />
 
-        <Route path="products/:category" element={<ProductsPage />}>
-          <Route path=":id" element={<SpecificProductTemplate />} />
-        </Route>
+        <Route path="products/:category" element={<ProductsPage />}/>
+        <Route path="/products/:category/:id" element={<SpecificProductTemplate />} />
 
         <Route path="log-in" element={<UserPage />} />
         
