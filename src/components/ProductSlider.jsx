@@ -104,7 +104,7 @@ const ProductSlider = ({ products }) => {
         <Heading style={{ color: "black", alignSelf: "start" }}>
           Street Kings
         </Heading>
-        <StyledLink to="/products">Discover More</StyledLink>
+        <StyledLink to="/products/street-kings">Discover More</StyledLink>
       </TitlePlusLink>
       <Slider {...settings}>
         {products.map((product) => (
@@ -114,7 +114,7 @@ const ProductSlider = ({ products }) => {
             price={product.price}
             srcImage={product.images[0]}
             hoverImage={product.images[1]}
-            productLink={`/product/${product.id}`}
+            productLink={`/products/all/${product.id}`}
           />
         ))}
       </Slider>
