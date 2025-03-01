@@ -111,11 +111,11 @@ const NavBar = () => {
     <Wrapper background={background} isHomepage={isHomepage}>
       <LeftLinks>
         <StyledLink to="/products/all">SHOP ALL</StyledLink>
-        <StyledLink to="/products/street-kings">NEW COLLECTION</StyledLink> 
         <StyledLink to="/products/tees">TEES</StyledLink>
         <StyledLink to="/products/jerseys">JERSEYS</StyledLink>
         <StyledLink to="/products/shorts">SHORTS</StyledLink>
         <StyledLink to="/products/sneakers">SNEAKERS</StyledLink>
+        <StyledLink to="/products/accessories">ACCESSORIES</StyledLink>
       </LeftLinks>
 
       <CenterLogo>
