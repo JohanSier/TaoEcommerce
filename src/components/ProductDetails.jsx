@@ -3,11 +3,12 @@ import { useParams } from 'react-router'; // Importamos useParams
 import styled from 'styled-components';
 import { HiOutlineTruck } from "react-icons/hi2";
 import { PiRulerBold } from "react-icons/pi";
+import AccordionDemo from './AccordionDemo';
 
 const Container = styled.article`
   position: sticky;
   top: 4rem;
-  max-height: 65vh; /* Prevents overflow */
+  max-height: 80vh; /* Prevents overflow */
   width: 30%;
   background: var(--white);
   padding: 3rem;
@@ -40,6 +41,7 @@ const SizeGuideComponent = styled.a`
 
 const Sizes = styled.div`
     display: flex;
+    flex-wrap: wrap;
     gap: .8rem;
     margin-bottom: 1.3rem;
 `;
@@ -104,7 +106,7 @@ const Separator = styled.div`
     margin-bottom: 1rem;
 `
 
-const ProductDetails = ({ title, price, sizes }) => {
+const ProductDetails = ({ title, price, sizes, description }) => {
     const { id } = useParams();
     const [selectedSize, setSelectedSize] = useState(null);
 
@@ -146,6 +148,8 @@ const ProductDetails = ({ title, price, sizes }) => {
                 <HiOutlineTruck size={20} />
                 Shipping calculated at checkout
             </ExtraInfo>
+
+            <AccordionDemo description={description}/>
         </Container>
     );
 };
