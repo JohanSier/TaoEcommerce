@@ -25,18 +25,30 @@ const Container = styled.footer`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center; /* Centrar contenido en pantallas pequeñas */
   width: 100%;
   height: 100%;
   background: var(--greyA);
-  padding: 3.5rem 4.3rem 2rem 4.3rem; /*(top, right, bottom, left)*/
+  padding: 3.5rem 4.3rem 2rem 4.3rem;
   border-radius: 1rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column; 
+    padding: 2rem;
+  }
 `;
+
 
 const GroupOne = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
   text-align: start;
+
+  @media (max-width: 768px) {
+    text-align: center;
+    align-items: center;
+  }
 `;
 
 const FooterHeading = styled.span`
@@ -64,7 +76,12 @@ const InputContainer = styled.form`
   border: 2px solid var(--white);
   border-radius: 8px;
   padding: 0.4rem 0.5rem;
+
+  @media (max-width: 480px) {
+    width: 100%; /* Ocupar todo el ancho en móviles */
+  }
 `;
+
 
 const Input = styled.input`
   color: var(--white);
@@ -103,16 +120,29 @@ const Divider = styled.div`
   height: 9.3rem;
   background-color: var(--greyE);
   margin-left: 10%;
+
+  @media (max-width: 768px) {
+    width: 80%;
+    height: 2px;
+    margin: 2rem auto;
+  }
 `;
 
 const SiteLinks = styled.div`
-  white-space: nowrap;
-  flex: 2;
-  flex-wrap: wrap;
   display: flex;
-  margin-left: 10%;
+  flex-wrap: wrap;
+  flex: 2;
   gap: 5.6rem;
+  margin-left: 10%;
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    justify-content: center;
+    gap: 2rem;
+    text-align: center;
+  }
 `;
+
 const Column = styled.div`
   display: flex;
   flex-direction: column;
@@ -137,22 +167,35 @@ const LogoLink = styled(Link)`
 `
 
 const LogoAndSocials = styled.div`
-  margin-top: 4.5rem;
-  margin-bottom: 1rem;
-  padding-bottom: 0.8rem;
-  border-bottom: 1px solid var;
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 4.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.8rem;
+  width: 100%;
+  border-bottom: 1px solid var(--white);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
 `;
+
 const Logo = styled.img`
   width: 7.5rem;
 `;
+
 const Socials = styled.div`
   display: flex;
   gap: 0.4rem;
+
+  @media (max-width: 480px) {
+    gap: 1rem;
+  }
 `;
+
 const SocialLink = styled.a`
   text-decoration: none;
   font-size: 1.5rem;
