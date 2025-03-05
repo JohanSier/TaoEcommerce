@@ -208,11 +208,13 @@ const Footer = () => {
         <SiteLinks>
           <Column>
             <ColumnTitle>SHOP</ColumnTitle>
-            <ColumnLink to="/products">NEW ARRIVALS</ColumnLink>
-            <ColumnLink to="products">MEN'S</ColumnLink>
-            <ColumnLink to="products">WOMEN'S</ColumnLink>
-            <ColumnLink to="products">KIDS</ColumnLink>
-            <ColumnLink to="products">ACCESORIES</ColumnLink>
+            <ColumnLink to="/products/all">SHOP ALL</ColumnLink>
+            <ColumnLink to="/products/tees">TEES</ColumnLink>
+            <ColumnLink to="/products/jerseys">JERSEYS</ColumnLink>
+            <ColumnLink to="/products/shorts">SHORTS</ColumnLink>
+            <ColumnLink to="/products/sneakers">SNEAKERS</ColumnLink>
+            <ColumnLink to="/products/accessories">ACCESSORIES</ColumnLink>
+
           </Column>
 
           <Column>
@@ -242,13 +244,13 @@ const Footer = () => {
             <SocialLink href="https://www.instagram.com/" target="_blank">
               <RiInstagramFill />
             </SocialLink>
-            <SocialLink href="https://x.com/home" target="_blank">
+            <SocialLink href="https://www.tiktok.com/?lang=en" target="_blank">
               <RiTiktokFill />
             </SocialLink>
-            <SocialLink href="https://www.tiktok.com/?lang=en" target="_blank">
+            <SocialLink href="https://www.facebook.com/?locale=es_LA" target="_blank">
               <RiFacebookFill />
             </SocialLink>
-            <SocialLink href="https://www.facebook.com/?locale=es_LA" target="_blank">
+            <SocialLink href="https://x.com/home" target="_blank">
               <RiTwitterXFill />
             </SocialLink>
           </Socials>
