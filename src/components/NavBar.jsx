@@ -1,27 +1,28 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link, useLocation } from "react-router";
-
 import {
   HiOutlineUser,
   HiOutlineShoppingBag,
   HiOutlineSearch,
 } from "react-icons/hi";
 import LogoImg from "../assets/Images/TaoHoops-logo.svg";
+import { useSizeGuide } from "../context/SizeGuideContext";
 
 const Wrapper = styled.div`
   width: 100%;
   position: sticky;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: ${(props) => (props.isSizeGuideVisible ? -1 : 999)}; /* Cambia el z-index dinámicamente */
   padding: 0 2rem;
   display: flex;
   align-items: center;
-  background: ${(props)=> (!props.isHomepage || props.background ? "var(--secondary)" : "var(--transparent)")};  
-  border-top-left-radius: ${(props)=> (props.background ? 0 : "1rem")};
-  border-top-right-radius: ${(props)=> (props.background ? 0 : "1rem")};
-  transition: background .2s linear;
+  background: ${(props) =>
+    !props.isHomepage || props.background ? "var(--secondary)" : "var(--transparent)"};
+  border-top-left-radius: ${(props) => (props.background ? 0 : "1rem")};
+  border-top-right-radius: ${(props) => (props.background ? 0 : "1rem")};
+  transition: background 0.2s linear, z-index 0.2s ease-in-out;
 `;
 
 const CenterLogo = styled.div`
@@ -90,6 +91,7 @@ const NavBar = () => {
   const location = useLocation(); // Get the current URL
   const isHomepage = location.pathname === "/"; 
   const [background, setBackground] = useState(false)
+  const {isSizeGuideVisible} = useSizeGuide();
   
    useEffect(() => {
     const handleScroll = () => {
@@ -107,8 +109,9 @@ const NavBar = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+
   return (
-    <Wrapper background={background} isHomepage={isHomepage}>
+    <Wrapper background={background} isHomepage={isHomepage} isSizeGuideVisible={isSizeGuideVisible}>
       <LeftLinks>
         <StyledLink to="/products/all">SHOP ALL</StyledLink>
         <StyledLink to="/products/tees">TEES</StyledLink>

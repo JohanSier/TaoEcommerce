@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   background: var(--transparent);
   margin: 0;
   position: relative;
-  z-index: 999;
+  z-index: -1;
 `;
 const Text = styled.p`
   font-size: 0.9rem;

@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import { HiOutlineTruck } from "react-icons/hi2";
 import { PiRulerBold } from "react-icons/pi";
 import AccordionDemo from './AccordionDemo';
+import SizeGuide from './SizeGuide';
+import { useSizeGuide } from '../context/SizeGuideContext';
 
 const Container = styled.article`
   position: sticky;
@@ -109,6 +111,7 @@ const Separator = styled.div`
 const ProductDetails = ({ title, price, sizes, description }) => {
     const { id } = useParams();
     const [selectedSize, setSelectedSize] = useState(null);
+    const {isSizeGuideVisible, setIsSizeGuideVisible} = useSizeGuide();
 
     const handleSizeClick = (size) => {
         setSelectedSize(prevSize => (prevSize === size ? null : size));
@@ -119,6 +122,7 @@ const ProductDetails = ({ title, price, sizes, description }) => {
         setSelectedSize(null);
     }, [id]);
 
+
     return (
         <Container>
             <ProductTitle>{title}</ProductTitle>
@@ -126,10 +130,12 @@ const ProductDetails = ({ title, price, sizes, description }) => {
 
             <Separator />
 
-            <SizeGuideComponent>
+            <SizeGuideComponent onClick={()=> setIsSizeGuideVisible(true)}>
                 <PiRulerBold size={20} />
                 Size Guide
             </SizeGuideComponent>
+            
+            {isSizeGuideVisible && <SizeGuide />}
 
             <Sizes>
                 {sizes.map((size, index) => (
