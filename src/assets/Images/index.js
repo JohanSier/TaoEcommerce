@@ -57,6 +57,8 @@ const categories = [
   { id: 6, title: "Accessories", src: categ_accessories, link: "/products/accessories" },
 ];
 
+const inchesToCm = (inches) => parseFloat((inches * 2.54).toFixed(2));
+
 const products = [
   {
     id: 1,
@@ -66,7 +68,23 @@ const products = [
       "A sleek black t-shirt with unique patches celebrating street basketball culture.",
     price: 44.99,
     images: [bape_black_tshirt_1, bape_black_tshirt_2, bape_black_tshirt_3, bape_black_tshirt_4, bape_black_tshirt_5],
-    availableSizes: ["XS", "S", "M", "2XL"]
+    availableSizes: ["XS", "S", "M", "2XL"],
+    measuresCm: {
+      XS: { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },  // Medidas en cm (Ejemplo)
+      S: { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },
+      M: { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },
+      L: { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },
+      XL: { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },
+      "2XL": { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },
+    },
+    measuresIn: {
+      XS: { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },  // Medidas en cm (Ejemplo)
+      S: { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },
+      M: { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },
+      L: { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },
+      XL: { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },
+      "2XL": { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },
+    }
   },
   {
     id: 2,
@@ -76,7 +94,23 @@ const products = [
       "Stylish black camo shorts perfect for both on and off the court.",
     price: 54.99,
     images: [bape_shorts_1, bape_shorts_2, bape_shorts_3, bape_shorts_4, bape_shorts_5, bape_shorts_6],
-    availableSizes: ["XS", "S", "M", "L", "XL", "2XL"]
+    availableSizes: ["XS", "S", "M", "L", "XL", "2XL"],
+    measuresCm: {
+      XS: { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },  // Medidas en cm (Ejemplo)
+      S: { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },
+      M: { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },
+      L: { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },
+      XL: { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },
+      "2XL": { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },
+    },
+    measuresIn: {
+      XS: { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },  // Medidas en cm (Ejemplo)
+      S: { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },
+      M: { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },
+      L: { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },
+      XL: { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },
+      "2XL": { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },
+    }
   },
   {
     id: 3,
@@ -86,7 +120,23 @@ const products = [
       " A premium, vintage-washed long-sleeve sweater for those cooler street game nights.",
     price: 69.99,
     images: [wade_sweatshirt_1, wade_sweatshirt_2, wade_sweatshirt_3, wade_sweatshirt_4, wade_sweatshirt_5, wade_sweatshirt_6, wade_sweatshirt_7],
-    availableSizes: ["XS", "S", "M", "2XL"]
+    availableSizes: ["XS", "S", "M", "2XL"],
+    measuresCm: {
+      XS: { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },  // Medidas en cm (Ejemplo)
+      S: { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },
+      M: { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },
+      L: { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },
+      XL: { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },
+      "2XL": { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },
+    },
+    measuresIn: {
+      XS: { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },  // Medidas en cm (Ejemplo)
+      S: { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },
+      M: { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },
+      L: { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },
+      XL: { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },
+      "2XL": { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },
+    }
   },
   {
     id: 4,
@@ -96,7 +146,23 @@ const products = [
       "A deep navy t-shirt with star-inspired designs for standout street style.",
     price: 47.99,
     images: [bape_tee_1, bape_tee_2, bape_tee_3, bape_tee_4, bape_tee_5, bape_tee_6, bape_tee_7, bape_tee_8],
-    availableSizes: ["M", "L", "XL", "2XL"]
+    availableSizes: ["M", "L", "XL", "2XL"],
+    measuresCm: {
+      XS: { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },  // Medidas en cm (Ejemplo)
+      S: { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },
+      M: { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },
+      L: { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },
+      XL: { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },
+      "2XL": { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },
+    },
+    measuresIn: {
+      XS: { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },  // Medidas en cm (Ejemplo)
+      S: { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },
+      M: { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },
+      L: { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },
+      XL: { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },
+      "2XL": { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },
+    }
   },
   {
     id: 5,
@@ -106,7 +172,23 @@ const products = [
       "Minimalist black shorts with subtle detailing for effortless style.",
     price: 49.99,
     images: [bape_tweed_shorts_1, bape_tweed_shorts_2, bape_tweed_shorts_3, bape_tweed_shorts_4, bape_tweed_shorts_5, bape_tweed_shorts_6],
-    availableSizes: ["XS", "S", "M", "L", "XL", "2XL"]
+    availableSizes: ["XS", "S", "M", "L", "XL", "2XL"],
+    measuresCm: {
+      XS: { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },  // Medidas en cm (Ejemplo)
+      S: { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },
+      M: { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },
+      L: { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },
+      XL: { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },
+      "2XL": { chestWidth: inchesToCm(17.3), sleeveLength: inchesToCm(22.4), itemLength: inchesToCm(26), chestOutline: inchesToCm(34.3), hipOutline: inchesToCm(34.3) },
+    },
+    measuresIn: {
+      XS: { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },  // Medidas en cm (Ejemplo)
+      S: { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },
+      M: { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },
+      L: { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },
+      XL: { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },
+      "2XL": { chestWidth: 17.3, sleeveLength: 22.4, itemLength: 26, chestOutline: 34.3, hipOutline: 34.3 },
+    }
   },
   {
     id: 6,
