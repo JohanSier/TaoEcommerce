@@ -6,9 +6,11 @@ import RootLayout from "./components/RootLayout";
 import NotFound from "./pages/NotFound";
 import UserPage from "./pages/UserPage";
 import SpecificProductTemplate from "./pages/SpecificProductTemplate";
+import SizeGuideProvider from "./context/SizeGuideContext";
 
 function App() {
   return (
+    <SizeGuideProvider>
     <Routes>
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Homepage />} />
@@ -21,7 +23,9 @@ function App() {
         {/* Página 404 cuando no hay coincidencias */}
         <Route path="*" element={<NotFound />} />
       </Route>
+
     </Routes>
+    </SizeGuideProvider>
   );
 }
 
