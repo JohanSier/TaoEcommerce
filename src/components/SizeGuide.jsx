@@ -47,7 +47,7 @@ const SizeComponent = styled.article`
     flex-direction: column;
   color: var(--secondary);
   width: 25%;
-  padding: 0 1.5rem 1rem 1.5rem;
+  padding: 0 1.5rem 2rem 1.5rem;
   height: 100vh;
   background: var(--white);
   border-top-left-radius: 10px;
@@ -194,9 +194,9 @@ const HowToMeasure = styled.div`
     display: flex;
     flex-direction: column;
 `
-const SubSubHeading = styled(Title)`
-    margin-top: 1.5rem;
-    font-size: 1rem;
+const MeasureTitle = styled(Title)`
+    margin-top: 2rem;
+    font-size: 1.3rem;
     font-variation-settings: "wght" 600;
 `
 const Image = styled.img`
@@ -206,7 +206,42 @@ const Image = styled.img`
     object-fit: cover;
     object-position: center;
 `
+const DescriptionContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    color: var(--secondary);
+    margin-top: 1rem;
+`
 
+const Description = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--secondary);
+`
+const Circle = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    background: var(--secondary);
+    color: var(--white);
+    border-radius: 100%;
+    height: 20px;
+    font-size: .75rem;
+    font-variation-settings: "wght" 600;
+`
+const HowToMeasureTitle = styled(Title)`
+    font-size: 1rem;
+    font-variation-settings: "wght" 600;
+`
+
+const Text = styled.p`
+    margin:0;
+    font-size: 0.9rem;
+    font-variation-settings: "wght" 400;
+    color: var(--greyA)
+`
 const SizeGuide = () => {
   const sizes = ["XS", "S", "M", "L", "XL", "2XL"];
   const [selectedSize, setSelectedSize] = useState(null);
@@ -318,17 +353,25 @@ const SizeGuide = () => {
             </BodyMeasures>
 
             <HowToMeasure>
-                <SubSubHeading>How to measure yourself?</SubSubHeading>
+                <MeasureTitle>How to measure yourself?</MeasureTitle>
                 <Image src={measureImage} alt="Imagen de como obtener su talla"/>
-                {/* <CircleBtnContainer>
-                    <CircleBtn>1</CircleBtn>
-                    <HiddenText>Para medir al circunferencia del pecho utiliza una cinta métrica y colocala alrededor de la parte más ancha de este</HiddenText>
-                </CircleBtnContainer>
+                
+                <DescriptionContainer>
+                  <Description>
+                      <Circle>1</Circle>
+                      <HowToMeasureTitle>Chest Outline</HowToMeasureTitle>
+                  </Description>
+                      <Text>To measure your chest circumference, use a measuring tape and place it around the widest part of your chest.</Text>
+                </DescriptionContainer>
 
-                <CircleBtnContainer>
-                    <CircleBtn>2</CircleBtn>
-                    <HiddenText>Para medir al circunferencia del pecho utiliza una cinta métrica y colocala alrededor de la parte más ancha de este</HiddenText>
-                </CircleBtnContainer> */}
+                <DescriptionContainer>
+                <Description>
+                    <Circle>2</Circle>
+                    <HowToMeasureTitle>Hip Outline</HowToMeasureTitle>
+                </Description>
+                    <Text>Put your feet together and place the measuring tape around the widest part of your hip circumference.</Text>
+                </DescriptionContainer>
+                 
             </HowToMeasure>
         </Measures> 
       </SizeComponent>
