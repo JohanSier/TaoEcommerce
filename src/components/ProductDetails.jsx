@@ -116,7 +116,7 @@ const Separator = styled.div`
     margin-bottom: 1rem;
 `;
 
-const ProductDetails = ({ title, price, sizes, description }) => {
+const ProductDetails = ({ title, price, sizes, description, thumbnailImage }) => {
     const { id } = useParams();
     const { isSizeGuideVisible, setIsSizeGuideVisible } = useSizeGuide();
     const { addItemToCart } = useCart(); // Get addItemToCart function from context
@@ -134,7 +134,8 @@ const ProductDetails = ({ title, price, sizes, description }) => {
             title,
             price,
             size: selectedSize,
-            quantity: 1
+            quantity: 1,
+            thumbnailImage
         };
 
         addItemToCart(product);

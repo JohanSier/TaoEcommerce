@@ -31,7 +31,8 @@ const CartItem = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-`;
+  margin-bottom:12px;
+  `;
 
 const ProductInfo = styled.div`
   width: 60%;
@@ -42,11 +43,11 @@ const ProductInfo = styled.div`
 `;
 
 const ProductImage = styled.img`
-  width: 20%;
+  width: 6rem;
   height: 100px;
   object-fit: cover;
   object-position: center;
-  border: 1px solid #333;
+  border: 1px solid var(--greyE);
   margin-right: 1rem;
   border-radius: 5px;
 `;
@@ -200,7 +201,7 @@ const Cart = ({ onClose }) => {
               <ProductInfo>
                 <ProductImage
                   src={
-                    item.images
+                    item.thumbnailImage
                   }
                   alt={item.title}
                 />
