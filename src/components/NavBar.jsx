@@ -8,6 +8,7 @@ import {
 } from "react-icons/hi";
 import LogoImg from "../assets/Images/TaoHoops-logo.svg";
 import { useSizeGuide } from "../context/SizeGuideContext";
+import Cart from "./Cart";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -92,6 +93,9 @@ const NavBar = () => {
   const isHomepage = location.pathname === "/"; 
   const [background, setBackground] = useState(false)
   const {isSizeGuideVisible} = useSizeGuide();
+  //Cart Logic
+  const [cartOpen, setCartOpen] = useState(false);
+
   
    useEffect(() => {
     const handleScroll = () => {
@@ -136,9 +140,10 @@ const NavBar = () => {
         <StyledLink to="/log-in">
           <HiOutlineUser aria-label="Profile Icon" title="Go to profile page"/>
         </StyledLink>
-        <StyledLink to="/">
+        <StyledLink onClick={() => setCartOpen(true)}>
           <HiOutlineShoppingBag aria-label="Cart Icon" title="Go to the cart page"/>
         </StyledLink>
+        {cartOpen && <Cart onClose={() => setCartOpen(false)} />}
       </RightLinks>
     </Wrapper>
   );
