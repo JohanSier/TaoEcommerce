@@ -22,6 +22,25 @@ const CartContainer = styled.div`
   overflow-y: scroll;
 `;
 
+const CartHeadingContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 6px;
+`
+const CartHeading = styled.h2`
+  font-size: 1.2rem;
+`
+const CartItemsCounter =styled.div`
+width: 20px;
+display: flex;
+align-items: center; 
+justify-content: center;
+font-size: 0.8rem;
+padding: 2px 5px;
+border-radius: 50px;
+background: var(--secondary);
+color: var(--white);
+`
 const CloseButton = styled(HiOutlineX)`
   cursor: pointer;
   align-self: flex-end;
@@ -81,10 +100,11 @@ const ProductSizeText = styled.p`
   }
 `
 const RemoveButton = styled.button`
-  background: red;
-  color: white;
+  color: #5e5e5e;
+  text-decoration: underline;
+  background: none;
+  font-variation-settings: "wght" 500;
   border: none;
-  padding: 5px;
   cursor: pointer;
   margin-left: auto;
 `;
@@ -195,7 +215,11 @@ const Cart = ({ onClose }) => {
         </EmptyContainer>
       ) : (
         <>
-          <h2>Your Cart</h2>
+          <CartHeadingContainer>
+            <CartHeading>Cart</CartHeading>
+            <CartItemsCounter>{cart.items.length}</CartItemsCounter>
+          </CartHeadingContainer>
+          
           {cart.items.map((item) => (
             <CartItem key={item.id}>
               <ProductInfo>
