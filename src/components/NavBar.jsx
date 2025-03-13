@@ -9,18 +9,22 @@ import {
 import LogoImg from "../assets/Images/TaoHoops-logo.svg";
 import { useSizeGuide } from "../context/SizeGuideContext";
 import Cart from "./Cart";
+import { useCart } from "../context/CartContext";
 
 const Wrapper = styled.div`
   width: 100%;
   position: sticky;
   top: 0;
   left: 0;
-  z-index: ${(props) => (props.isSizeGuideVisible ? -1 : 999)}; /* Cambia el z-index dinámicamente */
+  z-index: ${(props) =>
+    props.isSizeGuideVisible ? -1 : 999}; /* Cambia el z-index dinámicamente */
   padding: 0 2rem;
   display: flex;
   align-items: center;
   background: ${(props) =>
-    !props.isHomepage || props.background ? "var(--secondary)" : "var(--transparent)"};
+    !props.isHomepage || props.background
+      ? "var(--secondary)"
+      : "var(--transparent)"};
   border-top-left-radius: ${(props) => (props.background ? 0 : "1rem")};
   border-top-right-radius: ${(props) => (props.background ? 0 : "1rem")};
   transition: background 0.2s linear, z-index 0.2s ease-in-out;
@@ -47,6 +51,30 @@ const StyledLink = styled(Link)`
   }
 `;
 
+const CartLink = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  top:-3px;
+`;
+
+const CartItemsCounter = styled.div`
+visiblity: hidden;
+position: absolute;
+width: 14px;
+height: 14px;
+font-size: 0.6rem;
+color: var(--secondary);
+background: var(--white);
+top: -2px;
+right: -4px;
+border-radius: 50px;
+display: flex;
+align-items: center;
+justify-content: center;
+`;
+
 const Input = styled.input`
   margin: 0;
   width: 100%;
@@ -56,8 +84,10 @@ const Input = styled.input`
   outline: none;
   font-variation-settings: "wght" 500;
   cursor: pointer;
-  color: var(--white); // This instruction is crucial to show the white text in other devices, otherwise it'll show it in black
-  
+  color: var(
+    --white
+  ); // This instruction is crucial to show the white text in other devices, otherwise it'll show it in black
+
   &::placeholder {
     font-size: 1.1rem;
     color: var(--white);
@@ -90,14 +120,15 @@ const RightLinks = styled(LeftLinks)`
 
 const NavBar = () => {
   const location = useLocation(); // Get the current URL
-  const isHomepage = location.pathname === "/"; 
-  const [background, setBackground] = useState(false)
-  const {isSizeGuideVisible} = useSizeGuide();
+  const isHomepage = location.pathname === "/";
+  const [background, setBackground] = useState(false);
+  const { isSizeGuideVisible } = useSizeGuide();
   //Cart Logic
   const [cartOpen, setCartOpen] = useState(false);
+  //Access to context
+  const { cart } = useCart();
 
-  
-   useEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
       setBackground(window.scrollY > 60);
     };
@@ -113,9 +144,12 @@ const NavBar = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-
   return (
-    <Wrapper background={background} isHomepage={isHomepage} isSizeGuideVisible={isSizeGuideVisible}>
+    <Wrapper
+      background={background}
+      isHomepage={isHomepage}
+      isSizeGuideVisible={isSizeGuideVisible}
+    >
       <LeftLinks>
         <StyledLink to="/products/all">SHOP ALL</StyledLink>
         <StyledLink to="/products/tees">TEES</StyledLink>
@@ -133,16 +167,20 @@ const NavBar = () => {
 
       <RightLinks>
         <StyledLink to="/" className="input-btn">
-          <HiOutlineSearch aria-label="Search Icon" title="Search Item"/>
+          <HiOutlineSearch aria-label="Search Icon" title="Search Item" />
           <Input type="text" placeholder="Buscar" />
         </StyledLink>
 
         <StyledLink to="/log-in">
-          <HiOutlineUser aria-label="Profile Icon" title="Go to profile page"/>
+          <HiOutlineUser aria-label="Profile Icon" title="Go to profile page" />
         </StyledLink>
-        <StyledLink onClick={() => setCartOpen(true)}>
-          <HiOutlineShoppingBag aria-label="Cart Icon" title="Go to the cart page"/>
-        </StyledLink>
+
+        <CartLink onClick={() => setCartOpen(true)}>
+          <HiOutlineShoppingBag aria-label="Cart Icon" title="Go to the cart" />
+          {cart.items.length > 0 && (
+            <CartItemsCounter>{cart.items.length}</CartItemsCounter>
+          )}
+        </CartLink>
         {cartOpen && <Cart onClose={() => setCartOpen(false)} />}
       </RightLinks>
     </Wrapper>
