@@ -7,25 +7,30 @@ import NotFound from "./pages/NotFound";
 import UserPage from "./pages/UserPage";
 import SpecificProductTemplate from "./pages/SpecificProductTemplate";
 import SizeGuideProvider from "./context/SizeGuideContext";
+import { CartProvider } from "./context/CartContext";
 
 function App() {
   return (
-    <SizeGuideProvider>
-    <Routes>
-      <Route path="/" element={<RootLayout />}>
-        <Route index element={<Homepage />} />
+    <CartProvider>
 
-        <Route path="products/:category" element={<ProductsPage />}/>
-        <Route path="/products/:category/:id" element={<SpecificProductTemplate />} />
+      <SizeGuideProvider>
+      <Routes>
+        <Route path="/" element={<RootLayout />}>
+          <Route index element={<Homepage />} />
 
-        <Route path="log-in" element={<UserPage />} />
-        
-        {/* Página 404 cuando no hay coincidencias */}
-        <Route path="*" element={<NotFound />} />
-      </Route>
+          <Route path="products/:category" element={<ProductsPage />}/>
+          <Route path="/products/:category/:id" element={<SpecificProductTemplate />} />
 
-    </Routes>
-    </SizeGuideProvider>
+          <Route path="log-in" element={<UserPage />} />
+          
+          {/* Página 404 cuando no hay coincidencias */}
+          <Route path="*" element={<NotFound />} />
+        </Route>
+
+      </Routes>
+      </SizeGuideProvider>
+      
+    </CartProvider>
   );
 }
 

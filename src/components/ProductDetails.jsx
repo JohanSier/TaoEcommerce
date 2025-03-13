@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router'; // Importamos useParams
+import { useParams } from 'react-router';
 import styled from 'styled-components';
 import { HiOutlineTruck } from "react-icons/hi2";
 import { PiRulerBold } from "react-icons/pi";
 import AccordionDemo from './AccordionDemo';
 import SizeGuide from './SizeGuide';
 import { useSizeGuide } from '../context/SizeGuideContext';
+import { useCart } from '../context/CartContext'; // Import Cart Context
 
 const Container = styled.article`
   position: sticky;
   top: 4rem;
-  max-height: 80vh; /* Prevents overflow */
+  max-height: 80vh;
   width: 30%;
   background: var(--white);
   padding: 3rem;
@@ -32,7 +33,7 @@ const Price = styled.p`
 const SizeGuideComponent = styled.a`
     all:unset;
     text-decoration: underline;
-    display: flex;
+    display: inline-flex;
     gap: 5px;
     font-variation-settings: "wght" 500;
     font-size: 1rem;
@@ -57,7 +58,7 @@ const SizeButton = styled.button`
     border: 1px solid var(--greyE);
     color: var(--secondary);
 
-    &:hover{
+    &:hover {
         border:1px solid var(--secondary);
     }
 
@@ -66,7 +67,7 @@ const SizeButton = styled.button`
         color: var(--white);
         border: 1px solid var(--complementary);  
           
-            &:hover{
+        &:hover {
             border:1px solid var(--secondary);
         }
     }
@@ -82,13 +83,20 @@ const Cta = styled.button`
     font-size: 1rem;
     padding: 1.6rem;
     font-variation-settings: "wght" 600;
-    border:none;
+    border: none;
     border-radius: 10px;
     cursor: pointer;
     color: var(--white);
+    transition: opacity 0.2s ease-in-out;
 
-    &:hover{
+    &:hover {
         opacity: 0.75;
+    }
+
+    &:disabled {
+        background: var(--greyE);
+        cursor: not-allowed;
+        opacity: 0.6;
     }
 `;
 
@@ -106,22 +114,35 @@ const Separator = styled.div`
     height: 2px;
     background: #e6e6e6;
     margin-bottom: 1rem;
-`
+`;
 
 const ProductDetails = ({ title, price, sizes, description }) => {
     const { id } = useParams();
+    const { isSizeGuideVisible, setIsSizeGuideVisible } = useSizeGuide();
+    const { addItemToCart } = useCart(); // Get addItemToCart function from context
     const [selectedSize, setSelectedSize] = useState(null);
-    const {isSizeGuideVisible, setIsSizeGuideVisible} = useSizeGuide();
 
     const handleSizeClick = (size) => {
         setSelectedSize(prevSize => (prevSize === size ? null : size));
     };
 
-    // Resetea la selección de talla cuando cambia el ID del producto
+    const handleAddToCart = () => {
+        if (!selectedSize) return; // Prevent adding without a size
+
+        const product = {
+            id,
+            title,
+            price,
+            size: selectedSize,
+            quantity: 1
+        };
+
+        addItemToCart(product);
+    };
+
     useEffect(() => {
         setSelectedSize(null);
     }, [id]);
-
 
     return (
         <Container>
@@ -130,11 +151,10 @@ const ProductDetails = ({ title, price, sizes, description }) => {
 
             <Separator />
 
-            <SizeGuideComponent onClick={()=> setIsSizeGuideVisible(true)}>
+            <SizeGuideComponent onClick={() => setIsSizeGuideVisible(true)}>
                 <PiRulerBold size={20} />
                 Size Guide
             </SizeGuideComponent>
-            
             {isSizeGuideVisible && <SizeGuide />}
 
             <Sizes>
@@ -149,13 +169,16 @@ const ProductDetails = ({ title, price, sizes, description }) => {
                 ))}
             </Sizes>
 
-            <Cta>ADD TO CART</Cta>
+            <Cta onClick={handleAddToCart} disabled={!selectedSize}>
+                ADD TO CART
+            </Cta>
+
             <ExtraInfo>
                 <HiOutlineTruck size={20} />
                 Shipping calculated at checkout
             </ExtraInfo>
 
-            <AccordionDemo description={description}/>
+            <AccordionDemo description={description} />
         </Container>
     );
 };
