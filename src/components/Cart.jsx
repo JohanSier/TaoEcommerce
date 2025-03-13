@@ -42,6 +42,7 @@ background: var(--secondary);
 color: var(--white);
 `
 const CloseButton = styled(HiOutlineX)`
+  display: inline-flex;
   cursor: pointer;
   align-self: flex-end;
 `;
