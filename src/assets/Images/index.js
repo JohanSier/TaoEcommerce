@@ -205,7 +205,7 @@ const products = [
       "A durable and stylish black backpack with iconic accents, ready to carry your game essentials.",
     price: 84.99,
     images: [backpack_1, backpack_2, backpack_3, backpack_4],
-    availableSizes: ["XS", "S", "M", "L", "XL", "2XL"],
+    availableSizes: ["One Size"],
   },
 ];
 
