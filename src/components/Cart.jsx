@@ -1,9 +1,19 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { useCart } from "../context/CartContext";
 import { Link } from "react-router";
 import emptyCartGif from "../assets/Images/emptyCart.gif";
 import { HiOutlineX } from "react-icons/hi";
+
+const slideIn = keyframes`
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+`;
+
+const slideOut = keyframes`
+  from { transform: translateX(0); }
+  to { transform: translateX(100%); }
+`;
 
 const CartContainer = styled.div`
   position: fixed;
@@ -13,13 +23,18 @@ const CartContainer = styled.div`
   height: 100vh;
   background: var(--white);
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-  padding: 80px 32px 0 32px;
+  padding: 0 32px 0 32px;
   display: flex;
   flex-direction: column;
   gap: 10px;
   color: var(--secondary);
   z-index: 999;
   overflow-y: scroll;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+
+  animation: ${({ isVisible }) => (isVisible ? slideIn : slideOut)} 0.4s ease-in-out forwards;
+  
 `;
 
 const CartHeadingContainer = styled.div`
@@ -31,16 +46,17 @@ const CartHeading = styled.h2`
   font-size: 1.2rem;
 `
 const CartHeader = styled.div`
-  position: fixed;
-  top: 0;
-  width: 26.5%;
-  background: var(--white);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 999;
-  height: 60px; /* Define una altura específica */
-  border-bottom: 1px solid var(--greyE);
+width: 100%;
+position: sticky;
+background: var(--white);
+display: flex;
+justify-content: space-between;
+align-items: center;
+z-index: 999;
+height: 60px; /* Define una altura específica */
+border-bottom: 1px solid var(--greyE);
+top: 0;
+margin-bottom: 12px;
 `;
 
 const CartItemsCounter =styled.div`
@@ -124,12 +140,14 @@ const RemoveButton = styled.button`
 `;
 
 const EmptyContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  gap: 10px;
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 100%;
+height: 100%;
+gap: 10px;
+margin-top: -50px;
+
 `;
 
 const EmptyText = styled.h3`
@@ -161,6 +179,11 @@ const EmptyButton = styled(Link)`
 const Gif = styled.img`
   width: 30%;
 `;
+
+const EmptyCloseButton = styled(CloseButton)`
+  margin-top: 80px;
+  margin-left: auto;
+`
 
 const CheckoutDetails = styled.div`
   width: 100%;
@@ -220,10 +243,12 @@ const Cart = ({ onClose }) => {
   );
 
   return (
-    <CartContainer>
+    <CartContainer isVisible={onClose}>
 
       {cart.items.length === 0 ? (
+        
         <EmptyContainer>
+          <EmptyCloseButton size={30} onClick={onClose} />
           <Gif src={emptyCartGif} alt="Animated Gif of a basketball" />
           <EmptyText>Your Cart is Empty</EmptyText>
           <EmptyButton to="/products/all" onClick={onClose}>Continue Shopping</EmptyButton>
