@@ -8,12 +8,15 @@ import UserPage from "./pages/UserPage";
 import SpecificProductTemplate from "./pages/SpecificProductTemplate";
 import SizeGuideProvider from "./context/SizeGuideContext";
 import { CartProvider } from "./context/CartContext";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <CartProvider>
 
       <SizeGuideProvider>
+        <ToastContainer />
       <Routes>
         <Route path="/" element={<RootLayout />}>
           <Route index element={<Homepage />} />
@@ -29,7 +32,6 @@ function App() {
 
       </Routes>
       </SizeGuideProvider>
-      
     </CartProvider>
   );
 }
