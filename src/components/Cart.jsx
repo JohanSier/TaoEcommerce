@@ -13,11 +13,11 @@ const CartContainer = styled.div`
   height: 100vh;
   background: var(--white);
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-  padding: 20px 32px;
+  padding: 80px 32px 0 32px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  color: black;
+  color: var(--secondary);
   z-index: 999;
   overflow-y: scroll;
 `;
@@ -30,6 +30,19 @@ const CartHeadingContainer = styled.div`
 const CartHeading = styled.h2`
   font-size: 1.2rem;
 `
+const CartHeader = styled.div`
+  position: fixed;
+  top: 0;
+  width: 26.5%;
+  background: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+  height: 60px; /* Define una altura específica */
+  border-bottom: 1px solid var(--greyE);
+`;
+
 const CartItemsCounter =styled.div`
 width: 20px;
 display: flex;
@@ -41,10 +54,10 @@ border-radius: 50px;
 background: var(--secondary);
 color: var(--white);
 `
+
 const CloseButton = styled(HiOutlineX)`
-  display: inline-flex;
   cursor: pointer;
-  align-self: flex-end;
+  z-index: 899; // Ensures it stays above other elements
 `;
 
 const CartItem = styled.div`
@@ -151,13 +164,15 @@ const Gif = styled.img`
 
 const CheckoutDetails = styled.div`
   width: 100%;
-  background: var(--white);
+  background: white;
   display: flex;
   flex-direction: column;
-  margin-top: auto;
   border-top: 1px solid var(--greyE);
   position: sticky;
+  left: 0;
   bottom: 0;
+  padding: 32px 0;
+  margin-top: auto;
 `
 
 const TotalFlex = styled.div`
@@ -206,7 +221,6 @@ const Cart = ({ onClose }) => {
 
   return (
     <CartContainer>
-      <CloseButton size={32} onClick={onClose} />
 
       {cart.items.length === 0 ? (
         <EmptyContainer>
@@ -216,13 +230,16 @@ const Cart = ({ onClose }) => {
         </EmptyContainer>
       ) : (
         <>
-          <CartHeadingContainer>
-            <CartHeading>Cart</CartHeading>
-            <CartItemsCounter>{cart.items.length}</CartItemsCounter>
-          </CartHeadingContainer>
+          <CartHeader>
+            <CartHeadingContainer>
+              <CartHeading>Cart</CartHeading>
+              <CartItemsCounter>{cart.items.length}</CartItemsCounter>
+            </CartHeadingContainer>
+            <CloseButton size={28} onClick={onClose} />
+          </CartHeader>
           
           {cart.items.map((item) => (
-            <CartItem key={item.id}>
+            <CartItem key={`${item.id}-${item.size}`}>
               <ProductInfo>
                 <ProductImage
                   src={
@@ -240,7 +257,7 @@ const Cart = ({ onClose }) => {
                 </ProductDetails>
               </ProductInfo>
               
-              <RemoveButton onClick={() => removeItemFromCart(item.id)}>
+              <RemoveButton onClick={() => removeItemFromCart(item.id, item.size)}>
                 Remove
               </RemoveButton>
             </CartItem>

@@ -15,40 +15,48 @@ const CLEAR_CART = 'CLEAR_CART';
 function cartReducer(state, action) {
   switch (action.type) {
     case ADD_ITEM:
-      // Check if the item already exists
-      const existingItem = state.items.find(item => item.id === action.payload.id);
+      // Buscar un producto con el mismo ID y la misma talla
+      const existingItem = state.items.find(
+        item => item.id === action.payload.id && item.size === action.payload.size
+      );
+
       if (existingItem) {
-        // Increase quantity if already exists
+        // Si ya existe un producto con la misma talla, solo aumenta la cantidad
         return {
           ...state,
           items: state.items.map(item =>
-            item.id === action.payload.id
+            item.id === action.payload.id && item.size === action.payload.size
               ? { ...item, quantity: item.quantity + (action.payload.quantity || 1) }
               : item
           ),
         };
       }
-      // Add new item with quantity (default 1)
+
+      // Si no existe un producto con la misma talla, lo agrega como un nuevo producto
       return {
         ...state,
         items: [...state.items, { ...action.payload, quantity: action.payload.quantity || 1 }],
       };
+
     case REMOVE_ITEM:
       return {
         ...state,
-        items: state.items.filter(item => item.id !== action.payload.id),
+        items: state.items.filter(item => !(item.id === action.payload.id && item.size === action.payload.size)),
       };
+
     case UPDATE_ITEM_QUANTITY:
       return {
         ...state,
         items: state.items.map(item =>
-          item.id === action.payload.id
+          item.id === action.payload.id && item.size === action.payload.size
             ? { ...item, quantity: action.payload.quantity }
             : item
         ),
       };
+
     case CLEAR_CART:
       return initialCartState;
+
     default:
       return state;
   }
@@ -66,8 +74,8 @@ export const CartProvider = ({ children }) => {
     dispatch({ type: ADD_ITEM, payload: item });
   };
 
-  const removeItemFromCart = (id) => {
-    dispatch({ type: REMOVE_ITEM, payload: { id } });
+  const removeItemFromCart = (id, size) => {
+    dispatch({ type: REMOVE_ITEM, payload: { id, size } });
   };
 
   const updateItemQuantity = (id, quantity) => {
