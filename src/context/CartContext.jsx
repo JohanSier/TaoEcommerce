@@ -102,7 +102,7 @@ export const CartProvider = ({ children }) => {
       });
     } else {
       // No mostrar el toast si el producto ya está en el carrito
-      toast.info(' You already added this product to the cart', {
+      toast.info(`You already added ${item.title} ${item.size} product to the cart`, {
         position: "bottom-right",
         autoClose: 2000,
         hideProgressBar: false,
