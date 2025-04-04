@@ -7,6 +7,11 @@ import styled, { keyframes } from "styled-components";
 import NotFound from "./NotFound";
 import { Gallery, Item } from "react-photoswipe-gallery";
 import "photoswipe/dist/photoswipe.css";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const Container = styled.main`
   position: relative;
@@ -19,6 +24,11 @@ const Container = styled.main`
 const Wrapper = styled.section`
   display: flex;
   position: relative;
+  flex-direction: column;
+
+  @media (min-width: 800px) {
+    flex-direction: row;
+  }
 `;
 
 const Grid = styled.div`
@@ -26,11 +36,17 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
+  aspect-ratio: 2/1.5;
+
+  @media (max-width: 800px) {
+    display: none;
+  }
 `;
 
 const GridItem = styled.div`
   width: 100%;
   position: relative;
+  aspect-ratio: 3/4;
 `;
 
 /* Skeleton Loader Animation */
@@ -50,7 +66,7 @@ const Skeleton = styled.div`
 
 const StyledImage = styled.img`
   width: 100%;
-  height: 700px;
+  height: 100%;
   object-fit: cover;
   object-position: center;
   flex-grow: 1;
@@ -93,20 +109,92 @@ const Products = styled.div`
   margin-top: 1rem;
 `;
 
+const MobileSlider = styled(Swiper)`
+  display: none;
+  width: 100%;
+  height: 600px;
+
+  @media (max-width: 800px) {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 500px) {
+    max-width: 100%;
+  }
+
+  .swiper-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    bottom: 15px;
+    background: rgba(240, 240, 240, 0.85);
+    padding: 8px 15px;
+    width: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px;
+  }
+
+  .swiper-pagination-bullet {
+    width: 7px;
+    height: 7px;
+    background: #A8A3A0;
+    opacity: 0.5;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: var(--secondary);
+    opacity: 1;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: var(--white);
+    background: rgba(0, 0, 0, 0.3);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    &::after {
+      font-size: 1.2rem;
+    }
+  }
+`;
+
+const SliderItem = styled.div`
+  width: 100%;
+  height: 100%;
+  position: relative;
+`;
+
 const StyledProductDetails = styled(ProductDetails)`
   width: 100%;
+  margin-top: 2rem;
+
+  @media (min-width: 800px) {
+    width: 30%;
+    margin-left: 2rem;
+  }
 `;
 
 const SpecificProductTemplate = () => {
   const productsMayLike = products.slice(0, 5);
   const { id, category } = useParams();
   const product = products.find((p) => p.id === parseInt(id));
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   if (!product) {
     return <NotFound />;
   }
-
-  const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
     <Container>
@@ -144,6 +232,47 @@ const SpecificProductTemplate = () => {
           </Gallery>
         </Grid>
 
+        <MobileSlider
+          modules={[Navigation, Pagination]}
+          navigation
+          pagination={{ clickable: true }}
+          spaceBetween={10}
+          slidesPerView={1}
+        >
+          {products[id - 1].images.map((image, index) => (
+            <SwiperSlide key={index}>
+              <SliderItem>
+                <Gallery
+                  options={{
+                    paddingFn: () => ({ top: 0, bottom: 0, left: 0, right: 0 }),
+                  }}
+                >
+                  <Item
+                    original={image}
+                    thumbnail={image}
+                    width="900"
+                    height="1000"
+                  >
+                    {({ ref, open }) => (
+                      <>
+                        {!imageLoaded && <Skeleton />}
+                        <StyledImage
+                          ref={ref}
+                          src={image}
+                          alt={product.name}
+                          loaded={imageLoaded}
+                          onLoad={() => setImageLoaded(true)}
+                          onClick={open}
+                        />
+                      </>
+                    )}
+                  </Item>
+                </Gallery>
+              </SliderItem>
+            </SwiperSlide>
+          ))}
+        </MobileSlider>
+
         <StyledProductDetails
           title={product.name}
           price={product.price}
@@ -160,7 +289,7 @@ const SpecificProductTemplate = () => {
             .filter((p) => p.id !== parseInt(id))
             .map((product) => (
               <ProductCard
-                style={{ flexGrow: "2" }}
+                style={{ flexGrow: "1" }}
                 key={product.id}
                 productTitle={product.name}
                 price={product.price}

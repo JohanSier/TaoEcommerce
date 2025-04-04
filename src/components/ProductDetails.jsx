@@ -15,6 +15,10 @@ const Container = styled.article`
   width: 30%;
   background: var(--white);
   padding: 3rem;
+
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 `;
 
 const ProductTitle = styled.h1`
