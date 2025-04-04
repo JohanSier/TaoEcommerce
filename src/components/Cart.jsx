@@ -35,8 +35,14 @@ const CartContainer = styled.div`
 
   animation: ${({ isVisible }) => (isVisible ? slideIn : slideOut)} 0.4s ease-in-out forwards;
   
-`;
+  @media (max-width: 1165px) {
+    width: 60%;
+  }
 
+  @media (max-width: 650px) {
+    width: 100%;
+  }
+`;
 const CartHeadingContainer = styled.div`
   display: flex;
   align-items: center;
