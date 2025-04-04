@@ -84,19 +84,18 @@ function getCategoryId(category) {
 }
   // Filter products if category is selected
   const filteredProducts = category !== "all"
-    ? products.filter(p => p.categoryId === getCategoryId(category))
+    ? products.filter(p => p.categories.some(cat => cat.id === getCategoryId(category)))
     : products;
-
 
   const validCategories = ["all", "tees", "jerseys", "shorts", "sneakers", "accessories", "street-kings"];
 
   if (!validCategories.includes(category)) {
-    return <NotFound />; // 🚀 Si la categoría no existe, renderiza NotFound
+    return <NotFound />;
   }
 
   return (
     <Container>
-      <Heading>{category != "all" ? `${category.charAt(0).toUpperCase()}${category.slice(1)} ` : "All Products"}</Heading>
+      <Heading>{category !== "all" ? `${category.charAt(0).toUpperCase()}${category.slice(1)} ` : "All Products"}</Heading>
 
       <FilterAndResults>
         <FilterButton>
@@ -110,7 +109,6 @@ function getCategoryId(category) {
         {filteredProducts.map((product) => (
           <ProductCard
             key={product.id}
-            categoryId={product.categoryId}
             productTitle={product.name}
             price={product.price}
             srcImage={product.images[0]}

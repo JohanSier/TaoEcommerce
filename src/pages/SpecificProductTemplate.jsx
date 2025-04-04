@@ -70,7 +70,7 @@ const StyledImage = styled.img`
   object-fit: cover;
   object-position: center;
   flex-grow: 1;
-  opacity: ${(props) => (props.loaded ? 1 : 0)};
+  opacity: ${(props) => (props["data-loaded"] ? 1 : 0)};
   transition: opacity 0.3s ease-in-out;
   cursor: pointer;
 `;
@@ -191,10 +191,18 @@ const SpecificProductTemplate = () => {
   const product = products.find((p) => p.id === parseInt(id));
   const [imageLoaded, setImageLoaded] = useState(false);
 
-  // Get related products from the same category
-  const relatedProducts = products
-    .filter(p => p.categoryId === product?.categoryId && p.id !== parseInt(id))
-    .slice(0, 5); // Show maximum 4 related products
+  // Get related products only if product exists
+  const relatedProducts = product
+    ? products
+        .filter(p => {
+          if (p.id === parseInt(id)) return false; // Exclude current product
+          // Check if products share any categories
+          return p.categories.some(cat => 
+            product.categories.some(productCat => productCat.id === cat.id)
+          );
+        })
+        .slice(0, 5)
+    : [];
 
   if (!product) {
     return <NotFound />;
@@ -209,7 +217,7 @@ const SpecificProductTemplate = () => {
               paddingFn: () => ({ top: 0, bottom: 0, left: 0, right: 0 }),
             }}
           >
-            {products[id - 1].images.map((image, index) => (
+            {product.images.map((image, index) => (
               <GridItem key={index}>
                 <Item
                   original={image}
@@ -224,7 +232,7 @@ const SpecificProductTemplate = () => {
                         ref={ref}
                         src={image}
                         alt={product.name}
-                        loaded={imageLoaded}
+                        data-loaded={imageLoaded}
                         onLoad={() => setImageLoaded(true)}
                         onClick={open}
                       />
@@ -243,7 +251,7 @@ const SpecificProductTemplate = () => {
           spaceBetween={10}
           slidesPerView={1}
         >
-          {products[id - 1].images.map((image, index) => (
+          {product.images.map((image, index) => (
             <SwiperSlide key={index}>
               <SliderItem>
                 <Gallery
@@ -264,7 +272,7 @@ const SpecificProductTemplate = () => {
                           ref={ref}
                           src={image}
                           alt={product.name}
-                          loaded={imageLoaded}
+                          data-loaded={imageLoaded}
                           onLoad={() => setImageLoaded(true)}
                           onClick={open}
                         />

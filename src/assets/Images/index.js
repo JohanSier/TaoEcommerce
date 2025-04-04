@@ -47,6 +47,45 @@ import wade_sweatshirt_5 from "./Wade_Sweatshirt/Wade_Sweatshirt_5.webp";
 import wade_sweatshirt_6 from "./Wade_Sweatshirt/Wade_Sweatshirt_6.jpg";
 import wade_sweatshirt_7 from "./Wade_Sweatshirt/Wade_Sweatshirt_7.jpg";
 
+import wow_11_1 from "./Sneakers/WOW_11/WOW_11_1.webp";
+import wow_11_2 from "./Sneakers/WOW_11/WOW_11_2.webp";
+import wow_11_3 from "./Sneakers/WOW_11/WOW_11_3.webp";
+import wow_11_4 from "./Sneakers/WOW_11/WOW_11_4.webp";
+import wow_11_5 from "./Sneakers/WOW_11/WOW_11_5.webp";
+import wow_11_6 from "./Sneakers/WOW_11/WOW_11_6.webp";
+import wow_11_7 from "./Sneakers/WOW_11/WOW_11_7.webp";
+
+import wow_808_1 from "./Sneakers/WOW_808/WOW_808_1.webp";
+import wow_808_2 from "./Sneakers/WOW_808/WOW_808_2.webp";
+import wow_808_3 from "./Sneakers/WOW_808/WOW_808_3.webp";
+import wow_808_4 from "./Sneakers/WOW_808/WOW_808_4.webp";
+import wow_808_5 from "./Sneakers/WOW_808/WOW_808_5.webp";
+import wow_808_6 from "./Sneakers/WOW_808/WOW_808_6.webp";
+import wow_808_7 from "./Sneakers/WOW_808/WOW_808_7.webp";
+
+import wow_flash_1 from "./Sneakers/WOW_Flash/WOW_Flash_1.webp";
+import wow_flash_2 from "./Sneakers/WOW_Flash/WOW_Flash_2.webp";
+import wow_flash_3 from "./Sneakers/WOW_Flash/WOW_Flash_3.webp";
+import wow_flash_4 from "./Sneakers/WOW_Flash/WOW_Flash_4.webp";
+import wow_flash_5 from "./Sneakers/WOW_Flash/WOW_Flash_5.webp";
+import wow_flash_6 from "./Sneakers/WOW_Flash/WOW_Flash_6.webp";
+import wow_flash_7 from "./Sneakers/WOW_Flash/WOW_Flash_7.webp";
+
+import wow_shadow_1 from "./Sneakers/WOW_Shadow/WOW_Shadow_1.webp";
+import wow_shadow_2 from "./Sneakers/WOW_Shadow/WOW_Shadow_2.webp";
+import wow_shadow_3 from "./Sneakers/WOW_Shadow/WOW_Shadow_3.webp";
+import wow_shadow_4 from "./Sneakers/WOW_Shadow/WOW_Shadow_4.webp";
+import wow_shadow_5 from "./Sneakers/WOW_Shadow/WOW_Shadow_5.webp";
+import wow_shadow_7 from "./Sneakers/WOW_Shadow/WOW_Shadow_7.webp";
+
+import wow_slides_1 from "./Sneakers/WOW_Slides/WOW_Slides_1.webp";
+import wow_slides_2 from "./Sneakers/WOW_Slides/WOW_Slides_2.webp";
+import wow_slides_3 from "./Sneakers/WOW_Slides/WOW_Slides_3.webp";
+import wow_slides_4 from "./Sneakers/WOW_Slides/WOW_Slides_4.webp";
+import wow_slides_5 from "./Sneakers/WOW_Slides/WOW_Slides_5.webp";
+import wow_slides_6 from "./Sneakers/WOW_Slides/WOW_Slides_6.webp";
+import wow_slides_7 from "./Sneakers/WOW_Slides/WOW_Slides_7.webp";
+
 const categories = [
   {
     id: 1,
@@ -69,7 +108,10 @@ const categories = [
 const products = [
   {
     id: 1,
-    categoryId: 2,
+    categories: [
+      { id: 2, name: "Tees" },
+      { id: 1, name: "Street Kings" }
+    ],
     name: "Urban Insignia Tee",
     description:
       "A sleek black t-shirt with unique patches celebrating street basketball culture.",
@@ -94,7 +136,10 @@ const products = [
   },
   {
     id: 2,
-    categoryId: 4,
+    categories: [
+      { id: 4, name: "Shorts" },
+      { id: 1, name: "Street Kings" }
+    ],
     name: "Night Camo Shorts",
     description:
       "Stylish black camo shorts perfect for both on and off the court.",
@@ -120,8 +165,10 @@ const products = [
   },
   {
     id: 3,
-    categoryId: 1,
-    name: "King’s Court Sweater",
+    categories: [
+      { id: 1, name: "Street Kings" }
+    ],
+    name: "King's Court Sweater",
     description:
       "A premium, vintage-washed long-sleeve sweater for those cooler street game nights.",
     price: 69.99,
@@ -147,7 +194,10 @@ const products = [
   },
   {
     id: 4,
-    categoryId: 2,
+    categories: [
+      { id: 2, name: "Tees" },
+      { id: 1, name: "Street Kings" }
+    ],
     name: "Stellar Play Tee",
     description:
       "A deep navy t-shirt with star-inspired designs for standout street style.",
@@ -173,7 +223,10 @@ const products = [
   },
   {
     id: 5,
-    categoryId: 4,
+    categories: [
+      { id: 4, name: "Shorts" },
+      { id: 1, name: "Street Kings" }
+    ],
     name: "Shadowline Shorts",
     description:
       "Minimalist black shorts with subtle detailing for effortless style.",
@@ -199,7 +252,10 @@ const products = [
   },
   {
     id: 6,
-    categoryId: 6,
+    categories: [
+      { id: 6, name: "Accessories" },
+      { id: 1, name: "Street Kings" }
+    ],
     name: "Ascend Backpack",
     description:
       "A durable and stylish black backpack with iconic accents, ready to carry your game essentials.",
@@ -207,6 +263,173 @@ const products = [
     images: [backpack_1, backpack_2, backpack_3, backpack_4],
     availableSizes: ["One Size"],
   },
+  {
+    id: 7,
+    categories: [
+      { id: 5, name: "Sneakers" }
+    ],
+    name: "Way of Wade 11",
+    description: "The Way of Wade 11 is a high-performance basketball shoe engineered for players who demand speed and stability. Featuring innovative BOOM cushioning technology and breathable mesh upper, it delivers the perfect balance of comfort and on-court performance. The reinforced support system and enhanced traction pattern ensure confident movements during intense gameplay.",
+    price: 159.99,
+    images: [
+      wow_11_1,
+      wow_11_2,
+      wow_11_3,
+      wow_11_4,
+      wow_11_5,
+      wow_11_6,
+      wow_11_7
+    ],
+    availableSizes: ["7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5", "11", "11.5", "12", "13"],
+    measuresIn: {
+      "7": { footLength: 9.625 },
+      "7.5": { footLength: 9.75 },
+      "8": { footLength: 9.875 },
+      "8.5": { footLength: 10 },
+      "9": { footLength: 10.125 },
+      "9.5": { footLength: 10.25 },
+      "10": { footLength: 10.5 },
+      "10.5": { footLength: 10.625 },
+      "11": { footLength: 10.75 },
+      "11.5": { footLength: 10.875 },
+      "12": { footLength: 11 },
+      "13": { footLength: 11.5 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 8,
+    categories: [
+      { id: 5, name: "Sneakers" }
+    ],
+    name: "Way of Wade 808",
+    description: "The Way of Wade 808 combines cutting-edge design with superior functionality. Built with dynamic support technology and responsive cushioning, these shoes deliver exceptional court feel and agility. The lightweight construction and strategic ventilation ensure maximum comfort during intense play.",
+    price: 149.99,
+    images: [
+      wow_808_1,
+      wow_808_2,
+      wow_808_3,
+      wow_808_4,
+      wow_808_5,
+      wow_808_6,
+      wow_808_7
+    ],
+    availableSizes: ["7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5", "11", "11.5", "12", "13"],
+    measuresIn: {
+      "7": { footLength: 9.625 },
+      "7.5": { footLength: 9.75 },
+      "8": { footLength: 9.875 },
+      "8.5": { footLength: 10 },
+      "9": { footLength: 10.125 },
+      "9.5": { footLength: 10.25 },
+      "10": { footLength: 10.5 },
+      "10.5": { footLength: 10.625 },
+      "11": { footLength: 10.75 },
+      "11.5": { footLength: 10.875 },
+      "12": { footLength: 11 },
+      "13": { footLength: 11.5 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 9,
+    categories: [
+      { id: 5, name: "Sneakers" }
+    ],
+    name: "Way of Wade Flash",
+    description: "Experience lightning-quick responsiveness with the Way of Wade Flash. These performance basketball shoes feature advanced energy return technology and a specialized traction pattern for explosive movements. The adaptive fit system and reinforced stability features make them ideal for dynamic players.",
+    price: 139.99,
+    images: [
+      wow_flash_1,
+      wow_flash_2,
+      wow_flash_3,
+      wow_flash_4,
+      wow_flash_5,
+      wow_flash_6,
+      wow_flash_7
+    ],
+    availableSizes: ["7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5", "11", "11.5", "12", "13"],
+    measuresIn: {
+      "7": { footLength: 9.625 },
+      "7.5": { footLength: 9.75 },
+      "8": { footLength: 9.875 },
+      "8.5": { footLength: 10 },
+      "9": { footLength: 10.125 },
+      "9.5": { footLength: 10.25 },
+      "10": { footLength: 10.5 },
+      "10.5": { footLength: 10.625 },
+      "11": { footLength: 10.75 },
+      "11.5": { footLength: 10.875 },
+      "12": { footLength: 11 },
+      "13": { footLength: 11.5 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 10,
+    categories: [
+      { id: 5, name: "Sneakers" }
+    ],
+    name: "Way of Wade Shadow",
+    description: "The Way of Wade Shadow sets a new standard for stealth and style on the court. Featuring a sleek design with premium materials, these shoes offer enhanced lateral support and impact protection. The innovative cushioning system and breathable construction ensure sustained comfort throughout your game.",
+    price: 144.99,
+    images: [
+      wow_shadow_1,
+      wow_shadow_2,
+      wow_shadow_3,
+      wow_shadow_4,
+      wow_shadow_5,
+      wow_shadow_7
+    ],
+    availableSizes: ["7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5", "11", "11.5", "12", "13"],
+    measuresIn: {
+      "7": { footLength: 9.625 },
+      "7.5": { footLength: 9.75 },
+      "8": { footLength: 9.875 },
+      "8.5": { footLength: 10 },
+      "9": { footLength: 10.125 },
+      "9.5": { footLength: 10.25 },
+      "10": { footLength: 10.5 },
+      "10.5": { footLength: 10.625 },
+      "11": { footLength: 10.75 },
+      "11.5": { footLength: 10.875 },
+      "12": { footLength: 11 },
+      "13": { footLength: 11.5 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 11,
+    categories: [
+      {
+        id: 5, name: "Sneakers"
+      }
+    ],
+    
+    name: "Way of Wade Slides",
+    description: "Perfect for pre and post-game comfort, the Way of Wade Slides offer premium recovery support. The ergonomic footbed and soft cushioning provide ultimate relaxation, while the durable construction ensures lasting quality. Featuring a sleek design with signature WOW details for style and comfort.",
+    price: 49.99,
+    images: [
+      wow_slides_1,
+      wow_slides_2,
+      wow_slides_3,
+      wow_slides_4,
+      wow_slides_5,
+      wow_slides_6,
+      wow_slides_7
+    ],
+    availableSizes: ["7", "8", "9", "10", "11", "12", "13"],
+    measuresIn: {
+      "7": { footLength: 9.625 },
+      "8": { footLength: 9.875 },
+      "9": { footLength: 10.125 },
+      "10": { footLength: 10.5 },
+      "11": { footLength: 10.75 },
+      "12": { footLength: 11 },
+      "13": { footLength: 11.5 }
+    },
+    measuresCm: {}
+  }
 ];
 
 function inchesToCm(inches) {
