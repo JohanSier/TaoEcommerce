@@ -86,6 +86,47 @@ import wow_slides_5 from "./Sneakers/WOW_Slides/WOW_Slides_5.webp";
 import wow_slides_6 from "./Sneakers/WOW_Slides/WOW_Slides_6.webp";
 import wow_slides_7 from "./Sneakers/WOW_Slides/WOW_Slides_7.webp";
 
+// New imports for additional shoes
+import wac_red_1 from "./Sneakers/WAC_Red/WAC_Red_1.webp";
+import wac_red_2 from "./Sneakers/WAC_Red/WAC_Red_2.webp";
+import wac_red_3 from "./Sneakers/WAC_Red/WAC_Red_3.webp";
+import wac_red_4 from "./Sneakers/WAC_Red/WAC_Red_4.webp";
+import wac_red_5 from "./Sneakers/WAC_Red/WAC_Red_5.webp";
+import wac_red_6 from "./Sneakers/WAC_Red/WAC_Red_6.webp";
+import wac_red_7 from "./Sneakers/WAC_Red/WAC_Red_7.webp";
+
+import wac_veterans_1 from "./Sneakers/WAC_Veterans/WAC_Veterans_1.webp";
+import wac_veterans_2 from "./Sneakers/WAC_Veterans/WAC_Veterans_2.webp";
+import wac_veterans_3 from "./Sneakers/WAC_Veterans/WAC_Veterans_3.webp";
+import wac_veterans_4 from "./Sneakers/WAC_Veterans/WAC_Veterans_4.webp";
+import wac_veterans_5 from "./Sneakers/WAC_Veterans/WAC_Veterans_5.webp";
+import wac_veterans_6 from "./Sneakers/WAC_Veterans/WAC_Veterans_6.webp";
+import wac_veterans_7 from "./Sneakers/WAC_Veterans/WAC_Veterans_7.webp";
+
+import wow_all_city_1 from "./Sneakers/WOW_ALL_CITY/WOW_ALL_CITY_1.webp";
+import wow_all_city_2 from "./Sneakers/WOW_ALL_CITY/WOW_ALL_CITY_2.webp";
+import wow_all_city_3 from "./Sneakers/WOW_ALL_CITY/WOW_ALL_CITY_3.webp";
+import wow_all_city_4 from "./Sneakers/WOW_ALL_CITY/WOW_ALL_CITY_4.webp";
+import wow_all_city_5 from "./Sneakers/WOW_ALL_CITY/WOW_ALL_CITY_5.webp";
+import wow_all_city_6 from "./Sneakers/WOW_ALL_CITY/WOW_ALL_CITY_6.webp";
+import wow_all_city_7 from "./Sneakers/WOW_ALL_CITY/WOW_ALL_CITY_7.webp";
+
+import wow_overtown_1 from "./Sneakers/WOW_Overtown/WOW_Overtown_1.webp";
+import wow_overtown_2 from "./Sneakers/WOW_Overtown/WOW_Overtown_2.webp";
+import wow_overtown_3 from "./Sneakers/WOW_Overtown/WOW_Overtown_3.webp";
+import wow_overtown_4 from "./Sneakers/WOW_Overtown/WOW_Overtown_4.webp";
+import wow_overtown_5 from "./Sneakers/WOW_Overtown/WOW_Overtown_5.webp";
+import wow_overtown_6 from "./Sneakers/WOW_Overtown/WOW_Overtown_6.webp";
+import wow_overtown_7 from "./Sneakers/WOW_Overtown/WOW_Overtown_7.webp";
+
+import wade_808_4_ultra_1 from "./Sneakers/WOW_8_4/Wade_808_4_Ultra.webp";
+import wade_808_4_ultra_2 from "./Sneakers/WOW_8_4/Wade_808_4_Ultra_2.webp";
+import wade_808_4_ultra_3 from "./Sneakers/WOW_8_4/Wade_808_4_Ultra_3.webp";
+import wade_808_4_ultra_4 from "./Sneakers/WOW_8_4/Wade_808_4_Ultra_4.webp";
+import wade_808_4_ultra_5 from "./Sneakers/WOW_8_4/Wade_808_4_Ultra_5.webp";
+import wade_808_4_ultra_6 from "./Sneakers/WOW_8_4/Wade_808_4_Ultra_6.webp";
+import wade_808_4_ultra_7 from "./Sneakers/WOW_8_4/Wade_808_4_Ultra_7.webp";
+
 const categories = [
   {
     id: 1,
@@ -425,6 +466,176 @@ const products = [
       "9": { footLength: 10.125 },
       "10": { footLength: 10.5 },
       "11": { footLength: 10.75 },
+      "12": { footLength: 11 },
+      "13": { footLength: 11.5 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 12,
+    categories: [
+      { id: 5, name: "Sneakers" }
+    ],
+    name: "Way of Wade All City Red",
+    description: "The Way of Wade All City Red edition brings bold style to the court with its vibrant colorway. Engineered for performance and durability, these shoes feature responsive cushioning and a supportive fit. The premium materials and striking design make them a standout choice for players who want to make a statement.",
+    price: 129.99,
+    images: [
+      wac_red_1,
+      wac_red_2,
+      wac_red_3,
+      wac_red_4,
+      wac_red_5,
+      wac_red_6,
+      wac_red_7
+    ],
+    availableSizes: ["7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5", "11", "11.5", "12", "13"],
+    measuresIn: {
+      "7": { footLength: 9.625 },
+      "7.5": { footLength: 9.75 },
+      "8": { footLength: 9.875 },
+      "8.5": { footLength: 10 },
+      "9": { footLength: 10.125 },
+      "9.5": { footLength: 10.25 },
+      "10": { footLength: 10.5 },
+      "10.5": { footLength: 10.625 },
+      "11": { footLength: 10.75 },
+      "11.5": { footLength: 10.875 },
+      "12": { footLength: 11 },
+      "13": { footLength: 11.5 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 13,
+    categories: [
+      { id: 5, name: "Sneakers" }
+    ],
+    name: "Way of Wade All City Veterans",
+    description: "The Way of Wade All City Veterans edition pays tribute to the game's heritage with its classic design and premium materials. Built for comfort and performance, these shoes feature advanced cushioning technology and a supportive fit. The timeless design and quality construction make them a perfect choice for players who appreciate tradition and performance.",
+    price: 134.99,
+    images: [
+      wac_veterans_1,
+      wac_veterans_2,
+      wac_veterans_3,
+      wac_veterans_4,
+      wac_veterans_5,
+      wac_veterans_6,
+      wac_veterans_7
+    ],
+    availableSizes: ["7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5", "11", "11.5", "12", "13"],
+    measuresIn: {
+      "7": { footLength: 9.625 },
+      "7.5": { footLength: 9.75 },
+      "8": { footLength: 9.875 },
+      "8.5": { footLength: 10 },
+      "9": { footLength: 10.125 },
+      "9.5": { footLength: 10.25 },
+      "10": { footLength: 10.5 },
+      "10.5": { footLength: 10.625 },
+      "11": { footLength: 10.75 },
+      "11.5": { footLength: 10.875 },
+      "12": { footLength: 11 },
+      "13": { footLength: 11.5 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 14,
+    categories: [
+      { id: 5, name: "Sneakers" }
+    ],
+    name: "Way of Wade All City",
+    description: "The Way of Wade All City combines street style with court performance. Featuring a sleek design and responsive cushioning, these shoes deliver exceptional comfort and support. The durable construction and modern aesthetic make them perfect for both on-court performance and off-court style.",
+    price: 124.99,
+    images: [
+      wow_all_city_1,
+      wow_all_city_2,
+      wow_all_city_3,
+      wow_all_city_4,
+      wow_all_city_5,
+      wow_all_city_6,
+      wow_all_city_7
+    ],
+    availableSizes: ["7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5", "11", "11.5", "12", "13"],
+    measuresIn: {
+      "7": { footLength: 9.625 },
+      "7.5": { footLength: 9.75 },
+      "8": { footLength: 9.875 },
+      "8.5": { footLength: 10 },
+      "9": { footLength: 10.125 },
+      "9.5": { footLength: 10.25 },
+      "10": { footLength: 10.5 },
+      "10.5": { footLength: 10.625 },
+      "11": { footLength: 10.75 },
+      "11.5": { footLength: 10.875 },
+      "12": { footLength: 11 },
+      "13": { footLength: 11.5 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 15,
+    categories: [
+      { id: 5, name: "Sneakers" }
+    ],
+    name: "Way of Wade Overtown",
+    description: "The Way of Wade Overtown edition brings Miami's vibrant culture to the court. Featuring a unique design inspired by the city's energy, these shoes offer superior comfort and performance. The premium materials and innovative technology make them a perfect choice for players who want to stand out while maintaining top-tier performance.",
+    price: 139.99,
+    images: [
+      wow_overtown_1,
+      wow_overtown_2,
+      wow_overtown_3,
+      wow_overtown_4,
+      wow_overtown_5,
+      wow_overtown_6,
+      wow_overtown_7
+    ],
+    availableSizes: ["7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5", "11", "11.5", "12", "13"],
+    measuresIn: {
+      "7": { footLength: 9.625 },
+      "7.5": { footLength: 9.75 },
+      "8": { footLength: 9.875 },
+      "8.5": { footLength: 10 },
+      "9": { footLength: 10.125 },
+      "9.5": { footLength: 10.25 },
+      "10": { footLength: 10.5 },
+      "10.5": { footLength: 10.625 },
+      "11": { footLength: 10.75 },
+      "11.5": { footLength: 10.875 },
+      "12": { footLength: 11 },
+      "13": { footLength: 11.5 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 16,
+    categories: [
+      { id: 5, name: "Sneakers" }
+    ],
+    name: "Way of Wade 808 4 Ultra",
+    description: "The Way of Wade 808 4 Ultra takes performance to the next level with its advanced technology and premium construction. Featuring enhanced cushioning and support, these shoes deliver exceptional comfort and responsiveness. The sleek design and innovative features make them a top choice for players seeking maximum performance and style.",
+    price: 149.99,
+    images: [
+      wade_808_4_ultra_1,
+      wade_808_4_ultra_2,
+      wade_808_4_ultra_3,
+      wade_808_4_ultra_4,
+      wade_808_4_ultra_5,
+      wade_808_4_ultra_6,
+      wade_808_4_ultra_7
+    ],
+    availableSizes: ["7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5", "11", "11.5", "12", "13"],
+    measuresIn: {
+      "7": { footLength: 9.625 },
+      "7.5": { footLength: 9.75 },
+      "8": { footLength: 9.875 },
+      "8.5": { footLength: 10 },
+      "9": { footLength: 10.125 },
+      "9.5": { footLength: 10.25 },
+      "10": { footLength: 10.5 },
+      "10.5": { footLength: 10.625 },
+      "11": { footLength: 10.75 },
+      "11.5": { footLength: 10.875 },
       "12": { footLength: 11 },
       "13": { footLength: 11.5 }
     },

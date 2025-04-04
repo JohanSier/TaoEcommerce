@@ -25,6 +25,7 @@ const Wrapper = styled.section`
   display: flex;
   position: relative;
   flex-direction: column;
+  gap: 12px;
 
   @media (min-width: 800px) {
     flex-direction: row;
@@ -36,7 +37,7 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  aspect-ratio: 2/1.5;
+  aspect-ratio: 2/1.6;
 
   @media (max-width: 800px) {
     display: none;
@@ -46,7 +47,7 @@ const Grid = styled.div`
 const GridItem = styled.div`
   width: 100%;
   position: relative;
-  aspect-ratio: 3/4;
+  aspect-ratio: 3/2.8;
 `;
 
 /* Skeleton Loader Animation */
