@@ -187,10 +187,14 @@ const StyledProductDetails = styled(ProductDetails)`
 `;
 
 const SpecificProductTemplate = () => {
-  const productsMayLike = products.slice(0, 5);
   const { id, category } = useParams();
   const product = products.find((p) => p.id === parseInt(id));
   const [imageLoaded, setImageLoaded] = useState(false);
+
+  // Get related products from the same category
+  const relatedProducts = products
+    .filter(p => p.categoryId === product?.categoryId && p.id !== parseInt(id))
+    .slice(0, 5); // Show maximum 4 related products
 
   if (!product) {
     return <NotFound />;
@@ -285,19 +289,17 @@ const SpecificProductTemplate = () => {
       <MayAlsoLike>
         <Heading>You may also like</Heading>
         <Products>
-          {productsMayLike
-            .filter((p) => p.id !== parseInt(id))
-            .map((product) => (
-              <ProductCard
-                style={{ flexGrow: "1" }}
-                key={product.id}
-                productTitle={product.name}
-                price={product.price}
-                srcImage={product.images[0]}
-                hoverImage={product.images[1]}
-                productLink={`/products/${category}/${product.id}`}
-              />
-            ))}
+          {relatedProducts.map((product) => (
+            <ProductCard
+              style={{ flexGrow: "1" }}
+              key={product.id}
+              productTitle={product.name}
+              price={product.price}
+              srcImage={product.images[0]}
+              hoverImage={product.images[1]}
+              productLink={`/products/${category}/${product.id}`}
+            />
+          ))}
         </Products>
       </MayAlsoLike>
     </Container>
