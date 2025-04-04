@@ -5,6 +5,8 @@ import {
   HiOutlineUser,
   HiOutlineShoppingBag,
   HiOutlineSearch,
+  HiMenu,
+  HiX,
 } from "react-icons/hi";
 import LogoImg from "../assets/Images/TaoHoops-logo.svg";
 import { useSizeGuide } from "../context/SizeGuideContext";
@@ -31,7 +33,12 @@ const Wrapper = styled.div`
 `;
 
 const CenterLogo = styled.div`
-  flex-shrink: 0; /* Evita que el logo se redimensione */
+  flex-shrink: 0;
+  position: absolute;
+  left: 50%;
+  margin-top: 5px;
+  transform: translateX(-50%);
+  width: 140px;
 `;
 
 const StyledLink = styled(Link)`
@@ -48,6 +55,12 @@ const StyledLink = styled(Link)`
     border-radius: 8px;
     padding-right: 0;
     padding-left: 0.8rem;
+
+    @media (max-width: 850px) {
+      width: auto;
+      border: none;
+      margin-top: -5px;
+    }
   }
 `;
 
@@ -84,13 +97,15 @@ const Input = styled.input`
   outline: none;
   font-variation-settings: "wght" 500;
   cursor: pointer;
-  color: var(
-    --white
-  ); // This instruction is crucial to show the white text in other devices, otherwise it'll show it in black
+  color: var(--white);
 
   &::placeholder {
     font-size: 1.1rem;
     color: var(--white);
+  }
+
+  @media (max-width: 850px) {
+    display: none;
   }
 `;
 
@@ -103,6 +118,10 @@ const LeftLinks = styled.ul`
   font-size: 0.8rem;
   font-variation-settings: "wght" 600;
   gap: 1rem;
+
+  @media (max-width: 1250px) {
+    display: none;
+  }
 `;
 
 const Logo = styled.img`
@@ -118,14 +137,77 @@ const RightLinks = styled(LeftLinks)`
   font-size: 1.5rem;
 `;
 
+const MobileMenu = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 100vh;
+  background: var(--secondary);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  transform: translateX(${props => props.isOpen ? '0' : '-100%'});
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+`;
+
+const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: ${props => props.isOpen ? 1 : 0};
+  visibility: ${props => props.isOpen ? 'visible' : 'hidden'};
+  transition: opacity 0.3s ease-in-out;
+  z-index: 999;
+`;
+
+const MobileMenuHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+`;
+
+const MobileMenuLinks = styled.ul`
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+`;
+
+const MobileMenuLink = styled(Link)`
+  text-decoration: none;
+  color: var(--white);
+  font-size: 1.2rem;
+  font-variation-settings: "wght" 600;
+`;
+
+const BurgerButton = styled.button`
+  display: none;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+
+  @media (max-width: 1250px) {
+    display: block;
+  }
+`;
+
 const NavBar = () => {
-  const location = useLocation(); // Get the current URL
+  const location = useLocation();
   const isHomepage = location.pathname === "/";
   const [background, setBackground] = useState(false);
   const { isSizeGuideVisible } = useSizeGuide();
-  //Cart Logic
   const [cartOpen, setCartOpen] = useState(false);
-  //Access to context
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { cart } = useCart();
 
   useEffect(() => {
@@ -140,50 +222,88 @@ const NavBar = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [mobileMenuOpen]);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const handleLinkClick = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
-    <Wrapper
-      background={background}
-      isHomepage={isHomepage}
-      isSizeGuideVisible={isSizeGuideVisible}
-    >
-      <LeftLinks>
-        <StyledLink to="/products/all">SHOP ALL</StyledLink>
-        <StyledLink to="/products/tees">TEES</StyledLink>
-        <StyledLink to="/products/jerseys">JERSEYS</StyledLink>
-        <StyledLink to="/products/shorts">SHORTS</StyledLink>
-        <StyledLink to="/products/sneakers">SNEAKERS</StyledLink>
-        <StyledLink to="/products/accessories">ACCESSORIES</StyledLink>
-      </LeftLinks>
+    <>
+      <Wrapper
+        background={background}
+        isHomepage={isHomepage}
+        isSizeGuideVisible={isSizeGuideVisible}
+      >
+        <BurgerButton onClick={() => setMobileMenuOpen(true)}>
+          <HiMenu />
+        </BurgerButton>
 
-      <CenterLogo>
-        <StyledLink to="/" onClick={scrollToTop}>
-          <Logo src={LogoImg} alt="TaoHoops logo" />
-        </StyledLink>
-      </CenterLogo>
+        <LeftLinks>
+          <StyledLink to="/products/all">SHOP ALL</StyledLink>
+          <StyledLink to="/products/tees">TEES</StyledLink>
+          <StyledLink to="/products/jerseys">JERSEYS</StyledLink>
+          <StyledLink to="/products/shorts">SHORTS</StyledLink>
+          <StyledLink to="/products/sneakers">SNEAKERS</StyledLink>
+          <StyledLink to="/products/accessories">ACCESSORIES</StyledLink>
+        </LeftLinks>
 
-      <RightLinks>
-        <StyledLink to="/" className="input-btn">
-          <HiOutlineSearch aria-label="Search Icon" title="Search Item" />
-          <Input type="text" placeholder="Buscar" />
-        </StyledLink>
+        <CenterLogo>
+          <StyledLink to="/" onClick={scrollToTop}>
+            <Logo src={LogoImg} alt="TaoHoops logo" />
+          </StyledLink>
+        </CenterLogo>
 
-        <StyledLink to="/log-in">
-          <HiOutlineUser aria-label="Profile Icon" title="Go to profile page" />
-        </StyledLink>
+        <RightLinks>
+          <StyledLink to="/" className="input-btn">
+            <HiOutlineSearch aria-label="Search Icon" title="Search Item" />
+            <Input type="text" placeholder="Buscar" />
+          </StyledLink>
 
-        <CartLink onClick={() => setCartOpen(true)}>
-          <HiOutlineShoppingBag aria-label="Cart Icon" title="Go to the cart" />
-          {cart.items.length > 0 && (
-            <CartItemsCounter>{cart.items.length}</CartItemsCounter>
-          )}
-        </CartLink>
-        {cartOpen && <Cart onClose={() => setCartOpen(false)} />}
-      </RightLinks>
-    </Wrapper>
+          <StyledLink to="/log-in">
+            <HiOutlineUser aria-label="Profile Icon" title="Go to profile page" />
+          </StyledLink>
+
+          <CartLink onClick={() => setCartOpen(true)}>
+            <HiOutlineShoppingBag aria-label="Cart Icon" title="Go to the cart" />
+            {cart.items.length > 0 && (
+              <CartItemsCounter>{cart.items.length}</CartItemsCounter>
+            )}
+          </CartLink>
+          {cartOpen && <Cart onClose={() => setCartOpen(false)} />}
+        </RightLinks>
+      </Wrapper>
+
+      <Overlay isOpen={mobileMenuOpen} onClick={() => setMobileMenuOpen(false)} />
+      <MobileMenu isOpen={mobileMenuOpen}>
+        <MobileMenuHeader>
+          <StyledLink to="/" onClick={scrollToTop}>
+            <Logo src={LogoImg} alt="TaoHoops logo" />
+          </StyledLink>
+          <BurgerButton onClick={() => setMobileMenuOpen(false)}>
+            <HiX />
+          </BurgerButton>
+        </MobileMenuHeader>
+        <MobileMenuLinks>
+          <MobileMenuLink to="/products/all" onClick={handleLinkClick}>SHOP ALL</MobileMenuLink>
+          <MobileMenuLink to="/products/tees" onClick={handleLinkClick}>TEES</MobileMenuLink>
+          <MobileMenuLink to="/products/jerseys" onClick={handleLinkClick}>JERSEYS</MobileMenuLink>
+          <MobileMenuLink to="/products/shorts" onClick={handleLinkClick}>SHORTS</MobileMenuLink>
+          <MobileMenuLink to="/products/sneakers" onClick={handleLinkClick}>SNEAKERS</MobileMenuLink>
+          <MobileMenuLink to="/products/accessories" onClick={handleLinkClick}>ACCESSORIES</MobileMenuLink>
+        </MobileMenuLinks>
+      </MobileMenu>
+    </>
   );
 };
 
