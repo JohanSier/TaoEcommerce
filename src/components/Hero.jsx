@@ -36,6 +36,12 @@ const Container = styled.div`
     border-top-left-radius: 1.5rem;
     border-top-right-radius: 1.5rem;
   }
+
+  @media screen and (max-width: 1000px){
+    height: 30rem;
+    flex-wrap: wrap;
+    gap: 0;
+  }
 `;
 
 const Copys = styled.div`
@@ -44,6 +50,17 @@ const Copys = styled.div`
   align-items: start;
   position: relative;
   z-index: 900;
+
+  @media screen and (max-width: 1000px){
+    width: 100%;
+    flex-grow:1;
+    margin-top: 10rem;
+  }
+
+  @media screen and (max-width: 600px){
+    margin-top: 14rem;
+  }
+
 `;
 
 const Eyebrow = styled.div`
@@ -58,6 +75,11 @@ const HeroHeading = styled.h1`
   font-size: 5rem;
   font-variation-settings: "wght" 600;
   margin: 0;
+  width: 100%;
+
+  @media screen and (max-width: 600px){
+    font-size: 2.8rem;
+  }
 `;
 
 const Text = styled.div`
@@ -65,6 +87,11 @@ const Text = styled.div`
   font-size: 1.1rem;
   font-variation-settings: "wght" 400;
   margin: 0;
+  width: 100%;
+
+  @media screen and (max-width: 600px){
+    font-size: .9rem;
+  }
 `;
 
 const ButtonsContainer = styled.div`
@@ -73,6 +100,10 @@ const ButtonsContainer = styled.div`
   gap: 12px;
   position: relative;
   z-index: 999;
+  @media screen and (max-width: 900px){
+    margin-top:0;
+    flex-grow:1;
+  }
 `;
 
 const Button = styled(Link)`
