@@ -30,6 +30,10 @@ const FilterAndResults = styled.div`
   left: 0;
   background: var(--white);
   padding: 1rem;
+
+  @media (max-width: 850px) {
+    top: 78px;
+  }
 `;
 
 const FilterButton = styled.button`
@@ -64,6 +68,12 @@ const ProductCardsContainer = styled.section`
   align-items: center;
   justify-content: center;
   gap: 1rem;
+
+
+`;
+
+const ProductCardWrapper = styled.div`
+  width: 280px;
 `;
 
 const ProductsPage = () => {
@@ -107,14 +117,16 @@ function getCategoryId(category) {
 
       <ProductCardsContainer>
         {filteredProducts.map((product) => (
-          <ProductCard
-            key={product.id}
-            productTitle={product.name}
-            price={product.price}
-            srcImage={product.images[0]}
-            hoverImage={product.images[1]}
-            productLink={`/products/${category || "all"}/${product.id}`}
-          />
+          <ProductCardWrapper>
+            <ProductCard
+              key={product.id}
+              productTitle={product.name}
+              price={product.price}
+              srcImage={product.images[0]}
+              hoverImage={product.images[1]}
+              productLink={`/products/${category || "all"}/${product.id}`}
+            />
+          </ProductCardWrapper>
         ))}
       </ProductCardsContainer>
     </Container>

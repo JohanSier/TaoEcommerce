@@ -127,6 +127,65 @@ import wade_808_4_ultra_5 from "./Sneakers/WOW_8_4/Wade_808_4_Ultra_5.webp";
 import wade_808_4_ultra_6 from "./Sneakers/WOW_8_4/Wade_808_4_Ultra_6.webp";
 import wade_808_4_ultra_7 from "./Sneakers/WOW_8_4/Wade_808_4_Ultra_7.webp";
 
+// Nuevas importaciones de camisetas
+import among_roses_wolves_1 from "./Tees/Among_Roses_Wolves/Among_Roses_Wolves_1.webp";
+import among_roses_wolves_2 from "./Tees/Among_Roses_Wolves/Among_Roses_Wolves_2.webp";
+import among_roses_wolves_3 from "./Tees/Among_Roses_Wolves/Among_Roses_Wolves_3.webp";
+import among_roses_wolves_4 from "./Tees/Among_Roses_Wolves/Among_Roses_Wolves_4.webp";
+import among_roses_wolves_5 from "./Tees/Among_Roses_Wolves/Among_Roses_Wolves_5.webp";
+import among_roses_wolves_6 from "./Tees/Among_Roses_Wolves/Among_Roses_Wolves_6.webp";
+
+import demon_slayer_wolves_1 from "./Tees/DemonSlayer_Wolves/DemonSlayer_Wolves_1.webp";
+import demon_slayer_wolves_2 from "./Tees/DemonSlayer_Wolves/DemonSlayer_Wolves_2.webp";
+import demon_slayer_wolves_3 from "./Tees/DemonSlayer_Wolves/DemonSlayer_Wolves_3.webp";
+import demon_slayer_wolves_4 from "./Tees/DemonSlayer_Wolves/DemonSlayer_Wolves_4.webp";
+import demon_slayer_wolves_5 from "./Tees/DemonSlayer_Wolves/DemonSlayer_Wolves_5.webp";
+import demon_slayer_wolves_6 from "./Tees/DemonSlayer_Wolves/DemonSlayer_Wolves_6.webp";
+import demon_slayer_wolves_7 from "./Tees/DemonSlayer_Wolves/DemonSlayer_Wolves_7.webp";
+
+import malbon_1 from "./Tees/Malbon/Malbon_1.webp";
+import malbon_2 from "./Tees/Malbon/Malbon_2.webp";
+import malbon_3 from "./Tees/Malbon/Malbon_3.webp";
+import malbon_4 from "./Tees/Malbon/Malbon_4.webp";
+import malbon_5 from "./Tees/Malbon/Malbon_5.webp";
+
+import wolves_angel_1 from "./Tees/Wolves_Angel/Wolves_Angel_1.webp";
+import wolves_angel_2 from "./Tees/Wolves_Angel/Wolves_Angel_2.webp";
+import wolves_angel_3 from "./Tees/Wolves_Angel/Wolves_Angel_3.webp";
+import wolves_angel_4 from "./Tees/Wolves_Angel/Wolves_Angel_4.webp";
+import wolves_angel_5 from "./Tees/Wolves_Angel/Wolves_Angel_5.webp";
+import wolves_angel_6 from "./Tees/Wolves_Angel/Wolves_Angel_6.webp";
+import wolves_angel_7 from "./Tees/Wolves_Angel/Wolves_Angel_7.webp";
+import wolves_angel_8 from "./Tees/Wolves_Angel/Wolves_Angel_8.webp";
+
+import wolves_gatubela_1 from "./Tees/Wolves_Gatubela/Wolves_Gatubela_1.webp";
+import wolves_gatubela_2 from "./Tees/Wolves_Gatubela/Wolves_Gatubela_2.webp";
+import wolves_gatubela_3 from "./Tees/Wolves_Gatubela/Wolves_Gatubela_3.webp";
+import wolves_gatubela_4 from "./Tees/Wolves_Gatubela/Wolves_Gatubela_4.webp";
+import wolves_gatubela_5 from "./Tees/Wolves_Gatubela/Wolves_Gatubela_5.webp";
+import wolves_gatubela_6 from "./Tees/Wolves_Gatubela/Wolves_Gatubela_6.webp";
+import wolves_gatubela_7 from "./Tees/Wolves_Gatubela/Wolves_Gatubela_7.webp";
+
+import wolves_spiderman_1 from "./Tees/Wolves_Spiderman/Wolves_Spiderman_1.webp";
+import wolves_spiderman_2 from "./Tees/Wolves_Spiderman/Wolves_Spiderman_2.webp";
+import wolves_spiderman_3 from "./Tees/Wolves_Spiderman/Wolves_Spiderman_3.webp";
+import wolves_spiderman_4 from "./Tees/Wolves_Spiderman/Wolves_Spiderman_4.webp";
+import wolves_spiderman_5 from "./Tees/Wolves_Spiderman/Wolves_Spiderman_5.webp";
+import wolves_spiderman_6 from "./Tees/Wolves_Spiderman/Wolves_Spiderman_6.webp";
+import wolves_spiderman_7 from "./Tees/Wolves_Spiderman/Wolves_Spiderman_7.webp";
+import wolves_spiderman_8 from "./Tees/Wolves_Spiderman/Wolves_Spiderman_8.webp";
+
+import bucketsquad_ball_1 from "./Tees/Bucketsquad_Ball/Bucketsquad_Ball_1.webp";
+import bucketsquad_ball_2 from "./Tees/Bucketsquad_Ball/Bucketsquad_Ball_2.webp";
+import bucketsquad_ball_3 from "./Tees/Bucketsquad_Ball/Bucketsquad_Ball_3.webp";
+import bucketsquad_ball_4 from "./Tees/Bucketsquad_Ball/Bucketsquad_Ball_4.webp";
+import bucketsquad_ball_5 from "./Tees/Bucketsquad_Ball/Bucketsquad_Ball_5.webp";
+
+import undefeated_supernova_1 from "./Tees/Undefeated_Supernova/Undefeated_Supernova_1.webp";
+import undefeated_supernova_2 from "./Tees/Undefeated_Supernova/Undefeated_Supernova_2.webp";
+import undefeated_supernova_3 from "./Tees/Undefeated_Supernova/Undefeated_Supernova_3.webp";
+import undefeated_supernova_4 from "./Tees/Undefeated_Supernova/Undefeated_Supernova_4.webp";
+
 const categories = [
   {
     id: 1,
@@ -638,6 +697,213 @@ const products = [
       "11.5": { footLength: 10.875 },
       "12": { footLength: 11 },
       "13": { footLength: 11.5 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 17,
+    categories: [
+      { id: 2, name: "Tees" }
+    ],
+    name: "Among Roses Wolves Tee",
+    description: "A unique blend of street style and basketball culture, featuring a striking wolf design among roses. Perfect for those who want to make a statement both on and off the court.",
+    price: 49.99,
+    images: [
+      among_roses_wolves_1,
+      among_roses_wolves_2,
+      among_roses_wolves_3,
+      among_roses_wolves_4,
+      among_roses_wolves_5,
+      among_roses_wolves_6
+    ],
+    availableSizes: ["S", "M", "L", "XL", "2XL"],
+    measuresIn: {
+      S: { chestWidth: 18.5, sleeveLength: 7.5, itemLength: 27 },
+      M: { chestWidth: 20, sleeveLength: 8, itemLength: 28 },
+      L: { chestWidth: 21.5, sleeveLength: 8.5, itemLength: 29 },
+      XL: { chestWidth: 23, sleeveLength: 9, itemLength: 30 },
+      "2XL": { chestWidth: 24.5, sleeveLength: 9.5, itemLength: 31 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 18,
+    categories: [
+      { id: 2, name: "Tees" }
+    ],
+    name: "Demon Slayer Wolves Tee",
+    description: "A bold design inspired by street basketball culture, featuring a demon slayer wolf motif. This tee combines urban style with basketball heritage.",
+    price: 54.99,
+    images: [
+      demon_slayer_wolves_1,
+      demon_slayer_wolves_2,
+      demon_slayer_wolves_3,
+      demon_slayer_wolves_4,
+      demon_slayer_wolves_5,
+      demon_slayer_wolves_6,
+      demon_slayer_wolves_7
+    ],
+    availableSizes: ["S", "M", "L", "XL", "2XL"],
+    measuresIn: {
+      S: { chestWidth: 18.5, sleeveLength: 7.5, itemLength: 27 },
+      M: { chestWidth: 20, sleeveLength: 8, itemLength: 28 },
+      L: { chestWidth: 21.5, sleeveLength: 8.5, itemLength: 29 },
+      XL: { chestWidth: 23, sleeveLength: 9, itemLength: 30 },
+      "2XL": { chestWidth: 24.5, sleeveLength: 9.5, itemLength: 31 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 19,
+    categories: [
+      { id: 2, name: "Tees" }
+    ],
+    name: "Malbon Basketball Tee",
+    description: "A premium quality tee featuring the iconic Malbon basketball design. Perfect for those who appreciate both street style and basketball culture.",
+    price: 59.99,
+    images: [
+      malbon_1,
+      malbon_2,
+      malbon_3,
+      malbon_4,
+      malbon_5
+    ],
+    availableSizes: ["S", "M", "L", "XL"],
+    measuresIn: {
+      S: { chestWidth: 18.5, sleeveLength: 7.5, itemLength: 27 },
+      M: { chestWidth: 20, sleeveLength: 8, itemLength: 28 },
+      L: { chestWidth: 21.5, sleeveLength: 8.5, itemLength: 29 },
+      XL: { chestWidth: 23, sleeveLength: 9, itemLength: 30 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 20,
+    categories: [
+      { id: 2, name: "Tees" }
+    ],
+    name: "Wolves Angel Tee",
+    description: "A celestial-inspired design featuring a wolf angel motif. This tee combines street style with a touch of mysticism, perfect for those who want to stand out.",
+    price: 49.99,
+    images: [
+      wolves_angel_1,
+      wolves_angel_2,
+      wolves_angel_3,
+      wolves_angel_4,
+      wolves_angel_5,
+      wolves_angel_6,
+      wolves_angel_7,
+      wolves_angel_8
+    ],
+    availableSizes: ["S", "M", "L", "XL", "2XL"],
+    measuresIn: {
+      S: { chestWidth: 18.5, sleeveLength: 7.5, itemLength: 27 },
+      M: { chestWidth: 20, sleeveLength: 8, itemLength: 28 },
+      L: { chestWidth: 21.5, sleeveLength: 8.5, itemLength: 29 },
+      XL: { chestWidth: 23, sleeveLength: 9, itemLength: 30 },
+      "2XL": { chestWidth: 24.5, sleeveLength: 9.5, itemLength: 31 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 21,
+    categories: [
+      { id: 2, name: "Tees" }
+    ],
+    name: "Wolves Gatubela Tee",
+    description: "A unique fusion of street style and comic book culture, featuring a wolf in a catwoman-inspired design. Perfect for those who want to make a bold statement.",
+    price: 54.99,
+    images: [
+      wolves_gatubela_1,
+      wolves_gatubela_2,
+      wolves_gatubela_3,
+      wolves_gatubela_4,
+      wolves_gatubela_5,
+      wolves_gatubela_6,
+      wolves_gatubela_7
+    ],
+    availableSizes: ["S", "M", "L", "XL", "2XL"],
+    measuresIn: {
+      S: { chestWidth: 18.5, sleeveLength: 7.5, itemLength: 27 },
+      M: { chestWidth: 20, sleeveLength: 8, itemLength: 28 },
+      L: { chestWidth: 21.5, sleeveLength: 8.5, itemLength: 29 },
+      XL: { chestWidth: 23, sleeveLength: 9, itemLength: 30 },
+      "2XL": { chestWidth: 24.5, sleeveLength: 9.5, itemLength: 31 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 22,
+    categories: [
+      { id: 2, name: "Tees" }
+    ],
+    name: "Wolves Spiderman Tee",
+    description: "A creative blend of street style and superhero culture, featuring a wolf in a Spiderman-inspired design. Perfect for those who want to showcase their unique style.",
+    price: 54.99,
+    images: [
+      wolves_spiderman_1,
+      wolves_spiderman_2,
+      wolves_spiderman_3,
+      wolves_spiderman_4,
+      wolves_spiderman_5,
+      wolves_spiderman_6,
+      wolves_spiderman_7,
+      wolves_spiderman_8
+    ],
+    availableSizes: ["S", "M", "L", "XL", "2XL"],
+    measuresIn: {
+      S: { chestWidth: 18.5, sleeveLength: 7.5, itemLength: 27 },
+      M: { chestWidth: 20, sleeveLength: 8, itemLength: 28 },
+      L: { chestWidth: 21.5, sleeveLength: 8.5, itemLength: 29 },
+      XL: { chestWidth: 23, sleeveLength: 9, itemLength: 30 },
+      "2XL": { chestWidth: 24.5, sleeveLength: 9.5, itemLength: 31 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 23,
+    categories: [
+      { id: 2, name: "Tees" }
+    ],
+    name: "Bucketsquad Ball Tee",
+    description: "A basketball-inspired design featuring the iconic Bucketsquad logo. Perfect for those who want to show their love for the game in style.",
+    price: 44.99,
+    images: [
+      bucketsquad_ball_1,
+      bucketsquad_ball_2,
+      bucketsquad_ball_3,
+      bucketsquad_ball_4,
+      bucketsquad_ball_5
+    ],
+    availableSizes: ["S", "M", "L", "XL"],
+    measuresIn: {
+      S: { chestWidth: 18.5, sleeveLength: 7.5, itemLength: 27 },
+      M: { chestWidth: 20, sleeveLength: 8, itemLength: 28 },
+      L: { chestWidth: 21.5, sleeveLength: 8.5, itemLength: 29 },
+      XL: { chestWidth: 23, sleeveLength: 9, itemLength: 30 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 24,
+    categories: [
+      { id: 2, name: "Tees" }
+    ],
+    name: "Undefeated Supernova Tee",
+    description: "A premium quality tee featuring the iconic Undefeated Supernova design. Perfect for those who want to showcase their street style with a touch of basketball culture.",
+    price: 59.99,
+    images: [
+      undefeated_supernova_1,
+      undefeated_supernova_2,
+      undefeated_supernova_3,
+      undefeated_supernova_4
+    ],
+    availableSizes: ["S", "M", "L", "XL"],
+    measuresIn: {
+      S: { chestWidth: 18.5, sleeveLength: 7.5, itemLength: 27 },
+      M: { chestWidth: 20, sleeveLength: 8, itemLength: 28 },
+      L: { chestWidth: 21.5, sleeveLength: 8.5, itemLength: 29 },
+      XL: { chestWidth: 23, sleeveLength: 9, itemLength: 30 }
     },
     measuresCm: {}
   }

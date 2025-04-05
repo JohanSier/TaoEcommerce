@@ -7,7 +7,7 @@ const Container = styled(Link)`
   display: flex;
   flex-direction: column;
   width: 17rem;
-  height: 100%;
+  height: 24rem;
   border: 1px solid var(--greyE);
   outline: none;
 `;
@@ -33,12 +33,18 @@ const ProductInfo = styled.div`
   border-radius: inherit;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
+  height: 5.69rem; /* Fixed height for product info section */
 `;
 
 const ProductTitle = styled.h5`
   font-size: 1.1rem;
   font-variation-settings: "wght" 600;
+  text-align: left;
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
 `;
 
 const Price = styled.p`
