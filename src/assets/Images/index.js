@@ -17,14 +17,14 @@ import bape_shorts_4 from "./Bape_Shorts/Bape_Shorts_4.webp";
 import bape_shorts_5 from "./Bape_Shorts/Bape_Shorts_5.webp";
 import bape_shorts_6 from "./Bape_Shorts/Bape_Shorts_6.webp";
 
-import bape_tee_1 from "./Bape_Tee/Bape_Tee_1.webp";
-import bape_tee_2 from "./Bape_Tee/Bape_Tee_2.webp";
-import bape_tee_3 from "./Bape_Tee/Bape_Tee_3.webp";
-import bape_tee_4 from "./Bape_Tee/Bape_Tee_4.webp";
-import bape_tee_5 from "./Bape_Tee/Bape_Tee_5.webp";
-import bape_tee_6 from "./Bape_Tee/Bape_Tee_6.webp";
-import bape_tee_7 from "./Bape_Tee/Bape_Tee_7.webp";
-import bape_tee_8 from "./Bape_Tee/Bape_Tee_8.jpg";
+import bape_tee_1 from "./Tees/Bape_Tee/Bape_Tee_1.webp";
+import bape_tee_2 from "./Tees/Bape_Tee/Bape_Tee_2.webp";
+import bape_tee_3 from "./Tees/Bape_Tee/Bape_Tee_3.webp";
+import bape_tee_4 from "./Tees/Bape_Tee/Bape_Tee_4.webp";
+import bape_tee_5 from "./Tees/Bape_Tee/Bape_Tee_5.webp";
+import bape_tee_6 from "./Tees/Bape_Tee/Bape_Tee_6.webp";
+import bape_tee_7 from "./Tees/Bape_Tee/Bape_Tee_7.webp";
+import bape_tee_8 from "./Tees/Bape_Tee/Bape_Tee_8.jpg";
 
 import bape_tweed_shorts_1 from "./Bape_Tweed_Hem_Shorts/Bape_Tweed_Hem_Shorts_1.webp";
 import bape_tweed_shorts_2 from "./Bape_Tweed_Hem_Shorts/Bape_Tweed_Hem_Shorts_2.webp";
@@ -33,11 +33,11 @@ import bape_tweed_shorts_4 from "./Bape_Tweed_Hem_Shorts/Bape_Tweed_Hem_Shorts_4
 import bape_tweed_shorts_5 from "./Bape_Tweed_Hem_Shorts/Bape_Tweed_Hem_Shorts_5.webp";
 import bape_tweed_shorts_6 from "./Bape_Tweed_Hem_Shorts/Bape_Tweed_Hem_Shorts_6.webp";
 
-import bape_black_tshirt_1 from "./Bape_Black_Tshirt/Bape_Black_Tshirt_1.webp";
-import bape_black_tshirt_2 from "./Bape_Black_Tshirt/Bape_Black_Tshirt_2.webp";
-import bape_black_tshirt_3 from "./Bape_Black_Tshirt/Bape_Black_Tshirt_3.webp";
-import bape_black_tshirt_4 from "./Bape_Black_Tshirt/Bape_Black_Tshirt_4.webp";
-import bape_black_tshirt_5 from "./Bape_Black_Tshirt/Bape_Black_Tshirt_5.webp";
+import bape_black_tshirt_1 from "./Tees/Bape_Black_Tshirt/Bape_Black_Tshirt_1.webp";
+import bape_black_tshirt_2 from "./Tees/Bape_Black_Tshirt/Bape_Black_Tshirt_2.webp";
+import bape_black_tshirt_3 from "./Tees/Bape_Black_Tshirt/Bape_Black_Tshirt_3.webp";
+import bape_black_tshirt_4 from "./Tees/Bape_Black_Tshirt/Bape_Black_Tshirt_4.webp";
+import bape_black_tshirt_5 from "./Tees/Bape_Black_Tshirt/Bape_Black_Tshirt_5.webp";
 
 import wade_sweatshirt_1 from "./Wade_Sweatshirt/Wade_Sweatshirt_1.webp";
 import wade_sweatshirt_2 from "./Wade_Sweatshirt/Wade_Sweatshirt_2.webp";
