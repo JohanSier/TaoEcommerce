@@ -79,30 +79,92 @@ const SizeButton = styled.button`
 `;
 
 const Cta = styled.button`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 40px;
-    background: var(--secondary);
-    font-size: 1rem;
-    padding: 1.6rem;
-    font-variation-settings: "wght" 600;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    color: var(--white);
-    transition: opacity 0.2s ease-in-out;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  background: var(--secondary);
+  font-size: 1rem;
+  padding: 1.6rem;
+  font-variation-settings: "wght" 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--white);
+  transition: opacity 0.2s ease-in-out;
 
-    &:hover {
-        opacity: 0.75;
-    }
+  &:hover {
+      opacity: 0.75;
+  }
 
-    &:disabled {
-        background: var(--greyE);
-        cursor: not-allowed;
-        opacity: 0.6;
-    }
+  &:disabled {
+      background: var(--greyE);
+      cursor: not-allowed;
+      opacity: 0.6;
+  }
+`;
+
+const CtaWrapper = styled.div`
+  position: relative;
+  width: 100%;
+
+  &:hover .tooltip {
+    display: block;
+  }
+
+  &:hover .right-tooltip {
+    display: block;
+  }
+`;
+
+const Tooltip = styled.div`
+  display: none;
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1c1c1e;
+  color: var(--white);
+  padding: 10px 16px;
+  border-radius: 8px;
+  z-index: 10;
+  width: max-content;
+  max-width: 200px;
+  text-align: left;
+  font-size: 0.9rem;
+  opacity: 1;
+  pointer-events: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -6px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: #1c1c1e transparent transparent transparent;
+  }
+`;
+
+const RightTooltip = styled(Tooltip)`
+  top: -10px;
+  left: 210px:
+  transform: translateX(0);
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    margin-left: -112px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: #1c1c1e transparent transparent transparent;
+    transform: rotate(90deg);
+  }
 `;
 
 const ExtraInfo = styled.p`
@@ -132,6 +194,10 @@ const QuantityContainer = styled.div`
   height: 2.5rem;
   opacity: ${props => props.disabled ? 0.6 : 1};
   transition: opacity 0.2s ease-in-out;
+  
+  &:hover .tooltip {
+    display: block;
+  }
 `;
 
 const QuantityButton = styled.button`
@@ -224,6 +290,13 @@ const ProductDetails = ({ title, price, sizes, description, thumbnailImage }) =>
                 ))}
             </Sizes>
 
+            <CtaWrapper>
+              {!selectedSize && (
+                <RightTooltip className="right-tooltip">
+                  Select a size to increase quantity
+                </RightTooltip>
+              )}
+            
             <QuantityContainer disabled={!selectedSize}>
                 <QuantityButton 
                   onClick={() => handleQuantityChange(-1)} 
@@ -239,10 +312,21 @@ const ProductDetails = ({ title, price, sizes, description, thumbnailImage }) =>
                   +
                 </QuantityButton>
             </QuantityContainer>
+            </CtaWrapper>
 
-            <Cta onClick={handleAddToCart} disabled={!selectedSize}>
+            <CtaWrapper>
+              {!selectedSize && (
+                <Tooltip className="tooltip">
+                  Select a size to add to cart
+                </Tooltip>
+              )}
+              <Cta 
+                onClick={handleAddToCart} 
+                disabled={!selectedSize}
+              >
                 ADD TO CART
-            </Cta>
+              </Cta>
+            </CtaWrapper>
 
             <ExtraInfo>
                 <HiOutlineTruck size={20} />
