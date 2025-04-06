@@ -81,6 +81,11 @@ const ArrowButton = styled.button`
     border-color: var(--secondary);
   }
 
+  @media (max-width: 500px) {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+    
   ${(props) => (props.$direction === "prev" ? "left: -20px;" : "right: -20px;")}
 
   &:focus {
