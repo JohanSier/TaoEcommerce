@@ -5,10 +5,10 @@ import categ_shorts from "./categories-images/categ_shorts.avif";
 import categ_sneakers from "./categories-images/categ_sneakers.avif";
 import categ_accessories from "./categories-images/categ_accesories.avif";
 
-import backpack_1 from "./Backpack/Backpack_1.jpg";
-import backpack_2 from "./Backpack/Backpack_2.jpg";
-import backpack_3 from "./Backpack/Backpack_3.jpg";
-import backpack_4 from "./Backpack/Backpack_4.jpg";
+import backpack_1 from "./Accessories/Backpack/Backpack_1.webp";
+import backpack_2 from "./Accessories/Backpack/Backpack_2.webp";
+import backpack_3 from "./Accessories/Backpack/Backpack_3.webp";
+import backpack_4 from "./Accessories/Backpack/Backpack_4.webp";
 
 import bape_shorts_1 from "./Bape_Shorts/Bape_Shorts_1.webp";
 import bape_shorts_2 from "./Bape_Shorts/Bape_Shorts_2.webp";
@@ -185,6 +185,64 @@ import undefeated_supernova_1 from "./Tees/Undefeated_Supernova/Undefeated_Super
 import undefeated_supernova_2 from "./Tees/Undefeated_Supernova/Undefeated_Supernova_2.webp";
 import undefeated_supernova_3 from "./Tees/Undefeated_Supernova/Undefeated_Supernova_3.webp";
 import undefeated_supernova_4 from "./Tees/Undefeated_Supernova/Undefeated_Supernova_4.webp";
+
+// Jersey imports
+import carolina_vintage_1 from "./Jerseys/Carolina_Vintage/North_Carolina_Vintage_1.jpg";
+import carolina_vintage_2 from "./Jerseys/Carolina_Vintage/North_Carolina_Vintage_2.jpg";
+import carolina_vintage_3 from "./Jerseys/Carolina_Vintage/North_Carolina_Vintage_3.jpg";
+import carolina_vintage_4 from "./Jerseys/Carolina_Vintage/North_Carolina_Vintage_4.jpg";
+import carolina_vintage_5 from "./Jerseys/Carolina_Vintage/North_Carolina_Vintage_5.jpg";
+
+import hornets_1 from "./Jerseys/Charlotte_Hornets/Hornets_1.webp";
+import hornets_2 from "./Jerseys/Charlotte_Hornets/Hornets_2.webp";
+import hornets_3 from "./Jerseys/Charlotte_Hornets/Hornets_3.webp";
+import hornets_4 from "./Jerseys/Charlotte_Hornets/Hornets_4.webp";
+import hornets_5 from "./Jerseys/Charlotte_Hornets/Hornets_5.webp";
+
+import memphis_1 from "./Jerseys/Memphis_Vintage/Memphis_1.webp";
+import memphis_2 from "./Jerseys/Memphis_Vintage/Memphis_2.webp";
+import memphis_3 from "./Jerseys/Memphis_Vintage/Memphis_3.webp";
+import memphis_4 from "./Jerseys/Memphis_Vintage/Memphis_4.webp";
+import memphis_5 from "./Jerseys/Memphis_Vintage/Memphis_5.webp";
+
+import carolina_1 from "./Jerseys/North_Carolina/Carolina_1.webp";
+import carolina_2 from "./Jerseys/North_Carolina/Carolina_2.webp";
+import carolina_3 from "./Jerseys/North_Carolina/Carolina_3.webp";
+import carolina_4 from "./Jerseys/North_Carolina/Carolina_4.webp";
+import carolina_5 from "./Jerseys/North_Carolina/Carolina_5.webp";
+
+import orlando_1 from "./Jerseys/Orlando_Magic/Orlando_1.webp";
+import orlando_2 from "./Jerseys/Orlando_Magic/Orlando_2.webp";
+import orlando_3 from "./Jerseys/Orlando_Magic/Orlando_3.webp";
+import orlando_4 from "./Jerseys/Orlando_Magic/Orlando_4.webp";
+
+import raptors_purple_1 from "./Jerseys/Raptors_Purple/Raptors_1.webp";
+import raptors_purple_2 from "./Jerseys/Raptors_Purple/Raptors_2.webp";
+import raptors_purple_3 from "./Jerseys/Raptors_Purple/Raptors_3.webp";
+import raptors_purple_4 from "./Jerseys/Raptors_Purple/Raptors_4.webp";
+
+import raptors_white_1 from "./Jerseys/Raptors_White/Raptors_White_1.webp";
+import raptors_white_2 from "./Jerseys/Raptors_White/Raptors_White_2.webp";
+import raptors_white_3 from "./Jerseys/Raptors_White/Raptors_White_3.webp";
+import raptors_white_4 from "./Jerseys/Raptors_White/Raptors_White_4.webp";
+
+import heat_1 from "./Jerseys/Rose_MiamiHeat/Heat_1.webp";
+import heat_2 from "./Jerseys/Rose_MiamiHeat/Heat_2.webp";
+import heat_3 from "./Jerseys/Rose_MiamiHeat/Heat_3.webp";
+import heat_4 from "./Jerseys/Rose_MiamiHeat/Heat_4.jpg";
+import heat_5 from "./Jerseys/Rose_MiamiHeat/Heat_5.jpg";
+
+import lakers_white_1 from "./Jerseys/White_Lakers/Lakers_White_1.webp";
+import lakers_white_2 from "./Jerseys/White_Lakers/Lakers_White_2.webp";
+import lakers_white_3 from "./Jerseys/White_Lakers/Lakers_White_3.webp";
+import lakers_white_4 from "./Jerseys/White_Lakers/Lakers_White_4.webp";
+import lakers_white_5 from "./Jerseys/White_Lakers/Lakers_White_5.webp";
+
+import wolves_vintage_1 from "./Jerseys/Wolves_Vintage/Wolves_Vintage_1.webp";
+import wolves_vintage_2 from "./Jerseys/Wolves_Vintage/Wolves_Vintage_2.webp";
+import wolves_vintage_3 from "./Jerseys/Wolves_Vintage/Wolves_Vintage_3.webp";
+import wolves_vintage_4 from "./Jerseys/Wolves_Vintage/Wolves_Vintage_4.webp";
+import wolves_vintage_5 from "./Jerseys/Wolves_Vintage/Wolves_Vintage_5.webp";
 
 const categories = [
   {
@@ -908,6 +966,260 @@ const products = [
     measuresCm: {}
   }
 ];
+
+// Add new jersey products
+const newJerseys = [
+  {
+    id: 25,
+    categories: [
+      { id: 3, name: "Jerseys" }
+    ],
+    name: "North Carolina Vintage Jersey",
+    description: "Classic North Carolina basketball jersey featuring vintage styling and premium materials. Perfect for fans of college basketball history.",
+    price: 89.99,
+    images: [
+      carolina_vintage_1,
+      carolina_vintage_2,
+      carolina_vintage_3,
+      carolina_vintage_4,
+      carolina_vintage_5
+    ],
+    availableSizes: ["S", "M", "L", "XL", "2XL"],
+    measuresIn: {
+      S: { chestWidth: 20, length: 29 },
+      M: { chestWidth: 22, length: 30 },
+      L: { chestWidth: 24, length: 31 },
+      XL: { chestWidth: 26, length: 32 },
+      "2XL": { chestWidth: 28, length: 33 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 26,
+    categories: [
+      { id: 3, name: "Jerseys" }
+    ],
+    name: "Charlotte Hornets Classic Jersey",
+    description: "Authentic Charlotte Hornets jersey featuring the iconic teal colorway and classic design elements.",
+    price: 94.99,
+    images: [
+      hornets_1,
+      hornets_2,
+      hornets_3,
+      hornets_4,
+      hornets_5
+    ],
+    availableSizes: ["S", "M", "L", "XL", "2XL"],
+    measuresIn: {
+      S: { chestWidth: 20, length: 29 },
+      M: { chestWidth: 22, length: 30 },
+      L: { chestWidth: 24, length: 31 },
+      XL: { chestWidth: 26, length: 32 },
+      "2XL": { chestWidth: 28, length: 33 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 27,
+    categories: [
+      { id: 3, name: "Jerseys" }
+    ],
+    name: "Memphis Grizzlies Vintage Jersey",
+    description: "Retro-styled Memphis Grizzlies jersey celebrating the team's rich history and iconic design.",
+    price: 89.99,
+    images: [
+      memphis_1,
+      memphis_2,
+      memphis_3,
+      memphis_4,
+      memphis_5
+    ],
+    availableSizes: ["S", "M", "L", "XL", "2XL"],
+    measuresIn: {
+      S: { chestWidth: 20, length: 29 },
+      M: { chestWidth: 22, length: 30 },
+      L: { chestWidth: 24, length: 31 },
+      XL: { chestWidth: 26, length: 32 },
+      "2XL": { chestWidth: 28, length: 33 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 28,
+    categories: [
+      { id: 3, name: "Jerseys" }
+    ],
+    name: "North Carolina Modern Jersey",
+    description: "Contemporary take on the classic North Carolina basketball jersey, featuring modern materials and fit.",
+    price: 99.99,
+    images: [
+      carolina_1,
+      carolina_2,
+      carolina_3,
+      carolina_4,
+      carolina_5
+    ],
+    availableSizes: ["S", "M", "L", "XL", "2XL"],
+    measuresIn: {
+      S: { chestWidth: 20, length: 29 },
+      M: { chestWidth: 22, length: 30 },
+      L: { chestWidth: 24, length: 31 },
+      XL: { chestWidth: 26, length: 32 },
+      "2XL": { chestWidth: 28, length: 33 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 29,
+    categories: [
+      { id: 3, name: "Jerseys" }
+    ],
+    name: "Orlando Magic Classic Jersey",
+    description: "Authentic Orlando Magic jersey featuring the team's signature design and premium quality construction.",
+    price: 94.99,
+    images: [
+      orlando_1,
+      orlando_2,
+      orlando_3,
+      orlando_4
+    ],
+    availableSizes: ["S", "M", "L", "XL", "2XL"],
+    measuresIn: {
+      S: { chestWidth: 20, length: 29 },
+      M: { chestWidth: 22, length: 30 },
+      L: { chestWidth: 24, length: 31 },
+      XL: { chestWidth: 26, length: 32 },
+      "2XL": { chestWidth: 28, length: 33 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 30,
+    categories: [
+      { id: 3, name: "Jerseys" }
+    ],
+    name: "Toronto Raptors Purple Jersey",
+    description: "Iconic Toronto Raptors purple jersey featuring classic team design and premium materials.",
+    price: 99.99,
+    images: [
+      raptors_purple_1,
+      raptors_purple_2,
+      raptors_purple_3,
+      raptors_purple_4
+    ],
+    availableSizes: ["S", "M", "L", "XL", "2XL"],
+    measuresIn: {
+      S: { chestWidth: 20, length: 29 },
+      M: { chestWidth: 22, length: 30 },
+      L: { chestWidth: 24, length: 31 },
+      XL: { chestWidth: 26, length: 32 },
+      "2XL": { chestWidth: 28, length: 33 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 31,
+    categories: [
+      { id: 3, name: "Jerseys" }
+    ],
+    name: "Toronto Raptors White Jersey",
+    description: "Clean and modern Toronto Raptors white jersey, perfect for any basketball enthusiast.",
+    price: 94.99,
+    images: [
+      raptors_white_1,
+      raptors_white_2,
+      raptors_white_3,
+      raptors_white_4
+    ],
+    availableSizes: ["S", "M", "L", "XL", "2XL"],
+    measuresIn: {
+      S: { chestWidth: 20, length: 29 },
+      M: { chestWidth: 22, length: 30 },
+      L: { chestWidth: 24, length: 31 },
+      XL: { chestWidth: 26, length: 32 },
+      "2XL": { chestWidth: 28, length: 33 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 32,
+    categories: [
+      { id: 3, name: "Jerseys" }
+    ],
+    name: "Miami Heat Rose Edition Jersey",
+    description: "Limited edition Miami Heat jersey featuring unique rose design elements and premium construction.",
+    price: 109.99,
+    images: [
+      heat_1,
+      heat_2,
+      heat_3,
+      heat_4,
+      heat_5
+    ],
+    availableSizes: ["S", "M", "L", "XL", "2XL"],
+    measuresIn: {
+      S: { chestWidth: 20, length: 29 },
+      M: { chestWidth: 22, length: 30 },
+      L: { chestWidth: 24, length: 31 },
+      XL: { chestWidth: 26, length: 32 },
+      "2XL": { chestWidth: 28, length: 33 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 33,
+    categories: [
+      { id: 3, name: "Jerseys" }
+    ],
+    name: "Lakers White Edition Jersey",
+    description: "Clean and elegant Lakers white edition jersey, featuring premium materials and classic team design.",
+    price: 99.99,
+    images: [
+      lakers_white_1,
+      lakers_white_2,
+      lakers_white_3,
+      lakers_white_4,
+      lakers_white_5
+    ],
+    availableSizes: ["S", "M", "L", "XL", "2XL"],
+    measuresIn: {
+      S: { chestWidth: 20, length: 29 },
+      M: { chestWidth: 22, length: 30 },
+      L: { chestWidth: 24, length: 31 },
+      XL: { chestWidth: 26, length: 32 },
+      "2XL": { chestWidth: 28, length: 33 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 34,
+    categories: [
+      { id: 3, name: "Jerseys" }
+    ],
+    name: "Minnesota Timberwolves Vintage Jersey",
+    description: "Classic Timberwolves jersey featuring vintage team design and high-quality construction.",
+    price: 94.99,
+    images: [
+      wolves_vintage_1,
+      wolves_vintage_2,
+      wolves_vintage_3,
+      wolves_vintage_4,
+      wolves_vintage_5
+    ],
+    availableSizes: ["S", "M", "L", "XL", "2XL"],
+    measuresIn: {
+      S: { chestWidth: 20, length: 29 },
+      M: { chestWidth: 22, length: 30 },
+      L: { chestWidth: 24, length: 31 },
+      XL: { chestWidth: 26, length: 32 },
+      "2XL": { chestWidth: 28, length: 33 }
+    },
+    measuresCm: {}
+  }
+];
+
+// Add new jerseys to products array
+products.push(...newJerseys);
 
 function inchesToCm(inches) {
   return +(inches * 2.54).toFixed(2);

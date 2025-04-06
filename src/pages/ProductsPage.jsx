@@ -79,23 +79,34 @@ const ProductCardWrapper = styled.div`
 const ProductsPage = () => {
   const {category} = useParams();
 
-// Function to map category name to category ID
-function getCategoryId(category) {
-  const categories = {
-    "all": 0,
-    "street-kings": 1,
-    "tees": 2,
-    "jerseys": 3,
-    "shorts": 4,
-    "sneakers": 5,
-    "accessories": 6,
+  // Function to map category name to category ID
+  function getCategoryId(category) {
+    const categories = {
+      "all": 0,
+      "street-kings": 1,
+      "tees": 2,
+      "jerseys": 3,
+      "shorts": 4,
+      "sneakers": 5,
+      "accessories": 6,
+    };
+    return categories[category] || null;
+  }
+
+  // Function to shuffle array randomly
+  const shuffleArray = (array) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
   };
-  return categories[category] || null;
-}
-  // Filter products if category is selected
+
+  // Filter and shuffle products if showing all
   const filteredProducts = category !== "all"
     ? products.filter(p => p.categories.some(cat => cat.id === getCategoryId(category)))
-    : products;
+    : shuffleArray(products);
 
   const validCategories = ["all", "tees", "jerseys", "shorts", "sneakers", "accessories", "street-kings"];
 
