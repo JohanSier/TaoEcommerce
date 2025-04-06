@@ -244,13 +244,54 @@ const ViewCartButton = styled(CheckoutButton)`
   background: var(--complementary);
 `
 
+const CartItemQuantityContainer = styled.div`
+  display: inline-grid;
+  grid-template-columns: 1.8rem 1.5rem 1.8rem;
+  align-items: center;
+  margin: 4px 0;
+  border: 1px solid var(--greyE);
+  border-radius: 15px;
+  width: 5.1rem;
+  height: 2rem;
+`;
+
+const CartItemQuantityButton = styled.button`
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--secondary);
+  text-align: center;
+  padding: 0;
+  margin: 0;
+`;
+
+const CartItemQuantityText = styled.span`
+  font-size: 0.9rem;
+  font-variation-settings: "wght" 500;
+  text-align: center;
+  width: 100%;
+`;
+
 const Cart = ({ onClose }) => {
-  const { cart, removeItemFromCart } = useCart();
+  const { cart, removeItemFromCart, updateItemQuantity } = useCart();
   const navigate = useNavigate();
 
   const handleProductClick = (productId, category) => {
     navigate(`/products/${category}/${productId}`);
     onClose();
+  };
+
+  const handleQuantityChange = (item, increment) => {
+    const newQuantity = item.quantity + increment;
+    if (newQuantity >= 1) {
+      updateItemQuantity(item.id, item.size, newQuantity);
+    }
   };
 
   const totalPrice = cart.items.reduce(
@@ -292,6 +333,11 @@ const Cart = ({ onClose }) => {
                   <ProductSizeText>
                     Size: <span>{item.size}</span>
                   </ProductSizeText>
+                  <CartItemQuantityContainer>
+                    <CartItemQuantityButton onClick={() => handleQuantityChange(item, -1)}>-</CartItemQuantityButton>
+                    <CartItemQuantityText>{item.quantity}</CartItemQuantityText>
+                    <CartItemQuantityButton onClick={() => handleQuantityChange(item, 1)}>+</CartItemQuantityButton>
+                  </CartItemQuantityContainer>
                 </ProductDetails>
               </ProductInfo>
               

@@ -87,8 +87,7 @@ export const CartProvider = ({ children }) => {
     const existingItem = state.items.find(
       (cartItem) => cartItem.id === item.id && cartItem.size === item.size
     );
-
-    if (!existingItem) {
+    
       dispatch({ type: ADD_ITEM, payload: item });
       toast.success(`${item.title} ${item.size} has been added to your cart!`, {
         position: "bottom-right",
@@ -99,29 +98,15 @@ export const CartProvider = ({ children }) => {
         draggable: false,
         progress: undefined,
         theme: "light",
-      });
-    } else {
-      // No mostrar el toast si el producto ya está en el carrito
-      toast.info(`You already added ${item.title} ${item.size} product to the cart`, {
-        position: "bottom-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: false,
-        pauseOnHover: true,
-        draggable: false,
-        progress: undefined,
-        theme: "light"
-        });
-      dispatch({ type: ADD_ITEM, payload: item }); // Sigue agregando cantidad si es necesario
-    }
+      })
   };
 
   const removeItemFromCart = (id, size) => {
     dispatch({ type: REMOVE_ITEM, payload: { id, size } });
   };
 
-  const updateItemQuantity = (id, quantity) => {
-    dispatch({ type: UPDATE_ITEM_QUANTITY, payload: { id, quantity } });
+  const updateItemQuantity = (id, size, quantity) => {
+    dispatch({ type: UPDATE_ITEM_QUANTITY, payload: { id, size, quantity } });
   };
 
   const clearCart = () => {
