@@ -244,6 +244,60 @@ import wolves_vintage_3 from "./Jerseys/Wolves_Vintage/Wolves_Vintage_3.webp";
 import wolves_vintage_4 from "./Jerseys/Wolves_Vintage/Wolves_Vintage_4.webp";
 import wolves_vintage_5 from "./Jerseys/Wolves_Vintage/Wolves_Vintage_5.webp";
 
+// Importaciones de accesorios
+import big_backpack_1 from "./Accessories/Big_Backpack/Big_Backpack_1.webp";
+import big_backpack_2 from "./Accessories/Big_Backpack/Big_Backpack_2.webp";
+import big_backpack_3 from "./Accessories/Big_Backpack/Big_Backpack_3.webp";
+import big_backpack_4 from "./Accessories/Big_Backpack/Big_Backpack_4.webp";
+import big_backpack_5 from "./Accessories/Big_Backpack/Big_Backpack_5.webp";
+import big_backpack_6 from "./Accessories/Big_Backpack/Big_Backpack_6.webp";
+import big_backpack_7 from "./Accessories/Big_Backpack/Big_Backpack_7.webp";
+import big_backpack_8 from "./Accessories/Big_Backpack/Big_Backpack_8.webp";
+
+import tech_backpack_1 from "./Accessories/Tech_Backpack/Tech_Backpack_1.webp";
+import tech_backpack_2 from "./Accessories/Tech_Backpack/Tech_Backpack_2.webp";
+import tech_backpack_3 from "./Accessories/Tech_Backpack/Tech_Backpack_3.webp";
+import tech_backpack_4 from "./Accessories/Tech_Backpack/Tech_Backpack_4.webp";
+import tech_backpack_5 from "./Accessories/Tech_Backpack/Tech_Backpack_5.webp";
+import tech_backpack_6 from "./Accessories/Tech_Backpack/Tech_Backpack_6.webp";
+import tech_backpack_7 from "./Accessories/Tech_Backpack/Tech_Backpack_7.webp";
+import tech_backpack_8 from "./Accessories/Tech_Backpack/Tech_Backpack_8.webp";
+
+import hoop_1 from "./Accessories/Hoop/Hoop_1.webp";
+import hoop_2 from "./Accessories/Hoop/Hoop_2.webp";
+import hoop_3 from "./Accessories/Hoop/Hoop_3.webp";
+import hoop_4 from "./Accessories/Hoop/Hoop_4.webp";
+
+import necklace_1 from "./Accessories/Necklace/Necklace_1.webp";
+import necklace_2 from "./Accessories/Necklace/Necklace_2.webp";
+import necklace_3 from "./Accessories/Necklace/Necklace_3.webp";
+import necklace_4 from "./Accessories/Necklace/Necklace_4.webp";
+import necklace_5 from "./Accessories/Necklace/Necklace_5.webp";
+import necklace_6 from "./Accessories/Necklace/Necklace_6.webp";
+
+import heats_shaker_1 from "./Accessories/Heats_Shaker/Heats_Shaker_1.webp";
+import heats_shaker_2 from "./Accessories/Heats_Shaker/Heats_Shaker_2.webp";
+import heats_shaker_3 from "./Accessories/Heats_Shaker/Heats_Shaker_3.webp";
+import heats_shaker_4 from "./Accessories/Heats_Shaker/Heats_Shaker_4.webp";
+import heats_shaker_5 from "./Accessories/Heats_Shaker/Heats_Shaker_5.webp";
+import heats_shaker_6 from "./Accessories/Heats_Shaker/Heats_Shaker_6.webp";
+import heats_shaker_7 from "./Accessories/Heats_Shaker/Heats_Shaker_7.webp";
+
+import drawstring_bag_1 from "./Accessories/Drawstring_Bag/Drawstring_1.webp";
+import drawstring_bag_2 from "./Accessories/Drawstring_Bag/Drawstring_2.webp";
+import drawstring_bag_3 from "./Accessories/Drawstring_Bag/Drawstring_3.webp";
+import drawstring_bag_4 from "./Accessories/Drawstring_Bag/Drawstring_4.webp";
+import drawstring_bag_5 from "./Accessories/Drawstring_Bag/Drawstring_5.webp";
+import drawstring_bag_6 from "./Accessories/Drawstring_Bag/Drawstring_6.webp";
+
+import bulls_shaker_1 from "./Accessories/Bulls_Shaker/Bulls_Shaker_1.webp";
+import bulls_shaker_2 from "./Accessories/Bulls_Shaker/Bulls_Shaker_2.webp";
+import bulls_shaker_3 from "./Accessories/Bulls_Shaker/Bulls_Shaker_3.webp";
+import bulls_shaker_4 from "./Accessories/Bulls_Shaker/Bulls_Shaker_4.webp";
+import bulls_shaker_5 from "./Accessories/Bulls_Shaker/Bulls_Shaker_5.webp";
+import bulls_shaker_6 from "./Accessories/Bulls_Shaker/Bulls_Shaker_6.webp";
+import bulls_shaker_7 from "./Accessories/Bulls_Shaker/Bulls_Shaker_7.webp";
+
 const categories = [
   {
     id: 1,
@@ -1218,7 +1272,181 @@ const newJerseys = [
   }
 ];
 
-// Add new jerseys to products array
+// Añadir nuevos productos de accesorios
+const newAccessories = [
+  {
+    id: 35,
+    categories: [{ id: 6, name: "Accessories" }],
+    name: "Big Backpack",
+    description: "Una mochila espaciosa y resistente, perfecta para llevar todo tu equipo de baloncesto y accesorios personales.",
+    price: 89.99,
+    images: [
+      big_backpack_1,
+      big_backpack_2,
+      big_backpack_3,
+      big_backpack_4,
+      big_backpack_5,
+      big_backpack_6,
+      big_backpack_7,
+      big_backpack_8
+    ],
+    availableSizes: ["One Size"],
+    measuresIn: {
+      "One Size": {
+        height: 18,
+        width: 12,
+        depth: 8
+      }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 36,
+    categories: [{ id: 6, name: "Accessories" }],
+    name: "Tech Backpack",
+    description: "Mochila moderna con compartimento especial para dispositivos electrónicos y accesorios de baloncesto.",
+    price: 99.99,
+    images: [
+      tech_backpack_1,
+      tech_backpack_2,
+      tech_backpack_3,
+      tech_backpack_4,
+      tech_backpack_5,
+      tech_backpack_6,
+      tech_backpack_7,
+      tech_backpack_8
+    ],
+    availableSizes: ["One Size"],
+    measuresIn: {
+      "One Size": {
+        height: 17,
+        width: 11,
+        depth: 7
+      }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 37,
+    categories: [{ id: 6, name: "Accessories" }],
+    name: "Basketball Hoop Necklace",
+    description: "Colgante elegante con diseño de aro de baloncesto, perfecto para los amantes del deporte.",
+    price: 39.99,
+    images: [
+      hoop_1,
+      hoop_2,
+      hoop_3,
+      hoop_4
+    ],
+    availableSizes: ["One Size"],
+    measuresIn: {
+      "One Size": {
+        length: 1.5,
+        width: 1
+      }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 38,
+    categories: [{ id: 6, name: "Accessories" }],
+    name: "Basketball Chain Necklace",
+    description: "Cadena con colgante de baloncesto, ideal para complementar tu estilo urbano.",
+    price: 44.99,
+    images: [
+      necklace_1,
+      necklace_2,
+      necklace_3,
+      necklace_4,
+      necklace_5,
+      necklace_6
+    ],
+    availableSizes: ["One Size"],
+    measuresIn: {
+      "One Size": {
+        length: 2,
+        width: 1.2
+      }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 39,
+    categories: [{ id: 6, name: "Accessories" }],
+    name: "Miami Heat Shaker",
+    description: "Shaker oficial de los Miami Heat, perfecto para mostrar tu apoyo al equipo.",
+    price: 24.99,
+    images: [
+      heats_shaker_1,
+      heats_shaker_2,
+      heats_shaker_3,
+      heats_shaker_4,
+      heats_shaker_5,
+      heats_shaker_6,
+      heats_shaker_7
+    ],
+    availableSizes: ["One Size"],
+    measuresIn: {
+      "One Size": {
+        height: 8,
+        diameter: 3
+      }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 40,
+    categories: [{ id: 6, name: "Accessories" }],
+    name: "Drawstring Bag",
+    description: "Bolsa de cordón ligera y práctica, ideal para llevar tus accesorios de baloncesto.",
+    price: 29.99,
+    images: [
+      drawstring_bag_1,
+      drawstring_bag_2,
+      drawstring_bag_3,
+      drawstring_bag_4,
+      drawstring_bag_5,
+      drawstring_bag_6
+    ],
+    availableSizes: ["One Size"],
+    measuresIn: {
+      "One Size": {
+        height: 15,
+        width: 12
+      }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 41,
+    categories: [{ id: 6, name: "Accessories" }],
+    name: "Chicago Bulls Shaker",
+    description: "Shaker oficial de los Chicago Bulls, perfecto para los fanáticos del equipo.",
+    price: 24.99,
+    images: [
+      bulls_shaker_1,
+      bulls_shaker_2,
+      bulls_shaker_3,
+      bulls_shaker_4,
+      bulls_shaker_5,
+      bulls_shaker_6,
+      bulls_shaker_7
+    ],
+    availableSizes: ["One Size"],
+    measuresIn: {
+      "One Size": {
+        height: 8,
+        diameter: 3
+      }
+    },
+    measuresCm: {}
+  }
+];
+
+// Añadir los nuevos accesorios al array de productos
+products.push(...newAccessories);
+
+// Añadir los nuevos jerseys al array de productos
 products.push(...newJerseys);
 
 function inchesToCm(inches) {
