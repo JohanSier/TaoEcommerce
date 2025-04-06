@@ -1498,11 +1498,11 @@ const newBalls = [
 products.push(...newBalls);
 
 // Importaciones de shorts
-import bulls_shorts_1 from "./Shorts/Bulls_Shorts/Bulls_Shorts_1.webp";
-import bulls_shorts_2 from "./Shorts/Bulls_Shorts/Bulls_Shorts_2.webp";
-import bulls_shorts_3 from "./Shorts/Bulls_Shorts/Bulls_Shorts_3.webp";
-import bulls_shorts_4 from "./Shorts/Bulls_Shorts/Bulls_Shorts_4.webp";
-import bulls_shorts_5 from "./Shorts/Bulls_Shorts/Bulls_Shorts_5.webp";
+import ballislife_shorts_1 from "./Shorts/Ballislife_Shorts/Ballislife_Shorts_1.webp";
+import ballislife_shorts_2 from "./Shorts/Ballislife_Shorts/Ballislife_Shorts_2.webp";
+import ballislife_shorts_3 from "./Shorts/Ballislife_Shorts/Ballislife_Shorts_3.webp";
+import ballislife_shorts_4 from "./Shorts/Ballislife_Shorts/Ballislife_Shorts_4.webp";
+import ballislife_shorts_5 from "./Shorts/Ballislife_Shorts/Ballislife_Shorts_5.webp";
 
 import compression_shorts_1 from "./Shorts/Compression_Shorts/Compression_Shorts_1.webp";
 import compression_shorts_2 from "./Shorts/Compression_Shorts/Compression_Shorts_2.webp";
@@ -1557,15 +1557,15 @@ const newShorts = [
   {
     id: 44,
     categories: [{ id: 4, name: "Shorts" }],
-    name: "Chicago Bulls Shorts",
-    description: "Classic Chicago Bulls basketball shorts featuring the iconic team colors and logo. Perfect for both on and off the court.",
+    name: "Ballislife Shorts",
+    description: "Classic basketball shorts featuring the iconic Ballislife design. Perfect for both on and off the court.",
     price: 49.99,
     images: [
-      bulls_shorts_1,
-      bulls_shorts_2,
-      bulls_shorts_3,
-      bulls_shorts_4,
-      bulls_shorts_5
+      ballislife_shorts_1,
+      ballislife_shorts_2,
+      ballislife_shorts_3,
+      ballislife_shorts_4,
+      ballislife_shorts_5
     ],
     availableSizes: ["S", "M", "L", "XL", "2XL"],
     measuresIn: {

@@ -291,7 +291,7 @@ const SpecificProductTemplate = () => {
           price={product.price}
           sizes={product.availableSizes}
           description={product.description}
-          thumbnailImage={product.images[1]}
+          thumbnailImage={product.images[0]}
         />
       </Wrapper>
 
