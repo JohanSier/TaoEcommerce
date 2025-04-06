@@ -19,16 +19,16 @@ const Wrapper = styled.div`
   top: 0;
   left: 0;
   z-index: ${(props) =>
-    props.isSizeGuideVisible ? -1 : 999}; /* Cambia el z-index dinámicamente */
+    props.$isSizeGuideVisible ? -1 : 999}; /* Cambia el z-index dinámicamente */
   padding: 0 2rem;
   display: flex;
   align-items: center;
   background: ${(props) =>
-    !props.isHomepage || props.background
+    !props.$isHomepage || props.$background
       ? "var(--secondary)"
       : "var(--transparent)"};
-  border-top-left-radius: ${(props) => (props.background ? 0 : "1rem")};
-  border-top-right-radius: ${(props) => (props.background ? 0 : "1rem")};
+  border-top-left-radius: ${(props) => (props.$background ? 0 : "1rem")};
+  border-top-right-radius: ${(props) => (props.$background ? 0 : "1rem")};
   transition: background 0.2s linear, z-index 0.2s ease-in-out;
 `;
 
@@ -147,7 +147,7 @@ const MobileMenu = styled.div`
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  transform: translateX(${props => props.isOpen ? '0' : '-100%'});
+  transform: translateX(${props => props.$isOpen ? '0' : '-100%'});
   transition: transform 0.3s ease-in-out;
   z-index: 1000;
 `;
@@ -159,8 +159,8 @@ const Overlay = styled.div`
   width: 100%;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
-  opacity: ${props => props.isOpen ? 1 : 0};
-  visibility: ${props => props.isOpen ? 'visible' : 'hidden'};
+  opacity: ${props => props.$isOpen ? 1 : 0};
+  visibility: ${props => props.$isOpen ? 'visible' : 'hidden'};
   transition: opacity 0.3s ease-in-out;
   z-index: 999;
 `;
@@ -241,9 +241,9 @@ const NavBar = () => {
   return (
     <>
       <Wrapper
-        background={background}
-        isHomepage={isHomepage}
-        isSizeGuideVisible={isSizeGuideVisible}
+        $background={background}
+        $isHomepage={isHomepage}
+        $isSizeGuideVisible={isSizeGuideVisible}
       >
         <BurgerButton onClick={() => setMobileMenuOpen(true)}>
           <HiMenu />
@@ -284,8 +284,8 @@ const NavBar = () => {
         </RightLinks>
       </Wrapper>
 
-      <Overlay isOpen={mobileMenuOpen} onClick={() => setMobileMenuOpen(false)} />
-      <MobileMenu isOpen={mobileMenuOpen}>
+      <Overlay $isOpen={mobileMenuOpen} onClick={() => setMobileMenuOpen(false)} />
+      <MobileMenu $isOpen={mobileMenuOpen}>
         <MobileMenuHeader>
           <StyledLink to="/" onClick={scrollToTop}>
             <Logo src={LogoImg} alt="TaoHoops logo" />

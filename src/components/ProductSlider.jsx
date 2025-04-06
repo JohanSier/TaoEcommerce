@@ -3,12 +3,14 @@ import Slider from "react-slick";
 import styled from "styled-components";
 import ProductCard from "./ProductCard";
 import { Link } from "react-router";
+import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
 const SliderContainer = styled.section`
   width: 100%;
   background: var(--white);
   padding: 0 2rem;
   text-align: start;
+  position: relative;
 `;
 
 const TitlePlusLink = styled.div`
@@ -40,19 +42,51 @@ const ArrowButton = styled.button`
   top: 50%;
   z-index: 800;
   transform: translateY(-50%);
+  background: var(--white);
+  border: 1px solid var(--greyE);
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary);
+  transition: all 0.3s ease;
 
-  ${(props) => (props.direction === "prev" ? "left: 10px;" : "right: 10px;")}
+  &:hover {
+    background: var(--secondary);
+    color: var(--white);
+    border-color: var(--secondary);
+  }
+
+  ${(props) => (props.$direction === "prev" ? "left: -20px;" : "right: -20px;")}
 
   &:focus {
     outline: none;
   }
-
-  &.slick-next:before,
-  &.slick-prev:before {
-    color: black;
-    font-size: 24px;
-  }
 `;
+
+// Componentes personalizados para las flechas
+const PrevArrow = ({ onClick }) => (
+  <ArrowButton
+    onClick={onClick}
+    $direction="prev"
+    role="button"
+    aria-label="Previous Slide"
+  >
+    <HiChevronLeft size={24} />
+  </ArrowButton>
+);
+
+const NextArrow = ({ onClick }) => (
+  <ArrowButton
+    onClick={onClick}
+    $direction="next"
+    role="button"
+    aria-label="Next Slide"
+  >
+    <HiChevronRight size={24} />
+  </ArrowButton>
+);
 
 const ProductSlider = ({ products }) => {
   const settings = {
@@ -62,20 +96,8 @@ const ProductSlider = ({ products }) => {
     speed: 600,
     slidesToShow: 5,
     slidesToScroll: 1,
-    prevArrow: (
-      <ArrowButton
-        role="button"
-        aria-label="Next Slide"
-        direction="prev"
-      ></ArrowButton>
-    ),
-    nextArrow: (
-      <ArrowButton
-        role="button"
-        aria-label="Prev Slide"
-        direction="next"
-      ></ArrowButton>
-    ), 
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
     responsive: [
       {
         breakpoint: 1360,

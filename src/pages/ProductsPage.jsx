@@ -128,9 +128,8 @@ const ProductsPage = () => {
 
       <ProductCardsContainer>
         {filteredProducts.map((product) => (
-          <ProductCardWrapper>
+          <ProductCardWrapper key={product.id}>
             <ProductCard
-              key={product.id}
               productTitle={product.name}
               price={product.price}
               srcImage={product.images[0]}
