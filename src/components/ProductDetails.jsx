@@ -16,7 +16,13 @@ const Container = styled.article`
   background: var(--white);
   padding: 3rem;
 
+  @media (max-width: 1200px) {
+    position: relative;
+    top: 0;
+  }
+
   @media (max-width: 800px) {
+    position: sticky;
     width: 100%;
     padding: 2rem;
   }

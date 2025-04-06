@@ -48,6 +48,11 @@ const TitlePlusLink = styled.div`
 const StyledLink = styled(Link)`
   text-decoration: underline;
   color: var(--secondary);
+
+  @media screen and (max-width: 500px){
+    font-size: 1rem;
+    margin-right: 1rem;
+  }
 `;
 
 const Heading = styled.h5`

@@ -8,12 +8,16 @@ const Wrapper = styled.div`
   margin: 0;
   position: relative;
   z-index: -1;
+  text-align: center;
 `;
 const Text = styled.p`
   font-size: 0.9rem;
   color: var(--white);
-`;
 
+  @media screen and (max-width: 350px){
+    font-size: 0.7rem;
+  }
+`;
 const TopBarInfo = () => {
   return (
     <Wrapper>

@@ -82,6 +82,10 @@ const MayAlsoLike = styled.section`
   align-items: center;
   text-align: center;
   padding: 2rem;
+
+  @media (max-width: 900px) {
+    margin-top: 2rem;
+  }
 `;
 
 const Heading = styled.h2`

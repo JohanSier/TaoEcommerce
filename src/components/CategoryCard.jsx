@@ -102,6 +102,14 @@ const Card = styled(Link)`
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
     z-index: 2;
   }
+
+  @media screen and (max-width: 500px){
+    height: 25rem;
+  }
+
+  @media screen and (max-width: 320px){
+    height: 20rem;
+  }
 `;
 
 const Heading = styled.h3`
