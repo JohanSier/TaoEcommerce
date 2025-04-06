@@ -215,7 +215,20 @@ const SpecificProductTemplate = () => {
         <Grid>
           <Gallery
             options={{
-              paddingFn: () => ({ top: 0, bottom: 0, left: 0, right: 0 }),
+              paddingFn: () => ({ top: 50, bottom: 50, left: 0, right: 0 }),
+              bgOpacity: 0.9,
+              closeOnVerticalDrag: true,
+              closeOnClick: true,
+              maxSpreadZoom: 1,
+              getDoubleTapZoom: () => 1,
+              wheelToZoom: false,
+              imageClickAction: 'close',
+              tapAction: 'close',
+              preload: [1, 2],
+              showHideAnimationType: 'fade',
+              imageScaleMethod: 'fit',
+              fitScreenHeight: true,
+              fitScreenWidth: true
             }}
           >
             {product.images.map((image, index) => (
@@ -223,8 +236,9 @@ const SpecificProductTemplate = () => {
                 <Item
                   original={image}
                   thumbnail={image}
-                  width="900"
-                  height="1000"
+                  width="1200"
+                  height="1300"
+                  msrc={image}
                 >
                   {({ ref, open }) => (
                     <>
