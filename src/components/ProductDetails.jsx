@@ -130,6 +130,8 @@ const QuantityContainer = styled.div`
   border-radius: 20px;
   width: 6.8rem;
   height: 2.5rem;
+  opacity: ${props => props.disabled ? 0.6 : 1};
+  transition: opacity 0.2s ease-in-out;
 `;
 
 const QuantityButton = styled.button`
@@ -140,12 +142,13 @@ const QuantityButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
   font-size: 1.5rem;
-  color: var(--secondary);
+  color: ${props => props.disabled ? 'var(--greyA)' : 'var(--secondary)'};
   text-align: center;
   padding: 0;
-  marign:0;
+  margin: 0;
+  transition: color 0.2s ease-in-out;
 `;
 
 const QuantityText = styled.span`
@@ -153,6 +156,8 @@ const QuantityText = styled.span`
   font-variation-settings: "wght" 500;
   text-align: center;
   width: 100%;
+  color: ${props => props.disabled ? 'var(--greyA)' : 'var(--secondary)'};
+  transition: color 0.2s ease-in-out;
 `;
 
 const ProductDetails = ({ title, price, sizes, description, thumbnailImage }) => {
@@ -219,10 +224,20 @@ const ProductDetails = ({ title, price, sizes, description, thumbnailImage }) =>
                 ))}
             </Sizes>
 
-            <QuantityContainer>
-                <QuantityButton onClick={() => handleQuantityChange(-1)}>-</QuantityButton>
-                <QuantityText>{quantity}</QuantityText>
-                <QuantityButton onClick={() => handleQuantityChange(1)}>+</QuantityButton>
+            <QuantityContainer disabled={!selectedSize}>
+                <QuantityButton 
+                  onClick={() => handleQuantityChange(-1)} 
+                  disabled={!selectedSize}
+                >
+                  -
+                </QuantityButton>
+                <QuantityText disabled={!selectedSize}>{quantity}</QuantityText>
+                <QuantityButton 
+                  onClick={() => handleQuantityChange(1)} 
+                  disabled={!selectedSize}
+                >
+                  +
+                </QuantityButton>
             </QuantityContainer>
 
             <Cta onClick={handleAddToCart} disabled={!selectedSize}>
