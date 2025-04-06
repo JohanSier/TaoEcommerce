@@ -10,6 +10,11 @@ const Container = styled(Link)`
   height: 24rem;
   border: 1px solid var(--greyE);
   outline: none;
+
+  @media (max-width: 650px) {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 const ProductImage = styled.img`
@@ -19,6 +24,19 @@ const ProductImage = styled.img`
   border-radius: inherit;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+
+
+   @media (max-width: 650px) {
+    height: 25rem;
+    object-fit: cover;
+  }
+
+  @media (max-width: 500px) {
+    height: 18rem;
+    object-fit: cover;
+  }
+
+ 
 `;
 
 const ProductInfo = styled.div`
@@ -34,6 +52,10 @@ const ProductInfo = styled.div`
   border-top-right-radius: 0;
   border-top-left-radius: 0;
   height: 5.69rem; /* Fixed height for product info section */
+
+  @media (max-width: 650px) {
+    padding: 0.75rem 1rem;
+  }
 `;
 
 const ProductTitle = styled.h5`

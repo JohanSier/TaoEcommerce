@@ -11,6 +11,24 @@ const SliderContainer = styled.section`
   padding: 0 2rem;
   text-align: start;
   position: relative;
+
+  .slick-track {
+    display: flex;
+    align-items: center;
+  }
+
+  @media (max-width: 500px) {
+    padding: 0;
+
+    .slick-list {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .slick-slide {
+      padding: 0 1rem;
+    }
+  }
 `;
 
 const TitlePlusLink = styled.div`
@@ -20,6 +38,11 @@ const TitlePlusLink = styled.div`
   justify-content: space-between;
   padding-right: 3rem;
   cursor: default;
+  margin-bottom: 2rem;
+
+  @media (max-width: 500px) {
+    padding: 0 1rem;
+  }
 `;
 
 const StyledLink = styled(Link)`
@@ -115,6 +138,15 @@ const ProductSlider = ({ products }) => {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: true,
+          infinite: true,
         },
       },
     ],
