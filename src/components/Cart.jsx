@@ -118,7 +118,7 @@ const ProductTitle = styled.p`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 200px;
+  max-width: 250px;
 `
 const Price = styled.p`
   font-size: .8rem;
