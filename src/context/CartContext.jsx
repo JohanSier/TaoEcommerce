@@ -89,7 +89,7 @@ export const CartProvider = ({ children }) => {
     );
     
       dispatch({ type: ADD_ITEM, payload: item });
-      toast.success(`${item.title} ${item.size} has been added to your cart!`, {
+      toast.success(`${item.quantity} ${item.title} ${item.size} has been added to your cart!`, {
         position: "bottom-right",
         autoClose: 2000,
         hideProgressBar: false,
