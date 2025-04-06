@@ -10,12 +10,12 @@ import backpack_2 from "./Accessories/Backpack/Backpack_2.webp";
 import backpack_3 from "./Accessories/Backpack/Backpack_3.webp";
 import backpack_4 from "./Accessories/Backpack/Backpack_4.webp";
 
-import bape_shorts_1 from "./Bape_Shorts/Bape_Shorts_1.webp";
-import bape_shorts_2 from "./Bape_Shorts/Bape_Shorts_2.webp";
-import bape_shorts_3 from "./Bape_Shorts/Bape_Shorts_3.webp";
-import bape_shorts_4 from "./Bape_Shorts/Bape_Shorts_4.webp";
-import bape_shorts_5 from "./Bape_Shorts/Bape_Shorts_5.webp";
-import bape_shorts_6 from "./Bape_Shorts/Bape_Shorts_6.webp";
+import bape_shorts_1 from "./Shorts/Bape_Shorts/Bape_Shorts_1.webp";
+import bape_shorts_2 from "./Shorts/Bape_Shorts/Bape_Shorts_2.webp";
+import bape_shorts_3 from "./Shorts/Bape_Shorts/Bape_Shorts_3.webp";
+import bape_shorts_4 from "./Shorts/Bape_Shorts/Bape_Shorts_4.webp";
+import bape_shorts_5 from "./Shorts/Bape_Shorts/Bape_Shorts_5.webp";
+import bape_shorts_6 from "./Shorts/Bape_Shorts/Bape_Shorts_6.webp";
 
 import bape_tee_1 from "./Tees/Bape_Tee/Bape_Tee_1.webp";
 import bape_tee_2 from "./Tees/Bape_Tee/Bape_Tee_2.webp";
@@ -26,12 +26,12 @@ import bape_tee_6 from "./Tees/Bape_Tee/Bape_Tee_6.webp";
 import bape_tee_7 from "./Tees/Bape_Tee/Bape_Tee_7.webp";
 import bape_tee_8 from "./Tees/Bape_Tee/Bape_Tee_8.jpg";
 
-import bape_tweed_shorts_1 from "./Bape_Tweed_Hem_Shorts/Bape_Tweed_Hem_Shorts_1.webp";
-import bape_tweed_shorts_2 from "./Bape_Tweed_Hem_Shorts/Bape_Tweed_Hem_Shorts_2.webp";
-import bape_tweed_shorts_3 from "./Bape_Tweed_Hem_Shorts/Bape_Tweed_Hem_Shorts_3.webp";
-import bape_tweed_shorts_4 from "./Bape_Tweed_Hem_Shorts/Bape_Tweed_Hem_Shorts_4.webp";
-import bape_tweed_shorts_5 from "./Bape_Tweed_Hem_Shorts/Bape_Tweed_Hem_Shorts_5.webp";
-import bape_tweed_shorts_6 from "./Bape_Tweed_Hem_Shorts/Bape_Tweed_Hem_Shorts_6.webp";
+import bape_tweed_shorts_1 from "./Shorts/Bape_Tweed_Hem_Shorts/Bape_Tweed_Hem_Shorts_1.webp";
+import bape_tweed_shorts_2 from "./Shorts/Bape_Tweed_Hem_Shorts/Bape_Tweed_Hem_Shorts_2.webp";
+import bape_tweed_shorts_3 from "./Shorts/Bape_Tweed_Hem_Shorts/Bape_Tweed_Hem_Shorts_3.webp";
+import bape_tweed_shorts_4 from "./Shorts/Bape_Tweed_Hem_Shorts/Bape_Tweed_Hem_Shorts_4.webp";
+import bape_tweed_shorts_5 from "./Shorts/Bape_Tweed_Hem_Shorts/Bape_Tweed_Hem_Shorts_5.webp";
+import bape_tweed_shorts_6 from "./Shorts/Bape_Tweed_Hem_Shorts/Bape_Tweed_Hem_Shorts_6.webp";
 
 import bape_black_tshirt_1 from "./Tees/Bape_Black_Tshirt/Bape_Black_Tshirt_1.webp";
 import bape_black_tshirt_2 from "./Tees/Bape_Black_Tshirt/Bape_Black_Tshirt_2.webp";
@@ -1496,6 +1496,257 @@ const newBalls = [
 
 // Añadir los nuevos balones al array de productos
 products.push(...newBalls);
+
+// Importaciones de shorts
+import bulls_shorts_1 from "./Shorts/Bulls_Shorts/Bulls_Shorts_1.webp";
+import bulls_shorts_2 from "./Shorts/Bulls_Shorts/Bulls_Shorts_2.webp";
+import bulls_shorts_3 from "./Shorts/Bulls_Shorts/Bulls_Shorts_3.webp";
+import bulls_shorts_4 from "./Shorts/Bulls_Shorts/Bulls_Shorts_4.webp";
+import bulls_shorts_5 from "./Shorts/Bulls_Shorts/Bulls_Shorts_5.webp";
+
+import compression_shorts_1 from "./Shorts/Compression_Shorts/Compression_Shorts_1.webp";
+import compression_shorts_2 from "./Shorts/Compression_Shorts/Compression_Shorts_2.webp";
+import compression_shorts_3 from "./Shorts/Compression_Shorts/Compression_Shorts_3.webp";
+import compression_shorts_4 from "./Shorts/Compression_Shorts/Compression_Shorts_4.webp";
+
+import fire_temu_shorts_1 from "./Shorts/Fire_Temu_Shorts/Fire_Temu_Shorts_1.webp";
+import fire_temu_shorts_2 from "./Shorts/Fire_Temu_Shorts/Fire_Temu_Shorts_2.webp";
+import fire_temu_shorts_3 from "./Shorts/Fire_Temu_Shorts/Fire_Temu_Shorts_3.webp";
+import fire_temu_shorts_4 from "./Shorts/Fire_Temu_Shorts/Fire_Temu_Shorts_4.webp";
+import fire_temu_shorts_5 from "./Shorts/Fire_Temu_Shorts/Fire_Temu_Shorts_5.webp";
+import fire_temu_shorts_6 from "./Shorts/Fire_Temu_Shorts/Fire_Temu_Shorts_6.webp";
+
+import green_temu_shorts_1 from "./Shorts/Green_Temu_Shorts/Green_Temu_Shorts_1.webp";
+import green_temu_shorts_2 from "./Shorts/Green_Temu_Shorts/Green_Temu_Shorts_2.webp";
+import green_temu_shorts_3 from "./Shorts/Green_Temu_Shorts/Green_Temu_Shorts_3.webp";
+import green_temu_shorts_4 from "./Shorts/Green_Temu_Shorts/Green_Temu_Shorts_4.webp";
+import green_temu_shorts_5 from "./Shorts/Green_Temu_Shorts/Green_Temu_Shorts_5.webp";
+import green_temu_shorts_6 from "./Shorts/Green_Temu_Shorts/Green_Temu_Shorts_6.webp";
+import green_temu_shorts_7 from "./Shorts/Green_Temu_Shorts/Green_Temu_Shorts_7.webp";
+import green_temu_shorts_8 from "./Shorts/Green_Temu_Shorts/Green_Temu_Shorts_8.webp";
+
+import green_fire_temu_shorts_1 from "./Shorts/Green_Fire_Temu_Shorts/Green_Fire_Temu_Shorts_1.webp";
+import green_fire_temu_shorts_2 from "./Shorts/Green_Fire_Temu_Shorts/Green_Fire_Temu_Shorts_2.webp";
+import green_fire_temu_shorts_3 from "./Shorts/Green_Fire_Temu_Shorts/Green_Fire_Temu_Shorts_3.webp";
+import green_fire_temu_shorts_4 from "./Shorts/Green_Fire_Temu_Shorts/Green_Fire_Temu_Shorts_4.webp";
+
+import point3_shorts_1 from "./Shorts/Point3_Shorts/Point3_Shorts_1.webp";
+import point3_shorts_2 from "./Shorts/Point3_Shorts/Point3_Shorts_2.webp";
+import point3_shorts_3 from "./Shorts/Point3_Shorts/Point3_Shorts_3.webp";
+import point3_shorts_4 from "./Shorts/Point3_Shorts/Point3_Shorts_4.webp";
+import point3_shorts_5 from "./Shorts/Point3_Shorts/Point3_Shorts_5.webp";
+import point3_shorts_6 from "./Shorts/Point3_Shorts/Point3_Shorts_6.webp";
+import point3_shorts_7 from "./Shorts/Point3_Shorts/Point3_Shorts_7.webp";
+import point3_shorts_8 from "./Shorts/Point3_Shorts/Point3_Shorts_8.webp";
+
+import snake_short_1 from "./Shorts/Snake_Short/Snake_Short_1.webp";
+import snake_short_2 from "./Shorts/Snake_Short/Snake_Short_2.webp";
+import snake_short_3 from "./Shorts/Snake_Short/Snake_Short_3.webp";
+import snake_short_4 from "./Shorts/Snake_Short/Snake_Short_4.webp";
+import snake_short_5 from "./Shorts/Snake_Short/Snake_Short_5.webp";
+import snake_short_6 from "./Shorts/Snake_Short/Snake_Short_6.webp";
+
+import xmas_short_1 from "./Shorts/Xmas_Short/Xmas_Short_1.jpg";
+import xmas_short_2 from "./Shorts/Xmas_Short/Xmas_Short_2.webp";
+import xmas_short_3 from "./Shorts/Xmas_Short/Xmas_Short_3.jpg";
+import xmas_short_4 from "./Shorts/Xmas_Short/Xmas_Short_4.jpg";
+import xmas_short_5 from "./Shorts/Xmas_Short/Xmas_Short_5.webp";
+
+// Añadir nuevos productos de shorts
+const newShorts = [
+  {
+    id: 44,
+    categories: [{ id: 4, name: "Shorts" }],
+    name: "Chicago Bulls Shorts",
+    description: "Classic Chicago Bulls basketball shorts featuring the iconic team colors and logo. Perfect for both on and off the court.",
+    price: 49.99,
+    images: [
+      bulls_shorts_1,
+      bulls_shorts_2,
+      bulls_shorts_3,
+      bulls_shorts_4,
+      bulls_shorts_5
+    ],
+    availableSizes: ["S", "M", "L", "XL", "2XL"],
+    measuresIn: {
+      S: { waistWidth: 14.5, hipWidth: 20, itemLength: 18 },
+      M: { waistWidth: 15.5, hipWidth: 21, itemLength: 19 },
+      L: { waistWidth: 16.5, hipWidth: 22, itemLength: 20 },
+      XL: { waistWidth: 17.5, hipWidth: 23, itemLength: 21 },
+      "2XL": { waistWidth: 18.5, hipWidth: 24, itemLength: 22 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 45,
+    categories: [{ id: 4, name: "Shorts" }],
+    name: "Compression Shorts",
+    description: "High-performance compression shorts designed for maximum comfort and mobility during intense basketball games.",
+    price: 39.99,
+    images: [
+      compression_shorts_1,
+      compression_shorts_2,
+      compression_shorts_3,
+      compression_shorts_4
+    ],
+    availableSizes: ["S", "M", "L", "XL"],
+    measuresIn: {
+      S: { waistWidth: 14.5, hipWidth: 20, itemLength: 17 },
+      M: { waistWidth: 15.5, hipWidth: 21, itemLength: 18 },
+      L: { waistWidth: 16.5, hipWidth: 22, itemLength: 19 },
+      XL: { waistWidth: 17.5, hipWidth: 23, itemLength: 20 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 46,
+    categories: [{ id: 4, name: "Shorts" }],
+    name: "Fire Temu Shorts",
+    description: "Bold and stylish basketball shorts featuring a fiery design pattern, perfect for making a statement on the court.",
+    price: 44.99,
+    images: [
+      fire_temu_shorts_1,
+      fire_temu_shorts_2,
+      fire_temu_shorts_3,
+      fire_temu_shorts_4,
+      fire_temu_shorts_5,
+      fire_temu_shorts_6
+    ],
+    availableSizes: ["S", "M", "L", "XL", "2XL"],
+    measuresIn: {
+      S: { waistWidth: 14.5, hipWidth: 20, itemLength: 18 },
+      M: { waistWidth: 15.5, hipWidth: 21, itemLength: 19 },
+      L: { waistWidth: 16.5, hipWidth: 22, itemLength: 20 },
+      XL: { waistWidth: 17.5, hipWidth: 23, itemLength: 21 },
+      "2XL": { waistWidth: 18.5, hipWidth: 24, itemLength: 22 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 47,
+    categories: [{ id: 4, name: "Shorts" }],
+    name: "Green Temu Shorts",
+    description: "Vibrant green basketball shorts with modern design elements, offering both style and comfort for your game.",
+    price: 44.99,
+    images: [
+      green_temu_shorts_1,
+      green_temu_shorts_2,
+      green_temu_shorts_3,
+      green_temu_shorts_4,
+      green_temu_shorts_5,
+      green_temu_shorts_6,
+      green_temu_shorts_7,
+      green_temu_shorts_8
+    ],
+    availableSizes: ["S", "M", "L", "XL", "2XL"],
+    measuresIn: {
+      S: { waistWidth: 14.5, hipWidth: 20, itemLength: 18 },
+      M: { waistWidth: 15.5, hipWidth: 21, itemLength: 19 },
+      L: { waistWidth: 16.5, hipWidth: 22, itemLength: 20 },
+      XL: { waistWidth: 17.5, hipWidth: 23, itemLength: 21 },
+      "2XL": { waistWidth: 18.5, hipWidth: 24, itemLength: 22 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 48,
+    categories: [{ id: 4, name: "Shorts" }],
+    name: "Green Fire Temu Shorts",
+    description: "Unique basketball shorts combining green and fire elements for a distinctive look on the court.",
+    price: 44.99,
+    images: [
+      green_fire_temu_shorts_1,
+      green_fire_temu_shorts_2,
+      green_fire_temu_shorts_3,
+      green_fire_temu_shorts_4
+    ],
+    availableSizes: ["S", "M", "L", "XL", "2XL"],
+    measuresIn: {
+      S: { waistWidth: 14.5, hipWidth: 20, itemLength: 18 },
+      M: { waistWidth: 15.5, hipWidth: 21, itemLength: 19 },
+      L: { waistWidth: 16.5, hipWidth: 22, itemLength: 20 },
+      XL: { waistWidth: 17.5, hipWidth: 23, itemLength: 21 },
+      "2XL": { waistWidth: 18.5, hipWidth: 24, itemLength: 22 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 49,
+    categories: [{ id: 4, name: "Shorts" }],
+    name: "Point3 Basketball Shorts",
+    description: "Premium basketball shorts from Point3, designed for optimal performance and comfort during intense games.",
+    price: 54.99,
+    images: [
+      point3_shorts_1,
+      point3_shorts_2,
+      point3_shorts_3,
+      point3_shorts_4,
+      point3_shorts_5,
+      point3_shorts_6,
+      point3_shorts_7,
+      point3_shorts_8
+    ],
+    availableSizes: ["S", "M", "L", "XL", "2XL"],
+    measuresIn: {
+      S: { waistWidth: 14.5, hipWidth: 20, itemLength: 18 },
+      M: { waistWidth: 15.5, hipWidth: 21, itemLength: 19 },
+      L: { waistWidth: 16.5, hipWidth: 22, itemLength: 20 },
+      XL: { waistWidth: 17.5, hipWidth: 23, itemLength: 21 },
+      "2XL": { waistWidth: 18.5, hipWidth: 24, itemLength: 22 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 50,
+    categories: [{ id: 4, name: "Shorts" }],
+    name: "Snake Pattern Shorts",
+    description: "Basketball shorts featuring a unique snake pattern design, perfect for players who want to stand out on the court.",
+    price: 49.99,
+    images: [
+      snake_short_1,
+      snake_short_2,
+      snake_short_3,
+      snake_short_4,
+      snake_short_5,
+      snake_short_6
+    ],
+    availableSizes: ["S", "M", "L", "XL", "2XL"],
+    measuresIn: {
+      S: { waistWidth: 14.5, hipWidth: 20, itemLength: 18 },
+      M: { waistWidth: 15.5, hipWidth: 21, itemLength: 19 },
+      L: { waistWidth: 16.5, hipWidth: 22, itemLength: 20 },
+      XL: { waistWidth: 17.5, hipWidth: 23, itemLength: 21 },
+      "2XL": { waistWidth: 18.5, hipWidth: 24, itemLength: 22 }
+    },
+    measuresCm: {}
+  },
+  {
+    id: 51,
+    categories: [{ id: 4, name: "Shorts" }],
+    name: "Christmas Edition Shorts",
+    description: "Special edition basketball shorts with festive Christmas design, perfect for holiday season games.",
+    price: 49.99,
+    images: [
+      xmas_short_1,
+      xmas_short_2,
+      xmas_short_3,
+      xmas_short_4,
+      xmas_short_5
+    ],
+    availableSizes: ["S", "M", "L", "XL", "2XL"],
+    measuresIn: {
+      S: { waistWidth: 14.5, hipWidth: 20, itemLength: 18 },
+      M: { waistWidth: 15.5, hipWidth: 21, itemLength: 19 },
+      L: { waistWidth: 16.5, hipWidth: 22, itemLength: 20 },
+      XL: { waistWidth: 17.5, hipWidth: 23, itemLength: 21 },
+      "2XL": { waistWidth: 18.5, hipWidth: 24, itemLength: 22 }
+    },
+    measuresCm: {}
+  }
+];
+
+// Añadir los nuevos shorts al array de productos
+products.push(...newShorts);
 
 function inchesToCm(inches) {
   return +(inches * 2.54).toFixed(2);
