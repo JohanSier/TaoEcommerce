@@ -298,6 +298,18 @@ import bulls_shaker_5 from "./Accessories/Bulls_Shaker/Bulls_Shaker_5.webp";
 import bulls_shaker_6 from "./Accessories/Bulls_Shaker/Bulls_Shaker_6.webp";
 import bulls_shaker_7 from "./Accessories/Bulls_Shaker/Bulls_Shaker_7.webp";
 
+// Importaciones de balones
+import bucket_tidal_1 from "./Accessories/Bucket_Tidal/Bucket_Tidal_1.webp";
+import bucket_tidal_2 from "./Accessories/Bucket_Tidal/Bucket_Tidal_2.webp";
+import bucket_tidal_3 from "./Accessories/Bucket_Tidal/Bucket_Tidal_3.webp";
+import bucket_tidal_4 from "./Accessories/Bucket_Tidal/Bucket_Tidal_4.webp";
+
+import bucket_blossom_1 from "./Accessories/Bucket_Blossom/Bucket_Blossom_1.webp";
+import bucket_blossom_2 from "./Accessories/Bucket_Blossom/Bucket_Blossom_2.webp";
+import bucket_blossom_3 from "./Accessories/Bucket_Blossom/Bucket_Blossom_3.webp";
+import bucket_blossom_4 from "./Accessories/Bucket_Blossom/Bucket_Blossom_4.webp";
+import bucket_blossom_5 from "./Accessories/Bucket_Blossom/Bucket_Blossom_5.webp";
+
 const categories = [
   {
     id: 1,
@@ -1278,7 +1290,7 @@ const newAccessories = [
     id: 35,
     categories: [{ id: 6, name: "Accessories" }],
     name: "Big Backpack",
-    description: "Una mochila espaciosa y resistente, perfecta para llevar todo tu equipo de baloncesto y accesorios personales.",
+    description: "A spacious and durable backpack, perfect for carrying all your basketball equipment and personal accessories.",
     price: 89.99,
     images: [
       big_backpack_1,
@@ -1304,7 +1316,7 @@ const newAccessories = [
     id: 36,
     categories: [{ id: 6, name: "Accessories" }],
     name: "Tech Backpack",
-    description: "Mochila moderna con compartimento especial para dispositivos electrónicos y accesorios de baloncesto.",
+    description: "Modern backpack with special compartment for electronic devices and basketball accessories.",
     price: 99.99,
     images: [
       tech_backpack_1,
@@ -1329,8 +1341,8 @@ const newAccessories = [
   {
     id: 37,
     categories: [{ id: 6, name: "Accessories" }],
-    name: "Basketball Hoop Necklace",
-    description: "Colgante elegante con diseño de aro de baloncesto, perfecto para los amantes del deporte.",
+    name: "Basketball Hoop",
+    description: "The remarkable Beast Portable Basketball Hoop – a system that stands as the epitome of portability within its size class. Offering the unwavering stability reminiscent of an in-ground hoop, the ingenious design incorporates a mobile advantage through its wheeled base. Prepare to experience authentic rebounds akin to the professional court, courtesy of the expansive 60\" glass backboard.",
     price: 39.99,
     images: [
       hoop_1,
@@ -1351,7 +1363,7 @@ const newAccessories = [
     id: 38,
     categories: [{ id: 6, name: "Accessories" }],
     name: "Basketball Chain Necklace",
-    description: "Cadena con colgante de baloncesto, ideal para complementar tu estilo urbano.",
+    description: "Chain with basketball pendant, ideal to complement your urban style.",
     price: 44.99,
     images: [
       necklace_1,
@@ -1374,7 +1386,7 @@ const newAccessories = [
     id: 39,
     categories: [{ id: 6, name: "Accessories" }],
     name: "Miami Heat Shaker",
-    description: "Shaker oficial de los Miami Heat, perfecto para mostrar tu apoyo al equipo.",
+    description: "Official Miami Heat shaker, perfect for showing your support for the team.",
     price: 24.99,
     images: [
       heats_shaker_1,
@@ -1398,7 +1410,7 @@ const newAccessories = [
     id: 40,
     categories: [{ id: 6, name: "Accessories" }],
     name: "Drawstring Bag",
-    description: "Bolsa de cordón ligera y práctica, ideal para llevar tus accesorios de baloncesto.",
+    description: "Lightweight and practical drawstring bag, ideal for carrying your basketball accessories.",
     price: 29.99,
     images: [
       drawstring_bag_1,
@@ -1421,7 +1433,7 @@ const newAccessories = [
     id: 41,
     categories: [{ id: 6, name: "Accessories" }],
     name: "Chicago Bulls Shaker",
-    description: "Shaker oficial de los Chicago Bulls, perfecto para los fanáticos del equipo.",
+    description: "Official Chicago Bulls shaker, perfect for team fans.",
     price: 24.99,
     images: [
       bulls_shaker_1,
@@ -1448,6 +1460,42 @@ products.push(...newAccessories);
 
 // Añadir los nuevos jerseys al array de productos
 products.push(...newJerseys);
+
+// Añadir nuevos productos de balones
+const newBalls = [
+  {
+    id: 42,
+    categories: [{ id: 6, name: "Accessories" }],
+    name: "Bucket Tidal Basketball",
+    description: "Official basketball with wave design, perfect for playing on any surface.",
+    price: 49.99,
+    images: [
+      bucket_tidal_1,
+      bucket_tidal_2,
+      bucket_tidal_3,
+      bucket_tidal_4
+    ],
+    availableSizes: [7, 8, 9],
+  },
+  {
+    id: 43,
+    categories: [{ id: 6, name: "Accessories" }],
+    name: "Bucket Blossom Basketball",
+    description: "Official basketball with floral design, ideal for players looking for a unique style.",
+    price: 54.99,
+    images: [
+      bucket_blossom_1,
+      bucket_blossom_2,
+      bucket_blossom_3,
+      bucket_blossom_4,
+      bucket_blossom_5
+    ],
+    availableSizes: [8, 9],
+  }
+];
+
+// Añadir los nuevos balones al array de productos
+products.push(...newBalls);
 
 function inchesToCm(inches) {
   return +(inches * 2.54).toFixed(2);
