@@ -114,7 +114,11 @@ const ProductDetails = styled.div`
 const ProductTitle = styled.p`
   width: 100%;
   font-size: 1.1rem;
-  margin:0;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
 `
 const Price = styled.p`
   font-size: .8rem;
