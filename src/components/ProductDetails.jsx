@@ -122,21 +122,19 @@ const Separator = styled.div`
 `;
 
 const QuantityContainer = styled.div`
-  display: inline-flex;
+  display: inline-grid;
+  grid-template-columns: 2.1rem 2rem 2rem;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
   margin-bottom: 1.3rem;
   border: 1px solid var(--greyE);
   border-radius: 20px;
-  width: 6.6rem;
+  width: 6.8rem;
   height: 2.5rem;
-  padding: 0 2rem;
 `;
 
 const QuantityButton = styled.button`
-  width: 2.4rem;
-  border-radius: 5px;
+  width: 100%;
+  height: 100%;
   border: none;
   background: transparent;
   display: flex;
@@ -145,11 +143,16 @@ const QuantityButton = styled.button`
   cursor: pointer;
   font-size: 1.5rem;
   color: var(--secondary);
+  text-align: center;
+  padding: 0;
+  marign:0;
 `;
 
 const QuantityText = styled.span`
   font-size: 1.1rem;
   font-variation-settings: "wght" 500;
+  text-align: center;
+  width: 100%;
 `;
 
 const ProductDetails = ({ title, price, sizes, description, thumbnailImage }) => {
