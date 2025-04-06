@@ -57,8 +57,15 @@ const FooterHeading = styled.span`
   font-size: 2.3rem;
   font-variation-settings: "wght" 600;
   color: var(--white);
-`;
 
+  @media screen and (max-width: 570px){
+    font-size: 1.5rem;
+  }
+
+  @media screen and (max-width: 350px){
+    font-size: 1.2rem;
+  }
+`;
 const Text = styled.p`
   max-width: 23.5rem;
   margin-top: 0.875rem;
@@ -66,8 +73,11 @@ const Text = styled.p`
   font-size: 0.9rem;
   font-variation-settings: "wght" 400;
   color: var(--white);
-`;
 
+  @media screen and (max-width: 570px){
+    font-size: 0.8rem;
+  }
+`;
 const InputContainer = styled.form`
   width: 15.6rem;
   display: flex;

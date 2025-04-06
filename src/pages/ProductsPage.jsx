@@ -19,6 +19,14 @@ const Heading = styled.h1`
   font-size: 5rem;
   margin-bottom: 0;
   white-space: nowrap;
+
+  @media screen and (max-width: 570px){
+    font-size: 3rem;
+  }
+
+  @media screen and (max-width: 350px){
+    font-size: 2.5rem;
+  }
 `;
 
 const FilterAndResults = styled.div`
