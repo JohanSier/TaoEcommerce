@@ -131,24 +131,27 @@ const ProductSlider = ({ products }) => {
         breakpoint: 1360,
         settings: {
           slidesToShow: 4,
+          slidesToScroll: 2,
         },
       },
       {
         breakpoint: 1090,
         settings: {
           slidesToShow: 3,
+          slidesToScroll: 2,
         },
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
+          slidesToScroll: 1,
         },
       },
       {
         breakpoint: 500,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
           arrows: true,
           infinite: true,
