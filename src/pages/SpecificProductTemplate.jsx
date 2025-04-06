@@ -215,7 +215,7 @@ const SpecificProductTemplate = () => {
         <Grid>
           <Gallery
             options={{
-              paddingFn: () => ({ top: 50, bottom: 50, left: 0, right: 0 }),
+              paddingFn: () => ({ top: 0, bottom: 0, left: 0, right: 0 }),
               bgOpacity: 0.9,
               closeOnVerticalDrag: true,
               closeOnClick: true,
