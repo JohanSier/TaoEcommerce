@@ -121,33 +121,74 @@ const Separator = styled.div`
     margin-bottom: 1rem;
 `;
 
+const QuantityContainer = styled.div`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.3rem;
+  border: 1px solid var(--greyE);
+  border-radius: 20px;
+  width: 6.6rem;
+  height: 2.5rem;
+  padding: 0 2rem;
+`;
+
+const QuantityButton = styled.button`
+  width: 2.4rem;
+  border-radius: 5px;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--secondary);
+`;
+
+const QuantityText = styled.span`
+  font-size: 1.1rem;
+  font-variation-settings: "wght" 500;
+`;
+
 const ProductDetails = ({ title, price, sizes, description, thumbnailImage }) => {
     const { id } = useParams();
     const { isSizeGuideVisible, setIsSizeGuideVisible } = useSizeGuide();
-    const { addItemToCart } = useCart(); // Get addItemToCart function from context
+    const { addItemToCart } = useCart();
     const [selectedSize, setSelectedSize] = useState(null);
+    const [quantity, setQuantity] = useState(1);
 
     const handleSizeClick = (size) => {
         setSelectedSize(prevSize => (prevSize === size ? null : size));
     };
 
+    const handleQuantityChange = (increment) => {
+        setQuantity(prev => {
+            const newQuantity = prev + increment;
+            return newQuantity < 1 ? 1 : newQuantity;
+        });
+    };
+
     const handleAddToCart = () => {
-        if (!selectedSize) return; // Prevent adding without a size
+        if (!selectedSize) return;
 
         const product = {
             id,
             title,
             price,
             size: selectedSize,
-            quantity: 1,
+            quantity,
             thumbnailImage
         };
 
         addItemToCart(product);
+        setQuantity(1); // Reset quantity after adding to cart
     };
 
     useEffect(() => {
         setSelectedSize(null);
+        setQuantity(1);
     }, [id]);
 
     return (
@@ -174,6 +215,12 @@ const ProductDetails = ({ title, price, sizes, description, thumbnailImage }) =>
                     </SizeButton>
                 ))}
             </Sizes>
+
+            <QuantityContainer>
+                <QuantityButton onClick={() => handleQuantityChange(-1)}>-</QuantityButton>
+                <QuantityText>{quantity}</QuantityText>
+                <QuantityButton onClick={() => handleQuantityChange(1)}>+</QuantityButton>
+            </QuantityContainer>
 
             <Cta onClick={handleAddToCart} disabled={!selectedSize}>
                 ADD TO CART

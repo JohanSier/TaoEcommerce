@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import { useCart } from "../context/CartContext";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import emptyCartGif from "../assets/Images/emptyCart.gif";
 import { HiOutlineX } from "react-icons/hi";
 
@@ -246,6 +246,12 @@ const ViewCartButton = styled(CheckoutButton)`
 
 const Cart = ({ onClose }) => {
   const { cart, removeItemFromCart } = useCart();
+  const navigate = useNavigate();
+
+  const handleProductClick = (productId, category) => {
+    navigate(`/products/${category}/${productId}`);
+    onClose();
+  };
 
   const totalPrice = cart.items.reduce(
     (acc, item) => acc + item.price * item.quantity,
@@ -254,9 +260,7 @@ const Cart = ({ onClose }) => {
 
   return (
     <CartContainer isVisible={onClose}>
-
       {cart.items.length === 0 ? (
-        
         <EmptyContainer>
           <EmptyCloseButton size={30} onClick={onClose} />
           <Gif src={emptyCartGif} alt="Animated Gif of a basketball" />
@@ -277,12 +281,11 @@ const Cart = ({ onClose }) => {
             <CartItem key={`${item.id}-${item.size}`}>
               <ProductInfo>
                 <ProductImage
-                  src={
-                    item.thumbnailImage
-                  }
+                  src={item.thumbnailImage}
                   alt={item.title}
+                  onClick={() => handleProductClick(item.id, item.category)}
+                  style={{ cursor: 'pointer' }}
                 />
-
                 <ProductDetails>
                   <ProductTitle>{item.title}</ProductTitle>
                   <Price>${item.price}</Price>
