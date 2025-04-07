@@ -17,9 +17,10 @@ if (!process.env.STRIPE_SECRET_KEY) {
 
 // Configurar CORS
 app.use(cors({
-  origin: '*',
+  origin: ['http://localhost:4000', 'https://taohoops.netlify.app'],
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
 }));
 
 app.use(express.json());
@@ -41,8 +42,16 @@ function getPublicImageUrl(relativePath) {
   
   // Si es una ruta relativa, la convertimos a URL absoluta
   const cleanPath = relativePath.startsWith('/') ? relativePath : `/${relativePath}`;
-  return `http://localhost:4000${cleanPath}`;
+  const baseUrl = process.env.NODE_ENV === 'production' 
+    ? 'https://taohoops.netlify.app'
+    : 'http://localhost:4000';
+  return `${baseUrl}${cleanPath}`;
 }
+
+// Ruta de prueba para verificar que el servidor está funcionando
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'ok', environment: process.env.NODE_ENV });
+});
 
 app.post('/api/create-checkout-session', async (req, res) => {
   try {
@@ -84,12 +93,16 @@ app.post('/api/create-checkout-session', async (req, res) => {
 
     console.log('Creando sesión de Stripe con line_items:', JSON.stringify(lineItems, null, 2));
 
+    const baseUrl = process.env.NODE_ENV === 'production' 
+      ? 'https://taohoops.netlify.app'
+      : 'http://localhost:4000';
+
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: lineItems,
       mode: 'payment',
-      success_url: 'http://localhost:4000/payment-success',
-      cancel_url: 'http://localhost:4000/checkout',
+      success_url: `${baseUrl}/payment-success`,
+      cancel_url: `${baseUrl}/checkout`,
       shipping_address_collection: {
         allowed_countries: ['US', 'CO'],
       },
@@ -119,6 +132,7 @@ app.listen(port, () => {
   console.log('Versión de Node.js:', process.version);
   console.log('Variables de entorno cargadas:', {
     STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY ? 'Configurada' : 'No configurada',
-    PORT: port
+    PORT: port,
+    NODE_ENV: process.env.NODE_ENV || 'development'
   });
 }); 

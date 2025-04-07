@@ -4,6 +4,7 @@ import { useCart } from "../context/CartContext";
 import { Link, useNavigate } from "react-router";
 import emptyCartGif from "../assets/Images/emptyCart.gif";
 import { HiOutlineX } from "react-icons/hi";
+import { API_URL } from '../config';
 
 const slideIn = keyframes`
   from { transform: translateX(100%); }
@@ -297,7 +298,7 @@ const Cart = ({ onClose }) => {
     try {
       console.log('Iniciando checkout con items:', cart.items);
       
-      const response = await fetch('http://localhost:4242/api/create-checkout-session', {
+      const response = await fetch(`${API_URL}/api/create-checkout-session`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -314,13 +315,17 @@ const Cart = ({ onClose }) => {
         }),
       });
 
+      console.log('Respuesta del servidor:', response.status, response.statusText);
+      
       const data = await response.json();
+      console.log('Datos recibidos:', data);
       
       if (!response.ok) {
-        throw new Error(data.details || data.error || 'Error al procesar el pago');
+        throw new Error(data.details || data.error || `Error ${response.status}: ${response.statusText}`);
       }
 
       if (data.url) {
+        console.log('Redirigiendo a:', data.url);
         window.location.href = data.url;
       } else {
         throw new Error('No se recibió la URL de pago');
