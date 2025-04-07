@@ -1,7 +1,7 @@
 import "./styles/App.css";
 import Homepage from "./pages/Homepage";
 import ProductsPage from "./pages/ProductsPage"; 
-import { Routes, Route } from "react-router";
+import { Routes, Route, Navigate } from "react-router";
 import RootLayout from "./components/RootLayout"; 
 import NotFound from "./pages/NotFound";
 import UserPage from "./pages/UserPage";
@@ -14,6 +14,11 @@ import Checkout from "./pages/Checkout";
 import PaymentSuccess from "./pages/PaymentSuccess";
 
 function App() {
+  // Ignorar rutas que empiezan con /api
+  if (window.location.pathname.startsWith('/api')) {
+    return null;
+  }
+
   return (
     <CartProvider>
       <SizeGuideProvider>

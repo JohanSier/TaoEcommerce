@@ -2,6 +2,11 @@ import express from 'express';
 import cors from 'cors';
 import Stripe from 'stripe';
 import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Cargar variables de entorno
 dotenv.config();
@@ -50,7 +55,11 @@ function getPublicImageUrl(relativePath) {
 
 // Ruta de prueba para verificar que el servidor está funcionando
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', environment: process.env.NODE_ENV });
+  res.json({ 
+    status: 'ok', 
+    environment: process.env.NODE_ENV,
+    timestamp: new Date().toISOString()
+  });
 });
 
 app.post('/api/create-checkout-session', async (req, res) => {
@@ -126,6 +135,20 @@ app.post('/api/create-checkout-session', async (req, res) => {
     });
   }
 });
+
+// Servir archivos estáticos si estamos en producción
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'dist')));
+  
+  // Manejar todas las demás rutas enviando el index.html
+  app.get('*', (req, res) => {
+    // No enviar index.html para rutas /api
+    if (req.path.startsWith('/api')) {
+      return res.status(404).json({ error: 'API endpoint not found' });
+    }
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+  });
+}
 
 app.listen(port, () => {
   console.log(`Servidor escuchando en http://localhost:${port}`);
