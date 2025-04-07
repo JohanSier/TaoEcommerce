@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { useCart } from "../context/CartContext";
 import { Link, useNavigate } from "react-router";
@@ -238,6 +238,10 @@ const CheckoutButton = styled(EmptyButton)`
   border: none;
   cursor: pointer;
   font-size: .9rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const ViewCartButton = styled(CheckoutButton)`
@@ -281,10 +285,50 @@ const CartItemQuantityText = styled.span`
 const Cart = ({ onClose }) => {
   const { cart, removeItemFromCart, updateItemQuantity } = useCart();
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const handleProductClick = (productId, category) => {
     navigate(`/products/${category}/${productId}`);
     onClose();
+  };
+
+  const handleCheckout = async () => {
+    setLoading(true);
+    try {
+      console.log('Iniciando checkout con items:', cart.items);
+      
+      const response = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          items: cart.items.map(item => ({
+            id: item.id,
+            title: item.title,
+            price: item.price,
+            quantity: item.quantity,
+            size: item.size
+          }))
+        }),
+      });
+
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.details || data.error || 'Error al procesar el pago');
+      }
+
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        throw new Error('No se recibió la URL de pago');
+      }
+    } catch (error) {
+      console.error('Error detallado del checkout:', error);
+      alert('Error al procesar el pago: ' + error.message);
+      setLoading(false);
+    }
   };
 
   const handleQuantityChange = (item, increment) => {
@@ -346,20 +390,24 @@ const Cart = ({ onClose }) => {
               </RemoveButton>
             </CartItem>
           ))}
-        </>
-      )}
-      {cart.items.length === 0 ? null : (
-        <CheckoutDetails>
-          <TotalFlex>
-             <h3>Total:</h3>
-             <TotalPrice>${totalPrice.toFixed(2)}</TotalPrice>
-          </TotalFlex>
 
-          <ButtonContainer>
-            <ViewCartButton>View Cart</ViewCartButton>
-            <CheckoutButton>Go to Checkout</CheckoutButton>
-          </ButtonContainer>
-        </CheckoutDetails>
+          <CheckoutDetails>
+            <TotalFlex>
+              <h3>Total:</h3>
+              <TotalPrice>${totalPrice.toFixed(2)}</TotalPrice>
+            </TotalFlex>
+
+            <ButtonContainer>
+              <ViewCartButton>View Cart</ViewCartButton>
+              <CheckoutButton 
+                onClick={handleCheckout}
+                disabled={loading}
+              >
+                {loading ? 'Procesando...' : 'Go to Checkout'}
+              </CheckoutButton>
+            </ButtonContainer>
+          </CheckoutDetails>
+        </>
       )}
     </CartContainer>
   );
