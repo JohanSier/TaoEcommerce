@@ -2,14 +2,19 @@ FROM node:18-alpine
 
 WORKDIR /app
 
+# Copiar solo los archivos necesarios para la instalación
 COPY package*.json ./
 
-RUN npm install
+# Instalar dependencias
+RUN npm ci --only=production
 
-COPY . .
+# Copiar el código del servidor
+COPY server.js ./
 
+# Configurar variables de entorno
 ENV NODE_ENV=production
+ENV PORT=8080
 
-EXPOSE 4242
+EXPOSE 8080
 
 CMD ["npm", "start"] 

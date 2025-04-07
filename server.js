@@ -2,11 +2,6 @@ import express from 'express';
 import cors from 'cors';
 import Stripe from 'stripe';
 import dotenv from 'dotenv';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 // Cargar variables de entorno
 dotenv.config();
@@ -36,23 +31,6 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
   timeout: 20000,
 });
 
-// Función para convertir ruta relativa a URL pública
-function getPublicImageUrl(relativePath) {
-  if (!relativePath) return null;
-  
-  // Si la ruta ya es una URL completa, la devolvemos tal cual
-  if (relativePath.startsWith('http')) {
-    return relativePath;
-  }
-  
-  // Si es una ruta relativa, la convertimos a URL absoluta
-  const cleanPath = relativePath.startsWith('/') ? relativePath : `/${relativePath}`;
-  const baseUrl = process.env.NODE_ENV === 'production' 
-    ? 'https://taohoops.netlify.app'
-    : 'http://localhost:4000';
-  return `${baseUrl}${cleanPath}`;
-}
-
 // Ruta de prueba para verificar que el servidor está funcionando
 app.get('/api/health', (req, res) => {
   res.json({ 
@@ -77,8 +55,8 @@ app.post('/api/create-checkout-session', async (req, res) => {
     const processedItems = items.map(item => {
       let imageUrl = null;
       if (item.thumbnailImage) {
-        imageUrl = getPublicImageUrl(item.thumbnailImage);
-        console.log(`URL de imagen generada para ${item.title}:`, imageUrl);
+        imageUrl = item.thumbnailImage;
+        console.log(`URL de imagen para ${item.title}:`, imageUrl);
       }
       return {
         ...item,
@@ -102,16 +80,12 @@ app.post('/api/create-checkout-session', async (req, res) => {
 
     console.log('Creando sesión de Stripe con line_items:', JSON.stringify(lineItems, null, 2));
 
-    const baseUrl = process.env.NODE_ENV === 'production' 
-      ? 'https://taohoops.netlify.app'
-      : 'http://localhost:4000';
-
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: lineItems,
       mode: 'payment',
-      success_url: `${baseUrl}/payment-success`,
-      cancel_url: `${baseUrl}/checkout`,
+      success_url: 'https://taohoops.netlify.app/payment-success',
+      cancel_url: 'https://taohoops.netlify.app/checkout',
       shipping_address_collection: {
         allowed_countries: ['US', 'CO'],
       },
@@ -136,19 +110,10 @@ app.post('/api/create-checkout-session', async (req, res) => {
   }
 });
 
-// Servir archivos estáticos si estamos en producción
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'dist')));
-  
-  // Manejar todas las demás rutas enviando el index.html
-  app.get('*', (req, res) => {
-    // No enviar index.html para rutas /api
-    if (req.path.startsWith('/api')) {
-      return res.status(404).json({ error: 'API endpoint not found' });
-    }
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-  });
-}
+// Manejar rutas no encontradas de la API
+app.use('/api/*', (req, res) => {
+  res.status(404).json({ error: 'API endpoint not found' });
+});
 
 app.listen(port, () => {
   console.log(`Servidor escuchando en http://localhost:${port}`);
