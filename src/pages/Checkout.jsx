@@ -78,13 +78,20 @@ const Checkout = () => {
   const handlePayment = async () => {
     setLoading(true);
     try {
-      const response = await fetch('/api/create-checkout-session', {
+      const response = await fetch('http://localhost:4242/api/create-checkout-session', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          items: cart.items,
+          items: cart.items.map(item => ({
+            id: item.id,
+            title: item.title,
+            price: item.price,
+            quantity: item.quantity,
+            size: item.size,
+            thumbnailImage: item.thumbnailImage
+          }))
         }),
       });
 

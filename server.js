@@ -7,7 +7,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
-const port = 4242;
+const port = process.env.PORT || 4242;
 
 // Verificar que las claves de Stripe estén configuradas
 if (!process.env.STRIPE_SECRET_KEY) {
@@ -32,12 +32,19 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
 
 // Función para convertir ruta relativa a URL pública
 function getPublicImageUrl(relativePath) {
-  // Asegurarse de que la ruta comience con /
+  if (!relativePath) return null;
+  
+  // Si la ruta ya es una URL completa, la devolvemos tal cual
+  if (relativePath.startsWith('http')) {
+    return relativePath;
+  }
+  
+  // Si es una ruta relativa, la convertimos a URL absoluta
   const cleanPath = relativePath.startsWith('/') ? relativePath : `/${relativePath}`;
   return `http://localhost:4000${cleanPath}`;
 }
 
-app.post('/create-checkout-session', async (req, res) => {
+app.post('/api/create-checkout-session', async (req, res) => {
   try {
     const { items } = req.body;
     
@@ -84,9 +91,9 @@ app.post('/create-checkout-session', async (req, res) => {
       success_url: 'http://localhost:4000/payment-success',
       cancel_url: 'http://localhost:4000/checkout',
       shipping_address_collection: {
-        allowed_countries: ['US', 'CO'], // Permitir direcciones de envío de USA y Colombia
+        allowed_countries: ['US', 'CO'],
       },
-      allow_promotion_codes: true, // Permitir códigos promocionales
+      allow_promotion_codes: true,
     });
 
     console.log('Sesión de Stripe creada exitosamente:', session.id);

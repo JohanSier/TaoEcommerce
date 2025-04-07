@@ -297,7 +297,7 @@ const Cart = ({ onClose }) => {
     try {
       console.log('Iniciando checkout con items:', cart.items);
       
-      const response = await fetch('/api/create-checkout-session', {
+      const response = await fetch('http://localhost:4242/api/create-checkout-session', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -308,7 +308,8 @@ const Cart = ({ onClose }) => {
             title: item.title,
             price: item.price,
             quantity: item.quantity,
-            size: item.size
+            size: item.size,
+            thumbnailImage: item.thumbnailImage || null
           }))
         }),
       });
