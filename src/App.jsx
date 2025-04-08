@@ -1,7 +1,7 @@
 import "./styles/App.css";
 import Homepage from "./pages/Homepage";
 import ProductsPage from "./pages/ProductsPage"; 
-import { Routes, Route, Navigate } from "react-router";
+import { Routes, Route, Navigate } from "react-router-dom";
 import RootLayout from "./components/RootLayout"; 
 import NotFound from "./pages/NotFound";
 import UserPage from "./pages/UserPage";

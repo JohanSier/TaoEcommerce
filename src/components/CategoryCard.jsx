@@ -1,6 +1,6 @@
 import React from "react";
 import { HiArrowCircleRight } from "react-icons/hi";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 
 const Icon = styled(HiArrowCircleRight)`

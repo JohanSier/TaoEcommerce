@@ -3,7 +3,7 @@ import * as Accordion from "@radix-ui/react-accordion";
 import classNames from "classnames";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
 import "../styles/accordion.css";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const AccordionDemo = ({ description }) => {

@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 import ProductCard from "./ProductCard";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
 const SliderContainer = styled.section`

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import notFoundImage from  "../assets/Images/not-found-image.webp"
 import styled from "styled-components";
 

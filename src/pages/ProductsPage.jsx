@@ -3,7 +3,7 @@ import ProductCard from "../components/ProductCard";
 import { products } from "../assets/Images";
 import styled from "styled-components";
 import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import NotFound from "./NotFound";
 
 const Container = styled.main`

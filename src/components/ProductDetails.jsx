@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { HiOutlineTruck } from "react-icons/hi2";
 import { PiRulerBold } from "react-icons/pi";

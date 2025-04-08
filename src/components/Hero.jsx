@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { HiArrowCircleRight } from "react-icons/hi";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 //import heroImage from "../assets/Images/hero-image.avif"; 
 
 const Container = styled.div`

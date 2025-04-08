@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ProductCard from "../components/ProductCard";
 import ProductDetails from "../components/ProductDetails";
 import { products } from "../assets/Images";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import NotFound from "./NotFound";
 import { Gallery, Item } from "react-photoswipe-gallery";

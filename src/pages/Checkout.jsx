@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useCart } from '../context/CartContext';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const CheckoutContainer = styled.div`

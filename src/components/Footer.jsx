@@ -9,7 +9,7 @@ import {
   RiTwitterXFill,
 } from "react-icons/ri";
 import LogoImg from "../assets/Images/TaoHoops-logo.svg";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   width: 100%;

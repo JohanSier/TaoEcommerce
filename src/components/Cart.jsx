@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { useCart } from "../context/CartContext";
-import { Link, useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router-dom";
 import emptyCartGif from "../assets/Images/emptyCart.gif";
 import { HiOutlineX } from "react-icons/hi";
 import { API_URL } from '../config';
