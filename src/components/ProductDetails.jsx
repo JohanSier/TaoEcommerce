@@ -277,12 +277,16 @@ const ProductDetails = ({ title, price, sizes, description, thumbnailImage }) =>
             <Price>$ {price}</Price>
 
             <Separator />
-
-            <SizeGuideComponent onClick={() => setIsSizeGuideVisible(true)}>
+            <SizeGuideComponent 
+                onClick={(e) => {
+                    e.preventDefault();
+                    setIsSizeGuideVisible(true);
+                }}
+            >
                 <PiRulerBold size={20} />
                 Size Guide
             </SizeGuideComponent>
-            {isSizeGuideVisible && <SizeGuide />}
+            
 
             <Sizes>
                 {sizes.map((size, index) => (

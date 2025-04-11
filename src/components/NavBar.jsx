@@ -18,8 +18,7 @@ const Wrapper = styled.div`
   position: sticky;
   top: 0;
   left: 0;
-  z-index: ${(props) =>
-    props.$isSizeGuideVisible ? -1 : 999}; /* Cambia el z-index dinámicamente */
+  z-index: 999; /* Mantener un z-index constante */
   padding: 0 2rem;
   display: flex;
   align-items: center;
@@ -29,7 +28,7 @@ const Wrapper = styled.div`
       : "var(--transparent)"};
   border-top-left-radius: ${(props) => (props.$background ? 0 : "1rem")};
   border-top-right-radius: ${(props) => (props.$background ? 0 : "1rem")};
-  transition: background 0.2s linear, z-index 0.2s ease-in-out;
+  transition: background 0.2s linear;
 `;
 
 const CenterLogo = styled.div`
@@ -287,7 +286,7 @@ const NavBar = () => {
       <Overlay $isOpen={mobileMenuOpen} onClick={() => setMobileMenuOpen(false)} />
       <MobileMenu $isOpen={mobileMenuOpen}>
         <MobileMenuHeader>
-          <StyledLink to="/" onClick={scrollToTop}>
+          <StyledLink to="/" onClick={handleLinkClick}>
             <Logo src={LogoImg} alt="TaoHoops logo" />
           </StyledLink>
           <BurgerButton onClick={() => setMobileMenuOpen(false)}>

@@ -293,7 +293,7 @@ const Cart = ({ onClose }) => {
     onClose();
   };
 
-  const handleCheckout = async () => {
+  /*const handleCheckout = async () => {
     setLoading(true);
     try {
       console.log('Iniciando checkout con items:', cart.items);
@@ -335,7 +335,7 @@ const Cart = ({ onClose }) => {
       alert('Error al procesar el pago: ' + error.message);
       setLoading(false);
     }
-  };
+  };*/
 
   const handleQuantityChange = (item, increment) => {
     const newQuantity = item.quantity + increment;
@@ -406,7 +406,7 @@ const Cart = ({ onClose }) => {
             <ButtonContainer>
               <ViewCartButton>View Cart</ViewCartButton>
               <CheckoutButton 
-                onClick={handleCheckout}
+                //onClick={handleCheckout}
                 disabled={loading}
               >
                 {loading ? 'Procesando...' : 'Go to Checkout'}

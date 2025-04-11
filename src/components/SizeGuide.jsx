@@ -32,7 +32,7 @@ const Wrapper = styled.div`
   left: 0;
   width: 100%;
   height: 100vh;
-  z-index: 1000;
+  z-index: 1100;
   animation: ${({ isVisible }) => (isVisible ? fadeIn : fadeOut)} 0.4s ease-in-out forwards;
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
   visibility: ${({ isVisible }) => (isVisible ? "visible" : "hidden")};
@@ -47,6 +47,7 @@ const SizeComponent = styled.article`
     flex-direction: column;
   color: var(--secondary);
   width: 25%;
+  z-index: 1101;
   padding: 0 1.5rem 2rem 1.5rem;
   height: 100vh;
   background: var(--white);
@@ -249,15 +250,6 @@ const SizeGuide = () => {
   const [shouldRender, setShouldRender] = useState(isSizeGuideVisible);
   const sizeGuideRef = useRef(null);
 
-  // 🔹 Manejo de animaciones para ocultar después de terminar la animación
-  useEffect(() => {
-    if (isSizeGuideVisible) {
-      setShouldRender(true);
-    } else {
-      setTimeout(() => setShouldRender(false), 400); // Espera a que termine la animación antes de desmontar
-    }
-  }, [isSizeGuideVisible]);
-
   // 🔹 Detectar clics fuera del componente
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -272,18 +264,6 @@ const SizeGuide = () => {
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isSizeGuideVisible]);
-
-  useEffect(() => {
-    if (isSizeGuideVisible) {
-      document.body.classList.add("no-scroll");
-    } else {
-      document.body.classList.remove("no-scroll");
-    }
-
-    return () => {
-      document.body.classList.remove("no-scroll");
     };
   }, [isSizeGuideVisible]);
 
