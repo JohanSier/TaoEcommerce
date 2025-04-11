@@ -50,7 +50,7 @@ const StyledLink = styled(Link)`
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    width: 135px;
+    width: 125px;
     border: 1.5px solid var(--white);
     border-radius: 8px;
     padding-right: 0;
@@ -64,30 +64,53 @@ const StyledLink = styled(Link)`
   }
 `;
 
+const ProfileIconLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.5rem;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    opacity: 0.8;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+  }
+`;
+
 const CartLink = styled.div`
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
-  top:-3px;
+  padding: 0.5rem;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    opacity: 0.8;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+  }
 `;
 
 const CartItemsCounter = styled.div`
-visiblity: hidden;
-position: absolute;
-width: 14px;
-height: 14px;
-font-size: 0.6rem;
-color: var(--secondary);
-background: var(--white);
-top: -2px;
-right: -4px;
-border-radius: 50px;
-display: flex;
-align-items: center;
-justify-content: center;
+  visibility: visible;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  font-size: 0.6rem;
+  color: var(--secondary);
+  background: var(--white);
+  top: 0.5rem;
+  right: 0.5rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
-
 
 const LeftLinks = styled.ul`
   white-space: nowrap;
@@ -109,7 +132,7 @@ const Logo = styled.img`
 `;
 
 const RightLinks = styled(LeftLinks)`
-  gap: 0.5rem;
+  gap: .1rem;
   display: flex;
   flex: 1; /* Take up equal space */
   align-items: center;
@@ -167,21 +190,26 @@ const MobileMenuLink = styled(Link)`
   font-variation-settings: "wght" 600;
 `;
 
-const BurgerButton = styled.button`
-  display: none;
-  background: none;
-  border: none;
+const IconButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
   color: var(--white);
+  border: none;
   font-size: 1.5rem;
   cursor: pointer;
   padding: 0.5rem;
-
-  @media (max-width: 1250px) {
-    display: block;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    opacity: 0.8;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
   }
 `;
 
-const SearchButton = styled.button`
+const SearchButton = styled(IconButton)`
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -191,26 +219,27 @@ const SearchButton = styled.button`
   padding: 0.35rem 0.8rem;
   background: transparent;
   color: var(--white);
-  cursor: pointer;
-  font-size: 1.1rem;
-  font-variation-settings: "wght" 500;
-  transition: all 0.2s ease;
   
-  &:hover {
-    background: rgba(255, 255, 255, 0.1);
-  }
-
   @media (max-width: 850px) {
     width: auto;
     border: none;
-    margin-top: -5px;
     padding: 0.5rem;
   }
 `;
 
 const SearchText = styled.span`
+    font-size: 1.2rem;
+    font-variation-settings: "wght" 500;
   @media (max-width: 850px) {
     display: none;
+  }
+`;
+
+const BurgerButton = styled(IconButton)`
+  display: none;
+  
+  @media (max-width: 1250px) {
+    display: flex;
   }
 `;
 
@@ -260,7 +289,7 @@ const NavBar = () => {
         $isSizeGuideVisible={isSizeGuideVisible}
       >
         <BurgerButton onClick={() => setMobileMenuOpen(true)}>
-          <HiMenu />
+          <HiMenu size={24} />
         </BurgerButton>
 
         <LeftLinks>
@@ -280,16 +309,16 @@ const NavBar = () => {
 
         <RightLinks>
           <SearchButton onClick={() => setIsSearchOpen(true)}>
-            <HiOutlineSearch aria-label="Search Icon" title="Search Item" />
+            <HiOutlineSearch size={24} aria-label="Search Icon" title="Search Item" />
             <SearchText>Buscar</SearchText>
           </SearchButton>
 
-          <StyledLink to="/log-in">
-            <HiOutlineUser aria-label="Profile Icon" title="Go to profile page" />
-          </StyledLink>
+          <ProfileIconLink to="/log-in">
+            <HiOutlineUser size={24} aria-label="Profile Icon" title="Go to profile page" />
+          </ProfileIconLink>
 
           <CartLink onClick={() => setCartOpen(true)}>
-            <HiOutlineShoppingBag aria-label="Cart Icon" title="Go to the cart" />
+            <HiOutlineShoppingBag size={24} aria-label="Cart Icon" title="Go to the cart" />
             {cart.items.length > 0 && (
               <CartItemsCounter>{cart.items.length}</CartItemsCounter>
             )}
@@ -307,7 +336,7 @@ const NavBar = () => {
             <Logo src={LogoImg} alt="TaoHoops logo" />
           </StyledLink>
           <BurgerButton onClick={() => setMobileMenuOpen(false)}>
-            <HiX />
+            <HiX size={24} />
           </BurgerButton>
         </MobileMenuHeader>
         <MobileMenuLinks>
