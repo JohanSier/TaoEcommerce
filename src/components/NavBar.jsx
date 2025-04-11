@@ -11,6 +11,7 @@ import {
 import LogoImg from "../assets/Images/TaoHoops-logo.svg";
 import { useSizeGuide } from "../context/SizeGuideContext";
 import Cart from "./Cart";
+import SearchOverlay from "./SearchOverlay";
 import { useCart } from "../context/CartContext";
 
 const Wrapper = styled.div`
@@ -87,26 +88,6 @@ align-items: center;
 justify-content: center;
 `;
 
-const Input = styled.input`
-  margin: 0;
-  width: 100%;
-  padding: 0.5rem 0;
-  background: transparent;
-  border: none;
-  outline: none;
-  font-variation-settings: "wght" 500;
-  cursor: pointer;
-  color: var(--white);
-
-  &::placeholder {
-    font-size: 1.1rem;
-    color: var(--white);
-  }
-
-  @media (max-width: 850px) {
-    display: none;
-  }
-`;
 
 const LeftLinks = styled.ul`
   white-space: nowrap;
@@ -200,6 +181,39 @@ const BurgerButton = styled.button`
   }
 `;
 
+const SearchButton = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 125px;
+  border: 1.5px solid var(--white);
+  border-radius: 8px;
+  padding: 0.35rem 0.8rem;
+  background: transparent;
+  color: var(--white);
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-variation-settings: "wght" 500;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  @media (max-width: 850px) {
+    width: auto;
+    border: none;
+    margin-top: -5px;
+    padding: 0.5rem;
+  }
+`;
+
+const SearchText = styled.span`
+  @media (max-width: 850px) {
+    display: none;
+  }
+`;
+
 const NavBar = () => {
   const location = useLocation();
   const isHomepage = location.pathname === "/";
@@ -207,6 +221,7 @@ const NavBar = () => {
   const { isSizeGuideVisible } = useSizeGuide();
   const [cartOpen, setCartOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const { cart } = useCart();
 
   useEffect(() => {
@@ -264,10 +279,10 @@ const NavBar = () => {
         </CenterLogo>
 
         <RightLinks>
-          <StyledLink to="/" className="input-btn">
+          <SearchButton onClick={() => setIsSearchOpen(true)}>
             <HiOutlineSearch aria-label="Search Icon" title="Search Item" />
-            <Input type="text" placeholder="Buscar" />
-          </StyledLink>
+            <SearchText>Buscar</SearchText>
+          </SearchButton>
 
           <StyledLink to="/log-in">
             <HiOutlineUser aria-label="Profile Icon" title="Go to profile page" />
@@ -282,6 +297,8 @@ const NavBar = () => {
           {cartOpen && <Cart onClose={() => setCartOpen(false)} />}
         </RightLinks>
       </Wrapper>
+
+      <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
 
       <Overlay $isOpen={mobileMenuOpen} onClick={() => setMobileMenuOpen(false)} />
       <MobileMenu $isOpen={mobileMenuOpen}>
