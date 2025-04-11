@@ -84,18 +84,29 @@ const SearchInput = styled.input`
   color: var(--white);
   font-size: 1.5rem;
   padding: 0.5rem 0;
-  padding-left: 2.5rem;
+  padding-left: 2.2rem;
   
   &::placeholder {
     color: var(--greyD);
+  }
+
+  @media screen and (max-width: 360px){
+  padding-left: 1.6rem;
+        &::placeholder {
+        font-size: 1.2rem;
   }
 `;
 
 const SearchIcon = styled(HiOutlineSearch)`
   position: absolute;
   left: 0;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: var(--white);
+
+  @media screen and (max-width: 360px){
+    font-size: 1.2rem;
+    top: 15px;
+  }
 `;
 
 const ResultsContainer = styled.div`
@@ -215,11 +226,28 @@ const SearchOverlay = ({ isOpen, onClose }) => {
 
   // Categorías populares predefinidas
   const popularSearches = ['Jerseys', 'Tees', 'Shorts', 'Sneakers', 'Accessories'];
+  
+  // Función para resetear el estado de búsqueda
+  const resetSearch = () => {
+    setSearchTerm('');
+    setSearchResults([]);
+  };
+
+  // Función personalizada para cerrar y limpiar
+  const handleClose = () => {
+    onClose();
+    resetSearch();
+  };
 
   // Enfocar el input cuando se abre el overlay
   useEffect(() => {
     if (isOpen && inputRef.current) {
       inputRef.current.focus();
+    }
+    
+    // Resetear búsqueda cuando se abre de nuevo el overlay
+    if (!isOpen) {
+      resetSearch();
     }
   }, [isOpen]);
 
@@ -259,7 +287,7 @@ const SearchOverlay = ({ isOpen, onClose }) => {
     // Determinar la categoría principal para la URL
     const mainCategory = product.categories[0]?.name.toLowerCase() || 'all';
     navigate(`/products/${mainCategory}/${product.id}`);
-    onClose();
+    handleClose(); // Usar handleClose en lugar de onClose para también resetear la búsqueda
   };
 
   // Manejar la búsqueda por tag
@@ -271,7 +299,7 @@ const SearchOverlay = ({ isOpen, onClose }) => {
   useEffect(() => {
     const handleEscKey = (event) => {
       if (event.key === 'Escape') {
-        onClose();
+        handleClose(); // Usar handleClose en lugar de onClose
       }
     };
 
@@ -288,7 +316,7 @@ const SearchOverlay = ({ isOpen, onClose }) => {
       <SearchContainer>
         <SearchHeader>
           <SearchTitle>Buscar productos</SearchTitle>
-          <CloseButton onClick={onClose}>
+          <CloseButton onClick={handleClose}>
             <HiX />
           </CloseButton>
         </SearchHeader>
