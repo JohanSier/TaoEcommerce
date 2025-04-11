@@ -58,6 +58,22 @@ const SizeComponent = styled.article`
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
   visibility: ${({ isVisible }) => (isVisible ? "visible" : "hidden")};
   transition: opacity 0.4s, visibility 0.4s;
+
+  @media screen and (max-width: 1500px){
+    width: 40%;
+  }
+
+  @media screen and (max-width: 900px){
+    width: 60%;
+  }
+
+  @media screen and (max-width: 600px){
+    width: 80%;
+  }
+
+  @media screen and (max-width: 320px){
+    width: 100%;
+  }
 `;
 
 const FixedTitle = styled.div`
@@ -265,6 +281,27 @@ const SizeGuide = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
+  }, [isSizeGuideVisible]);
+
+  // 🔹 Bloquear el scroll del body cuando el SizeGuide está visible
+  useEffect(() => {
+    if (isSizeGuideVisible) {
+      // Guardar la posición actual del scroll
+      const scrollY = window.scrollY;
+      
+      // Aplicar estilos para bloquear el scroll
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
+      
+      return () => {
+        // Restaurar el scroll cuando el componente se desmonta
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        window.scrollTo(0, scrollY);
+      };
+    }
   }, [isSizeGuideVisible]);
 
   if (!shouldRender) return null; // Evita que el componente se renderice cuando está oculto
