@@ -77,11 +77,36 @@ const ProductCardsContainer = styled.section`
   justify-content: center;
   gap: 1rem;
 
+  @media screen and (max-width: 660px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    padding: 0 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
 
+  @media screen and (max-width: 470px) and (min-width: 401px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    padding: 0 0.25rem;
+  }
+
+  @media screen and (max-width: 400px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 `;
 
 const ProductCardWrapper = styled.div`
   width: 280px;
+  
+  @media screen and (max-width: 660px) {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
 `;
 
 const ProductsPage = () => {
