@@ -24,9 +24,8 @@ const Container = styled(Link)`
     border-radius: 6px;
   }
   
-  @media (max-width: 470px) and (min-width: 401px) {
-    width: 100%;
-    max-width: 100%;
+  @media (max-width: 470px){
+    width: 95%;
     height: auto;
   }
 `;

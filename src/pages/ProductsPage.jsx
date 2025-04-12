@@ -13,6 +13,12 @@ const Container = styled.main`
   background: var(--white);
   color: var(--secondary);
   padding: 1rem 2rem;
+
+   
+  @media (max-width: 530px) and (min-width: 400px){
+    padding: 1rem 0;
+  }
+
 `;
 
 const Heading = styled.h1`
@@ -34,14 +40,10 @@ const FilterAndResults = styled.div`
   align-items: center;
   justify-content: space-between;
   position: sticky;
-  top: 82px; // Change it from 84px to 82px because there was a tiny gap
   left: 0;
+  top: 82px; // Change it from 84px to 82px because there was a tiny gap
   background: var(--white);
   padding: 1rem;
-
-  @media (max-width: 850px) {
-    top: 78px;
-  }
 `;
 
 const FilterButton = styled.button`
@@ -86,16 +88,18 @@ const ProductCardsContainer = styled.section`
     box-sizing: border-box;
   }
 
-  @media screen and (max-width: 470px) and (min-width: 401px) {
+  @media screen and (max-width: 470px) {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
     padding: 0 0.25rem;
   }
 
   @media screen and (max-width: 400px) {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
+    display:flex;
+    flex-direction: column;
+    place-items: center;
+    gap: 2rem;
+
+    }
 `;
 
 const ProductCardWrapper = styled.div`
