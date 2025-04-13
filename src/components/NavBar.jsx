@@ -13,6 +13,7 @@ import { useSizeGuide } from "../context/SizeGuideContext";
 import Cart from "./Cart";
 import SearchOverlay from "./SearchOverlay";
 import { useCart } from "../context/CartContext";
+import Favicon from '../assets/favicon.ico';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -39,6 +40,10 @@ const CenterLogo = styled.div`
   margin-top: 5px;
   transform: translateX(-50%);
   width: 140px;
+
+  @media (max-width: 500px) {
+  width: 50px;
+  }
 `;
 
 const StyledLink = styled(Link)`
@@ -78,6 +83,10 @@ const ProfileIconLink = styled(Link)`
     background: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
   }
+
+  @media (max-width: 375px) {
+    padding: 0;
+  }
 `;
 
 const CartLink = styled.div`
@@ -93,6 +102,10 @@ const CartLink = styled.div`
     opacity: 0.8;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
+  }
+
+  @media (max-width: 470px) {
+    padding: 0.2rem;
   }
 `;
 
@@ -129,6 +142,11 @@ const LeftLinks = styled.ul`
 
 const Logo = styled.img`
   width: 100%;
+  @media (max-width: 500px) {
+    content: url(${Favicon});
+    width: 3.5rem;
+    height: auto;
+  }
 `;
 
 const RightLinks = styled(LeftLinks)`
@@ -138,6 +156,11 @@ const RightLinks = styled(LeftLinks)`
   align-items: center;
   justify-content: flex-end; /* Push content to the right */
   font-size: 1.5rem;
+
+  @media (max-width: 375px) {
+    gap: 0;
+    font-size: 1.2rem;
+  }
 `;
 
 const MobileMenu = styled.div`
@@ -207,6 +230,11 @@ const IconButton = styled.button`
     background: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
   }
+
+  @media (max-width: 470px) {
+    font-size: 1.2rem;
+    padding: 0.2rem;
+  }
 `;
 
 const SearchButton = styled(IconButton)`
@@ -224,6 +252,10 @@ const SearchButton = styled(IconButton)`
     width: auto;
     border: none;
     padding: 0.5rem;
+  }
+
+  @media (max-width: 470px) {
+    padding: 0.2rem;
   }
 `;
 
