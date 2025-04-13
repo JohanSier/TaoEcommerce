@@ -37,8 +37,7 @@ const ProductImage = styled.img`
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
   height: 18.31rem;
-
- 
+  loading: lazy;
   
   @media (max-width: 660px) {
     height: 15rem;
