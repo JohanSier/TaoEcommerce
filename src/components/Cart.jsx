@@ -4,7 +4,6 @@ import { useCart } from "../context/CartContext";
 import { Link, useNavigate } from "react-router-dom";
 import emptyCartGif from "../assets/Images/emptyCart.gif";
 import { HiOutlineX } from "react-icons/hi";
-import { API_URL } from '../config';
 
 const slideIn = keyframes`
   from { transform: translateX(100%); }
