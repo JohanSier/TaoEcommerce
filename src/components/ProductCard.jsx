@@ -38,24 +38,18 @@ const ProductImage = styled.img`
   border-bottom-left-radius: 0;
   height: 18.31rem;
 
-  @media (max-width: 650px) {
-    height: 25rem;
-  }
-
-  @media (max-width: 500px) {
-    height: 18rem;
-  }
+ 
   
   @media (max-width: 660px) {
-    height: 180px;
+    height: 15rem;
   }
   
-  @media (max-width: 470px) and (min-width: 401px) {
-    height: 150px;
+  @media (max-width: 440px) {
+    height: 12rem;
   }
   
   @media (max-width: 400px) {
-    height: 250px;
+    height: 14rem;
   }
 `;
 

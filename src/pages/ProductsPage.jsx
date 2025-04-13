@@ -107,7 +107,7 @@ const ProductCardWrapper = styled.div`
   
   @media screen and (max-width: 660px) {
     width: 100%;
-    max-width: 100%;
+    min-width: 100%;
     margin: 0;
     padding: 0;
   }
