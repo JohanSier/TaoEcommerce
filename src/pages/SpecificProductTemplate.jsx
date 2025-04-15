@@ -19,6 +19,10 @@ const Container = styled.main`
   background: var(--white);
   color: var(--secondary);
   padding: 0 2rem;
+
+  @media (max-width: 600px) {
+    padding: 0;
+  }
 `;
 
 const Wrapper = styled.section`
@@ -117,17 +121,22 @@ const Products = styled.div`
 const MobileSlider = styled(Swiper)`
   display: none;
   width: 100%;
-  height: 600px;
+  height: 35rem;
 
   @media (max-width: 800px) {
     display: block;
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
     margin: 0 auto;
   }
 
   @media (max-width: 500px) {
     max-width: 100%;
+    height: 30rem;
+  }
+
+  @media (max-width: 375px) {
+    height: 24rem;
   }
 
   .swiper-pagination {
