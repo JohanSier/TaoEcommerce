@@ -31,7 +31,7 @@ const Wrapper = styled.section`
   flex-direction: column;
   gap: 12px;
 
-  @media (min-width: 800px) {
+  @media (min-width: 801px) {
     flex-direction: row;
   }
 `;

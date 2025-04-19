@@ -51,7 +51,6 @@ const StyledLink = styled(Link)`
 
   @media screen and (max-width: 500px){
     font-size: 1rem;
-    margin-right: 1rem;
   }
 `;
 
@@ -61,6 +60,18 @@ const Heading = styled.h5`
   font-variation-settings: "wght" 600;
   margin-top: 0;
   margin-bottom: 1rem;
+
+  @media (max-width: 420px) {
+    font-size: 1.7rem;
+    margin-bottom: 0;
+
+  }
+
+  @media (max-width: 365px) {
+    font-size: 1.4rem;
+    margin-bottom: 0;
+
+  }
 `;
 
 const ArrowButton = styled.button`
