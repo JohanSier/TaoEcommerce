@@ -16,6 +16,7 @@ const FiltersContainer = styled.div`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   max-height: 80vh;
   overflow-y: auto;
+    
 `;
 
 const Header = styled.div`
@@ -59,7 +60,7 @@ const SectionHeader = styled.div`
   transition: background-color 0.2s ease;
 
   &:hover {
-    background-color: var(--greyF);
+    background-color: #e5e5e5;
   }
 `;
 
@@ -80,6 +81,7 @@ const SectionContent = styled.div`
   max-height: ${props => props.isOpen ? '300px' : '0'};
   overflow-y: auto;
   transition: max-height 0.3s ease-in-out;
+ 
 `;
 
 const ProductTypeGrid = styled.div`
@@ -150,8 +152,7 @@ const SortOption = styled.div`
   border-radius: 4px;
 
   &:hover {
-    background: var(--greyF);
-    color: var(--secondary);
+    background: #f0f0f0;
   }
 `;
 
@@ -172,7 +173,8 @@ const FooterButton = styled.button`
   transition: all 0.3s ease;
 
   &:hover {
-    background: ${props => props.variant === 'dark' ? 'var(--secondaryDark)' : 'var(--greyF)'};
+    background: ${props => props.variant === 'dark' ? '#413F3F' : '#f9f9f9'};
+    color: ${props => props.variant === 'dark' ? 'var(--white)' : 'var(--secondary)'};
   }
 
   &:first-child {
@@ -232,6 +234,23 @@ const ClearFilterButton = styled.button`
 
   &:hover {
     opacity: 1;
+  }
+`;
+
+const FilterButton = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8.5px 11px;
+  border: 1px solid var(--greyE);
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #F5F5F5;
   }
 `;
 
@@ -410,23 +429,10 @@ const Filters = ({
     <FilterGroup>
       <Collapsible open={isOpen} onOpenChange={setIsOpen}>
         <CollapsibleTrigger asChild>
-          <button
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '4px',
-              padding: '8.5px 11px',
-              border: '1px solid var(--greyE)',
-              borderRadius: '8px',
-              background: 'var(--white)',
-              color: 'var(--secondary)',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease'
-            }}
-          >
+          <FilterButton>
             <HiAdjustmentsHorizontal />
             Filters
-          </button>
+          </FilterButton>
         </CollapsibleTrigger>
 
         <CollapsibleContent>

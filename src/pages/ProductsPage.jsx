@@ -50,27 +50,6 @@ const FilterAndResults = styled.div`
   }
 `;
 
-const FilterButton = styled.button`
-  display: flex;
-  font-size: 1rem;
-  font-variation-settings: "wght" 500;
-  white-space: nowrap;
-  align-items: center;
-  gap: 4px;
-  border: 1px solid var(--greyE);
-  border-radius: 8px;
-  background: var(--white);
-  padding: 8.5px 11px;
-  color: var(--secondary);
-  cursor: pointer;
-  transition: background 0.5s ease;
-
-  &:hover {
-    background: var(--greyD);
-    transition: background 0.5s ease;
-  }
-`;
-
 const ResultsText = styled.p`
   font-size: .8rem;
 `
