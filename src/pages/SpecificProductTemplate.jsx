@@ -53,7 +53,7 @@ const GridItem = styled.div`
   position: relative;
   aspect-ratio: 3/2.8;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1100px) {
     aspect-ratio: 1.5/2.5;
   }
 `;
