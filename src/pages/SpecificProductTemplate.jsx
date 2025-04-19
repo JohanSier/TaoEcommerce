@@ -52,6 +52,10 @@ const GridItem = styled.div`
   width: 100%;
   position: relative;
   aspect-ratio: 3/2.8;
+
+  @media (max-width: 1000px) {
+    aspect-ratio: 1.5/2.5;
+  }
 `;
 
 /* Skeleton Loader Animation */
