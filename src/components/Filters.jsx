@@ -14,6 +14,8 @@ const FiltersContainer = styled.div`
   padding: 0;
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-height: 80vh;
+  overflow-y: auto;
 `;
 
 const Header = styled.div`
@@ -75,6 +77,9 @@ const ChevronIcon = styled(HiChevronDown)`
 const SectionContent = styled.div`
   padding: ${props => props.isOpen ? '0 1rem 1rem' : '0 1rem'};
   display: ${props => props.isOpen ? 'block' : 'none'};
+  max-height: ${props => props.isOpen ? '300px' : '0'};
+  overflow-y: auto;
+  transition: max-height 0.3s ease-in-out;
 `;
 
 const ProductTypeGrid = styled.div`
