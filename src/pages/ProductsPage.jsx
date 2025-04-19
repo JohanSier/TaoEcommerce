@@ -96,6 +96,43 @@ const ProductCardWrapper = styled.div`
   }
 `;
 
+const NoProductsMessage = styled.div`
+  padding: 2rem;
+  text-align: center;
+  background: var(--white);
+  border-radius: 8px;
+  margin: 2rem;
+  border: 1px solid var(--greyE);
+`;
+
+const MessageTitle = styled.h3`
+  font-size: 1.1rem;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+  font-variation-settings: "wght" 600;
+`;
+
+const MessageText = styled.p`
+  color: var(--greyA);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+`;
+
+const MessageAction = styled.button`
+  background: var(--secondary);
+  color: var(--white);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: var(--secondaryDark);
+  }
+`;
+
 const ProductsPage = () => {
   const { category } = useParams();
   const [selectedSizes, setSelectedSizes] = useState([]);
@@ -239,7 +276,8 @@ const ProductsPage = () => {
 
       <FilterAndResults>
         <Filters
-          products={filteredProducts}
+          products={products}
+          filteredProducts={filteredProducts}
           selectedCategory={category}
           selectedSizes={selectedSizes}
           selectedTypes={selectedTypes}
@@ -252,19 +290,32 @@ const ProductsPage = () => {
         <ResultsText>[{filteredProducts.length} Results]</ResultsText>
       </FilterAndResults>
 
-      <ProductCardsContainer>
-        {filteredProducts.map((product) => (
-          <ProductCardWrapper key={product.id}>
-            <ProductCard
-              productTitle={product.name}
-              price={product.price}
-              srcImage={product.images[0]}
-              hoverImage={product.images[1]}
-              productLink={`/products/${category || "all"}/${product.id}`}
-            />
-          </ProductCardWrapper>
-        ))}
-      </ProductCardsContainer>
+      {filteredProducts.length === 0 ? (
+        <NoProductsMessage>
+          <MessageTitle>No hay productos disponibles</MessageTitle>
+          <MessageText>
+            No encontramos productos que coincidan con los filtros seleccionados.
+            Intenta ajustar tus criterios de búsqueda o limpiar los filtros.
+          </MessageText>
+          <MessageAction onClick={handleClearAll}>
+            Limpiar filtros
+          </MessageAction>
+        </NoProductsMessage>
+      ) : (
+        <ProductCardsContainer>
+          {filteredProducts.map((product) => (
+            <ProductCardWrapper key={product.id}>
+              <ProductCard
+                productTitle={product.name}
+                price={product.price}
+                srcImage={product.images[0]}
+                hoverImage={product.images[1]}
+                productLink={`/products/${category || "all"}/${product.id}`}
+              />
+            </ProductCardWrapper>
+          ))}
+        </ProductCardsContainer>
+      )}
     </Container>
   );
 };
