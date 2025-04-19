@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ProductCard from "../components/ProductCard";
+import Filters from "../components/Filters";
 import { products } from "../assets/Images";
 import styled from "styled-components";
-import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
 import { useParams } from "react-router-dom";
 import NotFound from "./NotFound";
 
@@ -118,13 +118,16 @@ const ProductCardWrapper = styled.div`
 `;
 
 const ProductsPage = () => {
-  const {category} = useParams();
+  const { category } = useParams();
+  const [selectedSizes, setSelectedSizes] = useState([]);
+  const [selectedSort, setSelectedSort] = useState("Featured");
+  const [selectedTypes, setSelectedTypes] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   // Function to map category name to category ID
   function getCategoryId(category) {
     const categories = {
       "all": 0,
-      "street-kings": 1,
       "tees": 2,
       "jerseys": 3,
       "shorts": 4,
@@ -134,7 +137,19 @@ const ProductsPage = () => {
     return categories[category] || null;
   }
 
-  // Function to shuffle array randomly
+  // Function to get category name from ID
+  function getCategoryName(id) {
+    switch (id) {
+      case 2: return 'Tees';
+      case 3: return 'Jerseys';
+      case 4: return 'Shorts';
+      case 5: return 'Sneakers';
+      case 6: return 'Accessories';
+      default: return null;
+    }
+  }
+
+  // Function to shuffle array randomly (for Featured sort)
   const shuffleArray = (array) => {
     const shuffled = [...array];
     for (let i = shuffled.length - 1; i > 0; i--) {
@@ -144,12 +159,94 @@ const ProductsPage = () => {
     return shuffled;
   };
 
-  // Filter and shuffle products if showing all
-  const filteredProducts = category !== "all"
-    ? products.filter(p => p.categories.some(cat => cat.id === getCategoryId(category)))
-    : shuffleArray(products);
+  // Sort products based on selected option
+  const sortProducts = (productsToSort, sortOption) => {
+    const sorted = [...productsToSort];
+    switch (sortOption) {
+      case "Featured":
+        return shuffleArray(sorted);
+      case "Best selling":
+        return sorted;
+      case "Alphabetically, A-Z":
+        return sorted.sort((a, b) => a.name.localeCompare(b.name));
+      case "Alphabetically, Z-A":
+        return sorted.sort((a, b) => b.name.localeCompare(a.name));
+      case "Price, low to high":
+        return sorted.sort((a, b) => a.price - b.price);
+      case "Price, high to low":
+        return sorted.sort((a, b) => b.price - a.price);
+      default:
+        return sorted;
+    }
+  };
 
-  const validCategories = ["all", "tees", "jerseys", "shorts", "sneakers", "accessories", "street-kings"];
+  // Filter and sort products
+  useEffect(() => {
+    let filtered = [...products];
+
+    // Step 1: Filter by URL category first
+    if (category !== "all") {
+      const categoryId = getCategoryId(category);
+      filtered = filtered.filter(p => 
+        p.categories.some(cat => cat.id === categoryId)
+      );
+    }
+
+    // Step 2: Apply product type filters if any are selected
+    if (selectedTypes.length > 0) {
+      filtered = filtered.filter(product => {
+        // Get the product's category name
+        const productCategory = product.categories
+          .map(cat => getCategoryName(cat.id))
+          .filter(Boolean)[0];
+        
+        return selectedTypes.includes(productCategory);
+      });
+    }
+
+    // Step 3: Apply size filters if any are selected
+    if (selectedSizes.length > 0) {
+      filtered = filtered.filter(product => 
+        product.availableSizes.some(size => selectedSizes.includes(size))
+      );
+    }
+
+    // Step 4: Apply sorting
+    const sorted = sortProducts(filtered, selectedSort);
+    setFilteredProducts(sorted);
+  }, [category, selectedTypes, selectedSizes, selectedSort]);
+
+  // Initialize selectedTypes based on category
+  useEffect(() => {
+    if (category !== 'all') {
+      const categoryName = getCategoryName(getCategoryId(category));
+      if (categoryName) {
+        setSelectedTypes([categoryName]);
+      }
+    } else {
+      setSelectedTypes([]);
+    }
+  }, [category]);
+
+  const handleSizeChange = (newSizes) => {
+    setSelectedSizes(newSizes);
+  };
+
+  const handleSortChange = (newSort) => {
+    setSelectedSort(newSort);
+  };
+
+  const handleTypeChange = (newTypes) => {
+    setSelectedTypes(newTypes);
+  };
+
+  const handleClearAll = () => {
+    setSelectedSizes([]);
+    setSelectedTypes(category !== 'all' ? [getCategoryName(getCategoryId(category))] : []);
+    setSelectedSort("Featured");
+  };
+
+  const validCategories = ["all", "tees", "jerseys", "shorts", "sneakers", "accessories"];
 
   if (!validCategories.includes(category)) {
     return <NotFound />;
@@ -157,13 +254,22 @@ const ProductsPage = () => {
 
   return (
     <Container>
-      <Heading>{category !== "all" ? `${category.charAt(0).toUpperCase()}${category.slice(1)} ` : "All Products"}</Heading>
+      <Heading>
+        {category !== "all" ? `${category.charAt(0).toUpperCase()}${category.slice(1)} ` : "All Products"}
+      </Heading>
 
       <FilterAndResults>
-        <FilterButton>
-          Filters
-          <HiOutlineAdjustmentsHorizontal />
-        </FilterButton>
+        <Filters
+          products={filteredProducts}
+          selectedCategory={category}
+          selectedSizes={selectedSizes}
+          selectedTypes={selectedTypes}
+          selectedSort={selectedSort}
+          onSizeChange={handleSizeChange}
+          onTypeChange={handleTypeChange}
+          onSortChange={handleSortChange}
+          onClearAll={handleClearAll}
+        />
         <ResultsText>[{filteredProducts.length} Results]</ResultsText>
       </FilterAndResults>
 
