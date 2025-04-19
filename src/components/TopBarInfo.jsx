@@ -14,10 +14,11 @@ const Text = styled.p`
   font-size: 0.9rem;
   color: var(--white);
 
-  @media screen and (max-width: 350px){
-    font-size: 0.7rem;
-  }
+  @media screen and (max-width: 375px){
+    margin-bottom: 1.7rem;
+  } 
 `;
+
 const TopBarInfo = () => {
   return (
     <Wrapper>

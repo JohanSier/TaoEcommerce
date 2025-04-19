@@ -44,6 +44,10 @@ const FilterAndResults = styled.div`
   top: 82px; // Change it from 84px to 82px because there was a tiny gap
   background: var(--white);
   padding: 1rem;
+
+  @media screen and (max-width: 375px){
+    top: 69px;
+  }
 `;
 
 const FilterButton = styled.button`

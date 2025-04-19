@@ -18,6 +18,7 @@ const Container = styled.article`
 
   @media (max-width: 1200px) {
     position: relative;
+    height: auto;
     top: 0;
   }
 
@@ -25,6 +26,7 @@ const Container = styled.article`
     position: sticky;
     width: 100%;
     padding: 2rem;
+    height: auto;
   }
 `;
 
@@ -238,6 +240,7 @@ const ProductDetails = ({ title, price, sizes, description, thumbnailImage }) =>
     const { addItemToCart } = useCart();
     const [selectedSize, setSelectedSize] = useState(null);
     const [quantity, setQuantity] = useState(1);
+    const [isSecondItemOpen, setIsSecondItemOpen] = useState(false);
 
     const handleSizeClick = (size) => {
         setSelectedSize(prevSize => (prevSize === size ? null : size));
@@ -271,8 +274,10 @@ const ProductDetails = ({ title, price, sizes, description, thumbnailImage }) =>
         setQuantity(1);
     }, [id]);
 
+    const containerClass = isSecondItemOpen ? 'container--expanded' : '';
+
     return (
-        <Container>
+        <Container className={containerClass}>
             <ProductTitle>{title}</ProductTitle>
             <Price>$ {price}</Price>
 
@@ -343,7 +348,7 @@ const ProductDetails = ({ title, price, sizes, description, thumbnailImage }) =>
                 Shipping calculated at checkout
             </ExtraInfo>
 
-            <AccordionDemo description={description} />
+            <AccordionDemo description={description} onSecondItemOpen={setIsSecondItemOpen} />
         </Container>
     );
 };

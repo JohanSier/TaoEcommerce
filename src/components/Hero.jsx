@@ -42,6 +42,10 @@ const Container = styled.div`
     flex-wrap: wrap;
     gap: 0;
   }
+
+  @media screen and (max-width: 425px){
+    width: 100%;
+  }
 `;
 
 const Copys = styled.div`
@@ -57,9 +61,13 @@ const Copys = styled.div`
     margin-top: 10rem;
   }
 
-  @media screen and (max-width: 600px){
-    margin-top: 14rem;
-  }
+    @media screen and (max-width: 600px){
+      margin-top: 15rem;
+    }
+
+    @media screen and (max-width: 320px){
+      margin-top: 12rem;
+    }
 
 `;
 
@@ -80,6 +88,10 @@ const HeroHeading = styled.h1`
   @media screen and (max-width: 600px){
     font-size: 2.8rem;
   }
+
+  @media screen and (max-width: 425px){
+    font-size: 2.5rem;
+  }
 `;
 
 const Text = styled.div`
@@ -92,6 +104,10 @@ const Text = styled.div`
   @media screen and (max-width: 600px){
     font-size: .9rem;
   }
+
+  @media screen and (max-width: 425px){
+    text-wrap: wrap;
+  }
 `;
 
 const ButtonsContainer = styled.div`
@@ -100,6 +116,7 @@ const ButtonsContainer = styled.div`
   gap: 12px;
   position: relative;
   z-index: 999;
+
   @media screen and (max-width: 900px){
     margin-top:0;
     flex-grow:1;
@@ -124,6 +141,12 @@ const Button = styled(Link)`
     background: var(--secondary);
     color: var(--white);
     transition: background 0.5s ease, color 0.5s ease;
+  }
+
+  @media screen and (max-width: 445px){
+    font-size: 0.7rem;
+    padding: 0.4rem 0.6rem;
+    text-align: center;
   }
 `;
 //all: unset is a property that removes all styles from an element

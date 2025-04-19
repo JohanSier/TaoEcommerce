@@ -6,7 +6,7 @@ import "../styles/accordion.css";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const AccordionDemo = ({ description }) => {
+const AccordionDemo = ({ description, onSecondItemOpen }) => {
 	const { id } = useParams();
 	const [selectedAccordion, setSelectedAccordion] = useState("none");
 
@@ -14,9 +14,20 @@ const AccordionDemo = ({ description }) => {
 		setSelectedAccordion("none"); // Se cierra el acordeón al cambiar la ruta
 	}, [id]);
 
+	// Condicional para aplicar el estilo
+	const isSecondItemOpen = selectedAccordion === "item-2";
+
+	useEffect(() => {
+		onSecondItemOpen(isSecondItemOpen);
+	}, [isSecondItemOpen, onSecondItemOpen]);
+
+	const accordionRootClass = classNames("AccordionRoot", {
+		"AccordionRoot--expanded": isSecondItemOpen,
+	});
+
 	return (
 		<Accordion.Root
-			className="AccordionRoot"
+			className={accordionRootClass}
 			type="single"
 			collapsible
 			value={selectedAccordion} // Se controla el estado
@@ -36,7 +47,7 @@ const AccordionDemo = ({ description }) => {
 					Returns are accepted within 14 days if items are unworn and in original condition.
 					<br />
 					<br />
-					Shipping costs are non-refundable, and return shipping is the customer’s responsibility.
+					Shipping costs are non-refundable, and return shipping is the customer's responsibility.
 					<br />
 					<br />
 					For defects or wrong items, contact us immediately. More details on our policy page.
