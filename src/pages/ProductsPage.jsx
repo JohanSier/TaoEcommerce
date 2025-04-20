@@ -150,6 +150,7 @@ const ProductsPage = () => {
       "shorts": 4,
       "sneakers": 5,
       "accessories": 6,
+      "street-kings": 1
     };
     return categories[category] || null;
   }
@@ -157,6 +158,7 @@ const ProductsPage = () => {
   // Function to get category name from ID
   function getCategoryName(id) {
     switch (id) {
+      case 1: return 'Street Kings';
       case 2: return 'Tees';
       case 3: return 'Jerseys';
       case 4: return 'Shorts';
@@ -199,16 +201,8 @@ const ProductsPage = () => {
 
   // Initialize selectedTypes based on category
   useEffect(() => {
-    if (category !== 'all') {
-      if (category === 'street-kings') {
-        setSelectedTypes(['Tees', 'Jerseys', 'Shorts']);
-      } else {
-        // No inicializamos selectedTypes cuando se navega directamente a una categoría
-        setSelectedTypes([]);
-      }
-    } else {
-      setSelectedTypes([]);
-    }
+    // Siempre inicializamos los tipos como vacíos para evitar los breadcrumbs automáticos
+    setSelectedTypes([]);
   }, [category]);
 
   // Filter and sort products
@@ -218,9 +212,9 @@ const ProductsPage = () => {
     // Step 1: Filter by URL category first
     if (category !== "all") {
       if (category === "street-kings") {
-        // Para street-kings, mostramos Tees, Jerseys y Shorts
-        filtered = filtered.filter(p => 
-          p.categories.some(cat => [2, 3, 4].includes(cat.id))
+        // Para street-kings, mostramos TODOS los productos que tengan la categoría 1
+        filtered = products.filter(product => 
+          product.categories.some(cat => cat.id === 1)
         );
       } else {
         const categoryId = getCategoryId(category);
@@ -230,7 +224,7 @@ const ProductsPage = () => {
       }
     }
 
-    // Step 2: Apply product type filters if any are selected
+    // Step 2: Apply product type filters ONLY if manually selected
     if (selectedTypes.length > 0) {
       filtered = filtered.filter(product => {
         const productCategory = product.categories
@@ -251,7 +245,7 @@ const ProductsPage = () => {
     // Step 4: Apply sorting
     const sorted = sortProducts(filtered, selectedSort);
     setFilteredProducts(sorted);
-  }, [category, selectedTypes, selectedSizes, selectedSort]);
+  }, [category, selectedTypes, selectedSizes, selectedSort, products]);
 
   const handleSizeChange = (newSizes) => {
     setSelectedSizes(newSizes);
@@ -271,7 +265,7 @@ const ProductsPage = () => {
     setSelectedSort("Featured");
   };
 
-  const validCategories = ["all", "tees", "jerseys", "shorts", "sneakers", "accessories"];
+  const validCategories = ["all", "tees", "jerseys", "shorts", "sneakers", "accessories", "street-kings"];
 
   if (!validCategories.includes(category)) {
     return <NotFound />;
@@ -280,7 +274,12 @@ const ProductsPage = () => {
   return (
     <Container>
       <Heading>
-        {category !== "all" ? `${category.charAt(0).toUpperCase()}${category.slice(1)} ` : "All Products"}
+        {category === "street-kings" 
+          ? "Street Kings Collection"
+          : category !== "all" 
+            ? `${category.charAt(0).toUpperCase()}${category.slice(1)}` 
+            : "All Products"
+        }
       </Heading>
 
       <FilterAndResults>

@@ -5,16 +5,19 @@ import ProductSlider from "../components/ProductSlider";
 import { products } from "../assets/Images";
 
 const Homepage = () => {
-  // Filtrar productos para mostrar solo los de Street Kings (categoría 1)
+  // Filtrar productos para mostrar solo los de Street Kings (categorías 2, 3 y 4 - Tees, Jerseys y Shorts)
   const streetKingsProducts = products.filter(product => 
-    product.categories.some(category => category.id === 1)
+    product.categories.some(category => [2, 3, 4].includes(category.id))
   );
 
   return (
     <>
       <Hero />
       <CategoriesList />
-      <ProductSlider products={streetKingsProducts} />
+      <ProductSlider 
+        products={streetKingsProducts} 
+        title="NEW COLLECTION: STREET KINGS" 
+      />
     </>
   );
 };
