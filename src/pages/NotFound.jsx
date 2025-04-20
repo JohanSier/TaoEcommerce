@@ -11,7 +11,7 @@ const Container = styled.section`
   width: 100%;
   height: 87vh;
 
-  background: url(${notFoundImage}) no-repeat;
+  background: url('${notFoundImage}') no-repeat;
   background-size: cover;
   background-position: center;
   overflow-x: hidden;
