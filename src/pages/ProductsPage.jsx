@@ -197,22 +197,42 @@ const ProductsPage = () => {
     }
   };
 
+  // Initialize selectedTypes based on category
+  useEffect(() => {
+    if (category !== 'all') {
+      if (category === 'street-kings') {
+        setSelectedTypes(['Tees', 'Jerseys', 'Shorts']);
+      } else {
+        // No inicializamos selectedTypes cuando se navega directamente a una categoría
+        setSelectedTypes([]);
+      }
+    } else {
+      setSelectedTypes([]);
+    }
+  }, [category]);
+
   // Filter and sort products
   useEffect(() => {
     let filtered = [...products];
 
     // Step 1: Filter by URL category first
     if (category !== "all") {
-      const categoryId = getCategoryId(category);
-      filtered = filtered.filter(p => 
-        p.categories.some(cat => cat.id === categoryId)
-      );
+      if (category === "street-kings") {
+        // Para street-kings, mostramos Tees, Jerseys y Shorts
+        filtered = filtered.filter(p => 
+          p.categories.some(cat => [2, 3, 4].includes(cat.id))
+        );
+      } else {
+        const categoryId = getCategoryId(category);
+        filtered = filtered.filter(p => 
+          p.categories.some(cat => cat.id === categoryId)
+        );
+      }
     }
 
     // Step 2: Apply product type filters if any are selected
     if (selectedTypes.length > 0) {
       filtered = filtered.filter(product => {
-        // Get the product's category name
         const productCategory = product.categories
           .map(cat => getCategoryName(cat.id))
           .filter(Boolean)[0];
@@ -233,18 +253,6 @@ const ProductsPage = () => {
     setFilteredProducts(sorted);
   }, [category, selectedTypes, selectedSizes, selectedSort]);
 
-  // Initialize selectedTypes based on category
-  useEffect(() => {
-    if (category !== 'all') {
-      const categoryName = getCategoryName(getCategoryId(category));
-      if (categoryName) {
-        setSelectedTypes([categoryName]);
-      }
-    } else {
-      setSelectedTypes([]);
-    }
-  }, [category]);
-
   const handleSizeChange = (newSizes) => {
     setSelectedSizes(newSizes);
   };
@@ -259,7 +267,7 @@ const ProductsPage = () => {
 
   const handleClearAll = () => {
     setSelectedSizes([]);
-    setSelectedTypes(category !== 'all' ? [getCategoryName(getCategoryId(category))] : []);
+    setSelectedTypes([]);
     setSelectedSort("Featured");
   };
 

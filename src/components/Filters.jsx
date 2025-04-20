@@ -86,7 +86,7 @@ const SectionContent = styled.div`
 
 const ProductTypeGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: ${props => props.isSneakers ? 'repeat(4, 1fr)' : 'repeat(2, 1fr)'};
   gap: 1rem;
   @media (max-width: 400px) {
     display: flex;
@@ -321,10 +321,9 @@ const Filters = ({
   const handleTypeToggle = (type) => {
     let newTypes;
     if (selectedCategory !== 'all') {
-      const categoryType = productTypes.find(t => 
-        t.toLowerCase() === selectedCategory
-      );
-      newTypes = [categoryType];
+      newTypes = localSelectedTypes.includes(type)
+        ? localSelectedTypes.filter(t => t !== type)
+        : [...localSelectedTypes, type];
     } else {
       newTypes = localSelectedTypes.includes(type)
         ? localSelectedTypes.filter(t => t !== type)
@@ -353,10 +352,7 @@ const Filters = ({
     if (selectedCategory === 'all') {
       setLocalSelectedTypes([]);
     } else {
-      const categoryType = productTypes.find(t => 
-        t.toLowerCase() === selectedCategory
-      );
-      setLocalSelectedTypes(categoryType ? [categoryType] : []);
+      setLocalSelectedTypes([]);
     }
     setLocalSelectedSort('Featured');
     onClearAll?.();
@@ -473,7 +469,7 @@ const Filters = ({
                 </SectionHeader>
                 <SectionContent isOpen={isTypesOpen}>
                   <ProductTypeGrid>
-                    {visibleProductTypes.map((type) => (
+                    {productTypes.map((type) => (
                       <CheckboxLabel key={type}>
                         <Checkbox
                           type="checkbox"
@@ -495,7 +491,7 @@ const Filters = ({
                   <ChevronIcon isOpen={isSizesOpen} />
                 </SectionHeader>
                 <SectionContent isOpen={isSizesOpen}>
-                  <ProductTypeGrid>
+                  <ProductTypeGrid isSneakers={selectedCategory === 'sneakers'}>
                     {sizes.map((size) => (
                       <CheckboxLabel key={size}>
                         <Checkbox
