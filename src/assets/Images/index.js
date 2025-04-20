@@ -376,7 +376,7 @@ const products = [
       bape_shorts_5,
       bape_shorts_6,
     ],
-    availableSizes: ["XS", "S", "M", "L", "XL", "2XL"],
+    availableSizes: ["XS", "S", "M", "L", "XL",],
     measuresIn: {
       XS: { waistWidth: 13.5, hipWidth: 19, itemLength: 17 },
       S: { waistWidth: 14.5, hipWidth: 20, itemLength: 18 },
@@ -504,7 +504,7 @@ const products = [
       wow_11_6,
       wow_11_7
     ],
-    availableSizes: ["7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5", "11", "11.5", "12", "13"],
+    availableSizes: ["7", "8", "8.5", "9", "9.5", "10", "12", "13"],
     measuresIn: {
       "7": { footLength: 9.625 },
       "7.5": { footLength: 9.75 },
@@ -538,7 +538,7 @@ const products = [
       wow_808_6,
       wow_808_7
     ],
-    availableSizes: ["7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5", "11", "11.5", "12", "13"],
+    availableSizes: ["8.5", "9", "9.5", "10", "11", "11.5", "12", "13"],
     measuresIn: {
       "7": { footLength: 9.625 },
       "7.5": { footLength: 9.75 },
@@ -572,7 +572,7 @@ const products = [
       wow_flash_6,
       wow_flash_7
     ],
-    availableSizes: ["7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5", "11", "11.5", "12", "13"],
+    availableSizes: ["10", "10.5", "11", "11.5", "12"],
     measuresIn: {
       "7": { footLength: 9.625 },
       "7.5": { footLength: 9.75 },
@@ -605,7 +605,7 @@ const products = [
       wow_shadow_5,
       wow_shadow_7
     ],
-    availableSizes: ["7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5", "11", "11.5", "12", "13"],
+    availableSizes: ["8", "8.5", "9", "9.5", "10", "10.5", "11", "11.5", "12", "13"],
     measuresIn: {
       "7": { footLength: 9.625 },
       "7.5": { footLength: 9.75 },
@@ -671,7 +671,7 @@ const products = [
       wac_red_6,
       wac_red_7
     ],
-    availableSizes: ["7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5", "11", "11.5", "12", "13"],
+    availableSizes: ["7", "7.5", "8", "8.5", "11.5", "12", "13"],
     measuresIn: {
       "7": { footLength: 9.625 },
       "7.5": { footLength: 9.75 },
@@ -705,7 +705,7 @@ const products = [
       wac_veterans_6,
       wac_veterans_7
     ],
-    availableSizes: ["7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5", "11", "11.5", "12", "13"],
+    availableSizes: ["7", "7.5", "9", "9.5", "10", "10.5", "11", "11.5", "12", "13"],
     measuresIn: {
       "7": { footLength: 9.625 },
       "7.5": { footLength: 9.75 },
@@ -739,7 +739,7 @@ const products = [
       wow_all_city_6,
       wow_all_city_7
     ],
-    availableSizes: ["7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5", "11", "11.5", "12", "13"],
+    availableSizes: ["7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5", "13"],
     measuresIn: {
       "7": { footLength: 9.625 },
       "7.5": { footLength: 9.75 },
@@ -773,7 +773,7 @@ const products = [
       wow_overtown_6,
       wow_overtown_7
     ],
-    availableSizes: ["7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5", "11", "11.5", "12", "13"],
+    availableSizes: ["7", "7.5", "8", "8.5","10.5", "11", "11.5", "12"],
     measuresIn: {
       "7": { footLength: 9.625 },
       "7.5": { footLength: 9.75 },
@@ -807,7 +807,7 @@ const products = [
       wade_808_4_ultra_6,
       wade_808_4_ultra_7
     ],
-    availableSizes: ["7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5", "11", "11.5", "12", "13"],
+    availableSizes: ["7", "7.5", "8", "11", "11.5", "12", "13"],
     measuresIn: {
       "7": { footLength: 9.625 },
       "7.5": { footLength: 9.75 },
@@ -840,7 +840,7 @@ const products = [
       among_roses_wolves_5,
       among_roses_wolves_6
     ],
-    availableSizes: ["S", "M", "L", "XL", "2XL"],
+    availableSizes: ["S", "M", "L", "XL"],
     measuresIn: {
       S: { chestWidth: 18.5, sleeveLength: 7.5, itemLength: 27 },
       M: { chestWidth: 20, sleeveLength: 8, itemLength: 28 },
@@ -867,7 +867,7 @@ const products = [
       demon_slayer_wolves_6,
       demon_slayer_wolves_7
     ],
-    availableSizes: ["S", "M", "L", "XL", "2XL"],
+    availableSizes: ["M", "L", "XL", "2XL"],
     measuresIn: {
       S: { chestWidth: 18.5, sleeveLength: 7.5, itemLength: 27 },
       M: { chestWidth: 20, sleeveLength: 8, itemLength: 28 },
@@ -946,7 +946,7 @@ const products = [
       wolves_gatubela_6,
       wolves_gatubela_7
     ],
-    availableSizes: ["S", "M", "L", "XL", "2XL"],
+    availableSizes: ["S", "M", "L", "XL"],
     measuresIn: {
       S: { chestWidth: 18.5, sleeveLength: 7.5, itemLength: 27 },
       M: { chestWidth: 20, sleeveLength: 8, itemLength: 28 },
@@ -1075,7 +1075,7 @@ const newJerseys = [
       hornets_4,
       hornets_5
     ],
-    availableSizes: ["S", "M", "L", "XL", "2XL"],
+    availableSizes: ["S", "M", "XL", "2XL"],
     measuresIn: {
       S: { chestWidth: 20, length: 29 },
       M: { chestWidth: 22, length: 30 },
