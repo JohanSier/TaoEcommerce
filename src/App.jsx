@@ -26,6 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<RootLayout />}>
             <Route index element={<Homepage />} />
+            <Route path="products" element={<Navigate to="/products/all" replace />} />
             <Route path="products/:category" element={<ProductsPage />}/>
             <Route path="/products/:category/:id" element={<SpecificProductTemplate />} />
             <Route path="log-in" element={<UserPage />} />

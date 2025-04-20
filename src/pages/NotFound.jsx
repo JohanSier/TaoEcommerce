@@ -18,22 +18,31 @@ const Container = styled.section`
 
   color: var(--secondary);
   padding: 1rem 2rem;
+
+  @media (max-width: 800px) {
+    height: 75vh;
+  }
 `
 const HeadingAndLinks = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  flex-wrap: wrap;
   gap: 2rem;
   color: var(--white);
 `
 const Heading = styled.h1`
+  text-align: center;
+  width: 100%;
   font-size: 1.6rem;
-  width: 50rem;
 `
 
 const LinksContainer = styled.div`
   display: flex;
   gap: 0.9rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 `
 
 const StyledLink = styled(Link)`
@@ -65,11 +74,12 @@ const NotFound = () => {
       <HeadingAndLinks>
         <Heading>We’re sorry, but the page you’re looking for doesn’t exist. Try one of the links below instead:</Heading>
         <LinksContainer>
-          <StyledLink to="/products">SHOP ALL</StyledLink>
-          <StyledLink to="/products">MEN'S</StyledLink> 
-          <StyledLink to="/products">WOMEN'S</StyledLink>
-          <StyledLink to="/products">KIDS</StyledLink>
-          <StyledLink to="/products">ACCESORIES</StyledLink>
+          <StyledLink to="/products/all">SHOP ALL</StyledLink>
+          <StyledLink to="/products/tees">TEES</StyledLink>
+          <StyledLink to="/products/jerseys">JERSEYS</StyledLink>
+          <StyledLink to="/products/shorts">SHORTS</StyledLink>
+          <StyledLink to="/products/sneakers">SNEAKERS</StyledLink>
+          <StyledLink to="/products/accessories">ACCESSORIES</StyledLink>
         </LinksContainer>
       </HeadingAndLinks>
     </Container>
