@@ -106,7 +106,7 @@ const NoProductsMessage = styled.div`
 `;
 
 const MessageTitle = styled.h3`
-  font-size: 1.1rem;
+  font-size: 2rem;
   color: var(--secondary);
   margin-bottom: 0.5rem;
   font-variation-settings: "wght" 600;
@@ -114,8 +114,9 @@ const MessageTitle = styled.h3`
 
 const MessageText = styled.p`
   color: var(--greyA);
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin-bottom: 1rem;
+  text-align: center;
 `;
 
 const MessageAction = styled.button`
@@ -129,7 +130,7 @@ const MessageAction = styled.button`
   transition: all 0.2s ease;
 
   &:hover {
-    background: var(--secondaryDark);
+    background: #413F3F;
   }
 `;
 
@@ -292,13 +293,13 @@ const ProductsPage = () => {
 
       {filteredProducts.length === 0 ? (
         <NoProductsMessage>
-          <MessageTitle>No hay productos disponibles</MessageTitle>
+          <MessageTitle>No products found</MessageTitle>
           <MessageText>
-            No encontramos productos que coincidan con los filtros seleccionados.
-            Intenta ajustar tus criterios de búsqueda o limpiar los filtros.
+            We didn't find any products that match the selected filters.
+            Try to adjust your search criteria or clear the filters.
           </MessageText>
           <MessageAction onClick={handleClearAll}>
-            Limpiar filtros
+            Clear Filters
           </MessageAction>
         </NoProductsMessage>
       ) : (
