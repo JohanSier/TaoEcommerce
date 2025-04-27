@@ -19,6 +19,10 @@ const Wrapper = styled.div`
   margin-bottom: 0.65rem;
   border-bottom-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
+
+  @media (max-width: 420px) {
+    padding: 2rem 1rem 1rem 1rem;
+  }
 `;
 
 const Container = styled.footer`
@@ -151,6 +155,10 @@ const SiteLinks = styled.div`
     gap: 2rem;
     text-align: center;
   }
+
+  @media (max-width: 420px) {
+    justify-content: center;
+  }
 `;
 
 const Column = styled.div`
@@ -158,6 +166,14 @@ const Column = styled.div`
   flex-direction: column;
   align-items: start;
   gap: 0.6rem;
+
+  @media (max-width: 420px) {
+    align-items: start;
+    white-space: nowrap;
+  }
+  @media (max-width: 358px) {
+    width: 65%;
+  }
 `;
 const ColumnTitle = styled.span`
   margin-top: 0; //look if gap does not overrides this style
