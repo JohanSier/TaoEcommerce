@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const Container = styled(Link)`
   text-decoration: none;
@@ -51,6 +51,20 @@ const ProductImage = styled.img`
     height: 14rem;
   }
 `;
+
+const shimmer = keyframes`
+  0% { background-position: -200px 0; }
+  100% { background-position: 200px 0; }
+`;
+
+const Skeleton = styled.div`
+  width: 100%;
+  background: linear-gradient(90deg, #eee 25%, #ddd 50%, #eee 75%);
+  background-size: 200% 100%;
+  animation: ${shimmer} 3s infinite;
+  border-radius: 8px;
+`;
+
 
 const ProductInfo = styled.div`
   background: var(--white);
@@ -117,14 +131,22 @@ const Price = styled.p`
 
 const ProductCard = ({ productTitle, price, srcImage, productLink, hoverImage}) => {
   const [isHover, setIsHover] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+  
 
   return (
     <Container to={productLink}>
+      <>
+      {!imageLoaded && <Skeleton/>}
       <ProductImage
         src={isHover ? hoverImage : srcImage}
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
+        draggable="false"
+        data-loaded={imageLoaded}
+        onLoad={() => setImageLoaded(true)}
       />
+      </>
       <ProductInfo>
         <ProductTitle>{productTitle}</ProductTitle>
         <Price>${price}</Price>
