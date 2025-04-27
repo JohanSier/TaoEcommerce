@@ -65,7 +65,7 @@ const Copys = styled.div`
       margin-top: 15rem;
     }
 
-    @media screen and (max-width: 320px){
+    @media screen and (max-width: 400px){
       margin-top: 12rem;
     }
 
@@ -144,7 +144,6 @@ const Button = styled(Link)`
   }
 
   @media screen and (max-width: 445px){
-    font-size: 0.7rem;
     padding: 0.4rem 0.6rem;
     text-align: center;
   }
