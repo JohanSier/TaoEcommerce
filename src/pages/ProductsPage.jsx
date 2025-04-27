@@ -275,7 +275,7 @@ const ProductsPage = () => {
     <Container>
       <Heading>
         {category === "street-kings" 
-          ? "Street Kings Collection"
+          ? "Street Kings"
           : category !== "all" 
             ? `${category.charAt(0).toUpperCase()}${category.slice(1)}` 
             : "All Products"
