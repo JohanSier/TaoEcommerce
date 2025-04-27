@@ -16,7 +16,6 @@ const Homepage = () => {
       <CategoriesList />
       <ProductSlider 
         products={streetKingsProducts} 
-        title="NEW COLLECTION: STREET KINGS" 
       />
     </>
   );
