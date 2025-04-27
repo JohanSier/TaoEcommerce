@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { HiArrowCircleRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
@@ -9,6 +9,19 @@ const Icon = styled(HiArrowCircleRight)`
   right: 45px;
   z-index: 100;
   transition: opacity 0.5s ease-in-out, right 0.5s ease-in-out;
+`;
+
+const shimmer = keyframes`
+  0% { background-position: -200px 0; }
+  100% { background-position: 200px 0; }
+`;
+
+const Skeleton = styled.div`
+  width: 100%;
+  background: linear-gradient(90deg, #eee 25%, #ddd 50%, #eee 75%);
+  background-size: 200% 100%;
+  animation: ${shimmer} 1.5s infinite;
+  border-radius: 8px;
 `;
 
 const BackgroundImage = styled.img`
@@ -122,6 +135,8 @@ const Heading = styled.h3`
 `;
 
 const CategoryCard = ({ title, imageSrc, link}) => {
+    const [imageLoaded, setImageLoaded] = useState(false);
+  
   return (
     <Card to={link} draggable="false">
       <ShopNow>
@@ -135,11 +150,16 @@ const CategoryCard = ({ title, imageSrc, link}) => {
           <ShopNowText>SHOP NOW</ShopNowText>
         </ShopNowTextWrapper>
       </ShopNow>
+      <>
+      {!imageLoaded && <Skeleton/>}
       <BackgroundImage
         src={imageSrc}
         alt={`${title} Category Image`}
         draggable="false"
+        data-loaded={imageLoaded}
+        onLoad={() => setImageLoaded(true)}
       />
+      </>
       <Heading>{title}</Heading>
       <Icon color="white" size={32} />
     </Card>
