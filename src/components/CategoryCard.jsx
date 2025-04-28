@@ -172,7 +172,7 @@ const CategoryCard = ({ title, link, cloudinaryValue}) => {
       {!imageLoaded && <Skeleton/>}
       <BackgroundImage
       src
-      cldImg={cloudinary.image(`${cloudinaryValue}`).format("webp").quality("auto").resize(scale(600))}
+      cldImg={cloudinary.image(`${cloudinaryValue}`).format("webp").quality("auto").resize(scale(1000))}
       alt={`${title} Category Image`}
       draggable="false"
       data-loaded={imageLoaded}
