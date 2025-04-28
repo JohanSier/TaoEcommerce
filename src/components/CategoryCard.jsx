@@ -8,7 +8,7 @@ import { scale } from "@cloudinary/url-gen/actions/resize";
 
 const cloudinary = new Cloudinary({
   cloud: {
-    cloudName: import.meta.env.VITE_CLOUDINARY_CLOUD_NAME,
+    cloudName: "deocx31u2",
     apiKey: import.meta.env.VITE_CLOUDINARY_API_KEY,
     apiSecret: import.meta.env.VITE_CLOUDINARY_API_SECRET
   }
