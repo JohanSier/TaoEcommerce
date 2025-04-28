@@ -2,8 +2,18 @@ import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { useCart } from "../context/CartContext";
 import { Link, useNavigate } from "react-router-dom";
-import emptyCartGif from "../assets/Images/emptyCart.gif";
 import { HiOutlineX } from "react-icons/hi";
+import { Cloudinary } from "@cloudinary/url-gen";
+import { AdvancedImage } from "@cloudinary/react";
+import { scale } from "@cloudinary/url-gen/actions/resize";
+
+const cloudinary = new Cloudinary({
+  cloud: {
+    cloudName: "deocx31u2",
+    apiKey: import.meta.env.VITE_CLOUDINARY_API_KEY,
+    apiSecret: import.meta.env.VITE_CLOUDINARY_API_SECRET,
+  },
+});
 
 const slideIn = keyframes`
   from { transform: translateX(100%); }
@@ -33,8 +43,9 @@ const CartContainer = styled.div`
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
 
-  animation: ${({ isVisible }) => (isVisible ? slideIn : slideOut)} 0.4s ease-in-out forwards;
-  
+  animation: ${({ isVisible }) => (isVisible ? slideIn : slideOut)} 0.4s
+    ease-in-out forwards;
+
   @media (max-width: 1165px) {
     width: 60%;
   }
@@ -47,35 +58,35 @@ const CartHeadingContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 6px;
-`
+`;
 const CartHeading = styled.h2`
   font-size: 1.2rem;
-`
+`;
 const CartHeader = styled.div`
-width: 100%;
-position: sticky;
-background: var(--white);
-display: flex;
-justify-content: space-between;
-align-items: center;
-z-index: 999;
-height: 60px; /* Define una altura específica */
-border-bottom: 1px solid var(--greyE);
-top: 0;
-margin-bottom: 12px;
+  width: 100%;
+  position: sticky;
+  background: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+  height: 60px; /* Define una altura específica */
+  border-bottom: 1px solid var(--greyE);
+  top: 0;
+  margin-bottom: 12px;
 `;
 
-const CartItemsCounter =styled.div`
-width: 20px;
-display: flex;
-align-items: center; 
-justify-content: center;
-font-size: 0.8rem;
-padding: 2px 5px;
-border-radius: 50px;
-background: var(--secondary);
-color: var(--white);
-`
+const CartItemsCounter = styled.div`
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  padding: 2px 5px;
+  border-radius: 50px;
+  background: var(--secondary);
+  color: var(--white);
+`;
 
 const CloseButton = styled(HiOutlineX)`
   cursor: pointer;
@@ -86,8 +97,8 @@ const CartItem = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  margin-bottom:12px;
-  `;
+  margin-bottom: 12px;
+`;
 
 const ProductInfo = styled.div`
   width: 60%;
@@ -97,7 +108,7 @@ const ProductInfo = styled.div`
   flex: 1;
 `;
 
-const ProductImage = styled.img`
+const ProductImage = styled(AdvancedImage)`
   width: 6rem;
   height: 100px;
   object-fit: cover;
@@ -119,26 +130,26 @@ const ProductTitle = styled.p`
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 250px;
-`
+`;
 const Price = styled.p`
-  font-size: .8rem;
+  font-size: 0.8rem;
   margin: 4px 0;
   color: var(--greyA);
   font-variation-settings: "wght" 500;
-`
+`;
 const ProductSizeText = styled.p`
   font-size: 1rem;
   margin: 4px 0;
   color: var(--secondary);
   font-variation-settings: "wght" 400;
 
-  & > span{
-    font-size: .9rem;
+  & > span {
+    font-size: 0.9rem;
     margin-left: 4px;
     color: #7a7a7a;
     font-variation-settings: "wght" 600;
   }
-`
+`;
 const RemoveButton = styled.button`
   color: #5e5e5e;
   text-decoration: underline;
@@ -150,14 +161,13 @@ const RemoveButton = styled.button`
 `;
 
 const EmptyContainer = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-width: 100%;
-height: 100%;
-gap: 10px;
-margin-top: -50px;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 10px;
+  margin-top: -50px;
 `;
 
 const EmptyText = styled.h3`
@@ -193,7 +203,7 @@ const Gif = styled.img`
 const EmptyCloseButton = styled(CloseButton)`
   margin-top: 80px;
   margin-left: auto;
-`
+`;
 
 const CheckoutDetails = styled.div`
   width: 100%;
@@ -206,21 +216,20 @@ const CheckoutDetails = styled.div`
   bottom: 0;
   padding: 32px 0;
   margin-top: auto;
-`
+`;
 
 const TotalFlex = styled.div`
-display: flex;
-align-items: center;
-justify-content: space-between;
-font-size: 1.2rem;
-color: var(--secondary);
-
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  color: var(--secondary);
 `;
 
 const TotalPrice = styled.p`
   font-size: 1rem;
   font-variation-settings: "wght" 600;
-`
+`;
 
 const ButtonContainer = styled.div`
   display: flex;
@@ -228,7 +237,7 @@ const ButtonContainer = styled.div`
   justify-content: center;
   width: 100%;
   gap: 14px;
-`
+`;
 
 const CheckoutButton = styled(EmptyButton)`
   background: var(--secondary);
@@ -237,7 +246,7 @@ const CheckoutButton = styled(EmptyButton)`
   padding: 10px;
   border: none;
   cursor: pointer;
-  font-size: .9rem;
+  font-size: 0.9rem;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -246,7 +255,7 @@ const CheckoutButton = styled(EmptyButton)`
 
 const ViewCartButton = styled(CheckoutButton)`
   background: var(--complementary);
-`
+`;
 
 const CartItemQuantityContainer = styled.div`
   display: inline-grid;
@@ -292,50 +301,6 @@ const Cart = ({ onClose }) => {
     onClose();
   };
 
-  /*const handleCheckout = async () => {
-    setLoading(true);
-    try {
-      console.log('Iniciando checkout con items:', cart.items);
-      
-      const response = await fetch(`${API_URL}/api/create-checkout-session`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          items: cart.items.map(item => ({
-            id: item.id,
-            title: item.title,
-            price: item.price,
-            quantity: item.quantity,
-            size: item.size,
-            thumbnailImage: item.thumbnailImage || null
-          }))
-        }),
-      });
-
-      console.log('Respuesta del servidor:', response.status, response.statusText);
-      
-      const data = await response.json();
-      console.log('Datos recibidos:', data);
-      
-      if (!response.ok) {
-        throw new Error(data.details || data.error || `Error ${response.status}: ${response.statusText}`);
-      }
-
-      if (data.url) {
-        console.log('Redirigiendo a:', data.url);
-        window.location.href = data.url;
-      } else {
-        throw new Error('No se recibió la URL de pago');
-      }
-    } catch (error) {
-      console.error('Error detallado del checkout:', error);
-      alert('Error al procesar el pago: ' + error.message);
-      setLoading(false);
-    }
-  };*/
-
   const handleQuantityChange = (item, increment) => {
     const newQuantity = item.quantity + increment;
     if (newQuantity >= 1) {
@@ -353,9 +318,19 @@ const Cart = ({ onClose }) => {
       {cart.items.length === 0 ? (
         <EmptyContainer>
           <EmptyCloseButton size={30} onClick={onClose} />
-          <Gif src={emptyCartGif} alt="Animated Gif of a basketball" />
+          <Gif
+            src={cloudinary
+              .image('emptyCart_apcb8a.gif')
+              .format('gif')
+              .quality('auto')
+              .resize(scale().width(170))
+              .toURL()}
+            alt="Animated Gif of a basketball"
+          />
           <EmptyText>Your Cart is Empty</EmptyText>
-          <EmptyButton to="/products/all" onClick={onClose}>Continue Shopping</EmptyButton>
+          <EmptyButton to="/products/all" onClick={onClose}>
+            Continue Shopping
+          </EmptyButton>
         </EmptyContainer>
       ) : (
         <>
@@ -366,15 +341,14 @@ const Cart = ({ onClose }) => {
             </CartHeadingContainer>
             <CloseButton size={28} onClick={onClose} />
           </CartHeader>
-          
+
           {cart.items.map((item) => (
             <CartItem key={`${item.id}-${item.size}`}>
               <ProductInfo>
                 <ProductImage
-                  src={item.thumbnailImage}
-                  alt={item.title}
+                  cldImg={item.thumbnailImage}
                   onClick={() => handleProductClick(item.id, item.category)}
-                  style={{ cursor: 'pointer' }}
+                  style={{ cursor: "pointer" }}
                 />
                 <ProductDetails>
                   <ProductTitle>{item.title}</ProductTitle>
@@ -383,14 +357,24 @@ const Cart = ({ onClose }) => {
                     Size: <span>{item.size}</span>
                   </ProductSizeText>
                   <CartItemQuantityContainer>
-                    <CartItemQuantityButton onClick={() => handleQuantityChange(item, -1)}>-</CartItemQuantityButton>
+                    <CartItemQuantityButton
+                      onClick={() => handleQuantityChange(item, -1)}
+                    >
+                      -
+                    </CartItemQuantityButton>
                     <CartItemQuantityText>{item.quantity}</CartItemQuantityText>
-                    <CartItemQuantityButton onClick={() => handleQuantityChange(item, 1)}>+</CartItemQuantityButton>
+                    <CartItemQuantityButton
+                      onClick={() => handleQuantityChange(item, 1)}
+                    >
+                      +
+                    </CartItemQuantityButton>
                   </CartItemQuantityContainer>
                 </ProductDetails>
               </ProductInfo>
-              
-              <RemoveButton onClick={() => removeItemFromCart(item.id, item.size)}>
+
+              <RemoveButton
+                onClick={() => removeItemFromCart(item.id, item.size)}
+              >
                 Remove
               </RemoveButton>
             </CartItem>
@@ -404,11 +388,11 @@ const Cart = ({ onClose }) => {
 
             <ButtonContainer>
               <ViewCartButton>View Cart</ViewCartButton>
-              <CheckoutButton 
+              <CheckoutButton
                 //onClick={handleCheckout}
                 disabled={loading}
               >
-                {loading ? 'Procesando...' : 'Go to Checkout'}
+                {loading ? "Procesando..." : "Go to Checkout"}
               </CheckoutButton>
             </ButtonContainer>
           </CheckoutDetails>

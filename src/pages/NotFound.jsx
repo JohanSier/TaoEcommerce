@@ -1,7 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import notFoundImage from  "../assets/Images/not-found-image.webp"
 import styled from "styled-components";
+import { Cloudinary } from "@cloudinary/url-gen";
+import { scale } from "@cloudinary/url-gen/actions/resize";
+
+const cloudinary = new Cloudinary({
+  cloud: {
+    cloudName: "deocx31u2",
+    apiKey: import.meta.env.VITE_CLOUDINARY_API_KEY,
+    apiSecret: import.meta.env.VITE_CLOUDINARY_API_SECRET,
+  },
+});
 
 const Container = styled.section`
   display: flex;
@@ -11,7 +20,12 @@ const Container = styled.section`
   width: 100%;
   height: 87vh;
 
-  background: url('${notFoundImage}') no-repeat;
+  background: url('${cloudinary
+    .image('not-found-image_gpkdfb.webp')
+    .format('auto')
+    .quality('auto')
+    .resize(scale(1700))
+    .toURL()}') no-repeat;
   background-size: cover;
   background-position: center;
   overflow-x: hidden;

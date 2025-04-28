@@ -1,6 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
+import { Cloudinary } from "@cloudinary/url-gen";
+import { AdvancedImage } from "@cloudinary/react";
+import { scale } from "@cloudinary/url-gen/actions/resize";
+
+const cloudinary = new Cloudinary({
+  cloud: {
+    cloudName: "deocx31u2",
+    apiKey: import.meta.env.VITE_CLOUDINARY_API_KEY,
+    apiSecret: import.meta.env.VITE_CLOUDINARY_API_SECRET
+  }
+});
 
 const Container = styled(Link)`
   text-decoration: none;
@@ -30,7 +41,7 @@ const Container = styled(Link)`
   }
 `;
 
-const ProductImage = styled.img`
+const ProductImage = styled(AdvancedImage)`
   width: 100%;
   object-fit: cover;
   border-radius: inherit;
@@ -129,7 +140,7 @@ const Price = styled.p`
   }
 `;
 
-const ProductCard = ({ productTitle, price, srcImage, productLink, hoverImage}) => {
+const ProductCard = ({ productTitle, price, cloudinaryValue, hoverImage, productLink}) => {
   const [isHover, setIsHover] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   
@@ -139,7 +150,9 @@ const ProductCard = ({ productTitle, price, srcImage, productLink, hoverImage}) 
       <>
       {!imageLoaded && <Skeleton/>}
       <ProductImage
-        src={isHover ? hoverImage : srcImage}
+      cldImg={!isHover ? cloudinary.image(`${cloudinaryValue}`).format("webp").quality("auto").resize(scale(550)) 
+      :cloudinary.image(`${hoverImage}`).format("webp").quality("auto").resize(scale(450))}
+      alt={`${productTitle} Product Image`}
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
         draggable="false"

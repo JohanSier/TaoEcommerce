@@ -1,308 +1,3 @@
-import backpack_1 from "./Accessories/Backpack/Backpack_1.webp";
-import backpack_2 from "./Accessories/Backpack/Backpack_2.webp";
-import backpack_3 from "./Accessories/Backpack/Backpack_3.webp";
-import backpack_4 from "./Accessories/Backpack/Backpack_4.webp";
-
-import bape_shorts_1 from "./Shorts/Bape_Shorts/Bape_Shorts_1.webp";
-import bape_shorts_2 from "./Shorts/Bape_Shorts/Bape_Shorts_2.webp";
-import bape_shorts_3 from "./Shorts/Bape_Shorts/Bape_Shorts_3.webp";
-import bape_shorts_4 from "./Shorts/Bape_Shorts/Bape_Shorts_4.webp";
-import bape_shorts_5 from "./Shorts/Bape_Shorts/Bape_Shorts_5.webp";
-import bape_shorts_6 from "./Shorts/Bape_Shorts/Bape_Shorts_6.webp";
-
-import bape_tee_1 from "./Tees/Bape_Tee/Bape_Tee_1.webp";
-import bape_tee_2 from "./Tees/Bape_Tee/Bape_Tee_2.webp";
-import bape_tee_3 from "./Tees/Bape_Tee/Bape_Tee_3.webp";
-import bape_tee_4 from "./Tees/Bape_Tee/Bape_Tee_4.webp";
-import bape_tee_5 from "./Tees/Bape_Tee/Bape_Tee_5.webp";
-import bape_tee_6 from "./Tees/Bape_Tee/Bape_Tee_6.webp";
-import bape_tee_7 from "./Tees/Bape_Tee/Bape_Tee_7.webp";
-import bape_tee_8 from "./Tees/Bape_Tee/Bape_Tee_8.jpg";
-
-import bape_tweed_shorts_1 from "./Shorts/Bape_Tweed_Hem_Shorts/Bape_Tweed_Hem_Shorts_1.webp";
-import bape_tweed_shorts_2 from "./Shorts/Bape_Tweed_Hem_Shorts/Bape_Tweed_Hem_Shorts_2.webp";
-import bape_tweed_shorts_3 from "./Shorts/Bape_Tweed_Hem_Shorts/Bape_Tweed_Hem_Shorts_3.webp";
-import bape_tweed_shorts_4 from "./Shorts/Bape_Tweed_Hem_Shorts/Bape_Tweed_Hem_Shorts_4.webp";
-import bape_tweed_shorts_5 from "./Shorts/Bape_Tweed_Hem_Shorts/Bape_Tweed_Hem_Shorts_5.webp";
-import bape_tweed_shorts_6 from "./Shorts/Bape_Tweed_Hem_Shorts/Bape_Tweed_Hem_Shorts_6.webp";
-
-import bape_black_tshirt_1 from "./Tees/Bape_Black_Tshirt/Bape_Black_Tshirt_1.webp";
-import bape_black_tshirt_2 from "./Tees/Bape_Black_Tshirt/Bape_Black_Tshirt_2.webp";
-import bape_black_tshirt_3 from "./Tees/Bape_Black_Tshirt/Bape_Black_Tshirt_3.webp";
-import bape_black_tshirt_4 from "./Tees/Bape_Black_Tshirt/Bape_Black_Tshirt_4.webp";
-import bape_black_tshirt_5 from "./Tees/Bape_Black_Tshirt/Bape_Black_Tshirt_5.webp";
-
-import wade_sweatshirt_1 from "./Wade_Sweatshirt/Wade_Sweatshirt_1.webp";
-import wade_sweatshirt_2 from "./Wade_Sweatshirt/Wade_Sweatshirt_2.webp";
-import wade_sweatshirt_3 from "./Wade_Sweatshirt/Wade_Sweatshirt_3.jpg";
-import wade_sweatshirt_4 from "./Wade_Sweatshirt/Wade_Sweatshirt_4.jpg";
-import wade_sweatshirt_5 from "./Wade_Sweatshirt/Wade_Sweatshirt_5.webp";
-import wade_sweatshirt_6 from "./Wade_Sweatshirt/Wade_Sweatshirt_6.jpg";
-import wade_sweatshirt_7 from "./Wade_Sweatshirt/Wade_Sweatshirt_7.jpg";
-
-import wow_11_1 from "./Sneakers/WOW_11/WOW_11_1.webp";
-import wow_11_2 from "./Sneakers/WOW_11/WOW_11_2.webp";
-import wow_11_3 from "./Sneakers/WOW_11/WOW_11_3.webp";
-import wow_11_4 from "./Sneakers/WOW_11/WOW_11_4.webp";
-import wow_11_5 from "./Sneakers/WOW_11/WOW_11_5.webp";
-import wow_11_6 from "./Sneakers/WOW_11/WOW_11_6.webp";
-import wow_11_7 from "./Sneakers/WOW_11/WOW_11_7.webp";
-
-import wow_808_1 from "./Sneakers/WOW_808/WOW_808_1.webp";
-import wow_808_2 from "./Sneakers/WOW_808/WOW_808_2.webp";
-import wow_808_3 from "./Sneakers/WOW_808/WOW_808_3.webp";
-import wow_808_4 from "./Sneakers/WOW_808/WOW_808_4.webp";
-import wow_808_5 from "./Sneakers/WOW_808/WOW_808_5.webp";
-import wow_808_6 from "./Sneakers/WOW_808/WOW_808_6.webp";
-import wow_808_7 from "./Sneakers/WOW_808/WOW_808_7.webp";
-
-import wow_flash_1 from "./Sneakers/WOW_Flash/WOW_Flash_1.webp";
-import wow_flash_2 from "./Sneakers/WOW_Flash/WOW_Flash_2.webp";
-import wow_flash_3 from "./Sneakers/WOW_Flash/WOW_Flash_3.webp";
-import wow_flash_4 from "./Sneakers/WOW_Flash/WOW_Flash_4.webp";
-import wow_flash_5 from "./Sneakers/WOW_Flash/WOW_Flash_5.webp";
-import wow_flash_6 from "./Sneakers/WOW_Flash/WOW_Flash_6.webp";
-import wow_flash_7 from "./Sneakers/WOW_Flash/WOW_Flash_7.webp";
-
-import wow_shadow_1 from "./Sneakers/WOW_Shadow/WOW_Shadow_1.webp";
-import wow_shadow_2 from "./Sneakers/WOW_Shadow/WOW_Shadow_2.webp";
-import wow_shadow_3 from "./Sneakers/WOW_Shadow/WOW_Shadow_3.webp";
-import wow_shadow_4 from "./Sneakers/WOW_Shadow/WOW_Shadow_4.webp";
-import wow_shadow_5 from "./Sneakers/WOW_Shadow/WOW_Shadow_5.webp";
-import wow_shadow_7 from "./Sneakers/WOW_Shadow/WOW_Shadow_6.webp";
-
-import wow_slides_1 from "./Sneakers/WOW_Slides/WOW_Slides_1.webp";
-import wow_slides_2 from "./Sneakers/WOW_Slides/WOW_Slides_2.webp";
-import wow_slides_3 from "./Sneakers/WOW_Slides/WOW_Slides_3.webp";
-import wow_slides_4 from "./Sneakers/WOW_Slides/WOW_Slides_4.webp";
-import wow_slides_5 from "./Sneakers/WOW_Slides/WOW_Slides_5.webp";
-import wow_slides_6 from "./Sneakers/WOW_Slides/WOW_Slides_6.webp";
-import wow_slides_7 from "./Sneakers/WOW_Slides/WOW_Slides_7.webp";
-
-// New imports for additional shoes
-import wac_red_1 from "./Sneakers/WAC_Red/WAC_Red_1.webp";
-import wac_red_2 from "./Sneakers/WAC_Red/WAC_Red_2.webp";
-import wac_red_3 from "./Sneakers/WAC_Red/WAC_Red_3.webp";
-import wac_red_4 from "./Sneakers/WAC_Red/WAC_Red_4.webp";
-import wac_red_5 from "./Sneakers/WAC_Red/WAC_Red_5.webp";
-import wac_red_6 from "./Sneakers/WAC_Red/WAC_Red_6.webp";
-import wac_red_7 from "./Sneakers/WAC_Red/WAC_Red_7.webp";
-
-import wac_veterans_1 from "./Sneakers/WAC_Veterans/WAC_Veterans_1.webp";
-import wac_veterans_2 from "./Sneakers/WAC_Veterans/WAC_Veterans_2.webp";
-import wac_veterans_3 from "./Sneakers/WAC_Veterans/WAC_Veterans_3.webp";
-import wac_veterans_4 from "./Sneakers/WAC_Veterans/WAC_Veterans_4.webp";
-import wac_veterans_5 from "./Sneakers/WAC_Veterans/WAC_Veterans_5.webp";
-import wac_veterans_6 from "./Sneakers/WAC_Veterans/WAC_Veterans_6.webp";
-import wac_veterans_7 from "./Sneakers/WAC_Veterans/WAC_Veterans_7.webp";
-
-import wow_all_city_1 from "./Sneakers/WOW_ALL_CITY/WOW_ALL_CITY_1.webp";
-import wow_all_city_2 from "./Sneakers/WOW_ALL_CITY/WOW_ALL_CITY_2.webp";
-import wow_all_city_3 from "./Sneakers/WOW_ALL_CITY/WOW_ALL_CITY_3.webp";
-import wow_all_city_4 from "./Sneakers/WOW_ALL_CITY/WOW_ALL_CITY_4.webp";
-import wow_all_city_5 from "./Sneakers/WOW_ALL_CITY/WOW_ALL_CITY_5.webp";
-import wow_all_city_6 from "./Sneakers/WOW_ALL_CITY/WOW_ALL_CITY_6.webp";
-import wow_all_city_7 from "./Sneakers/WOW_ALL_CITY/WOW_ALL_CITY_7.webp";
-
-import wow_overtown_1 from "./Sneakers/WOW_Overtown/WOW_Overtown_1.webp";
-import wow_overtown_2 from "./Sneakers/WOW_Overtown/WOW_Overtown_2.webp";
-import wow_overtown_3 from "./Sneakers/WOW_Overtown/WOW_Overtown_3.webp";
-import wow_overtown_4 from "./Sneakers/WOW_Overtown/WOW_Overtown_4.webp";
-import wow_overtown_5 from "./Sneakers/WOW_Overtown/WOW_Overtown_5.webp";
-import wow_overtown_6 from "./Sneakers/WOW_Overtown/WOW_Overtown_6.webp";
-import wow_overtown_7 from "./Sneakers/WOW_Overtown/WOW_Overtown_7.webp";
-
-import wade_808_4_ultra_1 from "./Sneakers/WOW_8_4/Wade_808_4_Ultra.webp";
-import wade_808_4_ultra_2 from "./Sneakers/WOW_8_4/Wade_808_4_Ultra_2.webp";
-import wade_808_4_ultra_3 from "./Sneakers/WOW_8_4/Wade_808_4_Ultra_3.webp";
-import wade_808_4_ultra_4 from "./Sneakers/WOW_8_4/Wade_808_4_Ultra_4.webp";
-import wade_808_4_ultra_5 from "./Sneakers/WOW_8_4/Wade_808_4_Ultra_5.webp";
-import wade_808_4_ultra_6 from "./Sneakers/WOW_8_4/Wade_808_4_Ultra_6.webp";
-import wade_808_4_ultra_7 from "./Sneakers/WOW_8_4/Wade_808_4_Ultra_7.webp";
-
-// Nuevas importaciones de camisetas
-import among_roses_wolves_1 from "./Tees/Among_Roses_Wolves/Among_Roses_Wolves_1.webp";
-import among_roses_wolves_2 from "./Tees/Among_Roses_Wolves/Among_Roses_Wolves_2.webp";
-import among_roses_wolves_3 from "./Tees/Among_Roses_Wolves/Among_Roses_Wolves_3.webp";
-import among_roses_wolves_4 from "./Tees/Among_Roses_Wolves/Among_Roses_Wolves_4.webp";
-import among_roses_wolves_5 from "./Tees/Among_Roses_Wolves/Among_Roses_Wolves_5.webp";
-import among_roses_wolves_6 from "./Tees/Among_Roses_Wolves/Among_Roses_Wolves_6.webp";
-
-import demon_slayer_wolves_1 from "./Tees/DemonSlayer_Wolves/DemonSlayer_Wolves_1.webp";
-import demon_slayer_wolves_2 from "./Tees/DemonSlayer_Wolves/DemonSlayer_Wolves_2.webp";
-import demon_slayer_wolves_3 from "./Tees/DemonSlayer_Wolves/DemonSlayer_Wolves_3.webp";
-import demon_slayer_wolves_4 from "./Tees/DemonSlayer_Wolves/DemonSlayer_Wolves_4.webp";
-import demon_slayer_wolves_5 from "./Tees/DemonSlayer_Wolves/DemonSlayer_Wolves_5.webp";
-import demon_slayer_wolves_6 from "./Tees/DemonSlayer_Wolves/DemonSlayer_Wolves_6.webp";
-import demon_slayer_wolves_7 from "./Tees/DemonSlayer_Wolves/DemonSlayer_Wolves_7.webp";
-
-import malbon_1 from "./Tees/Malbon/Malbon_1.webp";
-import malbon_2 from "./Tees/Malbon/Malbon_2.webp";
-import malbon_3 from "./Tees/Malbon/Malbon_3.webp";
-import malbon_4 from "./Tees/Malbon/Malbon_4.webp";
-import malbon_5 from "./Tees/Malbon/Malbon_5.webp";
-
-import wolves_angel_1 from "./Tees/Wolves_Angel/Wolves_Angel_1.webp";
-import wolves_angel_2 from "./Tees/Wolves_Angel/Wolves_Angel_2.webp";
-import wolves_angel_3 from "./Tees/Wolves_Angel/Wolves_Angel_3.webp";
-import wolves_angel_4 from "./Tees/Wolves_Angel/Wolves_Angel_4.webp";
-import wolves_angel_5 from "./Tees/Wolves_Angel/Wolves_Angel_5.webp";
-import wolves_angel_6 from "./Tees/Wolves_Angel/Wolves_Angel_6.webp";
-import wolves_angel_7 from "./Tees/Wolves_Angel/Wolves_Angel_7.webp";
-import wolves_angel_8 from "./Tees/Wolves_Angel/Wolves_Angel_8.webp";
-
-import wolves_gatubela_1 from "./Tees/Wolves_Gatubela/Wolves_Gatubela_1.webp";
-import wolves_gatubela_2 from "./Tees/Wolves_Gatubela/Wolves_Gatubela_2.webp";
-import wolves_gatubela_3 from "./Tees/Wolves_Gatubela/Wolves_Gatubela_3.webp";
-import wolves_gatubela_4 from "./Tees/Wolves_Gatubela/Wolves_Gatubela_4.webp";
-import wolves_gatubela_5 from "./Tees/Wolves_Gatubela/Wolves_Gatubela_5.webp";
-import wolves_gatubela_6 from "./Tees/Wolves_Gatubela/Wolves_Gatubela_6.webp";
-import wolves_gatubela_7 from "./Tees/Wolves_Gatubela/Wolves_Gatubela_7.webp";
-
-import wolves_spiderman_1 from "./Tees/Wolves_Spiderman/Wolves_Spiderman_1.webp";
-import wolves_spiderman_2 from "./Tees/Wolves_Spiderman/Wolves_Spiderman_2.webp";
-import wolves_spiderman_3 from "./Tees/Wolves_Spiderman/Wolves_Spiderman_3.webp";
-import wolves_spiderman_4 from "./Tees/Wolves_Spiderman/Wolves_Spiderman_4.webp";
-import wolves_spiderman_5 from "./Tees/Wolves_Spiderman/Wolves_Spiderman_5.webp";
-import wolves_spiderman_6 from "./Tees/Wolves_Spiderman/Wolves_Spiderman_6.webp";
-import wolves_spiderman_7 from "./Tees/Wolves_Spiderman/Wolves_Spiderman_7.webp";
-import wolves_spiderman_8 from "./Tees/Wolves_Spiderman/Wolves_Spiderman_8.webp";
-
-import bucketsquad_ball_1 from "./Tees/Bucketsquad_Ball/Bucketsquad_Ball_1.webp";
-import bucketsquad_ball_2 from "./Tees/Bucketsquad_Ball/Bucketsquad_Ball_2.webp";
-import bucketsquad_ball_3 from "./Tees/Bucketsquad_Ball/Bucketsquad_Ball_3.webp";
-import bucketsquad_ball_4 from "./Tees/Bucketsquad_Ball/Bucketsquad_Ball_4.webp";
-import bucketsquad_ball_5 from "./Tees/Bucketsquad_Ball/Bucketsquad_Ball_5.webp";
-
-import undefeated_supernova_1 from "./Tees/Undefeated_Supernova/Undefeated_Supernova_1.webp";
-import undefeated_supernova_2 from "./Tees/Undefeated_Supernova/Undefeated_Supernova_2.webp";
-import undefeated_supernova_3 from "./Tees/Undefeated_Supernova/Undefeated_Supernova_3.webp";
-import undefeated_supernova_4 from "./Tees/Undefeated_Supernova/Undefeated_Supernova_4.webp";
-
-// Jersey imports
-import carolina_vintage_1 from "./Jerseys/Carolina_Vintage/North_Carolina_Vintage_1.jpg";
-import carolina_vintage_2 from "./Jerseys/Carolina_Vintage/North_Carolina_Vintage_2.jpg";
-import carolina_vintage_3 from "./Jerseys/Carolina_Vintage/North_Carolina_Vintage_3.jpg";
-import carolina_vintage_4 from "./Jerseys/Carolina_Vintage/North_Carolina_Vintage_4.jpg";
-import carolina_vintage_5 from "./Jerseys/Carolina_Vintage/North_Carolina_Vintage_5.jpg";
-
-import hornets_1 from "./Jerseys/Charlotte_Hornets/Hornets_1.webp";
-import hornets_2 from "./Jerseys/Charlotte_Hornets/Hornets_2.webp";
-import hornets_3 from "./Jerseys/Charlotte_Hornets/Hornets_3.webp";
-import hornets_4 from "./Jerseys/Charlotte_Hornets/Hornets_4.webp";
-import hornets_5 from "./Jerseys/Charlotte_Hornets/Hornets_5.webp";
-
-import memphis_1 from "./Jerseys/Memphis_Vintage/Memphis_1.webp";
-import memphis_2 from "./Jerseys/Memphis_Vintage/Memphis_2.webp";
-import memphis_3 from "./Jerseys/Memphis_Vintage/Memphis_3.webp";
-import memphis_4 from "./Jerseys/Memphis_Vintage/Memphis_4.webp";
-import memphis_5 from "./Jerseys/Memphis_Vintage/Memphis_5.webp";
-
-import carolina_1 from "./Jerseys/North_Carolina/Carolina_1.webp";
-import carolina_2 from "./Jerseys/North_Carolina/Carolina_2.webp";
-import carolina_3 from "./Jerseys/North_Carolina/Carolina_3.webp";
-import carolina_4 from "./Jerseys/North_Carolina/Carolina_4.webp";
-import carolina_5 from "./Jerseys/North_Carolina/Carolina_5.webp";
-
-import orlando_1 from "./Jerseys/Orlando_Magic/Orlando_1.webp";
-import orlando_2 from "./Jerseys/Orlando_Magic/Orlando_2.webp";
-import orlando_3 from "./Jerseys/Orlando_Magic/Orlando_3.webp";
-import orlando_4 from "./Jerseys/Orlando_Magic/Orlando_4.webp";
-
-import raptors_purple_1 from "./Jerseys/Raptors_Purple/Raptors_1.webp";
-import raptors_purple_2 from "./Jerseys/Raptors_Purple/Raptors_2.webp";
-import raptors_purple_3 from "./Jerseys/Raptors_Purple/Raptors_3.webp";
-import raptors_purple_4 from "./Jerseys/Raptors_Purple/Raptors_4.webp";
-
-import raptors_white_1 from "./Jerseys/Raptors_White/Raptors_White_1.webp";
-import raptors_white_2 from "./Jerseys/Raptors_White/Raptors_White_2.webp";
-import raptors_white_3 from "./Jerseys/Raptors_White/Raptors_White_3.webp";
-import raptors_white_4 from "./Jerseys/Raptors_White/Raptors_White_4.webp";
-
-import heat_1 from "./Jerseys/Rose_MiamiHeat/Heat_1.webp";
-import heat_2 from "./Jerseys/Rose_MiamiHeat/Heat_2.webp";
-import heat_3 from "./Jerseys/Rose_MiamiHeat/Heat_3.webp";
-import heat_4 from "./Jerseys/Rose_MiamiHeat/Heat_4.jpg";
-import heat_5 from "./Jerseys/Rose_MiamiHeat/Heat_5.jpg";
-
-import lakers_white_1 from "./Jerseys/White_Lakers/Lakers_White_1.webp";
-import lakers_white_2 from "./Jerseys/White_Lakers/Lakers_White_2.webp";
-import lakers_white_3 from "./Jerseys/White_Lakers/Lakers_White_3.webp";
-import lakers_white_4 from "./Jerseys/White_Lakers/Lakers_White_4.webp";
-import lakers_white_5 from "./Jerseys/White_Lakers/Lakers_White_5.webp";
-
-import wolves_vintage_1 from "./Jerseys/Wolves_Vintage/Wolves_Vintage_1.webp";
-import wolves_vintage_2 from "./Jerseys/Wolves_Vintage/Wolves_Vintage_2.webp";
-import wolves_vintage_3 from "./Jerseys/Wolves_Vintage/Wolves_Vintage_3.webp";
-import wolves_vintage_4 from "./Jerseys/Wolves_Vintage/Wolves_Vintage_4.webp";
-import wolves_vintage_5 from "./Jerseys/Wolves_Vintage/Wolves_Vintage_5.webp";
-
-// Importaciones de accesorios
-import big_backpack_1 from "./Accessories/Big_Backpack/Big_Backpack_1.webp";
-import big_backpack_2 from "./Accessories/Big_Backpack/Big_Backpack_2.webp";
-import big_backpack_3 from "./Accessories/Big_Backpack/Big_Backpack_3.webp";
-import big_backpack_4 from "./Accessories/Big_Backpack/Big_Backpack_4.webp";
-import big_backpack_5 from "./Accessories/Big_Backpack/Big_Backpack_5.webp";
-import big_backpack_6 from "./Accessories/Big_Backpack/Big_Backpack_6.webp";
-import big_backpack_7 from "./Accessories/Big_Backpack/Big_Backpack_7.webp";
-import big_backpack_8 from "./Accessories/Big_Backpack/Big_Backpack_8.webp";
-
-import tech_backpack_1 from "./Accessories/Tech_Backpack/Tech_Backpack_1.webp";
-import tech_backpack_2 from "./Accessories/Tech_Backpack/Tech_Backpack_2.webp";
-import tech_backpack_3 from "./Accessories/Tech_Backpack/Tech_Backpack_3.webp";
-import tech_backpack_4 from "./Accessories/Tech_Backpack/Tech_Backpack_4.webp";
-import tech_backpack_5 from "./Accessories/Tech_Backpack/Tech_Backpack_5.webp";
-import tech_backpack_6 from "./Accessories/Tech_Backpack/Tech_Backpack_6.webp";
-import tech_backpack_7 from "./Accessories/Tech_Backpack/Tech_Backpack_7.webp";
-import tech_backpack_8 from "./Accessories/Tech_Backpack/Tech_Backpack_8.webp";
-
-import hoop_1 from "./Accessories/Hoop/Hoop_1.webp";
-import hoop_2 from "./Accessories/Hoop/Hoop_2.webp";
-import hoop_3 from "./Accessories/Hoop/Hoop_3.webp";
-import hoop_4 from "./Accessories/Hoop/Hoop_4.webp";
-
-import necklace_1 from "./Accessories/Necklace/Necklace_1.webp";
-import necklace_2 from "./Accessories/Necklace/Necklace_2.webp";
-import necklace_3 from "./Accessories/Necklace/Necklace_3.webp";
-import necklace_4 from "./Accessories/Necklace/Necklace_4.webp";
-import necklace_5 from "./Accessories/Necklace/Necklace_5.webp";
-import necklace_6 from "./Accessories/Necklace/Necklace_6.webp";
-
-import heats_shaker_1 from "./Accessories/Heats_Shaker/Heats_Shaker_1.webp";
-import heats_shaker_2 from "./Accessories/Heats_Shaker/Heats_Shaker_2.webp";
-import heats_shaker_3 from "./Accessories/Heats_Shaker/Heats_Shaker_3.webp";
-import heats_shaker_4 from "./Accessories/Heats_Shaker/Heats_Shaker_4.webp";
-import heats_shaker_5 from "./Accessories/Heats_Shaker/Heats_Shaker_5.webp";
-import heats_shaker_6 from "./Accessories/Heats_Shaker/Heats_Shaker_6.webp";
-import heats_shaker_7 from "./Accessories/Heats_Shaker/Heats_Shaker_7.webp";
-
-import drawstring_bag_1 from "./Accessories/Drawstring_Bag/Drawstring_1.webp";
-import drawstring_bag_2 from "./Accessories/Drawstring_Bag/Drawstring_2.webp";
-import drawstring_bag_3 from "./Accessories/Drawstring_Bag/Drawstring_3.webp";
-import drawstring_bag_4 from "./Accessories/Drawstring_Bag/Drawstring_4.webp";
-import drawstring_bag_5 from "./Accessories/Drawstring_Bag/Drawstring_5.webp";
-import drawstring_bag_6 from "./Accessories/Drawstring_Bag/Drawstring_6.webp";
-
-import bulls_shaker_1 from "./Accessories/Bulls_Shaker/Bulls_Shaker_1.webp";
-import bulls_shaker_2 from "./Accessories/Bulls_Shaker/Bulls_Shaker_2.webp";
-import bulls_shaker_3 from "./Accessories/Bulls_Shaker/Bulls_Shaker_3.webp";
-import bulls_shaker_4 from "./Accessories/Bulls_Shaker/Bulls_Shaker_4.webp";
-import bulls_shaker_5 from "./Accessories/Bulls_Shaker/Bulls_Shaker_5.webp";
-import bulls_shaker_6 from "./Accessories/Bulls_Shaker/Bulls_Shaker_6.webp";
-import bulls_shaker_7 from "./Accessories/Bulls_Shaker/Bulls_Shaker_7.webp";
-
-// Importaciones de balones
-import bucket_tidal_1 from "./Accessories/Bucket_Tidal/Bucket_Tidal_1.webp";
-import bucket_tidal_2 from "./Accessories/Bucket_Tidal/Bucket_Tidal_2.webp";
-import bucket_tidal_3 from "./Accessories/Bucket_Tidal/Bucket_Tidal_3.webp";
-import bucket_tidal_4 from "./Accessories/Bucket_Tidal/Bucket_Tidal_4.webp";
-
-import bucket_blossom_1 from "./Accessories/Bucket_Blossom/Bucket_Blossom_1.webp";
-import bucket_blossom_2 from "./Accessories/Bucket_Blossom/Bucket_Blossom_2.webp";
-import bucket_blossom_3 from "./Accessories/Bucket_Blossom/Bucket_Blossom_3.webp";
-import bucket_blossom_4 from "./Accessories/Bucket_Blossom/Bucket_Blossom_4.webp";
-import bucket_blossom_5 from "./Accessories/Bucket_Blossom/Bucket_Blossom_5.webp";
-
 const categories = [
   {
     id: 1,
@@ -333,12 +28,12 @@ const products = [
     description:
       "A sleek black t-shirt with unique patches celebrating street basketball culture.",
     price: 44.99,
-    images: [
-      bape_black_tshirt_1,
-      bape_black_tshirt_2,
-      bape_black_tshirt_3,
-      bape_black_tshirt_4,
-      bape_black_tshirt_5,
+    cloudinaryValues: [
+      "Bape_Black_Tshirt_1_uvza9e.webp",
+      "Bape_Black_Tshirt_2_fxy05z.webp",
+      "Bape_Black_Tshirt_3_zysszy.webp",
+      "Bape_Black_Tshirt_4_jruhud.webp",
+      "Bape_Black_Tshirt_5_qyhnnz.webp",
     ],
     availableSizes: ["XS", "S", "M", "L", "XL", "2XL"],
     measuresIn: {
@@ -361,13 +56,13 @@ const products = [
     description:
       "Stylish black camo shorts perfect for both on and off the court.",
     price: 54.99,
-    images: [
-      bape_shorts_1,
-      bape_shorts_2,
-      bape_shorts_3,
-      bape_shorts_4,
-      bape_shorts_5,
-      bape_shorts_6,
+    cloudinaryValues: [
+      "Bape_Shorts_1_nu6myj.webp",
+      "Bape_Shorts_2_jmmz9l.webp",
+      "Bape_Shorts_3_qqehzh.webp",
+      "Bape_Shorts_4_h2qxti.webp",
+      "Bape_Shorts_5_z5bsno.webp",
+      "Bape_Shorts_6_i6macj.webp",
     ],
     availableSizes: ["XS", "S", "M", "L", "XL",],
     measuresIn: {
@@ -389,14 +84,14 @@ const products = [
     description:
       "A premium, vintage-washed long-sleeve sweater for those cooler street game nights.",
     price: 69.99,
-    images: [
-      wade_sweatshirt_1,
-      wade_sweatshirt_2,
-      wade_sweatshirt_3,
-      wade_sweatshirt_4,
-      wade_sweatshirt_5,
-      wade_sweatshirt_6,
-      wade_sweatshirt_7,
+    cloudinaryValues: [
+      "Wade_Sweatshirt_1_xe4ypv.webp",
+      "Wade_Sweatshirt_2_lmzth8.webp",
+      "Wade_Sweatshirt_3_aoebvm.jpg",
+      "Wade_Sweatshirt_4_nielzg.webp",
+      "Wade_Sweatshirt_5_cygsya.webp",
+      "Wade_Sweatshirt_6_e1mhwv.jpg",
+      "Wade_Sweatshirt_7_azxpvr.webp",
     ],
     availableSizes: ["XS", "S", "M", "L", "XL", "2XL"],
     measuresIn: {
@@ -419,15 +114,15 @@ const products = [
     description:
       "A deep navy t-shirt with star-inspired designs for standout street style.",
     price: 47.99,
-    images: [
-      bape_tee_1,
-      bape_tee_2,
-      bape_tee_3,
-      bape_tee_4,
-      bape_tee_5,
-      bape_tee_6,
-      bape_tee_7,
-      bape_tee_8,
+    cloudinaryValues: [
+      "Bape_Tee_1_bv5ugm.webp",
+      "Bape_Tee_2_tnfu1l.webp",
+      "Bape_Tee_3_o4lcuz.webp",
+      "Bape_Tee_4_dgmz0d.webp",
+      "Bape_Tee_5_amrxbx.webp",
+      "Bape_Tee_6_awwwlc.webp",
+      "Bape_Tee_7_hw4el5.webp",
+      "Bape_Tee_8_myb6w5.webp",
     ],
     availableSizes: ["M", "L", "XL", "2XL"],
     measuresIn: {
@@ -448,13 +143,13 @@ const products = [
     description:
       "Minimalist black shorts with subtle detailing for effortless style.",
     price: 49.99,
-    images: [
-      bape_tweed_shorts_1,
-      bape_tweed_shorts_2,
-      bape_tweed_shorts_3,
-      bape_tweed_shorts_4,
-      bape_tweed_shorts_5,
-      bape_tweed_shorts_6,
+    cloudinaryValues: [
+      "Bape_Tweed_Hem_Shorts_1_bwdtgq.webp",
+      "Bape_Tweed_Hem_Shorts_2_mspmtb.webp",
+      "Bape_Tweed_Hem_Shorts_3_kqgcea.webp",
+      "Bape_Tweed_Hem_Shorts_4_jpt2jc.webp",
+      "Bape_Tweed_Hem_Shorts_5_tkzsf7.webp",
+      "Bape_Tweed_Hem_Shorts_6_vjgxzr.webp",
     ],
     availableSizes: ["XS", "S", "M", "L", "XL", "2XL"],
     measuresIn: {
@@ -477,7 +172,7 @@ const products = [
     description:
       "A durable and stylish black backpack with iconic accents, ready to carry your game essentials.",
     price: 84.99,
-    images: [backpack_1, backpack_2, backpack_3, backpack_4],
+    cloudinaryValues: ["Backpack_1_iojo3t.webp", "Backpack_2_i6stfu.webp", "Backpack_3_i7rggp.webp", "Backpack_4_me1izt.webp"],
     availableSizes: ["One Size"],
   },
   {
@@ -488,14 +183,14 @@ const products = [
     name: "Way of Wade 11",
     description: "The Way of Wade 11 is a high-performance basketball shoe engineered for players who demand speed and stability. Featuring innovative BOOM cushioning technology and breathable mesh upper, it delivers the perfect balance of comfort and on-court performance. The reinforced support system and enhanced traction pattern ensure confident movements during intense gameplay.",
     price: 159.99,
-    images: [
-      wow_11_1,
-      wow_11_2,
-      wow_11_3,
-      wow_11_4,
-      wow_11_5,
-      wow_11_6,
-      wow_11_7
+    cloudinaryValues: [
+      "WOW_11_1_o1g8q2.webp",
+      "WOW_11_2_wpcqgh.webp",
+      "WOW_11_3_lxatva.webp",
+      "WOW_11_4_okajrj.webp",
+      "WOW_11_5_j9ijvm.webp",
+      "WOW_11_6_wmvo1f.webp",
+      "WOW_11_7_jyqw2f.webp"
     ],
     availableSizes: ["7", "8", "8.5", "9", "9.5", "10", "12", "13"],
     measuresIn: {
@@ -522,14 +217,14 @@ const products = [
     name: "Way of Wade 808",
     description: "The Way of Wade 808 combines cutting-edge design with superior functionality. Built with dynamic support technology and responsive cushioning, these shoes deliver exceptional court feel and agility. The lightweight construction and strategic ventilation ensure maximum comfort during intense play.",
     price: 149.99,
-    images: [
-      wow_808_1,
-      wow_808_2,
-      wow_808_3,
-      wow_808_4,
-      wow_808_5,
-      wow_808_6,
-      wow_808_7
+    cloudinaryValues: [
+      "WOW_808_1_nwge49.webp",
+      "WOW_808_2_gklw6i.webp",
+      "WOW_808_3_grfwzt.webp",
+      "WOW_808_4_mkz5yv.webp",
+      "WOW_808_5_pfagoq.webp",
+      "WOW_808_6_dyytl6.webp",
+      "WOW_808_7_xyrckg.webp"
     ],
     availableSizes: ["8.5", "9", "9.5", "10", "11", "11.5", "12", "13"],
     measuresIn: {
@@ -556,14 +251,14 @@ const products = [
     name: "Way of Wade Flash",
     description: "Experience lightning-quick responsiveness with the Way of Wade Flash. These performance basketball shoes feature advanced energy return technology and a specialized traction pattern for explosive movements. The adaptive fit system and reinforced stability features make them ideal for dynamic players.",
     price: 139.99,
-    images: [
-      wow_flash_1,
-      wow_flash_2,
-      wow_flash_3,
-      wow_flash_4,
-      wow_flash_5,
-      wow_flash_6,
-      wow_flash_7
+    cloudinaryValues: [
+      "WOW_Flash_1_gy7tsy.webp",
+      "WOW_Flash_2_vseyj9.webp",
+      "WOW_Flash_3_jdosmg.webp",
+      "WOW_Flash_4_n687ak.webp",
+      "WOW_Flash_5_cnlpvu.webp",
+      "WOW_Flash_6_i1amem.webp",
+      "WOW_Flash_7_hagqi7.webp"
     ],
     availableSizes: ["10", "10.5", "11", "11.5", "12"],
     measuresIn: {
@@ -590,13 +285,13 @@ const products = [
     name: "Way of Wade Shadow",
     description: "The Way of Wade Shadow sets a new standard for stealth and style on the court. Featuring a sleek design with premium materials, these shoes offer enhanced lateral support and impact protection. The innovative cushioning system and breathable construction ensure sustained comfort throughout your game.",
     price: 144.99,
-    images: [
-      wow_shadow_1,
-      wow_shadow_2,
-      wow_shadow_3,
-      wow_shadow_4,
-      wow_shadow_5,
-      wow_shadow_7
+    cloudinaryValues: [
+      "WOW_Shadow_1_paf8k3.webp",
+      "WOW_Shadow_2_efxfzm.webp",
+      "WOW_Shadow_3_wwxz6d.webp",
+      "WOW_Shadow_4_kdrizd.webp",
+      "WOW_Shadow_5_e73lgk.webp",
+      "WOW_Shadow_6_tlbo6f.webp"
     ],
     availableSizes: ["8", "8.5", "9", "9.5", "10", "10.5", "11", "11.5", "12", "13"],
     measuresIn: {
@@ -626,14 +321,14 @@ const products = [
     name: "Way of Wade Slides",
     description: "Perfect for pre and post-game comfort, the Way of Wade Slides offer premium recovery support. The ergonomic footbed and soft cushioning provide ultimate relaxation, while the durable construction ensures lasting quality. Featuring a sleek design with signature WOW details for style and comfort.",
     price: 49.99,
-    images: [
-      wow_slides_1,
-      wow_slides_2,
-      wow_slides_3,
-      wow_slides_4,
-      wow_slides_5,
-      wow_slides_6,
-      wow_slides_7
+    cloudinaryValues: [
+      "WOW_Slides_1_r3jcaa.webp",
+      "WOW_Slides_2_tvrcio.webp",
+      "WOW_Slides_3_demtsl.webp",
+      "WOW_Slides_4_lxtnhi.webp",
+      "WOW_Slides_5_bl6bgj.webp",
+      "WOW_Slides_6_hp6g0j.webp",
+      "WOW_Slides_7_ud6c28.webp"
     ],
     availableSizes: ["7", "8", "9", "10", "11", "12", "13"],
     measuresIn: {
@@ -655,14 +350,14 @@ const products = [
     name: "Way of Wade All City Red",
     description: "The Way of Wade All City Red edition brings bold style to the court with its vibrant colorway. Engineered for performance and durability, these shoes feature responsive cushioning and a supportive fit. The premium materials and striking design make them a standout choice for players who want to make a statement.",
     price: 129.99,
-    images: [
-      wac_red_1,
-      wac_red_2,
-      wac_red_3,
-      wac_red_4,
-      wac_red_5,
-      wac_red_6,
-      wac_red_7
+    cloudinaryValues: [
+      "WAC_Red_1_fqlxts.webp",
+      "WAC_Red_2_ssqljw.webp",
+      "WAC_Red_3_mmxys3.webp",
+      "WAC_Red_4_zuagbo.webp",
+      "WAC_Red_5_srpu3z.webp",
+      "WAC_Red_6_urfb7n.webp",
+      "WAC_Red_7_j22ldg.webp"
     ],
     availableSizes: ["7", "7.5", "8", "8.5", "11.5", "12", "13"],
     measuresIn: {
@@ -689,14 +384,14 @@ const products = [
     name: "Way of Wade All City Veterans",
     description: "The Way of Wade All City Veterans edition pays tribute to the game's heritage with its classic design and premium materials. Built for comfort and performance, these shoes feature advanced cushioning technology and a supportive fit. The timeless design and quality construction make them a perfect choice for players who appreciate tradition and performance.",
     price: 134.99,
-    images: [
-      wac_veterans_1,
-      wac_veterans_2,
-      wac_veterans_3,
-      wac_veterans_4,
-      wac_veterans_5,
-      wac_veterans_6,
-      wac_veterans_7
+    cloudinaryValues: [
+      "WAC_Veterans_1_nocvzc.webp",
+      "WAC_Veterans_2_roulrr.webp",
+      "WAC_Veterans_3_c4gpqk.webp",
+      "WAC_Veterans_4_tyivuu.webp",
+      "WAC_Veterans_5_pth28a.webp",
+      "WAC_Veterans_6_ifdl12.webp",
+      "WAC_Veterans_7_fuzwi4.webp"
     ],
     availableSizes: ["7", "7.5", "9", "9.5", "10", "10.5", "11", "11.5", "12", "13"],
     measuresIn: {
@@ -723,14 +418,14 @@ const products = [
     name: "Way of Wade All City",
     description: "The Way of Wade All City combines street style with court performance. Featuring a sleek design and responsive cushioning, these shoes deliver exceptional comfort and support. The durable construction and modern aesthetic make them perfect for both on-court performance and off-court style.",
     price: 124.99,
-    images: [
-      wow_all_city_1,
-      wow_all_city_2,
-      wow_all_city_3,
-      wow_all_city_4,
-      wow_all_city_5,
-      wow_all_city_6,
-      wow_all_city_7
+    cloudinaryValues: [
+      "WOW_ALL_CITY_1_fnrpbv.webp",
+      "WOW_ALL_CITY_2_sp7gb0.webp",
+      "WOW_ALL_CITY_3_u00xw5.webp",
+      "WOW_ALL_CITY_4_zticuq.webp",
+      "WOW_ALL_CITY_5_aeg4nk.webp",
+      "WOW_ALL_CITY_6_kkrpsy.webp",
+      "WOW_ALL_CITY_7_gxuuph.webp"
     ],
     availableSizes: ["7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5", "13"],
     measuresIn: {
@@ -757,14 +452,14 @@ const products = [
     name: "Way of Wade Overtown",
     description: "The Way of Wade Overtown edition brings Miami's vibrant culture to the court. Featuring a unique design inspired by the city's energy, these shoes offer superior comfort and performance. The premium materials and innovative technology make them a perfect choice for players who want to stand out while maintaining top-tier performance.",
     price: 139.99,
-    images: [
-      wow_overtown_1,
-      wow_overtown_2,
-      wow_overtown_3,
-      wow_overtown_4,
-      wow_overtown_5,
-      wow_overtown_6,
-      wow_overtown_7
+    cloudinaryValues: [
+      "WOW_Overtown_1_uax7oj.webp",
+      "WOW_Overtown_2_wxe4tt.webp",
+      "WOW_Overtown_3_qobnep.webp",
+      "WOW_Overtown_4_dgza9f.webp",
+      "WOW_Overtown_5_vvzxqj.webp",
+      "WOW_Overtown_6_lwkdhj.webp",
+      "WOW_Overtown_7_al0wmj.webp"
     ],
     availableSizes: ["7", "7.5", "8", "8.5","10.5", "11", "11.5", "12"],
     measuresIn: {
@@ -791,14 +486,14 @@ const products = [
     name: "Way of Wade 808 4 Ultra",
     description: "The Way of Wade 808 4 Ultra takes performance to the next level with its advanced technology and premium construction. Featuring enhanced cushioning and support, these shoes deliver exceptional comfort and responsiveness. The sleek design and innovative features make them a top choice for players seeking maximum performance and style.",
     price: 149.99,
-    images: [
-      wade_808_4_ultra_1,
-      wade_808_4_ultra_2,
-      wade_808_4_ultra_3,
-      wade_808_4_ultra_4,
-      wade_808_4_ultra_5,
-      wade_808_4_ultra_6,
-      wade_808_4_ultra_7
+    cloudinaryValues: [
+      "Wade_808_4_Ultra_dgeulq.webp",
+      "Wade_808_4_Ultra_2_csi6h9.webp",
+      "Wade_808_4_Ultra_3_xfu8fg.webp",
+      "Wade_808_4_Ultra_4_yffdjp.webp",
+      "Wade_808_4_Ultra_5_aibmqx.webp",
+      "Wade_808_4_Ultra_6_nha2cl.webp",
+      "Wade_808_4_Ultra_7_cosx2i.webp"
     ],
     availableSizes: ["7", "7.5", "8", "11", "11.5", "12", "13"],
     measuresIn: {
@@ -825,13 +520,13 @@ const products = [
     name: "Among Roses Wolves Tee",
     description: "A unique blend of street style and basketball culture, featuring a striking wolf design among roses. Perfect for those who want to make a statement both on and off the court.",
     price: 49.99,
-    images: [
-      among_roses_wolves_1,
-      among_roses_wolves_2,
-      among_roses_wolves_3,
-      among_roses_wolves_4,
-      among_roses_wolves_5,
-      among_roses_wolves_6
+    cloudinaryValues: [
+      "Among_Roses_Wolves_1_xqab2y.webp",
+      "Among_Roses_Wolves_2_mw7kvt.webp",
+      "Among_Roses_Wolves_3_yuehin.webp",
+      "Among_Roses_Wolves_4_lfv3oa.webp",
+      "Among_Roses_Wolves_5_ikggry.webp",
+      "Among_Roses_Wolves_6_ql6nfl.webp"
     ],
     availableSizes: ["S", "M", "L", "XL"],
     measuresIn: {
@@ -851,14 +546,14 @@ const products = [
     name: "Demon Slayer Wolves Tee",
     description: "A bold design inspired by street basketball culture, featuring a demon slayer wolf motif. This tee combines urban style with basketball heritage.",
     price: 54.99,
-    images: [
-      demon_slayer_wolves_1,
-      demon_slayer_wolves_2,
-      demon_slayer_wolves_3,
-      demon_slayer_wolves_4,
-      demon_slayer_wolves_5,
-      demon_slayer_wolves_6,
-      demon_slayer_wolves_7
+    cloudinaryValues: [
+      "DemonSlayer_Wolves_1_twnaqk.webp",
+      "DemonSlayer_Wolves_2_ttlmc8.webp",
+      "DemonSlayer_Wolves_3_lu7lsz.webp",
+      "DemonSlayer_Wolves_4_hiusoo.webp",
+      "DemonSlayer_Wolves_5_klkjpg.webp",
+      "DemonSlayer_Wolves_6_rf8gvv.webp",
+      "DemonSlayer_Wolves_7_z5uws1.webp"
     ],
     availableSizes: ["M", "L", "XL", "2XL"],
     measuresIn: {
@@ -878,12 +573,12 @@ const products = [
     name: "Malbon Basketball Tee",
     description: "A premium quality tee featuring the iconic Malbon basketball design. Perfect for those who appreciate both street style and basketball culture.",
     price: 59.99,
-    images: [
-      malbon_1,
-      malbon_2,
-      malbon_3,
-      malbon_4,
-      malbon_5
+    cloudinaryValues: [
+      "Malbon_1_t6mhfp.webp",
+      "Malbon_2_afrvsf.webp",
+      "Malbon_3_fc8rzd.webp",
+      "Malbon_4_v3lwum.webp",
+      "Malbon_5_sg8e32.webp"
     ],
     availableSizes: ["S", "M", "L", "XL"],
     measuresIn: {
@@ -902,15 +597,15 @@ const products = [
     name: "Wolves Angel Tee",
     description: "A celestial-inspired design featuring a wolf angel motif. This tee combines street style with a touch of mysticism, perfect for those who want to stand out.",
     price: 49.99,
-    images: [
-      wolves_angel_1,
-      wolves_angel_2,
-      wolves_angel_3,
-      wolves_angel_4,
-      wolves_angel_5,
-      wolves_angel_6,
-      wolves_angel_7,
-      wolves_angel_8
+    cloudinaryValues: [
+      "Wolves_Angel_1_yfixba.webp",
+      "Wolves_Angel_2_xsajbp.webp",
+      "Wolves_Angel_3_kaemeq.webp",
+      "Wolves_Angel_4_dxspgy.webp",
+      "Wolves_Angel_5_ugjkvj.webp",
+      "Wolves_Angel_6_rpgsbl.webp",
+      "Wolves_Angel_7_wpik2g.webp",
+      "Wolves_Angel_8_nku33c.webp"
     ],
     availableSizes: ["S", "M", "L", "XL", "2XL"],
     measuresIn: {
@@ -930,14 +625,14 @@ const products = [
     name: "Wolves Gatubela Tee",
     description: "A unique fusion of street style and comic book culture, featuring a wolf in a catwoman-inspired design. Perfect for those who want to make a bold statement.",
     price: 54.99,
-    images: [
-      wolves_gatubela_1,
-      wolves_gatubela_2,
-      wolves_gatubela_3,
-      wolves_gatubela_4,
-      wolves_gatubela_5,
-      wolves_gatubela_6,
-      wolves_gatubela_7
+    cloudinaryValues: [
+      "Wolves_Gatubela_1_xi75mv.webp",
+      "Wolves_Gatubela_2_pnmprw.webp",
+      "Wolves_Gatubela_3_sblzyz.webp",
+      "Wolves_Gatubela_4_m4luoz.webp",
+      "Wolves_Gatubela_5_qfdluh.webp",
+      "Wolves_Gatubela_6_eyhnf0.webp",
+      "Wolves_Gatubela_7_cxhq08.webp"
     ],
     availableSizes: ["S", "M", "L", "XL"],
     measuresIn: {
@@ -957,15 +652,15 @@ const products = [
     name: "Wolves Spiderman Tee",
     description: "A creative blend of street style and superhero culture, featuring a wolf in a Spiderman-inspired design. Perfect for those who want to showcase their unique style.",
     price: 54.99,
-    images: [
-      wolves_spiderman_1,
-      wolves_spiderman_2,
-      wolves_spiderman_3,
-      wolves_spiderman_4,
-      wolves_spiderman_5,
-      wolves_spiderman_6,
-      wolves_spiderman_7,
-      wolves_spiderman_8
+    cloudinaryValues: [
+      "Wolves_Spiderman_1_ltuh4z.webp",
+      "Wolves_Spiderman_2_jqhhgi.webp",
+      "Wolves_Spiderman_3_bdjxmu.webp",
+      "Wolves_Spiderman_4_qu4cla.webp",
+      "Wolves_Spiderman_5_k3l5p2.webp",
+      "Wolves_Spiderman_6_lg729u.webp",
+      "Wolves_Spiderman_7_r0sh6n.webp",
+      "Wolves_Spiderman_8_fd8th7.webp"
     ],
     availableSizes: ["S", "M", "L", "XL", "2XL"],
     measuresIn: {
@@ -985,12 +680,12 @@ const products = [
     name: "Bucketsquad Ball Tee",
     description: "A basketball-inspired design featuring the iconic Bucketsquad logo. Perfect for those who want to show their love for the game in style.",
     price: 44.99,
-    images: [
-      bucketsquad_ball_1,
-      bucketsquad_ball_2,
-      bucketsquad_ball_3,
-      bucketsquad_ball_4,
-      bucketsquad_ball_5
+    cloudinaryValues: [
+      "Bucketsquad_Ball_1_npswqs.webp",
+      "Bucketsquad_Ball_2_ggqcxw.webp",
+      "Bucketsquad_Ball_3_m3n1ad.webp",
+      "Bucketsquad_Ball_4_mya0jv.webp",
+      "Bucketsquad_Ball_5_jglsvy.webp"
     ],
     availableSizes: ["S", "M", "L", "XL"],
     measuresIn: {
@@ -1009,11 +704,11 @@ const products = [
     name: "Undefeated Supernova Tee",
     description: "A premium quality tee featuring the iconic Undefeated Supernova design. Perfect for those who want to showcase their street style with a touch of basketball culture.",
     price: 59.99,
-    images: [
-      undefeated_supernova_1,
-      undefeated_supernova_2,
-      undefeated_supernova_3,
-      undefeated_supernova_4
+    cloudinaryValues: [
+      "Undefeated_Supernova_1_wcj6sy.webp",
+      "Undefeated_Supernova_2_vvlyxk.webp",
+      "Undefeated_Supernova_3_euef3s.webp",
+      "Undefeated_Supernova_4_vktfuv.webp"
     ],
     availableSizes: ["S", "M", "L", "XL"],
     measuresIn: {
@@ -1036,12 +731,12 @@ const newJerseys = [
     name: "North Carolina Vintage Jersey",
     description: "Classic North Carolina basketball jersey featuring vintage styling and premium materials. Perfect for fans of college basketball history.",
     price: 89.99,
-    images: [
-      carolina_vintage_1,
-      carolina_vintage_2,
-      carolina_vintage_3,
-      carolina_vintage_4,
-      carolina_vintage_5
+    cloudinaryValues: [
+      "North_Carolina_Vintage_1_eyjpzu.jpg",
+      "North_Carolina_Vintage_2_xmbiu0.jpg",
+      "North_Carolina_Vintage_3_bxmkjk.jpg",
+      "North_Carolina_Vintage_4_cnwwjv.jpg",
+      "North_Carolina_Vintage_5_b4aro6.jpg"
     ],
     availableSizes: ["S", "M", "L", "XL", "2XL"],
     measuresIn: {
@@ -1061,12 +756,12 @@ const newJerseys = [
     name: "Charlotte Hornets Classic Jersey",
     description: "Authentic Charlotte Hornets jersey featuring the iconic teal colorway and classic design elements.",
     price: 94.99,
-    images: [
-      hornets_1,
-      hornets_2,
-      hornets_3,
-      hornets_4,
-      hornets_5
+    cloudinaryValues: [
+      "Hornets_1_nzklmv.webp",
+      "Hornets_2_sfoosh.webp",
+      "Hornets_3_mhpt3k.webp",
+      "Hornets_4_qzja3b.webp",
+      "Hornets_5_cz460c.webp"
     ],
     availableSizes: ["S", "M", "XL", "2XL"],
     measuresIn: {
@@ -1086,12 +781,12 @@ const newJerseys = [
     name: "Memphis Grizzlies Vintage Jersey",
     description: "Retro-styled Memphis Grizzlies jersey celebrating the team's rich history and iconic design.",
     price: 89.99,
-    images: [
-      memphis_1,
-      memphis_2,
-      memphis_3,
-      memphis_4,
-      memphis_5
+    cloudinaryValues: [
+      "Memphis_1_rnzxwo.webp",
+      "Memphis_2_czikno.webp",
+      "Memphis_3_kraun5.webp",
+      "Memphis_4_sdj1bj.webp",
+      "Memphis_5_o2ec7n.webp"
     ],
     availableSizes: ["S", "M", "L", "XL", "2XL"],
     measuresIn: {
@@ -1111,12 +806,12 @@ const newJerseys = [
     name: "North Carolina Modern Jersey",
     description: "Contemporary take on the classic North Carolina basketball jersey, featuring modern materials and fit.",
     price: 99.99,
-    images: [
-      carolina_1,
-      carolina_2,
-      carolina_3,
-      carolina_4,
-      carolina_5
+    cloudinaryValues: [
+      "Carolina_1_oudvmt.webp",
+      "Carolina_2_btlwgb.webp",
+      "Carolina_3_mhagnf.webp",
+      "Carolina_4_towmqz.webp",
+      "Carolina_5_ksbocc.webp"
     ],
     availableSizes: ["S", "M", "L", "XL", "2XL"],
     measuresIn: {
@@ -1136,11 +831,11 @@ const newJerseys = [
     name: "Orlando Magic Classic Jersey",
     description: "Authentic Orlando Magic jersey featuring the team's signature design and premium quality construction.",
     price: 94.99,
-    images: [
-      orlando_1,
-      orlando_2,
-      orlando_3,
-      orlando_4
+    cloudinaryValues: [
+      "Orlando_1_skdqkd.webp",
+      "Orlando_2_kqssmg.webp",
+      "Orlando_3_oubtrp.webp",
+      "Orlando_4_fhtigd.webp"
     ],
     availableSizes: ["S", "M", "L", "XL", "2XL"],
     measuresIn: {
@@ -1160,11 +855,11 @@ const newJerseys = [
     name: "Toronto Raptors Purple Jersey",
     description: "Iconic Toronto Raptors purple jersey featuring classic team design and premium materials.",
     price: 99.99,
-    images: [
-      raptors_purple_1,
-      raptors_purple_2,
-      raptors_purple_3,
-      raptors_purple_4
+    cloudinaryValues: [
+      "Raptors_1_ieleh6.webp",
+      "Raptors_2_mkeqbe.webp",
+      "Raptors_3_qny6dz.webp",
+      "Raptors_4_d1egoh.webp"
     ],
     availableSizes: ["S", "M", "L", "XL", "2XL"],
     measuresIn: {
@@ -1184,11 +879,11 @@ const newJerseys = [
     name: "Toronto Raptors White Jersey",
     description: "Clean and modern Toronto Raptors white jersey, perfect for any basketball enthusiast.",
     price: 94.99,
-    images: [
-      raptors_white_1,
-      raptors_white_2,
-      raptors_white_3,
-      raptors_white_4
+    cloudinaryValues: [
+      "Raptors_White_1_gze4qp.webp",
+      "Raptors_White_2_ryc9yq.webp",
+      "Raptors_White_3_xd0aor.webp",
+      "Raptors_White_4_gbtgnj.webp"
     ],
     availableSizes: ["S", "M", "L", "XL", "2XL"],
     measuresIn: {
@@ -1208,12 +903,12 @@ const newJerseys = [
     name: "Miami Heat Rose Edition Jersey",
     description: "Limited edition Miami Heat jersey featuring unique rose design elements and premium construction.",
     price: 109.99,
-    images: [
-      heat_1,
-      heat_2,
-      heat_3,
-      heat_4,
-      heat_5
+    cloudinaryValues: [
+      "Heat_1_abtjvj.webp",
+      "Heat_2_jvdwsc.webp",
+      "Heat_3_bxbvob.webp",
+      "Heat_4_hyz2ur.jpg",
+      "Heat_5_hof134.jpg"
     ],
     availableSizes: ["S", "M", "L", "XL", "2XL"],
     measuresIn: {
@@ -1233,12 +928,12 @@ const newJerseys = [
     name: "Lakers White Edition Jersey",
     description: "Clean and elegant Lakers white edition jersey, featuring premium materials and classic team design.",
     price: 99.99,
-    images: [
-      lakers_white_1,
-      lakers_white_2,
-      lakers_white_3,
-      lakers_white_4,
-      lakers_white_5
+    cloudinaryValues: [
+      "Lakers_White_1_gmvj8y.webp",
+      "Lakers_White_2_rzdq10.webp",
+      "Lakers_White_3_tu6wfb.webp",
+      "Lakers_White_4_crmvoq.webp",
+      "Lakers_White_5_yuhpaz.webp"
     ],
     availableSizes: ["S", "M", "L", "XL", "2XL"],
     measuresIn: {
@@ -1258,12 +953,12 @@ const newJerseys = [
     name: "Minnesota Timberwolves Vintage Jersey",
     description: "Classic Timberwolves jersey featuring vintage team design and high-quality construction.",
     price: 94.99,
-    images: [
-      wolves_vintage_1,
-      wolves_vintage_2,
-      wolves_vintage_3,
-      wolves_vintage_4,
-      wolves_vintage_5
+    cloudinaryValues: [
+      "Wolves_Vintage_1_txnrcr.webp",
+      "Wolves_Vintage_2_uvdkub.webp",
+      "Wolves_Vintage_3_ozifss.webp",
+      "Wolves_Vintage_4_li8ynk.webp",
+      "Wolves_Vintage_5_r4mfa2.webp"
     ],
     availableSizes: ["S", "M", "L", "XL", "2XL"],
     measuresIn: {
@@ -1285,15 +980,15 @@ const newAccessories = [
     name: "Big Backpack",
     description: "A spacious and durable backpack, perfect for carrying all your basketball equipment and personal accessories.",
     price: 89.99,
-    images: [
-      big_backpack_1,
-      big_backpack_2,
-      big_backpack_3,
-      big_backpack_4,
-      big_backpack_5,
-      big_backpack_6,
-      big_backpack_7,
-      big_backpack_8
+    cloudinaryValues: [
+      "Big_Backpack_1_jriiom.webp",
+      "Big_Backpack_2_wa5inj.webp",
+      "Big_Backpack_3_nf0hqz.webp",
+      "Big_Backpack_4_alkkqj.webp",
+      "Big_Backpack_5_pntgzn.webp",
+      "Big_Backpack_6_dthwxf.webp",
+      "Big_Backpack_7_kvwtki.webp",
+      "Big_Backpack_8_y7rfmf.webp"
     ],
     availableSizes: ["One Size"],
     measuresIn: {
@@ -1311,15 +1006,15 @@ const newAccessories = [
     name: "Tech Backpack",
     description: "Modern backpack with special compartment for electronic devices and basketball accessories.",
     price: 99.99,
-    images: [
-      tech_backpack_1,
-      tech_backpack_2,
-      tech_backpack_3,
-      tech_backpack_4,
-      tech_backpack_5,
-      tech_backpack_6,
-      tech_backpack_7,
-      tech_backpack_8
+    cloudinaryValues: [
+      "Tech_Backpack_1_px3mtz.webp",
+      "Tech_Backpack_2_gxeodz.webp",
+      "Tech_Backpack_3_vie20r.webp",
+      "Tech_Backpack_4_ibixug.webp",
+      "Tech_Backpack_5_fqlgbr.webp",
+      "Tech_Backpack_6_uywmhi.webp",
+      "Tech_Backpack_7_pokejt.webp",
+      "Tech_Backpack_8_tcrqdm.webp"
     ],
     availableSizes: ["One Size"],
     measuresIn: {
@@ -1336,12 +1031,12 @@ const newAccessories = [
     categories: [{ id: 6, name: "Accessories" }],
     name: "Basketball Hoop",
     description: "The remarkable Beast Portable Basketball Hoop – a system that stands as the epitome of portability within its size class. Offering the unwavering stability reminiscent of an in-ground hoop, the ingenious design incorporates a mobile advantage through its wheeled base. Prepare to experience authentic rebounds akin to the professional court, courtesy of the expansive 60\" glass backboard.",
-    price: 39.99,
-    images: [
-      hoop_1,
-      hoop_2,
-      hoop_3,
-      hoop_4
+    price: 999.99,
+    cloudinaryValues: [
+      "Hoop_1_hzkaqb.webp",
+      "Hoop_2_reswjf.webp",
+      "Hoop_3_cngaea.webp",
+      "Hoop_4_g8nlyr.webp"
     ],
     availableSizes: ["One Size"],
     measuresIn: {
@@ -1358,13 +1053,13 @@ const newAccessories = [
     name: "Basketball Chain Necklace",
     description: "Chain with basketball pendant, ideal to complement your urban style.",
     price: 44.99,
-    images: [
-      necklace_1,
-      necklace_2,
-      necklace_3,
-      necklace_4,
-      necklace_5,
-      necklace_6
+    cloudinaryValues: [
+      "Necklace_1_skjv4l.webp",
+      "Necklace_2_o6kj9s.webp",
+      "Necklace_3_lcbmyv.webp",
+      "Necklace_4_sroto8.webp",
+      "Necklace_5_otcwpe.webp",
+      "Necklace_6_krpeuk.webp"
     ],
     availableSizes: ["One Size"],
     measuresIn: {
@@ -1381,14 +1076,14 @@ const newAccessories = [
     name: "Miami Heat Shaker",
     description: "Official Miami Heat shaker, perfect for showing your support for the team.",
     price: 24.99,
-    images: [
-      heats_shaker_1,
-      heats_shaker_2,
-      heats_shaker_3,
-      heats_shaker_4,
-      heats_shaker_5,
-      heats_shaker_6,
-      heats_shaker_7
+    cloudinaryValues: [
+      "Heats_Shaker_1_ei3seq.webp",
+      "Heats_Shaker_2_scbg0r.webp",
+      "Heats_Shaker_3_e3yxuc.webp",
+      "Heats_Shaker_4_rywact.webp",
+      "Heats_Shaker_5_rba87p.webp",
+      "Heats_Shaker_6_pafasc.webp",
+      "Heats_Shaker_7_gwa5qa.webp"
     ],
     availableSizes: ["One Size"],
     measuresIn: {
@@ -1405,13 +1100,13 @@ const newAccessories = [
     name: "Drawstring Bag",
     description: "Lightweight and practical drawstring bag, ideal for carrying your basketball accessories.",
     price: 29.99,
-    images: [
-      drawstring_bag_1,
-      drawstring_bag_2,
-      drawstring_bag_3,
-      drawstring_bag_4,
-      drawstring_bag_5,
-      drawstring_bag_6
+    cloudinaryValues: [
+      "Drawstring_1_uvvxcp.webp",
+      "Drawstring_2_fihs5l.webp",
+      "Drawstring_3_vzujey.webp",
+      "Drawstring_4_s0cfvh.webp",
+      "Drawstring_5_ofv9uj.webp",
+      "Drawstring_6_g7kbg2.webp"
     ],
     availableSizes: ["One Size"],
     measuresIn: {
@@ -1428,14 +1123,14 @@ const newAccessories = [
     name: "Chicago Bulls Shaker",
     description: "Official Chicago Bulls shaker, perfect for team fans.",
     price: 24.99,
-    images: [
-      bulls_shaker_1,
-      bulls_shaker_2,
-      bulls_shaker_3,
-      bulls_shaker_4,
-      bulls_shaker_5,
-      bulls_shaker_6,
-      bulls_shaker_7
+    cloudinaryValues: [
+      "Bulls_Shaker_1_jiysb7.webp",
+      "Bulls_Shaker_2_lvptca.webp",
+      "Bulls_Shaker_3_rokhgr.webp",
+      "Bulls_Shaker_4_ydd3hd.webp",
+      "Bulls_Shaker_5_j6iw4s.webp",
+      "Bulls_Shaker_6_itolxh.webp",
+      "Bulls_Shaker_7_jdjup1.webp"
     ],
     availableSizes: ["One Size"],
     measuresIn: {
@@ -1462,11 +1157,11 @@ const newBalls = [
     name: "Bucket Tidal Basketball",
     description: "Official basketball with wave design, perfect for playing on any surface.",
     price: 49.99,
-    images: [
-      bucket_tidal_1,
-      bucket_tidal_2,
-      bucket_tidal_3,
-      bucket_tidal_4
+    cloudinaryValues: [
+      "Bucket_Tidal_1_mbtnia.webp",
+      "Bucket_Tidal_2_afv3ra.webp",
+      "Bucket_Tidal_3_dovkgo.webp",
+      "Bucket_Tidal_4_tmebep.webp"
     ],
     availableSizes: [7, 8, 9],
   },
@@ -1476,12 +1171,12 @@ const newBalls = [
     name: "Bucket Blossom Basketball",
     description: "Official basketball with floral design, ideal for players looking for a unique style.",
     price: 54.99,
-    images: [
-      bucket_blossom_1,
-      bucket_blossom_2,
-      bucket_blossom_3,
-      bucket_blossom_4,
-      bucket_blossom_5
+    cloudinaryValues: [
+      "Bucket_Blossom_1_x0ati6.webp",
+      "Bucket_Blossom_2_r2eqgf.webp",
+      "Bucket_Blossom_3_iuj7lf.webp",
+      "Bucket_Blossom_4_r2jsm3.webp",
+      "Bucket_Blossom_5_aweeim.webp"
     ],
     availableSizes: [8, 9],
   }
@@ -1489,62 +1184,6 @@ const newBalls = [
 
 // Añadir los nuevos balones al array de productos
 products.push(...newBalls);
-
-// Importaciones de shorts
-import ballislife_shorts_1 from "./Shorts/Ballislife_Shorts/Ballislife_Shorts_1.webp";
-import ballislife_shorts_2 from "./Shorts/Ballislife_Shorts/Ballislife_Shorts_2.webp";
-import ballislife_shorts_3 from "./Shorts/Ballislife_Shorts/Ballislife_Shorts_3.webp";
-import ballislife_shorts_4 from "./Shorts/Ballislife_Shorts/Ballislife_Shorts_4.webp";
-import ballislife_shorts_5 from "./Shorts/Ballislife_Shorts/Ballislife_Shorts_5.webp";
-
-import compression_shorts_1 from "./Shorts/Compression_Shorts/Compression_Shorts_1.webp";
-import compression_shorts_2 from "./Shorts/Compression_Shorts/Compression_Shorts_2.webp";
-import compression_shorts_3 from "./Shorts/Compression_Shorts/Compression_Shorts_3.webp";
-import compression_shorts_4 from "./Shorts/Compression_Shorts/Compression_Shorts_4.webp";
-
-import fire_temu_shorts_1 from "./Shorts/Fire_Temu_Shorts/Fire_Temu_Shorts_1.webp";
-import fire_temu_shorts_2 from "./Shorts/Fire_Temu_Shorts/Fire_Temu_Shorts_2.webp";
-import fire_temu_shorts_3 from "./Shorts/Fire_Temu_Shorts/Fire_Temu_Shorts_3.webp";
-import fire_temu_shorts_4 from "./Shorts/Fire_Temu_Shorts/Fire_Temu_Shorts_4.webp";
-import fire_temu_shorts_5 from "./Shorts/Fire_Temu_Shorts/Fire_Temu_Shorts_5.webp";
-import fire_temu_shorts_6 from "./Shorts/Fire_Temu_Shorts/Fire_Temu_Shorts_6.webp";
-
-import green_temu_shorts_1 from "./Shorts/Green_Temu_Shorts/Green_Temu_Shorts_1.webp";
-import green_temu_shorts_2 from "./Shorts/Green_Temu_Shorts/Green_Temu_Shorts_2.webp";
-import green_temu_shorts_3 from "./Shorts/Green_Temu_Shorts/Green_Temu_Shorts_3.webp";
-import green_temu_shorts_4 from "./Shorts/Green_Temu_Shorts/Green_Temu_Shorts_4.webp";
-import green_temu_shorts_5 from "./Shorts/Green_Temu_Shorts/Green_Temu_Shorts_5.webp";
-import green_temu_shorts_6 from "./Shorts/Green_Temu_Shorts/Green_Temu_Shorts_6.webp";
-import green_temu_shorts_7 from "./Shorts/Green_Temu_Shorts/Green_Temu_Shorts_7.webp";
-import green_temu_shorts_8 from "./Shorts/Green_Temu_Shorts/Green_Temu_Shorts_8.webp";
-
-import green_fire_temu_shorts_1 from "./Shorts/Green_Fire_Temu_Shorts/Green_Fire_Temu_Shorts_1.webp";
-import green_fire_temu_shorts_2 from "./Shorts/Green_Fire_Temu_Shorts/Green_Fire_Temu_Shorts_2.webp";
-import green_fire_temu_shorts_3 from "./Shorts/Green_Fire_Temu_Shorts/Green_Fire_Temu_Shorts_3.webp";
-import green_fire_temu_shorts_4 from "./Shorts/Green_Fire_Temu_Shorts/Green_Fire_Temu_Shorts_4.webp";
-
-import point3_shorts_1 from "./Shorts/Point3_Shorts/Point3_Shorts_1.webp";
-import point3_shorts_2 from "./Shorts/Point3_Shorts/Point3_Shorts_2.webp";
-import point3_shorts_3 from "./Shorts/Point3_Shorts/Point3_Shorts_3.webp";
-import point3_shorts_4 from "./Shorts/Point3_Shorts/Point3_Shorts_4.webp";
-import point3_shorts_5 from "./Shorts/Point3_Shorts/Point3_Shorts_5.webp";
-import point3_shorts_6 from "./Shorts/Point3_Shorts/Point3_Shorts_6.webp";
-import point3_shorts_7 from "./Shorts/Point3_Shorts/Point3_Shorts_7.webp";
-import point3_shorts_8 from "./Shorts/Point3_Shorts/Point3_Shorts_8.webp";
-
-import snake_short_1 from "./Shorts/Snake_Short/Snake_Short_1.webp";
-import snake_short_2 from "./Shorts/Snake_Short/Snake_Short_2.webp";
-import snake_short_3 from "./Shorts/Snake_Short/Snake_Short_3.webp";
-import snake_short_4 from "./Shorts/Snake_Short/Snake_Short_4.webp";
-import snake_short_5 from "./Shorts/Snake_Short/Snake_Short_5.webp";
-import snake_short_6 from "./Shorts/Snake_Short/Snake_Short_6.webp";
-
-import xmas_short_1 from "./Shorts/Xmas_Short/Xmas_Short_1.jpg";
-import xmas_short_2 from "./Shorts/Xmas_Short/Xmas_Short_2.webp";
-import xmas_short_3 from "./Shorts/Xmas_Short/Xmas_Short_3.jpg";
-import xmas_short_4 from "./Shorts/Xmas_Short/Xmas_Short_4.jpg";
-import xmas_short_5 from "./Shorts/Xmas_Short/Xmas_Short_5.webp";
-
 // Añadir nuevos productos de shorts
 const newShorts = [
   {
@@ -1553,12 +1192,12 @@ const newShorts = [
     name: "Ballislife Shorts",
     description: "Classic basketball shorts featuring the iconic Ballislife design. Perfect for both on and off the court.",
     price: 49.99,
-    images: [
-      ballislife_shorts_1,
-      ballislife_shorts_2,
-      ballislife_shorts_3,
-      ballislife_shorts_4,
-      ballislife_shorts_5
+    cloudinaryValues: [
+      "Ballislife_Shorts_1_rygmcf.webp",
+      "Ballislife_Shorts_2_bcpv24.webp",
+      "Ballislife_Shorts_3_cgamxd.webp",
+      "Ballislife_Shorts_4_ujbnxt.webp",
+      "Ballislife_Shorts_5_mifqyo.webp"
     ],
     availableSizes: ["S", "M", "L", "XL", "2XL"],
     measuresIn: {
@@ -1576,11 +1215,11 @@ const newShorts = [
     name: "Compression Shorts",
     description: "High-performance compression shorts designed for maximum comfort and mobility during intense basketball games.",
     price: 39.99,
-    images: [
-      compression_shorts_1,
-      compression_shorts_2,
-      compression_shorts_3,
-      compression_shorts_4
+    cloudinaryValues: [
+      "Compression_Shorts_1_vovzrr.webp",
+      "Compression_Shorts_2_kr8kt7.webp",
+      "Compression_Shorts_3_y70fm1.webp",
+      "Compression_Shorts_4_doea8t.webp"
     ],
     availableSizes: ["S", "M", "L", "XL"],
     measuresIn: {
@@ -1597,13 +1236,13 @@ const newShorts = [
     name: "Fire Temu Shorts",
     description: "Bold and stylish basketball shorts featuring a fiery design pattern, perfect for making a statement on the court.",
     price: 44.99,
-    images: [
-      fire_temu_shorts_1,
-      fire_temu_shorts_2,
-      fire_temu_shorts_3,
-      fire_temu_shorts_4,
-      fire_temu_shorts_5,
-      fire_temu_shorts_6
+    cloudinaryValues: [
+      "Fire_Temu_Shorts_1_dywzj1.webp",
+      "Fire_Temu_Shorts_2_ujqaoq.webp",
+      "Fire_Temu_Shorts_3_kd9urz.webp",
+      "Fire_Temu_Shorts_4_fljpun.webp",
+      "Fire_Temu_Shorts_5_jnbdlm.webp",
+      "Fire_Temu_Shorts_6_l8uzh2.webp"
     ],
     availableSizes: ["S", "M", "L", "XL", "2XL"],
     measuresIn: {
@@ -1621,15 +1260,15 @@ const newShorts = [
     name: "Green Temu Shorts",
     description: "Vibrant green basketball shorts with modern design elements, offering both style and comfort for your game.",
     price: 44.99,
-    images: [
-      green_temu_shorts_1,
-      green_temu_shorts_2,
-      green_temu_shorts_3,
-      green_temu_shorts_4,
-      green_temu_shorts_5,
-      green_temu_shorts_6,
-      green_temu_shorts_7,
-      green_temu_shorts_8
+    cloudinaryValues: [
+      "Green_Temu_Shorts_1_efnc2n.webp",
+      "Green_Temu_Shorts_2_ac5rvr.webp",
+      "Green_Temu_Shorts_3_bdscp4.webp",
+      "Green_Temu_Shorts_4_jarkzn.webp",
+      "Green_Temu_Shorts_5_feooud.webp",
+      "Green_Temu_Shorts_6_dlinqf.webp",
+      "Green_Temu_Shorts_7_cwbukl.webp",
+      "Green_Temu_Shorts_8_gf8a35.webp"
     ],
     availableSizes: ["S", "M", "L", "XL", "2XL"],
     measuresIn: {
@@ -1647,11 +1286,11 @@ const newShorts = [
     name: "Green Fire Temu Shorts",
     description: "Unique basketball shorts combining green and fire elements for a distinctive look on the court.",
     price: 44.99,
-    images: [
-      green_fire_temu_shorts_1,
-      green_fire_temu_shorts_2,
-      green_fire_temu_shorts_3,
-      green_fire_temu_shorts_4
+    cloudinaryValues: [
+      "Green_Fire_Temu_Shorts_1_uwstsx.webp",
+      "Green_Fire_Temu_Shorts_2_x8swsq.webp",
+      "Green_Fire_Temu_Shorts_3_wupk7h.webp",
+      "Green_Fire_Temu_Shorts_4_zr7o6e.webp"
     ],
     availableSizes: ["S", "M", "L", "XL", "2XL"],
     measuresIn: {
@@ -1669,15 +1308,15 @@ const newShorts = [
     name: "Point3 Basketball Shorts",
     description: "Premium basketball shorts from Point3, designed for optimal performance and comfort during intense games.",
     price: 54.99,
-    images: [
-      point3_shorts_1,
-      point3_shorts_2,
-      point3_shorts_3,
-      point3_shorts_4,
-      point3_shorts_5,
-      point3_shorts_6,
-      point3_shorts_7,
-      point3_shorts_8
+    cloudinaryValues: [
+      "Point3_Shorts_1_vfqmbl.webp",
+      "Point3_Shorts_2_woyvyi.webp",
+      "Point3_Shorts_3_mesb6c.webp",
+      "Point3_Shorts_4_qsuzwq.webp",
+      "Point3_Shorts_5_atidxn.webp",
+      "Point3_Shorts_6_fcnaxb.webp",
+      "Point3_Shorts_7_kntamg.webp",
+      "Point3_Shorts_8_nrcqtu.webp"
     ],
     availableSizes: ["S", "M", "L", "XL", "2XL"],
     measuresIn: {
@@ -1695,13 +1334,13 @@ const newShorts = [
     name: "Snake Pattern Shorts",
     description: "Basketball shorts featuring a unique snake pattern design, perfect for players who want to stand out on the court.",
     price: 49.99,
-    images: [
-      snake_short_1,
-      snake_short_2,
-      snake_short_3,
-      snake_short_4,
-      snake_short_5,
-      snake_short_6
+    cloudinaryValues: [
+      "Snake_Short_1_ntyj1d.webp",
+      "Snake_Short_2_cb4znq.webp",
+      "Snake_Short_3_b5j8tg.webp",
+      "Snake_Short_4_zzjjbr.webp",
+      "Snake_Short_5_q1c6vr.webp",
+      "Snake_Short_6_zopp0a.webp"
     ],
     availableSizes: ["S", "M", "L", "XL", "2XL"],
     measuresIn: {
@@ -1719,12 +1358,12 @@ const newShorts = [
     name: "Christmas Edition Shorts",
     description: "Special edition basketball shorts with festive Christmas design, perfect for holiday season games.",
     price: 49.99,
-    images: [
-      xmas_short_1,
-      xmas_short_2,
-      xmas_short_3,
-      xmas_short_4,
-      xmas_short_5
+    cloudinaryValues: [
+      "Xmas_Short_1_c8nyw1.jpg",
+      "Xmas_Short_2_szub04.webp",
+      "Xmas_Short_3_ked7iy.jpg",
+      "Xmas_Short_4_jkqz5l.jpg",
+      "Xmas_Short_5_aszva2.webp"
     ],
     availableSizes: ["S", "M", "L", "XL", "2XL"],
     measuresIn: {
@@ -1755,5 +1394,4 @@ products.forEach(product => {
     }
   }
 });
-
 export { categories, products };

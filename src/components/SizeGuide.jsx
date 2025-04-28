@@ -3,7 +3,6 @@ import { HiOutlineX } from "react-icons/hi";
 import styled, { keyframes } from 'styled-components';
 import { useSizeGuide } from '../context/SizeGuideContext';
 import { products } from '../assets/Images';
-import measureImage from '../assets/Images/Measure.png'
 
 const slideIn = keyframes`
   from { transform: translateX(100%); }
@@ -371,7 +370,12 @@ const SizeGuide = () => {
 
             <HowToMeasure>
                 <MeasureTitle>How to measure yourself?</MeasureTitle>
-                <Image src={measureImage} alt="Imagen de como obtener su talla"/>
+                <Image src={cloudinary
+                  .image('Measure_qfdwdr.png')
+                  .format('auto')
+                  .quality('auto')
+                  .resize(scale(400))
+                  .toURL()} alt="Image of how to measure yourself"/>
                 
                 <DescriptionContainer>
                   <Description>

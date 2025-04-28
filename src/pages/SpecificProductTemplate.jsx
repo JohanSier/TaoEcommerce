@@ -7,11 +7,22 @@ import styled, { keyframes } from "styled-components";
 import NotFound from "./NotFound";
 import { Gallery, Item } from "react-photoswipe-gallery";
 import "photoswipe/dist/photoswipe.css";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Cloudinary } from "@cloudinary/url-gen";
+import { AdvancedImage } from "@cloudinary/react";
+import { scale } from "@cloudinary/url-gen/actions/resize";
+
+const cloudinary = new Cloudinary({
+  cloud: {
+    cloudName: "deocx31u2",
+    apiKey: import.meta.env.VITE_CLOUDINARY_API_KEY,
+    apiSecret: import.meta.env.VITE_CLOUDINARY_API_SECRET,
+  },
+});
 
 const Container = styled.main`
   position: relative;
@@ -120,6 +131,10 @@ const Products = styled.div`
   justify-content: center;
   gap: 0;
   margin-top: 1rem;
+
+  @media (max-width: 660px) {
+    gap: 2rem;
+  }
 `;
 
 const MobileSlider = styled(Swiper)`
@@ -160,7 +175,7 @@ const MobileSlider = styled(Swiper)`
   .swiper-pagination-bullet {
     width: 7px;
     height: 7px;
-    background: #A8A3A0;
+    background: #a8a3a0;
     opacity: 0.5;
   }
 
@@ -212,11 +227,11 @@ const SpecificProductTemplate = () => {
   // Get related products only if product exists
   const relatedProducts = product
     ? products
-        .filter(p => {
+        .filter((p) => {
           if (p.id === parseInt(id)) return false; // Exclude current product
           // Check if products share any categories
-          return p.categories.some(cat => 
-            product.categories.some(productCat => productCat.id === cat.id)
+          return p.categories.some((cat) =>
+            product.categories.some((productCat) => productCat.id === cat.id)
           );
         })
         .slice(0, 5)
@@ -239,30 +254,50 @@ const SpecificProductTemplate = () => {
               maxSpreadZoom: 1,
               getDoubleTapZoom: () => 1,
               wheelToZoom: false,
-              imageClickAction: 'close',
-              tapAction: 'close',
+              imageClickAction: "close",
+              tapAction: "close",
               preload: [1, 2],
-              showHideAnimationType: 'fade',
-              imageScaleMethod: 'fit',
+              showHideAnimationType: "fade",
+              imageScaleMethod: "fit",
               fitScreenHeight: true,
-              fitScreenWidth: true
+              fitScreenWidth: true,
             }}
           >
-            {product.images.map((image, index) => (
+            {product.cloudinaryValues.map((image, index) => (
               <GridItem key={index}>
                 <Item
-                  original={image}
-                  thumbnail={image}
+                  original={cloudinary
+                    .image(`${image}`)
+                    .format("webp")
+                    .quality("auto")
+                    .resize(scale(900))
+                    .toURL()}
+                  thumbnail={cloudinary
+                    .image(`${image}`)
+                    .format("webp")
+                    .quality("auto")
+                    .resize(scale(900))
+                    .toURL()}
                   width="1200"
                   height="1300"
-                  msrc={image}
+                  msrc={cloudinary
+                    .image(`${image}`)
+                    .format("webp")
+                    .quality("auto")
+                    .resize(scale(900))
+                    .toURL()}
                 >
                   {({ ref, open }) => (
                     <>
                       {!imageLoaded && <Skeleton />}
                       <StyledImage
                         ref={ref}
-                        src={image}
+                        src={cloudinary
+                          .image(`${image}`)
+                          .format("webp")
+                          .quality("auto")
+                          .resize(scale(900))
+                          .toURL()}
                         alt={product.name}
                         data-loaded={imageLoaded}
                         onLoad={() => setImageLoaded(true)}
@@ -283,7 +318,7 @@ const SpecificProductTemplate = () => {
           spaceBetween={10}
           slidesPerView={1}
         >
-          {product.images.map((image, index) => (
+          {product.cloudinaryValues.map((image, index) => (
             <SwiperSlide key={index}>
               <SliderItem>
                 <Gallery
@@ -292,8 +327,19 @@ const SpecificProductTemplate = () => {
                   }}
                 >
                   <Item
-                    original={image}
-                    thumbnail={image}
+                    original={cloudinary
+                      .image(`${image}`)
+                      .format("webp")
+                      .quality("auto")
+                      .resize(scale(900))
+                      .toURL()}
+      
+                    thumbnail={cloudinary
+                      .image(`${image}`)
+                      .format("webp")
+                      .quality("auto")
+                      .resize(scale(900))
+                      .toURL()}
                     width="900"
                     height="1000"
                   >
@@ -302,7 +348,12 @@ const SpecificProductTemplate = () => {
                         {!imageLoaded && <Skeleton />}
                         <StyledImage
                           ref={ref}
-                          src={image}
+                          src={cloudinary
+                            .image(`${image}`)
+                            .format("webp")
+                            .quality("auto")
+                            .resize(scale(900))
+                            .toURL()}
                           alt={product.name}
                           data-loaded={imageLoaded}
                           onLoad={() => setImageLoaded(true)}
@@ -322,7 +373,12 @@ const SpecificProductTemplate = () => {
           price={product.price}
           sizes={product.availableSizes}
           description={product.description}
-          thumbnailImage={product.images[0]}
+          thumbnailImage={cloudinary
+            .image(`${product.cloudinaryValues[0]}`)
+            .format("webp")
+            .quality("auto")
+            .resize(scale(200))
+            }
         />
       </Wrapper>
 
@@ -335,8 +391,8 @@ const SpecificProductTemplate = () => {
               key={product.id}
               productTitle={product.name}
               price={product.price}
-              srcImage={product.images[0]}
-              hoverImage={product.images[1]}
+              cloudinaryValue={product.cloudinaryValues[0]}
+              hoverImage={product.cloudinaryValues[1]}
               productLink={`/products/${category}/${product.id}`}
             />
           ))}

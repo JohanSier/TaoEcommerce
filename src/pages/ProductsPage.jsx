@@ -316,8 +316,8 @@ const ProductsPage = () => {
               <ProductCard
                 productTitle={product.name}
                 price={product.price}
-                srcImage={product.images[0]}
-                hoverImage={product.images[1]}
+                cloudinaryValue={product.cloudinaryValues[0]}
+                hoverImage={product.cloudinaryValues[1]}
                 productLink={`/products/${category || "all"}/${product.id}`}
               />
             </ProductCardWrapper>
