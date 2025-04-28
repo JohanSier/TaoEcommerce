@@ -12,13 +12,19 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Checkout from "./pages/Checkout";
 import PaymentSuccess from "./pages/PaymentSuccess";
+// import { Cloudinary } from "@cloudinary/url-gen";
+// import { AdvancedImage } from "@cloudinary/react";
+// import { Resize } from "@cloudinary/url-gen/actions/resize";
+
+// const cloudinary = new Cloudinary({
+//   cloud: {
+//     cloudName: import.meta.env.VITE_CLOUDINARY_CLOUD_NAME,
+//     apiKey: import.meta.env.VITE_CLOUDINARY_API_KEY,
+//     apiSecret: import.meta.env.VITE_CLOUDINARY_API_SECRET
+//   }
+// });
 
 function App() {
-  // Ignorar rutas que empiezan con /api
-  if (window.location.pathname.startsWith('/api')) {
-    return null;
-  }
-
   return (
     <CartProvider>
       <SizeGuideProvider>

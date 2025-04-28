@@ -2,6 +2,17 @@ import React, { useState } from "react";
 import { HiArrowCircleRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
+import { Cloudinary } from "@cloudinary/url-gen";
+import { AdvancedImage } from "@cloudinary/react";
+import { scale } from "@cloudinary/url-gen/actions/resize";
+
+const cloudinary = new Cloudinary({
+  cloud: {
+    cloudName: import.meta.env.VITE_CLOUDINARY_CLOUD_NAME,
+    apiKey: import.meta.env.VITE_CLOUDINARY_API_KEY,
+    apiSecret: import.meta.env.VITE_CLOUDINARY_API_SECRET
+  }
+});
 
 const Icon = styled(HiArrowCircleRight)`
   position: relative;
@@ -24,7 +35,7 @@ const Skeleton = styled.div`
   border-radius: 8px;
 `;
 
-const BackgroundImage = styled.img`
+const BackgroundImage = styled(AdvancedImage)`
   position: absolute;
   top: 0;
   left: 0;
@@ -80,11 +91,11 @@ const ShopNowText = styled.p`
 const Card = styled(Link)`
   position: relative;
   display: flex;
-  flex-grow: 1;
+  flex: 1;
   align-items: flex-end;
   justify-content: space-between;
   text-decoration: none;
-  width: 32rem;
+  min-width: 26rem;
   height: 38rem;
   border-radius: 1rem;
   overflow: hidden;
@@ -116,12 +127,19 @@ const Card = styled(Link)`
     z-index: 2;
   }
 
-  @media screen and (max-width: 500px){
+  @media screen and (max-width: 900px){
+    min-width: 20rem;
+    height: 28rem;
+
+  }
+
+  @media screen and (max-width: 570px){
     height: 25rem;
   }
 
-  @media screen and (max-width: 320px){
+  @media screen and (max-width: 370px){
     height: 20rem;
+    min-width: 15rem;
   }
 `;
 
@@ -134,7 +152,7 @@ const Heading = styled.h3`
   z-index: 3;
 `;
 
-const CategoryCard = ({ title, imageSrc, link}) => {
+const CategoryCard = ({ title, link, cloudinaryValue}) => {
     const [imageLoaded, setImageLoaded] = useState(false);
   
   return (
@@ -153,12 +171,14 @@ const CategoryCard = ({ title, imageSrc, link}) => {
       <>
       {!imageLoaded && <Skeleton/>}
       <BackgroundImage
-        src={imageSrc}
-        alt={`${title} Category Image`}
-        draggable="false"
-        data-loaded={imageLoaded}
-        onLoad={() => setImageLoaded(true)}
+      src
+      cldImg={cloudinary.image(`${cloudinaryValue}`).format("webp").quality("auto").resize(scale(1000))}
+      alt={`${title} Category Image`}
+      draggable="false"
+      data-loaded={imageLoaded}
+      onLoad={() => setImageLoaded(true)}
       />
+      
       </>
       <Heading>{title}</Heading>
       <Icon color="white" size={32} />

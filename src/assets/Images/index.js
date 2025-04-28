@@ -1,10 +1,3 @@
-import categ_streetKings from "./categories-images/categ_streetKings.avif";
-import categ_tees from "./categories-images/categ_tees.avif";
-import categ_jerseys from "./categories-images/categ_jerseys.avif";
-import categ_shorts from "./categories-images/categ_shorts.avif";
-import categ_sneakers from "./categories-images/categ_sneakers.avif";
-import categ_accessories from "./categories-images/categ_accesories.avif";
-
 import backpack_1 from "./Accessories/Backpack/Backpack_1.webp";
 import backpack_2 from "./Accessories/Backpack/Backpack_2.webp";
 import backpack_3 from "./Accessories/Backpack/Backpack_3.webp";
@@ -76,7 +69,7 @@ import wow_shadow_2 from "./Sneakers/WOW_Shadow/WOW_Shadow_2.webp";
 import wow_shadow_3 from "./Sneakers/WOW_Shadow/WOW_Shadow_3.webp";
 import wow_shadow_4 from "./Sneakers/WOW_Shadow/WOW_Shadow_4.webp";
 import wow_shadow_5 from "./Sneakers/WOW_Shadow/WOW_Shadow_5.webp";
-import wow_shadow_7 from "./Sneakers/WOW_Shadow/WOW_Shadow_7.webp";
+import wow_shadow_7 from "./Sneakers/WOW_Shadow/WOW_Shadow_6.webp";
 
 import wow_slides_1 from "./Sneakers/WOW_Slides/WOW_Slides_1.webp";
 import wow_slides_2 from "./Sneakers/WOW_Slides/WOW_Slides_2.webp";
@@ -314,19 +307,19 @@ const categories = [
   {
     id: 1,
     title: "Street Kings",
-    src: categ_streetKings,
+    cloudinaryValue: "categ_streetKings_r92uft.avif",
     link: "/products/street-kings",
   },
-  { id: 2, title: "Tees", src: categ_tees, link: "/products/tees" },
-  { id: 3, title: "Jerseys", src: categ_jerseys, link: "/products/jerseys" },
-  { id: 4, title: "Shorts", src: categ_shorts, link: "/products/shorts" },
-  { id: 5, title: "Sneakers", src: categ_sneakers, link: "/products/sneakers" },
+  { id: 2, title: "Tees", cloudinaryValue: "categ_tees_hwpuy6.avif", link: "/products/tees" },
+  { id: 3, title: "Jerseys", cloudinaryValue: "categ_jerseys_yddj49.avif", link: "/products/jerseys" },
+  { id: 4, title: "Shorts", cloudinaryValue: "categ_shorts_cdax8u.avif", link: "/products/shorts" },
+  { id: 5, title: "Sneakers", cloudinaryValue: "categ_sneakers_cqedii.avif", link: "/products/sneakers" },
   {
     id: 6,
     title: "Accessories",
-    src: categ_accessories,
+    cloudinaryValue: "categ_accesories_ah3zhy.avif",
     link: "/products/accessories",
-  },
+  }
 ];
 
 const products = [
