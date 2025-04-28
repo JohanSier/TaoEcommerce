@@ -8,9 +8,14 @@ const Container = styled.main`
     justify-content: center;
     background: var(--white);
     padding: 2.5rem 2rem .5rem 2rem;
+
+    @media screen and (max-width: 570px){
+        padding: 2rem 0.5rem;
+    }
 `
 
 const LoginForm = styled.form`
+    max-width:100%;
     background: var(--greyA);
     display: flex;
     flex-direction: column;
@@ -18,8 +23,14 @@ const LoginForm = styled.form`
     color: var(--white);
     border-radius: 8px;
 
+    @media screen and (max-width: 600px){
+        padding: 2rem;
+    }
+
+
 `
 const Heading = styled.h1`
+
   font-size: 3rem;
   margin: 0;
 `
@@ -41,13 +52,22 @@ const Input = styled.input`
         color: var(--white);
         font-variation-settings: "wght" 500;
     }
+
+    @media screen and (max-width: 400px){
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+    }
 `
 const Link = styled.a`
     color: var(--white)
     text-decoration: none;
     margin: 1rem 0 1.2rem 0;
-    font-size: 1rem;
+    font-size: 0.9rem;
     align-self: flex-start;
+
+    @media screen and (max-width: 400px){
+        font-size: 0.8rem;
+    }
 `
 
 const Button = styled.button`
