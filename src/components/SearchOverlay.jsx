@@ -3,6 +3,16 @@ import styled, { keyframes } from 'styled-components';
 import { HiOutlineSearch, HiX } from 'react-icons/hi';
 import { useNavigate } from 'react-router-dom';
 import { products } from '../assets/Images';
+import { Cloudinary } from "@cloudinary/url-gen";
+import { scale } from "@cloudinary/url-gen/actions/resize";
+
+const cloudinary = new Cloudinary({
+  cloud: {
+    cloudName: "deocx31u2",
+    apiKey: import.meta.env.VITE_CLOUDINARY_API_KEY,
+    apiSecret: import.meta.env.VITE_CLOUDINARY_API_SECRET
+  }
+});
 
 const fadeIn = keyframes`
   from { opacity: 0; }
@@ -339,7 +349,13 @@ const SearchOverlay = ({ isOpen, onClose }) => {
                 key={product.id} 
                 onClick={() => handleResultClick(product)}
               >
-                <ResultImage src={product.images[0]} alt={product.name} />
+                <ResultImage src={cloudinary
+                  .image(`${product.cloudinaryValues[0]}`)
+                  .format('auto')
+                  .quality('auto')
+                  .resize(scale(150))
+                  .toURL()
+                  } alt={product.name} />
                 <ResultInfo>
                   <ResultTitle>
                     {product.name}

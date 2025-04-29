@@ -3,6 +3,16 @@ import { HiOutlineX } from "react-icons/hi";
 import styled, { keyframes } from 'styled-components';
 import { useSizeGuide } from '../context/SizeGuideContext';
 import { products } from '../assets/Images';
+import { Cloudinary } from "@cloudinary/url-gen";
+import { scale } from "@cloudinary/url-gen/actions/resize";
+
+const cloudinary = new Cloudinary({
+  cloud: {
+    cloudName: "deocx31u2",
+    apiKey: import.meta.env.VITE_CLOUDINARY_API_KEY,
+    apiSecret: import.meta.env.VITE_CLOUDINARY_API_SECRET
+  }
+});
 
 const slideIn = keyframes`
   from { transform: translateX(100%); }
@@ -374,7 +384,7 @@ const SizeGuide = () => {
                   .image('Measure_qfdwdr.png')
                   .format('auto')
                   .quality('auto')
-                  .resize(scale(400))
+                  .resize(scale(600))
                   .toURL()} alt="Image of how to measure yourself"/>
                 
                 <DescriptionContainer>
