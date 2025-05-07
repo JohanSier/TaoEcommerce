@@ -52,7 +52,6 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  aspect-ratio: 2/1.6;
 
   @media (max-width: 800px) {
     display: none;
