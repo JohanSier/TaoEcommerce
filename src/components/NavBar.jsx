@@ -342,7 +342,7 @@ const NavBar = () => {
         <RightLinks>
           <SearchButton onClick={() => setIsSearchOpen(true)}>
             <HiOutlineSearch size={24} aria-label="Search Icon" title="Search Item" />
-            <SearchText>Buscar</SearchText>
+            <SearchText>Search</SearchText>
           </SearchButton>
 
           <ProfileIconLink to="/log-in">

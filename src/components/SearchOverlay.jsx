@@ -325,7 +325,7 @@ const SearchOverlay = ({ isOpen, onClose }) => {
     <OverlayContainer>
       <SearchContainer>
         <SearchHeader>
-          <SearchTitle>Buscar productos</SearchTitle>
+          <SearchTitle>Search Products</SearchTitle>
           <CloseButton onClick={handleClose}>
             <HiX />
           </CloseButton>
@@ -336,7 +336,7 @@ const SearchOverlay = ({ isOpen, onClose }) => {
           <SearchInput 
             ref={inputRef}
             type="text" 
-            placeholder="¿Qué estás buscando?" 
+            placeholder="What are you looking for?" 
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
@@ -369,10 +369,10 @@ const SearchOverlay = ({ isOpen, onClose }) => {
             ))}
           </ResultsContainer>
         ) : searchTerm.trim() !== '' ? (
-          <NoResults>No se encontraron resultados para "{searchTerm}"</NoResults>
+          <NoResults>Sorry! There are no results for "{searchTerm}"</NoResults>
         ) : (
           <PopularSearches>
-            <PopularTitle>Búsquedas populares</PopularTitle>
+            <PopularTitle>Popular Searchs</PopularTitle>
             <TagsContainer>
               {popularSearches.map((tag, index) => (
                 <Tag key={index} onClick={() => handleTagClick(tag)}>
